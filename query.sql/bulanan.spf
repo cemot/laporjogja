@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>laporjogjadb</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>name</key>
+			<string>Local</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>latin1</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeACltpZF9rZWxvbXBva9Ie
+			Hy0uXxAPTlNNdXRhYmxlU3RyaW5noy0vI1hOU1N0cmluZ9IeHzEy
+			Xk5TTXV0YWJsZUFycmF5ozEzI1dOU0FycmF50h4fIjWiIiNfEA9O
+			U0tleWVkQXJjaGl2ZXLRODlUZGF0YYABAAgAEQAaACMALQAyADcA
+			RQBLAFIAWgBlAGwAcAByAHQAdgB6AHwAfgCAAIIAhwCMAJEAugDB
+			AMIAwwDFAMoA1QDeAPQA+AEFAQ4BEwEVARcBGQEeASgBKgE2ATsB
+			TQFRAVoBXwFuAXIBegF/AYIBlAGXAZwAAAAAAAACAQAAAAAAAAA6
+			AAAAAAAAAAAAAAAAAAABng==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1080, 496}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>select gk.id,gk.golongan_kejahatan, count(x.bulan) as jumlah,
+ifnull(sum(x.p21),0) as p21,
+ifnull(sum(x.bpp),0) as bpp,
+ifnull(sum(x.adc),0) as adc,
+ifnull(sum(x.nii),0) as nii,
+ifnull(sum(x.tm),0) as tm,
+ifnull(sum(x.tg),0) as tg,
+ifnull(sum(x.exp),0) as exp,
+ifnull(sum(x.p21),0) + ifnull(sum(x.bpp),0) + ifnull(sum(x.adc),0) + ifnull(sum(x.nii),0) + ifnull(sum(x.tm),0) + ifnull(sum(x.tg),0) + ifnull(sum(x.exp),0)  as jml_henti,
+
+ifnull(sum(x.sidik),0) as sidik,
+ifnull(sum(x.lidik),0) as lidik , 
+ifnull(sum(x.sidik),0)  + ifnull(sum(x.lidik),0)  as lidiksidik
+from m_golongan_kejahatan gk 
+left join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan 
+group by gk.id</string>
+			<key>table</key>
+			<string>m_kelompok_kejahatan</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>select gk.id,gk.golongan_kejahatan, count(x.bulan) as jumlah,
+ifnull(sum(x.p21),0) as p21,
+ifnull(sum(x.bpp),0) as bpp,
+ifnull(sum(x.adc),0) as adc,
+ifnull(sum(x.nii),0) as nii,
+ifnull(sum(x.tm),0) as tm,
+ifnull(sum(x.tg),0) as tg,
+ifnull(sum(x.exp),0) as exp,
+ifnull(sum(x.p21),0) + ifnull(sum(x.bpp),0) + ifnull(sum(x.adc),0) + ifnull(sum(x.nii),0) + ifnull(sum(x.tm),0) + ifnull(sum(x.tg),0) + ifnull(sum(x.exp),0)  as jml_henti,
+
+ifnull(sum(x.sidik),0) as sidik,
+ifnull(sum(x.lidik),0) as lidik , 
+ifnull(sum(x.sidik),0)  + ifnull(sum(x.lidik),0)  as lidiksidik
+from m_golongan_kejahatan gk 
+left join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan
+group by gk.id</string>
+		<string>select gk.id,gk.golongan_kejahatan, count(x.bulan) as jumlah,
+ifnull(sum(x.p21),0) as p21,
+ifnull(sum(x.bpp),0) as bpp,
+ifnull(sum(x.adc),0) as adc,
+ifnull(sum(x.nii),0) as nii,
+ifnull(sum(x.tm),0) as tm,
+ifnull(sum(x.tg),0) as tg,
+ifnull(sum(x.exp),0) as exp,
+ifnull(sum(x.p21),0) + ifnull(sum(x.bpp),0) + ifnull(sum(x.adc),0) + ifnull(sum(x.nii),0) + ifnull(sum(x.tm),0) + ifnull(sum(x.tg),0) + ifnull(sum(x.exp),0)  as jml_henti,
+
+ifnull(sum(x.sidik),0) as sidik,
+ifnull(sum(x.lidik),0) as lidik , 
+ifnull(sum(x.sidik),0)  + ifnull(sum(x.lidik),0)  as lidiksidik
+from m_golongan_kejahatan gk 
+join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan
+group by gk.id</string>
+		<string>select gk.id,gk.golongan_kejahatan, count(x.bulan) as jumlah,
+ifnull(sum(x.p21),0) as p21,
+ifnull(sum(x.bpp),0) as bpp,
+ifnull(sum(x.adc),0) as adc,
+ifnull(sum(x.nii),0) as nii,
+ifnull(sum(x.tm),0) as tm,
+ifnull(sum(x.tg),0) as tg,
+ifnull(sum(x.exp),0) as exp,
+ifnull(sum(x.p21),0) + ifnull(sum(x.bpp),0) + ifnull(sum(x.adc),0) + ifnull(sum(x.nii),0) + ifnull(sum(x.tm),0) + ifnull(sum(x.tg),0) + ifnull(sum(x.exp),0)  as jml_henti,
+
+ifnull(sum(x.sidik),0) as sidik,
+ifnull(sum(x.lidik),0) as lidik 
+from m_golongan_kejahatan gk 
+join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan
+group by gk.id</string>
+		<string>select gk.id,gk.golongan_kejahatan, count(x.bulan) as jumlah,
+ifnull(sum(x.p21),0) as p21,
+ifnull(sum(x.bpp),0) as bpp,
+ifnull(sum(x.adc),0) as adc,
+ifnull(sum(x.nii),0) as nii,
+ifnull(sum(x.tm),0) as tm,
+ifnull(sum(x.tg),0) as tg,
+ifnull(sum(x.exp),0) as exp,
+ifnull(sum(x.sidik),0) as sidik,
+ifnull(sum(x.lidik),0) as lidik 
+from m_golongan_kejahatan gk 
+join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan
+group by gk.id</string>
+		<string>select gk.id,gk.golongan_kejahatan, count(x.bulan) as jumlah,
+sum(x.p21) as p21,
+sum(x.bpp) as bpp,
+sum(x.adc) as adc,
+sum(x.nii) as nii,
+sum(x.tm) as tm,
+sum(x.tg) as tg,
+sum(x.exp) as exp,
+sum(x.sidik) as sidik,
+sum(x.lidik) as lidik 
+from m_golongan_kejahatan gk 
+join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan
+group by gk.id</string>
+		<string>select gk.golongan_kejahatan, count(x.bulan) as jumlah,
+sum(x.p21) as p21,
+sum(x.bpp) as bpp,
+sum(x.adc) as adc,
+sum(x.nii) as nii,
+sum(x.tm) as tm,
+sum(x.tg) as tg,
+sum(x.exp) as exp,
+sum(x.sidik) as sidik,
+sum(x.lidik) as lidik 
+from m_golongan_kejahatan gk 
+join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan
+group by gk.id</string>
+		<string>select gk.golongan_kejahatan, count(x.bulan) as jumlah,
+sum(x.p21) as p21,
+sum(x.bpp) as bpp,
+sum(x.adc) as adc
+from m_golongan_kejahatan gk 
+join 
+ (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x  on gk.id = x.id_gol_kejahatan
+group by gk.id</string>
+		<string>select * from (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x</string>
+		<string>select * (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+) x</string>
+		<string>select * (
+select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017
+)</string>
+		<string>select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a where  month(tanggal) = 3 and year(tanggal) = 2017
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b where month(tanggal) = 3 and year(tanggal) = 2017</string>
+		<string>select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, year(tanggal) tahun,
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b</string>
+		<string>select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, 
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_a
+union 
+select 'b' as tb, id_gol_kejahatan, month(tanggal) bulan, 
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+from lap_b</string>
+		<string>select 'a' as tb, id_gol_kejahatan, month(tanggal) bulan, 
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+
+
+
+from lap_a</string>
+		<string>select id_gol_kejahatan, month(tanggal) bulan, 
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp,
+if(penyelesaian='sidik',1,0) as sidik,
+if(penyelesaian='lidik',1,0) as lidik
+
+
+
+from lap_a</string>
+		<string>select id_gol_kejahatan, month(tanggal) bulan, 
+if(penyelesaian='p21',1,0) as p21,
+if(penyelesaian='dihentikan' and alasan='tidakcukupbukti' ,1,0) as tcb,
+if(penyelesaian='dihentikan' and alasan='bukanpkrpidana' ,1,0) as bpp,
+if(penyelesaian='dihentikan' and alasan='aduandicabut' ,1,0) as adc,
+if(penyelesaian='dihentikan' and alasan='nebisinidem' ,1,0) as nii,
+if(penyelesaian='dihentikan' and alasan='tskmati' ,1,0) as tm,
+if(penyelesaian='dihentikan' and alasan='tskgila' ,1,0) as tg,
+if(penyelesaian='dihentikan' and alasan='kadaluarsa' ,1,0) as exp
+
+
+from lap_a</string>
+		<string>select gol.golongan, kel.kelompok, gk.golongan_kejahatan , y.belum, y.selesai, y.total
+from m_golongan gol 
+join m_kelompok_kejahatan kel on kel.id_golongan = gol.id 
+join m_golongan_kejahatan gk on gk.id_kelompok = kel.id_kelompok 
+
+join (
+select x.id_gol_kejahatan, sum(x.belum) as belum ,  sum(x.selesai)  as selesai, count(*) as  total  from ( 
+
+		select lap_a_id as id,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_a
+		union 
+		select lap_b_id as id ,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_b
+		) x 
+		where x.tanggal between '2017-03-1' and '2017-03-31'
+		group by x.id_gol_kejahatan
+
+) y on y.id_gol_kejahatan = gk.id order by   gol.id, kel.id_kelompok, gk.id</string>
+		<string>select gol.golongan, kel.kelompok, gk.golongan_kejahatan , y.belum, y.selesai, y.total
+from m_golongan gol 
+join m_kelompok_kejahatan kel on kel.id_golongan = gol.id 
+join m_golongan_kejahatan gk on gk.id_kelompok = kel.id_kelompok 
+
+join (
+select x.id_gol_kejahatan, sum(x.belum) as belum ,  sum(x.selesai)  as selesai, count(*) as  total  from ( 
+
+		select lap_a_id as id,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_a
+		union 
+		select lap_b_id as id ,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_b
+		) x 
+		where x.tanggal between '2017-03-1' and '2017-03-31'
+		group by x.id_gol_kejahatan
+
+) y on y.id_gol_kejahatan = gk.id  order by gk.id</string>
+		<string>select gol.golongan, kel.kelompok, gk.golongan_kejahatan , y.belum, y.selesai, y.total
+from m_golongan gol 
+join m_kelompok_kejahatan kel on kel.id_golongan = gol.id 
+join m_golongan_kejahatan gk on gk.id_kelompok = kel.id_kelompok 
+
+join (
+select x.id_gol_kejahatan, sum(x.belum) as belum ,  sum(x.selesai)  as selesai, count(*) as  total  from ( 
+
+		select lap_a_id as id,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_a
+		union 
+		select lap_b_id as id ,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_b
+		) x 
+		where x.tanggal between '2017-03-1' and '2017-03-31'
+		group by x.id_gol_kejahatan
+
+) y on y.id_gol_kejahatan = gk.id</string>
+		<string>select gol.golongan, kel.kelompok, gk.golongan_kejahatan 
+from m_golongan gol 
+join m_kelompok_kejahatan kel on kel.id_golongan = gol.id 
+join m_golongan_kejahatan gk on gk.id_kelompok = kel.id_kelompok 
+
+join (
+select x.id_gol_kejahatan, sum(x.belum) as belum ,  sum(x.selesai)  as selesai, count(*) as  total  from ( 
+
+		select lap_a_id as id,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_a
+		union 
+		select lap_b_id as id ,tanggal,id_gol_kejahatan,penyelesaian,if(penyelesaian='' or penyelesaian is null ,1,0) as belum , 
+		if(penyelesaian='' or penyelesaian is null ,0,1) as selesai
+		from lap_b
+		) x 
+		where x.tanggal between '2017-03-1' and '2017-03-31'
+		group by x.id_gol_kejahatan
+
+) y on y.id_gol_kejahatan = gk.id</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.14</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

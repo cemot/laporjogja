@@ -1,0 +1,21 @@
+drop view v_lap_bb; 
+create view v_lap_bb as 
+select a.lap_b_id, nomor, tanggal, pelapor_nama, group_concat(tersangka_nama) as terlapor , 
+tindak_pidana, group_concat(u.nama) as  penyidik_nama, a.user_id
+from lap_b a 
+left join lap_b_tersangka tr on a.lap_b_id = tr.lap_b_id
+left join lap_b_penyidik p on p.lap_b_id = a.lap_b_id
+left join pengguna u on u.id = p.id_penyidik
+group by a.lap_b_id; 
+
+
+
+drop view v_lap_aa; 
+create view v_lap_aa as 
+select a.lap_a_id, nomor, tanggal, pelapor_nama, group_concat(tersangka_nama) as terlapor , 
+tindak_pidana, group_concat(u.nama) as  penyidik_nama, a.user_id
+from lap_a a 
+left join lap_a_tersangka tr on a.lap_a_id = tr.lap_a_id
+left join lap_a_penyidik p on p.lap_a_id = a.lap_a_id
+left join pengguna u on u.id = p.id_penyidik
+group by a.lap_a_id; 
