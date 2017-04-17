@@ -46,7 +46,7 @@
                 Laporan Polisi  <br /> Model B 
             </a>
 
-            <a href="<?php echo site_url("ex_lap_lantas") ?>" class="btn btn-sq-lg btn-primary">
+            <a href="<?php echo site_url("ex_laka") ?>" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-ambulance  fa-5x"></i><br/>
                 Laporan Polisi  <br /> Laka Lantas
             </a>

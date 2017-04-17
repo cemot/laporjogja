@@ -1,14 +1,14 @@
 <?php
-class penyidik_lap_d extends penyidik_controller {
+class ex_lap_d extends ex_controller {
  	var $controller ;
 
-	function penyidik_lap_d(){
+	function ex_lap_d(){
 		parent::__construct();
 		 
 		$this->load->model("coremodel","cm");
 		$this->load->helper("tanggal");
 		$this->load->model("admindik_lap_d_model","dm");
-        $this->load->model("penyidik_lap_d_model","am");
+        $this->load->model("ex_lap_d_model","am");
 		$this->controller = get_class($this);
 		$this->userdata = $_SESSION['userdata'];
 
@@ -38,10 +38,10 @@ class penyidik_lap_d extends penyidik_controller {
 		$data_array['status'] = isset($_GET['status'])?$_GET['status']:'0';
 		$content = $this->load->view($controller."_view",$data_array,true);
 
-		$this->set_subtitle("LAPORAN POLISI MODEL-C");
-		$this->set_title("LAPORAN  POLISI MODEL-C");
+		$this->set_subtitle("LAPORAN POLISI MODEL-D");
+		$this->set_title("LAPORAN  POLISI MODEL-D");
 		$this->set_content($content);
-		$this->render_admin();
+		$this->render();
 	}
 
 
@@ -57,7 +57,9 @@ function get_data(){
         // $no_rangka = $_REQUEST['columns'][5]['search']['value'];
         $tanggal_awal = $_REQUEST['columns'][1]['search']['value'];
         $tanggal_akhir = $_REQUEST['columns'][2]['search']['value'];
-        $id_fungsi = $_REQUEST['columns'][3]['search']['value'];
+        $jenis = (!empty($_REQUEST['columns'][4]['search']['value']))?$_REQUEST['columns'][4]['search']['value']:"x";
+        $id_polres = $_REQUEST['columns'][5]['search']['value'];
+        $id_polsek = $_REQUEST['columns'][6]['search']['value'];
 
 
  
@@ -70,8 +72,9 @@ function get_data(){
                 "limit" => null ,
                 "tanggal_awal" => $tanggal_awal, 
                 "tanggal_akhir" => $tanggal_akhir, 
-                "id_fungsi" => $id_fungsi ,
-                "id_penyidik" => $userdata['id']
+                "jenis" => $jenis,
+                "id_polres" => $id_polres,
+                "id_polsek" => $id_polsek
                  
         );     
            
@@ -133,6 +136,9 @@ function detail($id){
 	
 	$detail['controller'] = $this->controller;
 
+    $detail['rec_perkembangan'] = $this->dm->get_perkembangan($id);
+    $detail['rec_penyidik'] = $this->dm->get_data_penyidik($id); 
+
 	
 
 
@@ -140,10 +146,10 @@ function detail($id){
 
 	//show_array($detail);
 	$content = $this->load->view($this->controller."_view_detail",$detail,true);
-	$this->set_subtitle("DETAIL LAPORAN POLISI MODEL-C NOMOR : ".$detail['nomor']);
-	$this->set_title("DETAIL  LAPORAN  POLISI MODEL-C NOMOR : ".$detail['nomor']);
+	$this->set_subtitle("DETAIL LAPORAN POLISI MODEL-D NOMOR : ".$detail['nomor']);
+	$this->set_title("DETAIL  LAPORAN  POLISI MODEL-D NOMOR : ".$detail['nomor']);
 	$this->set_content($content);
-	$this->render_admin();
+	$this->render();
 
 
 }

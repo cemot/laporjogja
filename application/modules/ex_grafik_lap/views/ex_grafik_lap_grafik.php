@@ -61,7 +61,7 @@
 
 <div id="grafik" style="height: 423px;">
 
-<div id="view"></div>
+  <div id="view"></div>
 
 </div>
 

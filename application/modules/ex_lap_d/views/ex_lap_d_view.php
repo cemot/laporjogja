@@ -99,14 +99,47 @@
                         name="tanggal_akhir"  >
                       </div>
 
-                      <div class="form-group">
-                       <?php 
+                       <div class="form-group">
+                         <?php
+                         $arr = array("x"=>"= SEMUA = ",
+                                      "polda"=>"POLDA",
+                                      "polres"=>"POLRES",
+                                      "polsek"=>"POLSEK"
+                                      
+                                      );
+                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control"');
 
-            $arr_fungsi = $this->cm->get_arr_dropdown("m_fungsi", 
-                    "id_fungsi","fungsi",'fungsi');
-            array_unshift($arr_fungsi, "- Semua Fungsi Terkait -");
-            echo form_dropdown('',$arr_fungsi,'','id="id_fungsi" class="form-control"');
-             ?>
+                         ?>
+                         
+                      </div>
+
+
+                      <div class="form-group" id="search_polres">
+                         <?php
+                          
+                         $arr_polres = $this->cm->get_arr_dropdown("m_polres","id_polres","nama_polres","nama_polres");
+
+                         $arr_polres = $this->cm->add_arr_head($arr_polres,"x","=  PILIH POLRES =");
+
+
+                         echo form_dropdown("id_pores",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+
+                         ?>
+                         
+                      </div>
+
+
+                       <div class="form-group" id="search_polsek">
+                         <?php
+                          
+                        
+
+                         
+
+                         echo form_dropdown("id_polsek",$arr_polres,"",'id="id_polsek" class="form-control"');
+
+                         ?>
+                         
                       </div>
                      <!--  <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-search" id='btn_cari'></i>Cari</a> -->
 
@@ -155,3 +188,5 @@
 
 
 <?php $this->load->view($controller."_view_js") ?>
+<?php $this->load->view("js/general_js") ?>
+

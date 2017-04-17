@@ -1,6 +1,6 @@
 <?php
-class penyidik_lap_d_model extends CI_Model {
-	function penyidik_lap_d_model(){
+class ex_lap_d_model extends CI_Model {
+	function ex_lap_d_model(){
 		parent::__construct();
 	}
 
@@ -21,11 +21,29 @@ function data($param){
 	$sort_by = $arr_column[$param['sort_by']];
 
 	$this->db->select('a.*')->from('v_lap_d a'); 
-	$this->db->join("lap_d_penyidik b","a.lap_d_id = b.lap_d_id","left");
+	$this->db->join('pengguna u','a.user_id = u.id');
 
 				// "tanggal_awall" => $tanggal_awal, 
 				// "tanggal_akhir" => $tanggal_akhir,
 				// "id_fungsi" => $id_fungsi 
+
+
+	if($param['jenis']<>'x'  ) {
+
+		// echo "kok masuk sini";
+		$this->db->where("u.jenis",$param['jenis']);
+
+		if($param['jenis']=="polres") {
+			$this->db->where("u.id_polres",$param['id_polres']);
+		}
+		else if($param['jenis']=="polsek") {
+			$this->db->where("u.id_polsek",$param['id_polsek']);
+		}
+
+
+	}
+
+
 
     if($param['tanggal_awal']<> '') {
     	$tanggal_awal = flipdate($param['tanggal_awal']); 
@@ -33,14 +51,8 @@ function data($param){
     	$this->db->where("tanggal between '$tanggal_awal' and '$tanggal_akhir'",null,false);
     }
 
-    if($param['id_fungsi'] > 0 ){
-    	$this->db->where("id_fungsi",$param['id_fungsi']);
-    }
-
-    
-    $this->db->where("b.id_penyidik",$param['id_penyidik']);
-
-
+   
+     
 
 
 	($param['limit'] != null ? $this->db->limit($param['limit']['end'], $param['limit']['start']) : '');

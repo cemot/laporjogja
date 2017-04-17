@@ -2,10 +2,9 @@
 </p>
  
 
-<table width="100%"  border="0" class="table table-striped 
-             table-bordered table-hover dataTable no-footer" id="grid_penyidik" role="grid">
+<table width="100%"  border="0" class="table table-striped">
 <thead>
-  <tr style="background-color:#CCC">
+  <tr >
 
         <th width="15%">NRP</th>
         <th width="19%">NAMA</th>
@@ -17,7 +16,20 @@
          
        
     </tr>
-  
+   <?php 
+        foreach($rec_penyidik->result() as $row ) : 
+
+    ?>
+      <tr>
+      <td><?php echo $row->user_id ?></td>
+      <td><?php echo $row->nama ?></td>
+      <td><?php echo $row->pangkat ?></td>
+      <td><?php echo $row->polres_polsek ?></td>
+      <td><?php echo $row->nomor_hp ?></td>
+      <td><?php echo $row->email ?></td>
+      </tr>
+
+    <?php endforeach; ?>
 </thead>
 </table>
 

@@ -1,5 +1,5 @@
 <?php
-class laporan_harian extends admin_controller  {
+class laporan_harian extends ex_controller  {
 	function laporan_harian(){
 		parent::__construct();
 		$this->load->helper("tanggal");
@@ -17,7 +17,7 @@ class laporan_harian extends admin_controller  {
 		$this->set_subtitle("LAPORAN HARIAN GANGGUAN KAMTIBMAS (LHGK)");
 		$this->set_title("LAPORAN HARIAN GANGGUAN KAMTIBMAS (LHGK)");
 		$this->set_content($content);
-		$this->render_admin();
+		$this->render();
 	}
 
 

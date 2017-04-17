@@ -12,7 +12,7 @@
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">
             <div class="alert alert-danger" role="alert" id="message">
-            	
+              
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
   <div class="row">
   <div id="benar" class="col-lg-12" style="display:none">
             <div class="alert alert-success" role="alert" id="message2">
-            	
+              
             </div>
         </div>
     </div> 
@@ -44,8 +44,20 @@
                     ?>
                   </select>
 
+                  <?php 
+
+              $arr_polres = $this->cm->get_arr_dropdownpolres("m_polres","id_polres","nama_polres","nama_polres");
+              echo form_dropdown("id_polres",$arr_polres,'','class="form-control" id="id_polres" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+              ?>
+              <?php 
+              
+              echo form_dropdown("id_polsek",array(),'','class="form-control" id="id_polsek"');
+              ?>
+
+
+
                      <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i> Cari</button>
-                      <a href="#" onclick="reset_cari();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
+                     
                
                   </div>
                 </div>
@@ -61,7 +73,7 @@
 
 <div id="grafik" style="height: 423px;">
 
-<div id="view"></div>
+  <div id="view"></div>
 
 </div>
 
@@ -76,7 +88,7 @@
             x: -20 //center
         },
     subtitle: {
-            text: 'Tahun : <?php echo date('Y'); ?>',
+            text: 'Wellcome Back',
             x: -20
         },
         xAxis: {
@@ -88,7 +100,7 @@
         },
         yAxis: {
             title: {
-                text: '<?php echo $title.' Tahun : '.date('Y'); ?>'
+                text: '<?php echo $title ?>'
             },
             plotLines: [{
                 value: 0,
@@ -97,7 +109,7 @@
             }]
         },
         tooltip: {
-            valueSuffix: ' Orang'
+            valueSuffix: ' Kasus'
         },
         legend: {
             layout: 'vertical',
@@ -106,7 +118,7 @@
             borderWidth: 0
         },
         series: [{
-            name: 'Jumlah',
+            name: 'Data Kosong',
             data: [
         <?php
           
@@ -127,12 +139,34 @@
         }]
     });
 
+    $("#id_polres").change(function(){
+
+    $.ajax({
+
+            url : '<?php echo site_url("$this->controller/get_polsek") ?>',
+            data : { id_polres : $(this).val() },
+            type : 'post', 
+            success : function(result) {
+                $("#id_polsek").html(result)
+            }
+    });
+
+});
+
     $("#cari_button").click(function() {
 
       var nilai = $('#tahun').val();
+      var id_polres = $('#id_polres').val();
+      var id_polsek = $('#id_polsek').val();
+
       
       if(!nilai) {
-        alert('Anda harus pilih tahun dulu');
+        alert('Anda harus pilih tahun Terlebih Dahulu');
+        return false;
+      }  
+
+      if(!id_polres) {
+        alert('Anda harus pilih Polres Terlebih Dahulu');
         return false;
       }  
 
@@ -142,7 +176,7 @@
       $.ajax({
 
         url   : '<?php echo site_url("$controller/get_grafik"); ?>',
-        data  : 'tahun=' + nilai + '&url=' + <?php echo $this->uri->segment(3); ?>,
+        data  : 'tahun=' + nilai + '&id_polres=' + id_polres + '&id_polsek=' + id_polsek + '&url=' + <?php echo $this->uri->segment(3); ?>,
         type  : 'GET',
         success: function(obj) {
           $("#grafik").html(obj);
