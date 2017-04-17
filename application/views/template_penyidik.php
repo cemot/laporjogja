@@ -241,7 +241,7 @@
 
         ?>
         
-        <li class="dropdown" ><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo strtoupper($userdata['jenis'])." $inst "." - ". $userdata['user_id']. " ". $userdata['nama'] ?><span class="caret"></span></a>
+        <li class="dropdown" ><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo strtoupper($userdata['jenis'])." $inst "." - ". $userdata['user_id']. " ". $userdata['nama'] ?>- PENYIDIK <span class="caret"></span></a>
         <ul class="dropdown-menu">
         <li><a href="<?php echo site_url("login/logout"); ?>">GANTI PASSWORD USER </a></li>
         <li><a href="<?php echo site_url("login/logout"); ?>">KELUAR</a></li>

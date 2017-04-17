@@ -1,5 +1,5 @@
 drop view v_lap_bb; 
-create veiw v_lap_bb as 
+create view v_lap_bb as 
 select 
 	`a`.`lap_b_id` AS `lap_b_id`, 
 	`a`.`nomor` AS `nomor`, 
@@ -68,13 +68,13 @@ ALTER TABLE `m_polsek` ADD `alamat` VARCHAR(200) NULL ;
 ALTER TABLE `m_setting_polda` ADD `alamat` VARCHAR(200) NULL ; 
 
 
-update lap_a set kp_wktu=concat(second(kp_wktu),':00',':00') WHERE HOUR( kp_wktu ) = '0' AND MINUTE( kp_wktu ) = '0' ;
+-- update lap_a set kp_wktu=concat(second(kp_wktu),':00',':00') WHERE HOUR( kp_wktu ) = '0' AND MINUTE( kp_wktu ) = '0' ;
 
-update lap_b set kejadian_jam=concat(second(kejadian_jam),':00',':00') WHERE HOUR( kejadian_jam ) = '0' AND MINUTE( kejadian_jam ) = '0' ; 
+-- update lap_b set kejadian_jam=concat(second(kejadian_jam),':00',':00') WHERE HOUR( kejadian_jam ) = '0' AND MINUTE( kejadian_jam ) = '0' ; 
 
 
 
-	drop view v_pencarian ; 
+drop view v_pencarian ; 
 create view v_pencarian as 
 select 
 	kp_wktu as waktu, 
@@ -651,5 +651,7 @@ from
 	);
 
 
+
+INSERT INTO `m_level` (`id`, `level`) VALUES ('4', 'EXECUTIVE');
 
 

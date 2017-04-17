@@ -37,7 +37,7 @@ class coremodel extends CI_Model {
             "Berhasil Blokir");
 
 
-  var $arr_alasan = array("tidakcukupbukti"=>"TIDAK CUKUP BUKTI",
+var $arr_alasan = array("tidakcukupbukti"=>"TIDAK CUKUP BUKTI",
                    "bukanpkrpidana" => "BUKAN PERKARA PIDANA",
                    "aduandicabut"   => "ADUAN DICABUT",
                    "nebisinidem"    => "NEBIS IN IDEM",
@@ -47,6 +47,11 @@ class coremodel extends CI_Model {
 
 var $arr_penyelesaian = array("p21"=>"P 21",
                    "dihentikan"=>"PENYIDIKAN DIHENTIKAN");
+
+var $arr_status_kasus = array("sidik"=>"PENYELIDIKAN",
+                              "lidik"=>"PENYIDIKAN",
+                              "p21"=>"P 21",
+                              "dihentikan");
 
 
         function arr_dropdown($vTable, $vINDEX, $vVALUE, $vORDERBY){

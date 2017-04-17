@@ -27,6 +27,7 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
+   
     <li role="presentation"><a href="#pasal" aria-controls="pasal" role="tab" data-toggle="tab">Pasal</a></li>
 
     <li role="presentation"><a href="#tersangka" aria-controls="tersangka" role="tab" data-toggle="tab">Tersangka</a></li>

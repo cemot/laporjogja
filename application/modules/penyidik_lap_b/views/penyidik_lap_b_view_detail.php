@@ -41,6 +41,9 @@
     
 
      <li role="presentation"><a href="#perkembagan" aria-controls="perkembagan" role="tab" data-toggle="tab">Perkembangan kasus</a></li>
+
+      <li role="presentation"><a href="#status" aria-controls="status" role="tab" data-toggle="tab">Status Kasus</a>
+     </li>
     
   </ul>
 
@@ -82,14 +85,23 @@
     <?php $this->load->view($this->controller."_view_detail_barbuk"); ?>
 
     </div>
+
+
     <div role="tabpanel" class="tab-pane" id="penyidik">
 
     <?php $this->load->view($this->controller."_view_detail_penyidik"); ?>  
 
     </div>
-    <div role="tabpanel" class="tab-pane" id="perkembagan">
+
+     <div role="tabpanel" class="tab-pane" id="perkembagan">
     <?php $this->load->view($this->controller."_view_detail_perkembangan"); ?>  
     </div>
+
+     <div role="tabpanel" class="tab-pane" id="status">
+    <?php $this->load->view($this->controller."_view_detail_status"); ?>  
+     
+    </div>
+    
   </div>
 
 </div>

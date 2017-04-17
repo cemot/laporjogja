@@ -127,6 +127,8 @@ function detail($id){
 
     $detail['lap_b_id'] = $id;
 
+    $_SESSION['lap_b_id'] = $id;
+
     // show_array($detail); exit;
 
 	
@@ -610,6 +612,42 @@ function get_perkembangan_detail_json($id){
     echo json_encode($detail);
 }
 
+
+
+function update_penyelesaian(){
+    $userdata = $this->userdata;
+    $post = $this->input->post();
+    $this->db->where("lap_b_id",$_SESSION['lap_b_id']);
+
+    if($post['penyelesaian']=="p21"){
+        unset($post['alasan']);
+    }
+    $post['penyelesaian_waktu'] = date("Y-m-d");
+    $post['penyelesaian_by'] = $userdata['id'];
+
+    $res = $this->db->update("lap_b",$post);
+
+    // echo $this->db->last_query();
+
+    if($res){
+        $ret = array("error"=>false,"message"=>"Penyelesaian laporan berhasil diupdate");
+
+    }
+    else {
+        $ret = array("error"=>true,"message"=>"Penyelesaian Laporan berhasil diupdate");
+    }
+    echo json_encode($ret);
+
+}
+
+
+function get_lap_b_detail($id){
+    $this->db->where("lap_b_id",$id);
+    $data = $this->db->get("lap_b")->row_array();
+
+    echo json_encode($data);
+
+}
 
 }
 ?>

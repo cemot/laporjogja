@@ -51,6 +51,41 @@ $("#lidik").change(function(){
 });
 
 
+
+
+$("#penyelesaian").change(function(){
+     if($(this).val()=="p21"){
+          $("#divalasan").hide();
+      }
+      else {
+        $("#divalasan").show();
+      }
+});
+
+  
+$("#formpenyelesaian").submit(function(){
+    //alert('test'); 
+    update_penyelesaian();
+    return false;
+    
+});
+
+
+// get detail 
+$.ajax({
+  url : '<?php echo site_url("$this->controller/get_lap_b_detail/$lap_b_id") ?>',
+  dataType : 'json',
+  success : function(retdata) {
+    $("#penyelesaian").val(retdata.penyelesaian).attr('selected','selected');
+    if(retdata.penyelesaian=="p21"){
+      $("#divalasan").hide();
+    }
+    else {
+      $("#divalasan").show();
+    }
+  }
+});
+
 // submit formulir 
 
 // $("#formulir_perkembangan").submit(function(){
@@ -63,6 +98,67 @@ $("#lidik").change(function(){
 	
 });
 
+
+
+function update_penyelesaian(){
+
+BootstrapDialog.show({
+            message : 'ANDA AKAN MENGUPDATE PENYELESAIAN LAPORAN INI. ANDA YAKIN  ?  ',
+            title: 'KONFIRMASI UPDATE PENYELESAIAN LAPORAN ',
+            draggable: true,
+            buttons : [
+              {
+                label : 'IYA',
+                cssClass : 'btn-primary',
+                hotkey: 13,
+                action : function(dialogItself){
+
+
+                  dialogItself.close();
+                  $('#myPleaseWait').modal('show'); 
+                  
+                  $.ajax({
+                    url : $("#formpenyelesaian").prop('action'),
+                    type : 'post',
+                    data :  $("#formpenyelesaian").serialize(),
+                    dataType : 'json',
+                    success : function(obj) {
+                      $('#myPleaseWait').modal('hide'); 
+                      if(obj.error==false) {
+                          BootstrapDialog.alert({
+                              type: BootstrapDialog.TYPE_PRIMARY,
+                              title: 'Informasi',
+                              message: obj.message,
+                               
+                          });   
+
+                      // $('#grid_perkembangan').DataTable().ajax.reload(); 
+                      
+                      }
+                      else {
+                        BootstrapDialog.alert({
+                            type: BootstrapDialog.TYPE_DANGER,
+                            title: 'Error',
+                            message: obj.message,
+                             
+                        }); 
+                      }
+                    }
+                  });
+
+                }
+              },
+              {
+                label : 'TIDAK',
+                cssClass : 'btn-danger',
+                action: function(dialogItself){
+                    dialogItself.close();
+                }
+              }
+            ]
+          });
+ 
+}
 
 
 
