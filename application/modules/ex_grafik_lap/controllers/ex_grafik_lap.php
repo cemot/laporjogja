@@ -134,11 +134,11 @@ class ex_grafik_lap extends ex_controller  {
 
 		$data_array['query'] = $this->db->query($query)->row_array();
 
-		//echo $this->db->last_query();
+		// echo $this->db->last_query(); exit;
 		$data_array['tahun'] = $tahun;
 		$data_array['title'] = $title;
 
-		// show_array($data_array);
+		//show_array($data_array);
 
 		$this->load->view($controller."_grafik_view",$data_array);
 

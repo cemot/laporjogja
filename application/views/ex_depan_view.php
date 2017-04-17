@@ -56,7 +56,7 @@
                 Laporan Polisi  <br /> Model D  
             </a>
 
-             <a href="<?php echo site_url("pencarian") ?>" class="btn btn-sq-lg btn-primary">
+             <a href="<?php echo site_url("ex_pencarian") ?>" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-search  fa-5x"></i><br/>
                 Pencarian  <br /> Laporan 
             </a>
