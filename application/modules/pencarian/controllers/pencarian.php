@@ -155,6 +155,15 @@ class pencarian extends master_controller {
 			"operators" => array('equal')			 
 		   	)  , 
 
+		   	array(
+		   	"id" => "tanggal_akhir",
+			"label" => "Tanggal Pelaporan Maksimal",
+			"type" => "string",
+			"operators" => array('equal')			 
+		   	)  
+
+
+		   	,
 
 		   	array(
 		   	"id" => "waktu_awal",
@@ -172,15 +181,7 @@ class pencarian extends master_controller {
 			"operators" => array('equal')			 
 		   	)  , 
 
-		   	array(
-		   	"id" => "tanggal_akhir",
-			"label" => "Tanggal Pelaporan Maksimal",
-			"type" => "string",
-			"operators" => array('equal')			 
-		   	)  
-
-
-		   	,
+		   	
 
 		   	array(
 		   	"id" => "kp_tempat_kejadian",

@@ -40,9 +40,11 @@ function data($param){
 		$this->db->where("a.id_polsek",$userdata['id_polsek']);
 	}
 
-	if ($userdata['jenis']=="polda") {
-		$this->db->where("a.id_polda",$userdata['id_polda']);
-	}
+	$this->db->where("a.jenis",$userdata['jenis']);
+
+	// if ($userdata['jenis']=="polda") {
+	// 	$this->db->where("a.id_polda",$userdata['id_polda']);
+	// }
 
 
 

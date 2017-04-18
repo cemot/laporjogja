@@ -148,12 +148,56 @@ class ex_pencarian extends ex_controller {
 
 
 
-		   	array(
+		 //   	array(
+		 //   	"id" => "tanggal_awal",
+			// "label" => "Tanggal Pelaporan Awal",
+			// "type" => "date",
+			// "operators" => array('equal'),
+			// "plugin" =>"datepicker"	,
+			// "plugin_config" => array(
+			// 		"format" => 'dd-mm-yyyy',
+			// 		"todayBtn" => "linked",
+			// 		"todayHighlight" => "true",
+			// 		"autoclose" => "true"
+					 
+			// 	),
+			// "validation" => array("format"=>"dd-mm-yyyy")
+
+		 //   	)  , 
+
+		 //   	array(
+		 //   	"id" => "tanggal_akhir",
+			// "label" => "Tanggal Pelaporan Akhir",
+			// "type" => "date",
+			// "operators" => array('equal')	,
+			// "plugin" =>"datepicker"	,
+			// "plugin_config" => array(
+			// 		"format" => 'yyyy/mm/dd',
+			// 		"todayBtn" => "linked",
+			// 		"todayHighlight" => "true",
+			// 		"autoclose" => "true"
+					 
+			// 	)
+			// ,"validation" => array("format"=>"YYYY/MM/DD")		 
+		 //   	)  
+ 		// 	, 
+
+		   		array(
 		   	"id" => "tanggal_awal",
 			"label" => "Tanggal Pelaporan Minimal",
 			"type" => "string",
 			"operators" => array('equal')			 
 		   	)  , 
+
+		   	array(
+		   	"id" => "tanggal_akhir",
+			"label" => "Tanggal Pelaporan Maksimal",
+			"type" => "string",
+			"operators" => array('equal')			 
+		   	)  
+
+
+		   	,
 
 
 		   	array(
@@ -170,15 +214,7 @@ class ex_pencarian extends ex_controller {
 			"label" => "Waktu akhir",
 			"type" => "string",
 			"operators" => array('equal')			 
-		   	)  , 
-
-		   	array(
-		   	"id" => "tanggal_akhir",
-			"label" => "Tanggal Pelaporan Maksimal",
-			"type" => "string",
-			"operators" => array('equal')			 
-		   	)  
-
+		   	) 
 
 		   	,
 
