@@ -142,6 +142,20 @@
                          ?>
                          
                       </div>
+
+
+                      <div class="form-group" id="search_polres">
+                         <?php
+                          
+                          $arr_status = $this->cm->arr_status_kasus;
+                          $arr_status = $this->cm->add_arr_head($arr_status,"x","== SEMUA  == ");
+
+                          echo form_dropdown("penyelesaian",$arr_status,'','id="penyelesaian" class="form-control"');
+                          
+
+                         ?>
+                         
+                      </div>
                         
 
 

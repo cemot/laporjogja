@@ -102,7 +102,7 @@ $("#tanggal_akhir").val('');
 $("#jenis").val('x').attr('selected','selected');
 $("#search_polres").hide();
 $("#search_polsek").hide();
-
+$("#penyelesaian").val('x').attr('selected','selected');
  $("#cari_button").click();
 return false;
 

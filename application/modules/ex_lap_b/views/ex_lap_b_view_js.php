@@ -69,6 +69,7 @@ $("#jenis").change(function(){
 				 .column(4).search($("#jenis").val())
 				 .column(5).search($("#id_polres").val())
 				 .column(6).search($("#id_polsek").val())
+				 .column(3).search($("#penyelesaian").val())
 				 .draw();
 
 				 return false;
@@ -146,6 +147,7 @@ $("#tanggal_akhir").val('');
 $("#jenis").val('x').attr('selected','selected');
 $("#search_polres").hide();
 $("#search_polsek").hide();
+$("#penyelesaian").val('x').attr('selected','selected');
 
  $("#cari_button").click();
 return false;

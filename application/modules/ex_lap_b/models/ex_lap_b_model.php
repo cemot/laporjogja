@@ -42,6 +42,11 @@ function data($param){
 
 	}
 
+	if($param['penyelesaian']<> 'x') {
+		// echo "vangkeh..";
+		$this->db->where("penyelesaian",$param['penyelesaian']);
+	}
+
 
     if($param['tanggal_awal']<> '') {
     	$tanggal_awal = flipdate($param['tanggal_awal']); 
