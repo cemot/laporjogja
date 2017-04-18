@@ -14,7 +14,6 @@ class admindik_lap_b extends admindik_controller {
 	}
 
  
-
 	function index(){
 		// echo "fuckkk.."; exit;
 		$userdata = $this->userdata;

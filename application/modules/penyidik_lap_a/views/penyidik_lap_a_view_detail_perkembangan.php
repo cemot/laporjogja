@@ -15,6 +15,7 @@
         <th width="19%">TANGGAL</th>
         
         <th width="22%">KETERANGAN</th>
+        <th width="22%">DOKUMEN</th>
         <th width="5%">#</th>
          
        

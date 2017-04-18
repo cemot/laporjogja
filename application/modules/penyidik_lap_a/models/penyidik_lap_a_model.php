@@ -56,7 +56,7 @@ function data($param){
 
 function get_data_perkembangan($param){
 
-	// show_array($param);
+	//show_array($param);
 
 	$arr_column = array("lidik","tahap","no_dokumen","tanggal","keterangan");
 
@@ -73,6 +73,10 @@ function get_data_perkembangan($param){
 
     
     $this->db->where("a.lap_a_id",$param['lap_a_id']);
+
+    $id_penyidik = $param['userdata']['id'];
+    $this->db->where("(a.id_penyidik = '$id_penyidik' or id_penyidik is null )");
+
 
 
 

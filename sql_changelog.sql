@@ -655,3 +655,15 @@ from
 INSERT INTO `m_level` (`id`, `level`) VALUES ('4', 'EXECUTIVE');
 
 
+
+--- versi tanggal 18 
+
+ALTER TABLE `lap_a_perkembangan` ADD `id_penyidik` CHAR(32) NULL ; 
+ALTER TABLE `lap_b_perkembangan` ADD `id_penyidik` CHAR(32) NULL ; 
+ALTER TABLE `lap_c_perkembangan` ADD `id_penyidik` CHAR(32) NULL ; 
+ALTER TABLE `lap_d_perkembangan` ADD `id_penyidik` CHAR(32) NULL ; 
+ALTER TABLE `lap_laka_perkembangan` ADD `id_penyidik` CHAR(32) NULL ; 
+
+
+
+

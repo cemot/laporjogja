@@ -115,6 +115,9 @@ $id = $row['lap_a_id'];
 								strtoupper($row['terlapor']),
 								strtoupper($row['tindak_pidana']),
 								strtoupper($row['operator']),
+
+								($row['penyidik_nama']=="")?"<span style='color:red;'>BELUM ADA</span>":strtoupper($row['penyidik_nama']), 
+
         		  			   "<a class=\"btn btn-primary\" href=\" " . site_url("$controller/detail/".$id) ."\" > Detail </a>"
         		  			  
         		  				 
@@ -151,7 +154,7 @@ function detail($id){
     $detail['rec_korban'] = $this->xm->get_korban($id);
     $detail['rec_barbuk'] = $this->xm->get_barbuk($id);
     $detail['rec_perkembangan'] = $this->xm->get_perkembangan($id);
-    $detail['rec_penyidik'] = $this->xm->get_data_penyidik($id); 
+    $detail['rec_penyidik'] = $this->xm->get_data_penyidik(array("lap_a_id"=>$id)); 
 
     
 

@@ -215,8 +215,9 @@
         <th width="10%">TANGGAL</th>
         <th width="15%">PELAPOR</th>
         <th width="15%">TERLAPOR</th>
-        <th width="76%">TINDAK PIDANA</th>
+        <th width="56%">TINDAK PIDANA</th>
         <th width="10%">OPERATOR ENTRY</th>
+        <th width="10%">PENYIDIK</th>
       <th width="16%">PROSES</th>
     </tr>
 	

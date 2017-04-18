@@ -172,13 +172,15 @@ function get_data_penyidik($lap_a_id){
         $nama = $_REQUEST['columns'][1]['search']['value'];
         $level = $_REQUEST['columns'][2]['search']['value'];
 
+        $userdata = $_SESSION['userdata'];
 
       //  order[0][column]
         $req_param = array (
                 "sort_by" => $sidx,
                 "sort_direction" => $sord,
                 "limit" => null,
-                "lap_a_id" => $lap_a_id
+                "lap_a_id" => $lap_a_id 
+
                 
                  
         );     
@@ -270,11 +272,14 @@ function get_data_perkembangan($lap_a_id){
 
 
       //  order[0][column]
+
+        $userdata = $_SESSION['userdata'];
         $req_param = array (
                 "sort_by" => $sidx,
                 "sort_direction" => $sord,
                 "limit" => null,
-                "lap_a_id" => $lap_a_id
+                "lap_a_id" => $lap_a_id, 
+                "userdata" => $userdata
                 
                  
         );     
@@ -308,6 +313,7 @@ function get_data_perkembangan($lap_a_id){
                 $row['no_dokumen'],            
                 flipdate($row['tanggal']), 
                 $row['keterangan'], 
+                $row['file_dokumen'],
                                  
                                  
                               
@@ -340,7 +346,7 @@ function perkembangan_simpan(){
         $data=$this->input->post();
 
  
-
+        $userdata=$_SESSION['userdata'];
         
         $this->load->library('form_validation');
         
@@ -412,7 +418,14 @@ function perkembangan_simpan(){
 
 
              $data['id'] = md5(microtime(). rand(0,999999) );
+
+             $data['id_penyidik'] = $userdata['id'];
+
+
              $res = $this->db->insert("lap_a_perkembangan",$data);
+
+             // show_array($data); 
+             // echo $this->db->last_query();
 
              // $lap_a_id = $this->db->insert_id();
 
@@ -515,8 +528,10 @@ function perkembangan_update(){
             //$data['user_id'] = $userdata['id'];
 
 
-            
+            $userdata = $_SESSION['userdata'];
             $this->db->where("id",$data['id']);
+            $data['id_penyidik'] = $userdata['id'];
+
             $res = $this->db->update("lap_a_perkembangan",$data);
 
              // echo $this->db->last_query(); exit;

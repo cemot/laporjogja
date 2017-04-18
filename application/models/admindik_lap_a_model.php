@@ -250,7 +250,7 @@ function get_data_penyidik($param){
 
 	$sort_by = $arr_column[$param['sort_by']];
 
-	$this->db->select("a.*, b.pangkat, l.level  as level2,
+	$this->db->select("a.*, b.pangkat, l.level  as level2, 
 	   res.nama_polres, sek.nama_polsek,lp.id as idlp
 	 ")->from('pengguna a',false)
 	->join('m_pangkat b','a.id_pangkat=b.id_pangkat','left')
@@ -323,7 +323,7 @@ function get_perkembangan($lap_a_id){
 
     
     $this->db->where("a.lap_a_id",$lap_a_id);
-    $res = $this->db->get("lap_a_perkembangan");
+    $res = $this->db->get();
     return $res;
 }
 
