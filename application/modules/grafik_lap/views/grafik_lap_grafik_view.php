@@ -40,21 +40,11 @@ $(function () {
         series: [{
             name: 'Jumlah',
             data: [
-				<?php
-					
-					if($query == null ) {
-						for($x=1; $x<=count($query); $x++){
-							echo '0, ';
-						}
-					} else {
-						$data = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
-						for($x=0; $x<count($data); $x++) {
-							
-							echo $query->$data[$x].', ';
-						}
-					}
-					
-				?>
+				<?php 
+                    foreach($query as $index =>$vl):
+                                    echo $vl.', ';
+                    endforeach;
+                ?>
 				]
         }]
     });

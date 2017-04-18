@@ -65,7 +65,7 @@
                 Data Master  <br /> Tempat Kejahatan
             </a>
 
-             <a href="<?php echo site_url("laporan_harian") ?>" class="btn btn-sq-lg btn-primary">
+             <!-- <a href="<?php echo site_url("laporan_harian") ?>" class="btn btn-sq-lg btn-primary">
                 <i class="fa  fa-area-chart fa-5x"></i><br/>
                 Laporan  <br /> Harian
             </a>
@@ -78,7 +78,7 @@
             <a href="<?php echo site_url("laporan_mingguan") ?>" class="btn btn-sq-lg btn-primary">
                 <i class="fa  fa-bar-chart-o  fa-5x"></i><br/>
                 Laporan  <br /> Bulanan
-            </a>
+            </a> -->
              
 
 

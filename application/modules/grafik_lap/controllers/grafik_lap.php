@@ -127,7 +127,7 @@ class grafik_lap extends admin_controller  {
 				  FROM ".$table."
 				  WHERE YEAR(tanggal) = ".$tahun;
 
-		$data_array['query'] = $this->db->query($query)->row();
+		$data_array['query'] = $this->db->query($query)->row_array();
 		$data_array['tahun'] = $tahun;
 		$data_array['title'] = $title;
 
