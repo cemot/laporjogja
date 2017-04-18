@@ -102,7 +102,8 @@
             ?></TD></tr>
 
 
-            <tr><td  >Upload dokumen</td>
+             <tr><td >Upload dokumen (max 2Mb) <br /> 
+            hanya menerima extensi .jpg, .jpeg, .png, .pdf, .xlsx, .doc, .docx</td>
             <TD><input type="file" name="file_dokumen" id="file_dokumen"></TD></tr>
 
                </table>

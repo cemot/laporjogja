@@ -97,5 +97,66 @@ function get_data_kejahatan(id,target,dropdown) {
 
 
 
+function hapus_dokumen(id) {
+ 
+
+    
+BootstrapDialog.show({
+            message : 'ANDA AKAN MENGHAPUS DOKUMEN PERKEMBANGAN KASUS. ANDA YAKIN  ?  ',
+            title: 'KONFIRMASI HAPUS DOKUMEN',
+            draggable: true,
+            buttons : [
+              {
+                label : 'IYA',
+                cssClass : 'btn-primary',
+                hotkey: 13,
+                action : function(dialogItself){
+
+
+                  dialogItself.close();
+                  $('#myPleaseWait').modal('show'); 
+                  $.ajax({
+                    url : '<?php echo site_url("$controller/perkembangan_hapus_dokumen") ?>',
+                    type : 'post',
+                    data : {id : id},
+                    dataType : 'json',
+                    success : function(obj) {
+                      $('#myPleaseWait').modal('hide'); 
+                      if(obj.error==false) {
+                          BootstrapDialog.alert({
+                              type: BootstrapDialog.TYPE_PRIMARY,
+                              title: 'Informasi',
+                              message: obj.message,
+                               
+                          });   
+
+                      $('#grid_perkembangan').DataTable().ajax.reload(); 
+                      
+                      }
+                      else {
+                        BootstrapDialog.alert({
+                            type: BootstrapDialog.TYPE_DANGER,
+                            title: 'Error',
+                            message: obj.message,
+                             
+                        }); 
+                      }
+                    }
+                  });
+
+                }
+              },
+              {
+                label : 'TIDAK',
+                cssClass : 'btn-danger',
+                action: function(dialogItself){
+                    dialogItself.close();
+                }
+              }
+            ]
+          });
+          
+}
+
 
 </script>

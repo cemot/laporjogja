@@ -363,17 +363,19 @@ function perkembangan_simpan(){
             /// upload the file 
             if(! empty($_FILES['file_dokumen']['name']) ) {
                     $config['upload_path'] = './documents/';
-                    $config['allowed_types'] = 'txt|pdf|doc|docx|xls|xlsx';
-                    $config['max_size'] = '1000000';
-                    $config['max_width']  = '1024000';
-                    $config['max_height']  = '76800000';
+                    $config['allowed_types'] = 'jpg|jpeg|png|pdf|xlsx|doc|docx';
+                    $config['max_size'] = '2048';
+                    // $config['max_width']  = '1024000';
+                    // $config['max_height']  = '76800000';
                     $this->load->library('upload',$config);
                     if ( ! $this->upload->do_upload('file_dokumen'))
                     {    
                         $error = array('error' => $this->upload->display_errors()); 
+
+                        //show_array($error);
                          
                         $ret = array("success"=>false,
-                                    "pesan"=>"Gambar terlalu besar atau file bukan file gambar. Silahkan pilih gambar yang lain",
+                                    "message"=>"File terlalu besar  atau extens file tidak sesuai ".$error['error'],
                                     "operation" =>"insert");
                         echo json_encode($ret);
                         exit;
@@ -450,17 +452,19 @@ function perkembangan_update(){
             /// upload the file 
             if(! empty($_FILES['file_dokumen']['name']) ) {
                     $config['upload_path'] = './documents/';
-                    $config['allowed_types'] = 'txt|pdf|doc|docx|xls|xlsx';
-                    $config['max_size'] = '1000000';
-                    $config['max_width']  = '1024000';
-                    $config['max_height']  = '76800000';
+                    $config['allowed_types'] = 'jpg|jpeg|png|pdf|xlsx|doc|docx';
+                    $config['max_size'] = '2048';
+                    // $config['max_width']  = '1024000';
+                    // $config['max_height']  = '76800000';
                     $this->load->library('upload',$config);
                     if ( ! $this->upload->do_upload('file_dokumen'))
                     {    
                         $error = array('error' => $this->upload->display_errors()); 
+
+                        //show_array($error);
                          
                         $ret = array("success"=>false,
-                                    "pesan"=>"Gambar terlalu besar atau file bukan file gambar. Silahkan pilih gambar yang lain",
+                                    "message"=>"File terlalu besar  atau extens file tidak sesuai ".$error['error'],
                                     "operation" =>"insert");
                         echo json_encode($ret);
                         exit;
