@@ -486,7 +486,7 @@ function perkembangan_update(){
             /// upload the file 
             if(! empty($_FILES['file_dokumen']['name']) ) {
                     $config['upload_path'] = './documents/';
-                    $config['allowed_types'] = 'txt|pdf|doc|docx|xls|xlsx';
+                    $config['allowed_types'] = 'txt|pdf|doc|docx|xls|xlsx|png|jpg';
                     $config['max_size'] = '1000000';
                     $config['max_width']  = '1024000';
                     $config['max_height']  = '76800000';
@@ -496,7 +496,7 @@ function perkembangan_update(){
                         $error = array('error' => $this->upload->display_errors()); 
                          
                         $ret = array("success"=>false,
-                                    "pesan"=>"Gambar terlalu besar atau file bukan file gambar. Silahkan pilih gambar yang lain",
+                                    "message"=>"Gambar terlalu besar atau file bukan file gambar. Silahkan pilih gambar yang lain".$error,
                                     "operation" =>"insert");
                         echo json_encode($ret);
                         exit;
