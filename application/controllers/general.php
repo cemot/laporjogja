@@ -5,6 +5,8 @@ class general extends CI_Controller {
 
 	function general(){
 		parent::__construct();
+
+		$this->load->helper('download');
 	}
 
 
@@ -341,5 +343,12 @@ function get_detail_golongan(){
 
 }
 
+
+function getdokumen($file) {
+	$data = file_get_contents("./documents/$file");
+
+	force_download($file,$data);
+
+}
 
 }

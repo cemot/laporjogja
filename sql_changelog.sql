@@ -664,6 +664,8 @@ ALTER TABLE `lap_c_perkembangan` ADD `id_penyidik` CHAR(32) NULL ;
 ALTER TABLE `lap_d_perkembangan` ADD `id_penyidik` CHAR(32) NULL ; 
 ALTER TABLE `lap_laka_perkembangan` ADD `id_penyidik` CHAR(32) NULL ; 
 
+-- executed 
+
 
 
 

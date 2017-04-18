@@ -300,20 +300,23 @@ function get_data_perkembangan($lap_a_id){
 
        
         $arr_data = array();
-        
+        $n=0;
         foreach($result as $row) : 
+            $n++;
         
              
             $id = $row['id'];
             $row['lidik']  = ($row['lidik']=="1")?"Penyidikan":"Penyelidikan";
          
             $arr_data[] = array(
+                $n,
+                flipdate($row['tanggal']), 
                 $row['lidik'], 
                 $row['tahap'], 
                 $row['no_dokumen'],            
-                flipdate($row['tanggal']), 
+                
                 $row['keterangan'], 
-                $row['file_dokumen'],
+                anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']),
                                  
                                  
                               

@@ -8,11 +8,12 @@
              table-bordered table-hover dataTable no-footer" id="grid_perkembangan" role="grid">
 <thead>
   <tr style="background-color:#CCC">
-
-        <th width="15%">LIDIK/SIDIK</th>
-        <th width="19%">TAHAP</th>
+        <th width="3%">NO.</th>
+         <th width="10%">TANGGAL</th>
+        <th width="10%">LIDIK/SIDIK</th>
+        <th width="29%">TAHAP</th>
         <th width="19%">NO DOKUMEN</th>
-        <th width="19%">TANGGAL</th>
+       
         
         <th width="22%">KETERANGAN</th>
         <th width="22%">DOKUMEN</th>
