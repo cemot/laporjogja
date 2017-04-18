@@ -113,11 +113,22 @@ class ex_pencarian extends ex_controller {
 
 
 		   	array(
-		   	"id" => "kp_tanggal",
-			"label" => "Tanggal Kejadian",
+		   	"id" => "kp_awal",
+			"label" => "Tanggal Kejadian Awal",
 			"type" => "string",
-			"operators" => array('equal', 'contains')
-		   	), 
+			"operators" => array('equal')			 
+		   	)  , 
+
+		   	array(
+		   	"id" => "kp_akhir",
+			"label" => "Tanggal Kejadian Akhir",
+			"type" => "string",
+			"operators" => array('equal')			 
+		   	)  
+
+
+		   	,
+
 
 
 		   	array(
@@ -182,7 +193,7 @@ class ex_pencarian extends ex_controller {
 		 //   	)  
  		// 	, 
 
-		   		array(
+		    array(
 		   	"id" => "tanggal_awal",
 			"label" => "Tanggal Pelaporan Minimal",
 			"type" => "string",
@@ -395,7 +406,17 @@ function cari(){
 				else if ($field=="tanggal_akhir"){
 					$str .=" tanggal <= '$value' " ;
 				}
-				if ($field=="waktu_awal"){
+
+				else if ($field=="kp_awal"){
+					$str .=" kp_tanggal  >= '$value' " ;
+				}
+
+				else if ($field=="kp_akhir"){
+					$str .=" kp_tanggal <= '$value' " ;
+				}
+
+
+				else if ($field=="waktu_awal"){
 					//$value .= ":00";
 					$str .=" waktu  >= '$value' " ;
 				}
@@ -437,14 +458,25 @@ function cari(){
 					}
 
 
-					if ($sub_filter['field']=="waktu_awal"){
-					 $value = $sub_filter['value'];
-					$str .=" waktu  >= '$value' " ;
+					else if ($sub_filter['field']=="waktu_awal"){
+					 	$value = $sub_filter['value'];
+						$str .=" waktu  >= '$value' " ;
 					}
 					else if ($sub_filter['field']=="waktu_akhir"){
 						//$value .= ":00";
 						$value = $sub_filter['value'];
 						$str .=" waktu <= '$value' " ;
+					}
+
+
+					else if ($sub_filter['field']=="kp_awal"){
+					 	$value = $sub_filter['value'];
+						$str .=" kp_tanggal  >= '$value' " ;
+					}
+					else if ($sub_filter['field']=="kp_akhir"){
+						 
+						$value = $sub_filter['value'];
+						$str .=" kp_tanggal <= '$value' " ;
 					}
 
 
@@ -476,7 +508,7 @@ function cari(){
 
 	$sql.=" group by laporan, id";
 
-	//echo $sql; 
+	// echo $sql; 
 
 	// exit;
 

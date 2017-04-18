@@ -4,12 +4,13 @@
 <thead>
   <tr>
 
-        <th width="5%">NO.</th>
-        <th width="10%">TANGGAL</th>
+        <th width="3%">NO.</th>
+        <th width="7%">TANGGAL</th>
         <th width="10%">LIDIK/SIDIK</th>
-        <th width="10%">TAHAP</th>
+        <th width="30%">TAHAP</th>
         <th width="19%">NO DOKUMEN</th>
         <th width="22%">KETERANGAN</th>
+         <th width="10%">FILE DOKUMEN</th>
          
          
        
@@ -20,7 +21,7 @@
 <?php 
 $n=0;
 foreach ($rec_perkembangan->result() as  $value)  : 
-	 $n++;
+     $n++;
  
 ?>
 <tr >
@@ -33,6 +34,10 @@ foreach ($rec_perkembangan->result() as  $value)  :
         
         
         <td><?php echo $value->keterangan; ?></td>
+
+        <td><?php echo (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']); ?></td>
+
+        
          
          
        
