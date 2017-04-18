@@ -271,11 +271,13 @@ function get_data_perkembangan($lap_b_id){
 
 
       //  order[0][column]
+        $userdata = $_SESSION['userdata'];
         $req_param = array (
                 "sort_by" => $sidx,
                 "sort_direction" => $sord,
                 "limit" => null,
-                "lap_b_id" => $lap_b_id
+                "lap_b_id" => $lap_b_id,
+                "userdata" => $userdata
                 
                  
         );     
@@ -312,7 +314,9 @@ function get_data_perkembangan($lap_b_id){
                 $row['no_dokumen'],            
                 
                 $row['keterangan'], 
-                (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']),
+                (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']). " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
+                    <img src='".base_url("assets/images/delete.png")."'>
+                </a>",
                                  
                                  
                                  
@@ -655,6 +659,33 @@ function get_lap_b_detail($id){
     $data = $this->db->get("lap_b")->row_array();
 
     echo json_encode($data);
+
+}
+
+
+
+function perkembangan_hapus_dokumen() {
+    $post = $this->input->post();
+    $id = $post['id'];
+
+    $this->db->where("id",$id);
+   // $dokumen = $this->db->get("lap_b_perkembangan")->row();
+
+    $arr=array("file_dokumen"=>"");
+
+    $this->db->where("id",$id);
+    $res = $this->db->update("lap_b_perkembangan",$arr);
+
+    if($res) {
+        $ret = array("error"=>false,"message"=>"Dokumen berhasil dihapus");
+    }
+    else {
+        $ret = array("error"=>true,"message"=>"Dokumen gagal dihapus");
+    }
+
+    echo json_encode($ret);
+
+
 
 }
 

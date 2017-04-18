@@ -58,6 +58,14 @@ function get_data_perkembangan($param){
 
 	// show_array($param);
 
+	$kol = array(
+			1=>"tanggal",
+			"lidik",
+			"tahap",
+			"no_dokumen",
+			"keterangan",
+			"file_dokumen");
+
 	$arr_column = array("lidik","tahap","no_dokumen","tanggal","keterangan");
 
 	$sort_by = $arr_column[$param['sort_by']];
@@ -73,6 +81,9 @@ function get_data_perkembangan($param){
 
     
     $this->db->where("a.lap_b_id",$param['lap_b_id']);
+
+    $id_penyidik = $param['userdata']['id'];
+    $this->db->where("(a.id_penyidik = '$id_penyidik' or id_penyidik is null )");
 
 
 
