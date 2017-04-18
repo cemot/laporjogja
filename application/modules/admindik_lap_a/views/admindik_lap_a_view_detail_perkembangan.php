@@ -10,6 +10,7 @@
         <th width="30%">TAHAP</th>
         <th width="19%">NO DOKUMEN</th>
         <th width="22%">KETERANGAN</th>
+         <th width="10%">FILE DOKUMEN</th>
          
          
        
@@ -33,6 +34,10 @@ foreach ($rec_perkembangan->result() as  $value)  :
         
         
         <td><?php echo $value->keterangan; ?></td>
+
+        <td><?php echo (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']); ?></td>
+
+        
          
          
        

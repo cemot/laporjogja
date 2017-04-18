@@ -316,7 +316,7 @@ function get_data_perkembangan($lap_a_id){
                 $row['no_dokumen'],            
                 
                 $row['keterangan'], 
-                anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']),
+                (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']),
                                  
                                  
                               
