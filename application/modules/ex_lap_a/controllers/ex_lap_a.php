@@ -64,6 +64,7 @@ function get_data(){
        // $id_fungsi = $_REQUEST['columns'][3]['search']['value'];
 
         $jenis = (!empty($_REQUEST['columns'][4]['search']['value']))?$_REQUEST['columns'][4]['search']['value']:"x";
+        $penyelesaian = (!empty($_REQUEST['columns'][3]['search']['value']))?$_REQUEST['columns'][3]['search']['value']:"x";
         $id_polres = $_REQUEST['columns'][5]['search']['value'];
         $id_polsek = $_REQUEST['columns'][6]['search']['value'];
 
@@ -80,7 +81,8 @@ function get_data(){
 							 
 				"jenis" => $jenis,
 				"id_polres" => $id_polres,
-				"id_polsek" => $id_polsek
+				"id_polsek" => $id_polsek, 
+				"penyelesaian" => $penyelesaian
 				 
 		);     
            

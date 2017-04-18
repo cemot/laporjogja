@@ -77,6 +77,9 @@ $("#jenis").change(function(){
 				 .column(4).search($("#jenis").val())
 				 .column(5).search($("#id_polres").val())
 				 .column(6).search($("#id_polsek").val())
+				 .column(3).search($("#penyelesaian").val())
+
+
 				 .draw();
 
 				 return false;

@@ -48,10 +48,12 @@ var $arr_alasan = array("tidakcukupbukti"=>"TIDAK CUKUP BUKTI",
 var $arr_penyelesaian = array("p21"=>"P 21",
                    "dihentikan"=>"PENYIDIKAN DIHENTIKAN");
 
-var $arr_status_kasus = array("sidik"=>"PENYELIDIKAN",
-                              "lidik"=>"PENYIDIKAN",
+var $arr_status_kasus = array(
                               "p21"=>"P 21",
-                              "dihentikan");
+                              "sidik"=>"PENYELIDIKAN",
+                              "lidik"=>"PENYIDIKAN",
+                              
+                              "dihentikan"=>"DIHENTIKAN");
 
 
         function arr_dropdown($vTable, $vINDEX, $vVALUE, $vORDERBY){
