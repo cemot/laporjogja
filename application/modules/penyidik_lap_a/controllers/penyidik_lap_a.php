@@ -486,7 +486,7 @@ function perkembangan_update(){
             /// upload the file 
             if(! empty($_FILES['file_dokumen']['name']) ) {
                     $config['upload_path'] = './documents/';
-                    $config['allowed_types'] = 'txt|pdf|doc|docx|xls|xlsx|png|jpg';
+                    $config['allowed_types'] = 'txt|pdf|doc|docx|xls|xlsx|png|jpg|mp4';
                     $config['max_size'] = '1000000';
                     $config['max_width']  = '1024000';
                     $config['max_height']  = '76800000';
