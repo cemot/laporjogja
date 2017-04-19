@@ -24,6 +24,20 @@ class ex_pencarian extends ex_controller {
 		$array = array(
 
 			array(
+		   	"id" => "laporan",
+			"label" => "Jenis laporan",
+			"type" => "string",
+			"input" => "select",
+			"values" =>  array(
+								"lap_a"  => "LAPORAN TIPE A",
+								"lap_b"  => "LAPORAN TIPE B",
+								"lap_c"  => "LAPORAN TIPE C",
+								"lap_d"  => "LAPORAN TIPE D",
+								"lap_laka_latas"  =>  "LAPORAN LAKA LANTAS"),
+			"operators" => array('equal')
+		   	), 
+
+			array(
 		   	"id" => "pelapor_nama",
 			"label" => "Nama pelapor / pemohon",
 			"type" => "string",
