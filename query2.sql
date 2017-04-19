@@ -1,3 +1,5 @@
+drop view v_pencarian; 
+create view v_pencarian as 
 select 
 	`a`.`kp_wktu` AS `waktu`, 
 	'lap_a' AS `laporan`, 
@@ -16,6 +18,7 @@ select
 	NULL AS `palapor_kota`, 
 	NULL AS `palapor_id_prop`, 
 	NULL AS `palapor_provinsi`, 
+	null as pelapor_umur,
 	g.pasal as pasal,
 	`p`.`id` AS `id_pasal`, 
 	`a`.`id_gol_kejahatan` AS `id_gol_kejahatan`, 
@@ -38,6 +41,7 @@ select
 	month(`a`.`kp_tanggal`) AS `bulan_kejadian`, 
 	year(`a`.`kp_tanggal`) AS `tahun_kejadian`, 
 	`t`.`tersangka_nama` AS `tersangka_nama`, 
+	 TIMESTAMPDIFF(YEAR,tersangka_tgl_lahir,kp_tanggal) AS tersangka_umur,
 	`s`.`saksi_nama` AS `saksi_nama`, 
 	`k`.`korban_nama` AS `korban_nama`, 
 	`b`.`barbuk_nama` AS `barbuk_nama`, 
@@ -149,6 +153,7 @@ select
 	`pelapor_kota`.`kota` AS `pelapor_kota`, 
 	`pelapor_prop`.`id` AS `pelapor_id_prop`, 
 	`pelapor_prop`.`provinsi` AS `pelapor_provinsi`, 
+	TIMESTAMPDIFF(YEAR,pelapor_tgl_lahir,kejadian_tanggal) AS pelapor_umur,
 	g.pasal as pasal,
 	`p`.`id` AS `id_pasal`, 
 	`a`.`id_gol_kejahatan` AS `id_gol_kejahatan`, 
@@ -170,7 +175,8 @@ select
 	`a`.`kejadian_tanggal` AS `kejadian_tanggal`, 
 	month(`a`.`kejadian_tanggal`) AS `bulan_kejadian`, 
 	year(`a`.`kejadian_tanggal`) AS `tahun_kejadian`, 
-	`t`.`tersangka_nama` AS `tersangka_nama`, 
+	`t`.`tersangka_nama` AS `tersangka_nama`,
+	TIMESTAMPDIFF(YEAR,tersangka_tgl_lahir,kejadian_tanggal) AS tersangka_umur, 
 	`s`.`saksi_nama` AS `saksi_nama`, 
 	`k`.`korban_nama` AS `korban_nama`, 
 	`b`.`barbuk_nama` AS `barbuk_nama`, 
@@ -310,6 +316,7 @@ select
 	`pelapor_kota`.`kota` AS `pelapor_kota`, 
 	`pelapor_prop`.`id` AS `pelapor_id_prop`, 
 	`pelapor_prop`.`provinsi` AS `pelapor_provinsi`, 
+	TIMESTAMPDIFF(YEAR,pelapor_tgl_lahir,kejadian_tanggal) AS pelapor_umur,
 	NULL AS `pasal`, 
 	NULL AS `id_pasal`, 
 	NULL AS `id_gol_kejahatan`, 
@@ -332,6 +339,7 @@ select
 	month(`a`.`kejadian_tanggal`) AS `bulan_kejadian`, 
 	year(`a`.`kejadian_tanggal`) AS `tahun_kejadian`, 
 	NULL AS `tersangka_nama`, 
+	null AS tersangka_umur,
 	NULL AS `saksi_nama`, 
 	NULL AS `korban_nama`, 
 	NULL AS `barbuk_nama`, 
@@ -413,6 +421,7 @@ select
 	NULL AS `palapor_kota`, 
 	NULL AS `palapor_id_prop`, 
 	NULL AS `palapor_provinsi`, 
+	null as pelapor_umur,
 	NULL AS `pasal`, 
 	NULL AS `id_pasal`, 
 	NULL AS `id_gol_kejahatan`, 
@@ -435,6 +444,7 @@ select
 	month(`a`.`kejadian_tanggal`) AS `bulan_kejadian`, 
 	year(`a`.`kejadian_tanggal`) AS `tahun_kejadian`, 
 	NULL AS `tersangka_nama`, 
+	null as tersangka_umur,
 	NULL AS `saksi_nama`, 
 	NULL AS `korban_nama`, 
 	NULL AS `barbuk_nama`, 
@@ -488,6 +498,7 @@ select
 	NULL AS `palapor_kota`, 
 	NULL AS `palapor_id_prop`, 
 	NULL AS `palapor_provinsi`, 
+	null as pelapor_umur,
 	NULL AS `pasal`, 
 	NULL AS `id_pasal`, 
 	NULL AS `id_gol_kejahatan`, 
@@ -510,6 +521,7 @@ select
 	month(`a`.`kp_tanggal`) AS `bulan_kejadian`, 
 	year(`a`.`kp_tanggal`) AS `tahun_kejadian`, 
 	NULL AS `tersangka`, 
+	null as tersangka_umur,
 	`s`.`saksi_nama` AS `saksi_nama`, 
 	`k`.`korban_nama` AS `korban_nama`, 
 	NULL AS `barbuk_nama`, 
@@ -569,4 +581,4 @@ from
 				`p`.`lap_laka_lantas_id` = `a`.`lap_laka_lantas_id`
 			)
 		)
-	)
+	);

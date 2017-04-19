@@ -50,7 +50,40 @@ class ex_pencarian extends ex_controller {
 			 
 		   	), 
 
+
+
+		   	array(
+		   	"id" => "pelapor_umur",
+			"label" => "Umur pelapor minimal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
 		   
+
+		   array(
+		   	"id" => "pelapor_umur2",
+			"label" => "Umur pelapor maximal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
+
+
+		   array(
+		   	"id" => "tersangka_umur",
+			"label" => "Umur tersangka minimal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
+		   
+
+		   array(
+		   	"id" => "tersangka_umur2",
+			"label" => "Umur tersangka maximal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
+
+
 
 		    array(
 		   	"id" => "nomor",
@@ -412,6 +445,22 @@ function cari(){
 					$str .=" kp_tanggal <= '$value' " ;
 				}
 
+				else if ($field=="pelapor_umur"){
+					$str .=" pelapor_umur  >= '$value' " ;
+				}
+
+				else if ($field=="pelapor_umur2"){
+					$str .=" pelapor_umur <= '$value' " ;
+				}
+
+
+				else if ($field=="tersangka_umur"){
+					$str .=" tersangka_umur  >= '$value' " ;
+				}
+
+				else if ($field=="tersangka_umur2"){
+					$str .=" tersangka_umur <= '$value' " ;
+				}
 
 				else if ($field=="waktu_awal"){
 					//$value .= ":00";
