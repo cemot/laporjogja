@@ -1,6 +1,7 @@
 <link href="<?php echo base_url("assets") ?>/css/datepicker.css" rel="stylesheet">
 <link href="<?php echo base_url("assets") ?>/css/jquery.dataTables.css" rel="stylesheet">
 <link href="<?php echo base_url("assets") ?>/css/query-builder.default.min.css" rel="stylesheet">
+<link href="<?php echo base_url("assets") ?>/css/selectize.bootstrap3.css" rel="stylesheet">
 
 <script src="<?php echo base_url("assets") ?>/js/bootstrap-datepicker.js"></script>
 
@@ -15,6 +16,7 @@
 
 
 <script src="<?php echo base_url("assets") ?>/js/moment.min.js"></script>
+<script src="<?php echo base_url("assets") ?>/js/selectize.min.js"></script>
 <script src="<?php echo base_url("assets") ?>/js/query-builder.min.js"></script>
 
 

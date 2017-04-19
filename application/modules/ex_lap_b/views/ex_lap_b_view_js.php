@@ -27,10 +27,14 @@ $("#jenis").change(function(){
 		$("#search_polres").hide();
 		$("#search_polsek").hide();
 	}
-	else if($(this).val()=="polres") {
+	else if($(this).val()=="polres" || $(this).val()=="polresall" ) {
 		$("#search_polres").show();
 		$("#search_polsek").hide();
 	}
+	// else if($(this).val()=="polresall") {
+	// 	$("#search_polres").show();
+	// 	$("#search_polsek").hide();
+	// }
 	else {
 		$("#search_polres").show();
 		$("#search_polsek").show();

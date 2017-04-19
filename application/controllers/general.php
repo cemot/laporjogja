@@ -351,4 +351,14 @@ function getdokumen($file) {
 
 }
 
+function json_gol_kejahatan(){
+	$res = $this->db->get("m_golongan_kejahatan");
+	$arr = array();
+	foreach($res->result() as $row) : 
+		$arr[] = array("id"=>$row->id,"name"=>$row->golongan_kejahatan);
+	endforeach;
+	header('Content-Type: application/json');
+	echo json_encode($arr);
+}
+
 }

@@ -102,9 +102,10 @@
 
                       <div class="form-group">
                          <?php
-                         $arr = array("x"=>"= SEMUA = ",
+                         $arr = array("x"=>"POLDA KESELURUHAN ",
                                       "polda"=>"POLDA",
                                       "polres"=>"POLRES",
+                                      "polresall"=>"POLRES KESELURUHAN",
                                       "polsek"=>"POLSEK"
                                       
                                       );

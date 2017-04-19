@@ -106,6 +106,7 @@ class ex_pencarian extends ex_controller {
 			"operators" => array('equal', 'contains')
 		   	), 
 
+		   
 		   	array(
 		   	"id" => "id_gol_kejahatan",
 			"label" => "Golongan Kejahatan",
@@ -116,6 +117,31 @@ class ex_pencarian extends ex_controller {
 			"operators" => array('equal')
 			 
 		   	), 
+
+
+		   /*	array(
+		   	"id" => "id_gol_kejahatan",
+			"label" => "Golongan Kejahatan",
+			"type" => "string",
+			"input" => "select",
+			"plugin" => 'selectize', 
+			"plugin_config" => array(
+					"valueField"       =>  "id",
+					"labelField"       =>  "name",
+					"searchField"       =>  "name",
+					"sortField"       =>  "name",
+					"create"       =>  "true",
+					"maxItems"       =>  "1",
+					"plugins"       =>  "['remove_button']",
+					"onInitialize"       => "function() {var that = this;if (localStorage.demoData === undefined) {\$.getJSON('".site_url('general/json_gol_kejahatan')."', function(data) {localStorage.demoData = JSON.stringify(data);data.forEach(function(item) {that.addOption(item);});});}else{JSON.parse(localStorage.demoData).forEach(function(item) {that.addOption(item);});}}",
+
+					),
+
+			"valueSetter" => "function(rule, value) {rule.$elfind('.rule-value-container input')[0].selectize.setValue(value);}"		 
+		 
+			 
+		   	), */
+
 
 		   	array(
 		   	"id" => "id_jenis_lokasi",
@@ -156,13 +182,31 @@ class ex_pencarian extends ex_controller {
 
 
 
+		 //   	array(
+		 //   	"id" => "kp_awal",
+			// "label" => "Tanggal Kejadian Awal",
+			// "type" => "date",
+			// "operators" => array('equal'),
+			// "validation" => array("format"=>"DD-MM-YYYY"),
+			// "plugin"   => "datepicker",
+			// "plugin_config" => array(
+										 
+			// 				"format"  => "dd-mm-yyyy",
+			// 				"todayBtn"  => "linked",
+			// 				"todayHighlight"  => true,
+			// 				"autoclose"  => true
+			// 						)			 
+		 //   	)  , 
+
 		   	array(
 		   	"id" => "kp_awal",
 			"label" => "Tanggal Kejadian Awal",
 			"type" => "string",
 			"operators" => array('equal')			 
-		   	)  , 
+		   	)  
 
+
+		   	,
 		   	array(
 		   	"id" => "kp_akhir",
 			"label" => "Tanggal Kejadian Akhir",
