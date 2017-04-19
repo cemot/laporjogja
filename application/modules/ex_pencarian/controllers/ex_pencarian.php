@@ -43,13 +43,10 @@ class ex_pencarian extends ex_controller {
 
 
 		   	array(
-		   	"id" => "id_pasal",
+		   	"id" => "pasal",
 			"label" => "Pasal",
-			"type" => "string",
-			"input" => "select",
-			"values" => $this->cm->get_arr_dropdown("m_pasal","id","pasal",'pasal')
-			,
-			"operators" => array('equal')
+			"type" => "string",			 
+			"operators" => array('equal','contains')
 			 
 		   	), 
 

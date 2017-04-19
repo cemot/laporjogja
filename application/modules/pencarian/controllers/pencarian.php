@@ -42,14 +42,11 @@ class pencarian extends master_controller {
 		   	), 
 
 
-		   	array(
-		   	"id" => "id_pasal",
+		    array(
+		   	"id" => "pasal",
 			"label" => "Pasal",
-			"type" => "string",
-			"input" => "select",
-			"values" => $this->cm->get_arr_dropdown("m_pasal","id","pasal",'pasal')
-			,
-			"operators" => array('equal')
+			"type" => "string",			 
+			"operators" => array('equal','contains')
 			 
 		   	), 
 
@@ -113,11 +110,22 @@ class pencarian extends master_controller {
 
 
 		   	array(
-		   	"id" => "kp_tanggal",
-			"label" => "Tanggal Kejadian",
+		   	"id" => "kp_awal",
+			"label" => "Tanggal Kejadian Awal",
 			"type" => "string",
-			"operators" => array('equal', 'contains')
-		   	), 
+			"operators" => array('equal')			 
+		   	)  , 
+
+		   	array(
+		   	"id" => "kp_akhir",
+			"label" => "Tanggal Kejadian Akhir",
+			"type" => "string",
+			"operators" => array('equal')			 
+		   	)  
+
+
+		   	,
+
 
 
 		   	array(
@@ -148,7 +156,41 @@ class pencarian extends master_controller {
 
 
 
-		   	array(
+		 //   	array(
+		 //   	"id" => "tanggal_awal",
+			// "label" => "Tanggal Pelaporan Awal",
+			// "type" => "date",
+			// "operators" => array('equal'),
+			// "plugin" =>"datepicker"	,
+			// "plugin_config" => array(
+			// 		"format" => 'dd-mm-yyyy',
+			// 		"todayBtn" => "linked",
+			// 		"todayHighlight" => "true",
+			// 		"autoclose" => "true"
+					 
+			// 	),
+			// "validation" => array("format"=>"dd-mm-yyyy")
+
+		 //   	)  , 
+
+		 //   	array(
+		 //   	"id" => "tanggal_akhir",
+			// "label" => "Tanggal Pelaporan Akhir",
+			// "type" => "date",
+			// "operators" => array('equal')	,
+			// "plugin" =>"datepicker"	,
+			// "plugin_config" => array(
+			// 		"format" => 'yyyy/mm/dd',
+			// 		"todayBtn" => "linked",
+			// 		"todayHighlight" => "true",
+			// 		"autoclose" => "true"
+					 
+			// 	)
+			// ,"validation" => array("format"=>"YYYY/MM/DD")		 
+		 //   	)  
+ 		// 	, 
+
+		    array(
 		   	"id" => "tanggal_awal",
 			"label" => "Tanggal Pelaporan Minimal",
 			"type" => "string",
@@ -165,6 +207,7 @@ class pencarian extends master_controller {
 
 		   	,
 
+
 		   	array(
 		   	"id" => "waktu_awal",
 			"label" => "Waktu awal",
@@ -179,9 +222,9 @@ class pencarian extends master_controller {
 			"label" => "Waktu akhir",
 			"type" => "string",
 			"operators" => array('equal')			 
-		   	)  , 
+		   	) 
 
-		   	
+		   	,
 
 		   	array(
 		   	"id" => "kp_tempat_kejadian",
@@ -360,7 +403,17 @@ function cari(){
 				else if ($field=="tanggal_akhir"){
 					$str .=" tanggal <= '$value' " ;
 				}
-				if ($field=="waktu_awal"){
+
+				else if ($field=="kp_awal"){
+					$str .=" kp_tanggal  >= '$value' " ;
+				}
+
+				else if ($field=="kp_akhir"){
+					$str .=" kp_tanggal <= '$value' " ;
+				}
+
+
+				else if ($field=="waktu_awal"){
 					//$value .= ":00";
 					$str .=" waktu  >= '$value' " ;
 				}
@@ -400,6 +453,30 @@ function cari(){
 					else if ($sub_filter['field']=="tanggal_akhir"){ 
 						$str .=" tanggal <= '".$sub_filter['value']."' ";
 					}
+
+
+					else if ($sub_filter['field']=="waktu_awal"){
+					 	$value = $sub_filter['value'];
+						$str .=" waktu  >= '$value' " ;
+					}
+					else if ($sub_filter['field']=="waktu_akhir"){
+						//$value .= ":00";
+						$value = $sub_filter['value'];
+						$str .=" waktu <= '$value' " ;
+					}
+
+
+					else if ($sub_filter['field']=="kp_awal"){
+					 	$value = $sub_filter['value'];
+						$str .=" kp_tanggal  >= '$value' " ;
+					}
+					else if ($sub_filter['field']=="kp_akhir"){
+						 
+						$value = $sub_filter['value'];
+						$str .=" kp_tanggal <= '$value' " ;
+					}
+
+
 					else { 
 						$str .= " ". $sub_filter['field'] . " = '".$sub_filter['value']."' ";
 					}
@@ -428,7 +505,7 @@ function cari(){
 
 	$sql.=" group by laporan, id";
 
-	//echo $sql; 
+	// echo $sql; 
 
 	// exit;
 
@@ -436,6 +513,7 @@ function cari(){
 	$data['record'] = $res;
 
 	$this->load->view($this->controller."_hasil_view",$data);
+	// echo $str;
 	// echo $str;
 
 } 
