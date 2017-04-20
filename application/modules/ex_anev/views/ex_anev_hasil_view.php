@@ -25,7 +25,7 @@ foreach($kasus_record->result() as $row) :
 
 
 <div class="col-md-6">
-<h3>JUMLAH KASUS <?php echo number_format($kasus_jumlah,0); ?> </h3>
+<h3>JUMLAH KASUS <?php echo number_format($kasus_jumlah2,0); ?> </h3>
 
 <b> Data berdasarkan golongan kejahatan </b>
 <table class="table" width="100%">
