@@ -57,6 +57,18 @@ class ex_pencarian extends ex_controller {
 
 
 		   	array(
+		   	"id" => "id_kelompok",
+			"label" => "Kelompok Kejahatan",
+			"type" => "string",
+			"input" => "select",
+			"values" => $this->cm->get_arr_dropdown("m_kelompok_kejahatan","id_kelompok","kelompok",'kelompok')
+			,
+			"operators" => array('equal')
+			 
+		   	), 
+
+
+		   	array(
 		   	"id" => "pasal",
 			"label" => "Pasal",
 			"type" => "string",			 
