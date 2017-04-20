@@ -111,6 +111,29 @@ class ex_pencarian extends ex_controller {
 
 
 
+		   array(
+		   	"id" => "pelapor_id_pekerjaan",
+			"label" => "Pekerjaan pelapor",
+			"type" => "string",
+			"input" => "select",
+			"values" => $this->cm->get_arr_dropdown("m_pekerjaan","id_pekerjaan","pekerjaan",'pekerjaan')
+			,
+			"operators" => array('equal')
+			 
+		   	), 
+
+		   array(
+		   	"id" => "tersangka_id_pekerjaan",
+			"label" => "Pekerjaan tersangka",
+			"type" => "string",
+			"input" => "select",
+			"values" => $this->cm->get_arr_dropdown("m_pekerjaan","id_pekerjaan","pekerjaan",'pekerjaan')
+			,
+			"operators" => array('equal')
+			 
+		   	), 
+
+
 		    array(
 		   	"id" => "nomor",
 			"label" => "Nomor Laporan",

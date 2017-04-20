@@ -19,6 +19,7 @@ select
 	NULL AS `palapor_id_prop`, 
 	NULL AS `palapor_provinsi`, 
 	NULL AS `pelapor_umur`, 
+	null as pelapor_id_pekerjaan, 
 	`g`.`pasal` AS `pasal`, 
 	`p`.`id` AS `id_pasal`, 
 	`a`.`id_gol_kejahatan` AS `id_gol_kejahatan`, 
@@ -46,6 +47,7 @@ select
 		YEAR, `t`.`tersangka_tgl_lahir`, 
 		`a`.`kp_tanggal`
 	) AS `tersangka_umur`, 
+	tersangka_id_pekerjaan, 
 	`s`.`saksi_nama` AS `saksi_nama`, 
 	`k`.`korban_nama` AS `korban_nama`, 
 	`b`.`barbuk_nama` AS `barbuk_nama`, 
@@ -160,6 +162,7 @@ select
 	timestampdiff(
 		YEAR, `a`.`pelapor_tgl_lahir`, `a`.`kejadian_tanggal`
 	) AS `pelapor_umur`, 
+	pelapor_id_pekerjaan, 
 	`g`.`pasal` AS `pasal`, 
 	`p`.`id` AS `id_pasal`, 
 	`a`.`id_gol_kejahatan` AS `id_gol_kejahatan`, 
@@ -187,6 +190,7 @@ select
 		YEAR, `t`.`tersangka_tgl_lahir`, 
 		`a`.`kejadian_tanggal`
 	) AS `tersangka_umur`, 
+	tersangka_id_pekerjaan, 
 	`s`.`saksi_nama` AS `saksi_nama`, 
 	`k`.`korban_nama` AS `korban_nama`, 
 	`b`.`barbuk_nama` AS `barbuk_nama`, 
@@ -329,6 +333,7 @@ select
 	timestampdiff(
 		YEAR, `a`.`pelapor_tgl_lahir`, `a`.`kejadian_tanggal`
 	) AS `pelapor_umur`, 
+	pelapor_id_pekerjaan,
 	NULL AS `pasal`, 
 	NULL AS `id_pasal`, 
 	NULL AS `id_gol_kejahatan`, 
@@ -353,6 +358,7 @@ select
 	year(`a`.`kejadian_tanggal`) AS `tahun_kejadian`, 
 	NULL AS `tersangka_nama`, 
 	NULL AS `tersangka_umur`, 
+	null as tersangka_id_pekerjaan, 
 	NULL AS `saksi_nama`, 
 	NULL AS `korban_nama`, 
 	NULL AS `barbuk_nama`, 
@@ -435,6 +441,7 @@ select
 	NULL AS `palapor_id_prop`, 
 	NULL AS `palapor_provinsi`, 
 	NULL AS `pelapor_umur`, 
+	null as pelapor_id_pekerjaan, 
 	NULL AS `pasal`, 
 	NULL AS `id_pasal`, 
 	NULL AS `id_gol_kejahatan`, 
@@ -459,6 +466,7 @@ select
 	year(`a`.`kejadian_tanggal`) AS `tahun_kejadian`, 
 	NULL AS `tersangka_nama`, 
 	NULL AS `tersangka_umur`, 
+	null as tersangka_id_pekerjaan, 
 	NULL AS `saksi_nama`, 
 	NULL AS `korban_nama`, 
 	NULL AS `barbuk_nama`, 
@@ -513,6 +521,7 @@ select
 	NULL AS `palapor_id_prop`, 
 	NULL AS `palapor_provinsi`, 
 	NULL AS `pelapor_umur`, 
+	null as pelapor_id_pekerjaan,
 	NULL AS `pasal`, 
 	NULL AS `id_pasal`, 
 	NULL AS `id_gol_kejahatan`, 
@@ -537,6 +546,7 @@ select
 	year(`a`.`kp_tanggal`) AS `tahun_kejadian`, 
 	NULL AS `tersangka`, 
 	NULL AS `tersangka_umur`, 
+	null as tersangka_id_pekerjaan, 
 	`s`.`saksi_nama` AS `saksi_nama`, 
 	`k`.`korban_nama` AS `korban_nama`, 
 	NULL AS `barbuk_nama`, 
