@@ -147,6 +147,10 @@ $('#btn-get2').on('click', function() {
 
 $("#query").on('click',function(){
 
+
+   $('#myPleaseWait').modal('show');
+   $("#resultBox").html('');
+
     var result = $('#builder-basic').queryBuilder('getRules');
     var result2 = $('#builder-basic2').queryBuilder('getRules');
 
@@ -158,6 +162,7 @@ $("#query").on('click',function(){
       data : {json_data : result, json_data2 : result2}, 
       success : function (obj){
         //console(obj)
+        $('#myPleaseWait').modal('hide');
         $("#resultBox").html(obj);
       }
     });
