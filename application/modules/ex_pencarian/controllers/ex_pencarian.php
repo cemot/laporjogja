@@ -652,6 +652,7 @@ function cari(){
 	// exit;
 
 	$res = $this->db->query($sql); 
+	$data['jumlah'] = $res->num_rows();
 	$data['record'] = $res;
 
 	$this->load->view($this->controller."_hasil_view",$data);
