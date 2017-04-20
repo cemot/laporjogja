@@ -60,6 +60,11 @@
                 <i class="fa fa-search  fa-5x"></i><br/>
                 Pencarian  <br /> Laporan 
             </a>
+
+              <a href="<?php echo site_url("ex_pencarian") ?>" class="btn btn-sq-lg btn-primary">
+                <i class="fa fa-bars   fa-5x"></i><br/>
+                Anev  <br /> data LP 
+            </a>
              
              
 

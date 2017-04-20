@@ -107,6 +107,7 @@ foreach($lokasi_record2->result() as $row) :
 </div>
 
 </div> <!-- row -->
+<hr />
 
 
 <div class="row">
@@ -217,6 +218,7 @@ foreach($lokasi_record2->result() as $row) :
 </div>
 
 </div> <!-- row -->
+<hr />
 
 
 

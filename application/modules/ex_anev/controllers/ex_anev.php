@@ -940,7 +940,7 @@ function cari(){
 
 				";
 
-	//echo "<hr>$sql_hari"; 
+	//echo "<hr>$sql_hari2"; 
 
 	$data['hari_record2'] = $this->db->query($sql_hari2)->row();		
 
