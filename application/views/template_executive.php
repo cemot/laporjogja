@@ -212,6 +212,7 @@
         </li>
 
         <li><a href="<?php echo site_url("ex_pencarian"); ?>">PENCARIAN</a></li>
+        <li><a href="<?php echo site_url("ex_anev"); ?>">ANEV</a></li>
          
         <li>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
