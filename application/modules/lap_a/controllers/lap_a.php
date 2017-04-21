@@ -339,6 +339,7 @@ function edit($id){
 		$data['arr_jenis_lokasi'] = $this->cm->get_arr_dropdown("m_jenis_lokasi", 
 			"id_jenis_lokasi","jenis_lokasi",'jenis_lokasi');
 
+		$userdata = $_SESSION['userdata'];
 		$data['arr_fungsi'] = $this->cm->get_arr_function($userdata['jenis']);
 
 		$data['arr_pangkat'] = $this->cm->get_arr_dropdown("m_pangkat", 
