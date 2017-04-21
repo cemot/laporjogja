@@ -31,6 +31,17 @@ function index(){
 }
 
 
+function convert_tanggal($tgl) {
+	$arr_bulan=array(1=>"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+	$arr_bulan = array_flip($arr_bulan);
+
+	$tmp = explode("-",$tgl);
+	$bln_angka = $arr_bulan[$tmp[1]];
+	$res = $tmp[2]."-".$bln_angka."-".$tmp[0];
+	return $res;
+}
+
 
 function import(){
 	$userdata = $_SESSION['userdata'];
@@ -55,7 +66,7 @@ function import(){
 		$filename = $_FILES['xlsfile']['name'];
 		
 
-		$i=3;
+		$i=1;
 
 
 		$hasil = array();
@@ -65,9 +76,9 @@ function import(){
 			// show_array($data);
 		// echo $i.'<br />';
 		// echo $data[$i]['A'] . '<br />'; 
-		// $i++;
+		$i++;
 		
-		if($index == 1)  continue;
+		if($index <= 2)  continue;
 
 		// $nama_pekerjaan = ;
 		// $pekerjaan = ;
@@ -82,9 +93,9 @@ function import(){
 		"nama" 				=>$data['D'],
 		"nama_alias" 					=>$data['E'],
 		"pasal_kejahatan" 					=>$data['F'],
-		"tgl_masuk" 					=>$data['G'],
+		"tgl_masuk" 					=> $this->convert_tanggal($data['G']),
 		"hukuman" 			=>$data['H'],
-		"tgl_ekspirasi" 					=>$data['I'],
+		"tgl_ekspirasi" 					=> $this->convert_tanggal($data['I']),
 		"status" 	=>$data['J'],
 		"verifikasi" 			=>$data['K'],
 		"id_user" => $userdata['user_id'],
@@ -92,9 +103,9 @@ function import(){
 		
 					);
 
-			$this->db->insert('temp_main', $hasil);
+			 $this->db->insert('temp_main', $hasil);
 			endforeach;
-			// show_array($hasil); exit;
+			//show_array($hasil);  
 
 				$xdata = $hasil;
 				// $this->session->set_userdata('agu', $xdata);
@@ -109,7 +120,7 @@ function import(){
 		}
 
 		// show_array($penduduk);
-		// exit();
+		//exit();
 
 			$this->set_subtitle("Data Import");
 			$this->set_title("Data Import");
