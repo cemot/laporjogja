@@ -233,7 +233,7 @@
 
         <li>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          IMPORT DATA<b class="caret"></b></a>
+          DATA TAHANAN<b class="caret"></b></a>
           <ul class="dropdown-menu multi-level">
                 <li><a href="<?php echo site_url("ex_lihat_data"); ?>">LIHAT DATA</a></li>
                 <li><a href="<?php echo site_url("ex_import_data"); ?>">IMPORT DATA</a></li>
