@@ -178,7 +178,7 @@ function detail($id){
 	 $this->db->select('a.*,gk.golongan_kejahatan, 
 	 	gk.id_kelompok,
 	 	kel.id_golongan, 
-	 	pasal.pasal, 
+	 	gk.pasal, 
 lok.jenis_lokasi, 
 f.fungsi, 
 motif.motif, 

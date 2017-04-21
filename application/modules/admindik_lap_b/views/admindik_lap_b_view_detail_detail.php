@@ -11,9 +11,12 @@
       <tr><td>Nomor </td>
             <td><?php echo $nomor; ?> </td>
       <tr><td>Golongan Kejahatan </td>
-            <td> <?php echo $golongan_kejahatan ?>
+          <td> <?php echo $golongan_kejahatan ?></td> 
+      </tr>
 
-               </td>
+      <tr><td>Pasal </td>
+          <td> <?php echo $pasal ?></td> 
+      </tr>
 
 
       <tr><td>Kategori Tempat Kejahatan</td>
@@ -25,8 +28,7 @@
 
       <tr><td>Tindak Pidana </td>
             <td> <?php echo $tindak_pidana ?>  </td>
-      <tr><td>Pasal </td>
-            <td><?php echo $pasal ?>   </td>
+     
       <tr><td>Fungsi Terkait </td>
             <td>
                    

@@ -74,7 +74,7 @@ function data($param){
 
 
 function detail($id){
-	 $this->db->select('a.*,gk.golongan_kejahatan, 	 	 
+	 $this->db->select('a.*,gk.golongan_kejahatan, gk.pasal,	 	 
 				lok.jenis_lokasi, 
 				f.fungsi, 
 				pel_pangkat.pangkat as pelapor_pangkat,

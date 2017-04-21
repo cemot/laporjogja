@@ -106,5 +106,5 @@
 
 
 <?php  //$this->load->view($controller."_view_detail_js") ?>
-
+ <?php //$this->load->view("js/general_js") ?>
 

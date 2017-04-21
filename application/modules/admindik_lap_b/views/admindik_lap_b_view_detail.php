@@ -27,7 +27,8 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
-    <li role="presentation"><a href="#pasal" aria-controls="pasal" role="tab" data-toggle="tab">Pasal</a></li>
+    
+    <!-- <li role="presentation"><a href="#pasal" aria-controls="pasal" role="tab" data-toggle="tab">Pasal</a></li> -->
 
     <li role="presentation"><a href="#tersangka" aria-controls="tersangka" role="tab" data-toggle="tab">Tersangka</a></li>
 
@@ -52,12 +53,13 @@
     
      <?php $this->load->view($this->controller."_view_detail_detail"); ?>
     </div>  
-    <div role="tabpanel" class="tab-pane" id="pasal">
+   
+   <!--  <div role="tabpanel" class="tab-pane" id="pasal">
     
     
     <?php   $this->load->view($this->controller."_view_detail_pasal"); ?>
 
-    </div>
+    </div> -->
     <div role="tabpanel" class="tab-pane" id="tersangka">
     
     <?php  $this->load->view($this->controller."_view_detail_tersangka"); ?>

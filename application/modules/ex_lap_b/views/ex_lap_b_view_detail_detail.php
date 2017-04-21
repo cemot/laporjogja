@@ -14,6 +14,13 @@
             <td> <?php echo $golongan_kejahatan ?>
 
                </td>
+      </tr>
+
+      <tr><td>Pasal </td>
+            <td> <?php echo $pasal ?>
+
+               </td>
+      </tr>
 
 
       <tr><td>Kategori Tempat Kejahatan</td>

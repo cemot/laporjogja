@@ -170,7 +170,7 @@ function detail($id){
 	 $this->db->select('a.*,gk.golongan_kejahatan, 
 	 	gk.id_kelompok,
 	 	kel.id_golongan, 
-	 	pasal.pasal, 
+	 	gk.pasal, 
 lok.jenis_lokasi, 
 f.fungsi, 
 pel_pangkat.pangkat as pelapor_pangkat,
@@ -201,7 +201,7 @@ u.nama as pengguna ')
 ->join("m_pangkat pen_pangkat","pen_pangkat.id_pangkat = a.pen_lapor_id_pangkat ",'left')
 ->join("m_pangkat meng_pangkat","meng_pangkat.id_pangkat = a.mengetahui_id_pangkat",'left')
 ->join("pengguna u","u.id = a.user_id",'left')
-->join("m_pasal pasal","pasal.id = a.id_pasal",'left')
+// ->join("m_pasal pasal","pasal.id = a.id_pasal",'left')
 
 
 ->join('tiger_desa desa','desa.id = a.kp_tempat_id_desa ','left')

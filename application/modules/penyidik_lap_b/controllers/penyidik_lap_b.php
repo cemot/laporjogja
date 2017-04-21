@@ -314,6 +314,7 @@ function get_data_perkembangan($lap_b_id){
                 $row['no_dokumen'],            
                 
                 $row['keterangan'], 
+                
                 (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']). " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
                     <img src='".base_url("assets/images/delete.png")."'>
                 </a>",

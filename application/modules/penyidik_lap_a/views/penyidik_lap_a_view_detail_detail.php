@@ -8,7 +8,13 @@
       <tr><td>Nomor </td>
         <td><?php echo $nomor; ?> </td>
       <tr><td>Golongan Kejahatan </td>
-            <td><?php echo $golongan_kejahatan; ?></td>
+      <td><?php echo $golongan_kejahatan; ?></td>
+      </tr>
+
+      <tr><td>Pasal </td>
+      <td><?php echo $pasal; ?></td>
+      </tr>
+    
       <tr><td>Tempat Kejadian Perkara</td>
             <td><?php echo $jenis_lokasi; ?></td>
       <tr><td>Fungsi Terkait </td>
@@ -20,12 +26,12 @@
       </tr>
 
       
-
+<!-- 
 <tr> <td colspan="2"> <b> PASAL</b>  </td> </tr>
 
 
       <tr> 
-            <td colspan="2"><?php $this->load->view($this->controller."_view_detail_pasal"); ?></td> </tr>    
+            <td colspan="2"><?php $this->load->view($this->controller."_view_detail_pasal"); ?></td> </tr>     -->
 
 
 

@@ -25,10 +25,15 @@ foreach ($rec_perkembangan->result() as  $value)  :
 ?>
 <tr >
         <TD><?php echo $n; ?></TD>
+         <td><?php echo flipdate($value->tanggal); ?></td>
         <td><?php echo ($value->lidik=="1")?"Penyidikan":"Penyelidikan"; ?></td>
-        <td><?php echo flipdate($value->tanggal); ?></td>
+       
         <td><?php echo $value->tahap; ?></td>
-        <td><?php echo $value->no_dokumen; ?></td>
+        <td><?php echo $value->no_dokumen.'<br />';  echo 
+
+            (empty($value->file_dokumen))?"-":anchor("general/getdokumen/".$value->file_dokumen,$value->file_dokumen); 
+
+        ?></td>
         
         
         <td><?php echo $value->keterangan; ?></td>
