@@ -1,4 +1,4 @@
-
+<link href="<?php echo base_url("assets") ?>/css/jquery.dataTables.css" rel="stylesheet">
 
 <script src="<?php echo base_url("assets") ?>/js/bootstrap-datepicker.js"></script>
 
@@ -46,19 +46,19 @@
             <div class="col-md-1">
               <div class="form-group">
                 <label></label>
-                <button type="submit" class="btn btn-default form-control" id="btn_submit"><i class="fa">Cari</i></button>
+                <button type="submit" class="btn btn-primary form-control" id="btn_submit"><i class="fa">Cari</i></button>
               </div>
             </div>
             <div class="col-md-1">
               <div class="form-group">
                 <label></label>
-                <button type="reset" class="btn btn-default form-control" id="btn_reset"><i class="fa">Reset</i></button>
+                <button type="reset" class="btn btn-danger form-control" id="btn_reset"><i class="fa">Reset</i></button>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label></label>
-                <a href="<?php echo site_url('ex_import_data'); ?>" class="btn btn-default form-control" ><i class="fa">Import Data</i></a>
+                <a href="<?php echo site_url('ex_import_data'); ?>" class="btn btn-success form-control" ><i class="fa">Import Data</i></a>
               </div>
             </div>
             </div>
