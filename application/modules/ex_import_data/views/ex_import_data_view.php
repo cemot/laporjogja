@@ -90,7 +90,7 @@
 <br />
 <br />
 <br />
-<div class="col-md-12" align="center"><input type="submit" class="btn btn-default" value="IMPORT"></div>
+<div class="col-md-12" align="center"><input type="submit" class="btn btn-primary" value="IMPORT"></div>
 <br />
 <br />
 <br />
