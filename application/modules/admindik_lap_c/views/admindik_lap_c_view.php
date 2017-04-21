@@ -51,12 +51,12 @@
 
                       <div class="form-group">
                        <?php 
-
-            $arr_fungsi = $this->cm->get_arr_dropdown("m_fungsi", 
-                    "id_fungsi","fungsi",'fungsi');
-            array_unshift($arr_fungsi, "- Semua Fungsi Terkait -");
-            echo form_dropdown('',$arr_fungsi,'','id="id_fungsi" class="form-control"');
-             ?>
+                       $userdata = $_SESSION['userdata'];
+                       $arr_fungsi = $this->cm->get_arr_function($userdata['jenis']);
+                   
+                      array_unshift($arr_fungsi, "- Semua Fungsi Terkait -");
+                      echo form_dropdown('',$arr_fungsi,'','id="id_fungsi" class="form-control"');
+                      ?>
                       </div>
                      <!--  <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-search" id='btn_cari'></i>Cari</a> -->
 

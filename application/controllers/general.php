@@ -7,6 +7,7 @@ class general extends CI_Controller {
 		parent::__construct();
 
 		$this->load->helper('download');
+		$this->load->model("coremodel","cm");
 	}
 
 
@@ -359,6 +360,15 @@ function json_gol_kejahatan(){
 	endforeach;
 	header('Content-Type: application/json');
 	echo json_encode($arr);
+}
+
+function get_fungsi_terkait($jenis) {
+	$arr = $this->cm->get_arr_function($jenis);
+	$arr = $this->cm->add_arr_head($arr,"x"," = SEMUA =");
+
+	foreach($arr as $index=>$value ) : 
+		echo "<option value=$index>$value</option>";
+	endforeach;
 }
 
 }
