@@ -3,3 +3,7 @@ $x="function() {var that = this;if (localStorage.demoData === undefined) {\$.get
 ?>
 
 ini buat test saja. kalo 
+
+
+
+apa lagi ya ? kok saya jadi bosan begini. 
