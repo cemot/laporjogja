@@ -84,7 +84,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SISTEM PELAPORAN DAN PENYELIDIKAN <?php echo $title; ?></title>
+    <title>SISTEM LAPORAN POLISI POLDA DIY <?php echo $title; ?></title>
 <!-- 
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/jseasyui/themes/default/easyui.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/jseasyui/themes/icon.css">
