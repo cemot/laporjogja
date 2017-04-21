@@ -80,6 +80,7 @@ function get_data(){
          
         	$arr_data[] = array(
         	$row['kesatuan'],
+        	($row['jenis_fungsi']=="polda")?"POLDA":"POLRES/POLSEK",
 			"<div class=\"btn-group\"> 
      <a class=\"btn dropdown-toggle btn-primary\" data-toggle=\"dropdown\" href=\"#\">Proses<span class=\"caret\"></span></a>
      

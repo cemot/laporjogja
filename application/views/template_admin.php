@@ -210,6 +210,8 @@
                 <li><a href="<?php echo site_url("admin_kelompok_kejahatan"); ?>">KELOMPOK KEJAHATAN</a></li>
                  <li><a href="<?php echo site_url("admin_golongan_kejahatan"); ?>">GOLONGAN KEJAHATAN</a></li>
                 <li><a href="<?php echo site_url("admin_pasal"); ?>">PASAL</a></li>
+                <li><a href="<?php echo site_url("admin_fungsi"); ?>">FUNGSI TERKAIT</a></li>
+
                 <li><a href="<?php echo site_url("admin_kesatuan"); ?>">KESATUAN</a></li>
                 <li><a href="<?php echo site_url("admin_tempat"); ?>">KATEGORI TEMPAT KEJAHATAN</a></li>
                 <li><a href="<?php echo site_url("admin_motif"); ?>">MOTIF KEJAHATAN</a></li>

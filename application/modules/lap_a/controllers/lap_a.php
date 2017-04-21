@@ -141,7 +141,7 @@ $id = $row['lap_a_id'];
 
 function baru(){
 
-
+		$userdata = $_SESSION['userdata']; 
 
 		$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
 		if($temp_lap_a_id == "") {
@@ -173,8 +173,7 @@ function baru(){
 		$data['arr_jenis_lokasi'] = $this->cm->get_arr_dropdown("m_jenis_lokasi", 
 			"id_jenis_lokasi","jenis_lokasi",'jenis_lokasi');
 
-		$data['arr_fungsi'] = $this->cm->get_arr_dropdown("m_fungsi", 
-			"id_fungsi","fungsi",'id_fungsi');
+		$data['arr_fungsi'] = $this->cm->get_arr_function($userdata['jenis']);
 
 
 		$data['arr_pangkat'] = $this->cm->get_arr_dropdown("m_pangkat", 
@@ -340,9 +339,7 @@ function edit($id){
 		$data['arr_jenis_lokasi'] = $this->cm->get_arr_dropdown("m_jenis_lokasi", 
 			"id_jenis_lokasi","jenis_lokasi",'jenis_lokasi');
 
-		$data['arr_fungsi'] = $this->cm->get_arr_dropdown("m_fungsi", 
-			"id_fungsi","fungsi",'id_fungsi');
-
+		$data['arr_fungsi'] = $this->cm->get_arr_function($userdata['jenis']);
 
 		$data['arr_pangkat'] = $this->cm->get_arr_dropdown("m_pangkat", 
 			"id_pangkat","pangkat",'pangkat');

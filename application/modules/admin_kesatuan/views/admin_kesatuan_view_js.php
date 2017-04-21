@@ -146,6 +146,7 @@ $("#titleModal").html('EDIT DATA KESATUAN');
 		success : function(obj) {
 			$("#id_kesatuan").val(obj.id_kesatuan);
 			$("#kesatuan").val(obj.kesatuan);
+			$("#jenis_fungsi").val(obj.jenis_fungsi).attr('selected','selected');
 			 
 			 
 
