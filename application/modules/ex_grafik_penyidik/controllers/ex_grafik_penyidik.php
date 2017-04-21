@@ -170,6 +170,10 @@ class ex_grafik_penyidik extends admin_controller  {
 
 	}
 
+	if($post['id_fungsi']<> 'x') {
+		$this->db->where("a.id_fungsi",$post['id_fungsi']);
+	}
+
 	$res = $this->db->get();
 	// echo $this->db->last_query(); exit;
 
