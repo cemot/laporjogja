@@ -15,7 +15,7 @@ class index_executive extends ex_controller  {
 
 		$userdata = $_SESSION['userdata'];
 		// show_array($userdata);
-
+		// exit();
 		$content = $this->load->view("ex_depan_view",array(),true);
 
 		$this->set_subtitle("DASHBOARD EXECUTIVE ");
