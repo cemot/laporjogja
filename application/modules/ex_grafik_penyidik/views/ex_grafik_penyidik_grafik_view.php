@@ -38,17 +38,31 @@ $(function () {
             verticalAlign: 'middle',
             borderWidth: 0
         },
-        series: [
-        <?php 
-        $nilai = 0;
-        foreach ($penyidik as $row) {
-          $nilai= $nilai+1;
-          ?>
-           { name: '<?php echo $row['nama'] ?>',
-            data: [<?php echo $row['Januari'].', '.$row['Februari'].', '.$row['Maret'].', '.$row['April'].', '.$row['Mei'].', '.$row['Juni'].', '.$row['Juli'].', '.$row['Agustus'].', '.$row['September'].', '.$row['Oktober'].', '.$row['November'].', '.$row['Desember']; ?>]
-          },
-        <?php }  ?>
-        ]
+        series:  [
+
+            <?php 
+            foreach($arr as $a => $b) : 
+                echo "{";
+                echo "name: '".$b['nama']."',";
+                    echo "data : [";
+                        foreach($b['data'] as $angka ) : 
+                            echo $angka.",";
+                        endforeach;
+                    echo "]";
+                echo "},";
+                
+            endforeach;
+
+            ?>
+            ]
+           // { name: 'Anjay (10 kasus) ',
+           //  data: [ 4,5,6,7,5,3,8,9,4,2,6,10 ]
+           // },
+           // { name: 'Budi(13 kasus) ',
+           //  data: [ 5,6,6,7,4,3,3,9,6,7,8,9 ]
+           // },
+        
+         
     });
     
 });

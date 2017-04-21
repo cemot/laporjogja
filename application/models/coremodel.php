@@ -386,5 +386,26 @@ function get_detail_polsek($id_polsek) {
   return $data->nama_polsek;
 }
 
+
+function get_arr_function($jenis) {
+  //echo "jenis $jenis";
+    if($jenis=="polda") {
+      $this->db->where("jenis_fungsi","polda");
+    }
+    else {
+      $this->db->where("jenis_fungsi","polrespolsek");
+    }
+
+    $res = $this->db->get("m_fungsi");
+    // echo $this->db->last_query(); 
+    $arr = array();
+    foreach($res->result() as $row) : 
+      $arr[$row->id_fungsi] = $row->fungsi;
+
+    endforeach;
+    return $arr;
+}
+
+
 }
 ?>

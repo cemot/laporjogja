@@ -67,9 +67,10 @@
 <thead>
 	<tr style="background-color:#CCC">
 
-        <th width="80%">KESATUAN</th>
+        <th width="70%">KESATUAN</th>
+        <th width="20%">TINGKAT</th>
          
-      <th width="14%">#</th>
+      <th width="10%">#</th>
     </tr>
 	
 </thead>

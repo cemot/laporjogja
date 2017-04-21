@@ -122,7 +122,7 @@ function reset_cari(){
 
 $("#tanggal_awal").val('');
 $("#tanggal_akhir").val('');
-$("#id_fungsi").val(0).attr('selected','selected');
+$("#id_fungsi").val('').attr('selected','selected');
 $("#pelapor_nama").val('');
 $("#nomor").val('');
 $("#cari_button").click();

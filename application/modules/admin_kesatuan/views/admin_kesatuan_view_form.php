@@ -9,8 +9,19 @@
         
 <form action="" id="formulir" method="post">
             <table width="100%"  class='table table-bordered'>
-              <tr>
-               
+
+               <tr>               
+              <tr><td width="30%" >Tingkat  </td>
+              <TD>
+              <?php 
+                 $arr = array("polda"=>"POLDA","
+                              polrespolsek"=>"POLRES/POLSEK");
+                 echo form_dropdown("jenis_fungsi",$arr,'','id="jenis_fungsi" class="form-control"');
+              ?>
+
+              </TD></tr>
+
+              <tr>               
               <tr><td width="30%" >Nama Kesatuan </td>
               <TD><input type="text" class="form-control" name="kesatuan" id="kesatuan" placeholder="Nama Kesatuan " /> </TD></tr>
 
