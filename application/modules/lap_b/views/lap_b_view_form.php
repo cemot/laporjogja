@@ -49,7 +49,8 @@
      <tr><td> Golongan Kejahatan</td>
             <td>  
 
-            <?php echo form_dropdown("id_gol_kejahatan",$arr_golongan_kejahatan,'','id="id_gol_kejahatan" class="form-control ds2"') ?>
+            <?php echo form_dropdown("id_gol_kejahatan",
+            $arr_golongan_kejahatan,"$id_gol_kejahatan",'id="id_gol_kejahatan" class="form-control ds2"') ?>
 
       </td>
 

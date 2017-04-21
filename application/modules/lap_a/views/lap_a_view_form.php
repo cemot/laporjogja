@@ -38,7 +38,8 @@
             <?php 
 
             $id_gol_kejahatan = isset($id_gol_kejahatan)?$id_gol_kejahatan:"";
-            echo form_dropdown("id_gol_kejahatan",$arr_golongan_kejahatan,$id_gol_kejahatan,'id="id_gol_kejahatan" class="form-control ds2"') ?>
+            echo form_dropdown("id_gol_kejahatan",$arr_golongan_kejahatan,
+            $id_gol_kejahatan,'id="id_gol_kejahatan" class="form-control ds2"') ?>
 
       </td>
 

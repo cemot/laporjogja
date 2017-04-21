@@ -210,7 +210,7 @@ $.ajax({
  	success : function(jsonData){
  		$("#formulir").loadJSON(jsonData);
 
- 		$("#id_gol_kejahatan").val(jsonData.id_gol_kejahatan).attr('selected','selected');
+ 		//$("#id_gol_kejahatan").val(jsonData.id_gol_kejahatan).attr('selected','selected');
  		$("#id_jenis_lokasi").val(jsonData.id_jenis_lokasi).attr('selected','selected');
  		$("#id_fungsi").val(jsonData.id_fungsi).attr('selected','selected');
 
