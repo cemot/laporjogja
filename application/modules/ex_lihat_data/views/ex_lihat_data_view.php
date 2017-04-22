@@ -29,8 +29,8 @@
             </div>
             <div class="col-md-2">
               <div class="form-group">
-                <label for="Tanggal">Asal UPT</label>
-                <input name="asal_upt" id="asal_upt" type="text" class="form-control" placeholder="Asal UPT"></input>
+                <label for="Tanggal">Lokasi Lapas</label>
+                <input name="asal_upt" id="asal_upt" type="text" class="form-control" placeholder="Lokasi Lapas"></input>
               </div>
             </div>
 
@@ -74,7 +74,7 @@
         <th width="15%" >Nama</th>
         <th width="5%" >Tgl. Masuk</th>
         <th width="5%" >Tgl. Ekspirasi</th>
-        <th width="15%" >Asal UPT</th>
+        <th width="15%" >Lokasi Lapas</th>
         <th width="15%" >Pasal Kejahatan</th>
     </tr>
   
