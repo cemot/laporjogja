@@ -69,7 +69,14 @@ function import(){
 		$i=1;
 
 
+		// echo "jumlah data ". count($arr_data);
+
+		// show_array($arr_data); 
+		// exit;
+
 		$hasil = array();
+
+		$tmpar = array();
 
 		foreach($arr_data   as  $index =>  $data) : 
 			//echo "index $index <br />" ;
@@ -104,8 +111,12 @@ function import(){
 					);
 
 			 $this->db->insert('temp_main', $hasil);
+
+		$tmpar[] = $hasil;
 			endforeach;
-			//show_array($hasil);  
+
+			// echo "berapa jumlahnya " . count($tmpar);
+			// show_array($tmpar);  //exit;
 
 				$xdata = $hasil;
 				// $this->session->set_userdata('agu', $xdata);
@@ -140,6 +151,10 @@ function save(){
 		// session_start();
 		// show_array($_POST['data']);exit();
 		$post = $this->input->post();
+		// echo "jumlah ". count($post['data']);
+		// show_array($post); 
+		// exit;
+
 		// $xdata = $datalogin['xdata']; 
 		
 		$true = 0;
