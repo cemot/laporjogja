@@ -1,5 +1,5 @@
 <?php
-class ex_grafik_penyidik extends admin_controller  {
+class ex_grafik_penyidik extends ex_controller  {
 	function ex_grafik_penyidik(){
 		parent::__construct();
 		$this->load->model("coremodel","cm");
@@ -13,7 +13,7 @@ class ex_grafik_penyidik extends admin_controller  {
 		$this->set_subtitle("Data Grafik");
 		$this->set_title("Data Grafik");
 		$this->set_content("WELCOME");
-		$this->render_admin();
+		$this->render();
 	}
 
 	function grafik($url) {
@@ -77,7 +77,7 @@ class ex_grafik_penyidik extends admin_controller  {
 		$this->set_subtitle($title);
 		$this->set_title($title);
 		$this->set_content($content);
-		$this->render_admin();
+		$this->render();
 	}
 
 	function get_grafik($url) {
