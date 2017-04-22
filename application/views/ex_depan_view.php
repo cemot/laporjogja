@@ -61,15 +61,25 @@
                 Pencarian  <br /> Laporan 
             </a>
 
-              <a href="<?php echo site_url("ex_anev") ?>" class="btn btn-sq-lg btn-primary">
+             <a href="<?php echo site_url("ex_anev") ?>" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-bars   fa-5x"></i><br/>
                 Anev  <br /> data LP 
             </a>
              
              
+             <a href="<?php echo site_url("ex_lihat_data") ?>" class="btn btn-sq-lg btn-primary">
+                <i class="fa fa-user-circle-o fa-5x"></i><br/>
+                Data   <br /> tahanan  
+            </a>
 
+             <a href="<?php echo site_url("ex_diagram_pie") ?>" class="btn btn-sq-lg btn-primary">
+                <i class="fa fa-pie-chart fa-5x"></i><br/>
+                Statistik  <br /> tahanan &amp; lapas   
+            </a>
 
              
+
+
              
           </p>
         </div>
