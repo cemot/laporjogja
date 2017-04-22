@@ -133,7 +133,7 @@ class ex_grafik_lap extends ex_controller  {
 				  WHERE YEAR($field_name) = ".$tahun;
 
 		$data_array['query'] = $this->db->query($query)->row_array();
-
+		// show_array($data_array['query'] ); exit;
 		// echo $this->db->last_query(); exit;
 		$data_array['tahun'] = $tahun;
 		$data_array['title'] = $title;
