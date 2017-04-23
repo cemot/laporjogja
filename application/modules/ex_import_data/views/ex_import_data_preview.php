@@ -1,8 +1,8 @@
-<script src="<?php echo base_url("assets") ?>/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
-
+ 
 <form class="form-inline" id="gembreng" enctype="multipart/form-data" method="post" action="<?php echo site_url($this->controller."/save"); ?>">
 <button type="submit" class="btn btn-primary">Import Data</button>
+
+<div id="" style="overflow-y: scroll; min-height:400px;">
 <table id="example2" class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -48,7 +48,7 @@
                       </tr>
                     </tfoot>
                   </table>
-
+</div>
                   </form>
 
 

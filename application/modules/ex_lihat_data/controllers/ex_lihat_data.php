@@ -1,5 +1,5 @@
 <?php
-class ex_lihat_data extends ex_controller {
+class ex_lihat_data extends super_controller {
     var $controller ;
 
     function ex_lihat_data(){
