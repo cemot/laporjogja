@@ -124,7 +124,7 @@
                          $arr_polres = $this->cm->add_arr_head($arr_polres,"x","=  PILIH POLRES =");
 
 
-                         echo form_dropdown("id_pores",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
 
                          ?>
                          

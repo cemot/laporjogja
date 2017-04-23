@@ -150,7 +150,12 @@ class ex_grafik_penyidik extends ex_controller  {
 		
 
 		if($post['jenis']=="polres") {
-			$this->db->where("u.id_polres",$post['id_polres']);
+			// echo "ini polres <hr />";
+			// echo "poles id = ". $post['id_polres'];
+			// show_array($post);
+			$this->db->where("u.id_polres",$post['id_pores']);
+			 // $this->db->where("u.id_polres",'vangkeh');
+
 			$this->db->where("u.jenis",$post['jenis']);
 		}
 		else if($post['jenis']=="polsek") {
