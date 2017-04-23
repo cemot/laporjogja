@@ -73,13 +73,17 @@ function get_data(){
 
        
         $arr_data = array();
+        $n=0;
         foreach($result as $row) : 
 		//$daft_id = $row['daft_id'];
+        	$n++;
         	 
 			$id = $row['id'];
          
         	$arr_data[] = array(
+        	$n,
         	$row['lapas'],
+        	$row['kapasitas'],
 			"<div class=\"btn-group\"> 
      <a class=\"btn dropdown-toggle btn-primary\" data-toggle=\"dropdown\" href=\"#\">Proses<span class=\"caret\"></span></a>
      
