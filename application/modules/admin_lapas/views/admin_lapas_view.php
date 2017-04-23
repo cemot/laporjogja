@@ -68,7 +68,7 @@
 	<tr style="background-color:#CCC">
         <th width="8%">NO.</th>
         <th width="80%">NAMA PENGADILAN</th>
-        <th width="10%">KASITAS</th>
+        <th width="10%">KAPASITAS</th>
          
       <th width="14%">#</th>
     </tr>
