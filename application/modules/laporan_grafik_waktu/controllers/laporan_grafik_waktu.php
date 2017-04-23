@@ -1,5 +1,5 @@
 <?php
-class laporan_grafik_waktu extends ex_controller  {
+class laporan_grafik_waktu extends super_controller  {
 	function laporan_grafik_waktu(){
 		parent::__construct();
 		$this->load->helper("tanggal");

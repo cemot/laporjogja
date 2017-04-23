@@ -122,7 +122,7 @@
                        // echo $userdata['jenis'];
                        $userdata = $_SESSION['userdata'];
             $arr_fungsi = $this->cm->get_arr_function($userdata['jenis']);
-            $arr_fungsi = $this->cm->add_arr_head($arr_fungsi,"","- Semua Fungsi Terkait -");
+            $arr_fungsi = $this->cm->add_arr_head($arr_fungsi,"0","- Semua Fungsi Terkait -");
             echo form_dropdown('',$arr_fungsi,'','id="id_fungsi" class="form-control"');
              ?>
                       </div>

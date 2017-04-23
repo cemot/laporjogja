@@ -1,5 +1,5 @@
 <?php
-class ex_lap_d extends ex_controller {
+class ex_lap_d extends super_controller {
  	var $controller ;
 
 	function ex_lap_d(){

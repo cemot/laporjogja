@@ -5,6 +5,19 @@
    // $('<p>').appendTo('#sleman').text('SELEMAN').css({position:'absolute',
    //                                               top:'100px',
    //                                               left:'70px'});
+$(".ds2").select2({
+  placeholder: "Pilih "
+});
+
+   $("#peta").hide();
+
+$(".petajogja").maphilight({fade: false});
+
+ // $( document ).tooltip();
+ 
+
+
+
 
 
 
@@ -13,6 +26,8 @@
         $(this).datepicker('hide');
     });
    
+ 
+
 
 
 $(".ma").on("click", function(e){
@@ -38,16 +53,6 @@ $(".ma").on("click", function(e){
 
 });
 
-$("#peta").hide();
-
-$(".petajogja").maphilight({fade: false});
-
- $( document ).tooltip();
- 
-
-$(".ds2").select2({
-  placeholder: "Pilih "
-});
 
 
 

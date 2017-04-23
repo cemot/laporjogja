@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Tables | Clean Admin</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- global css -->
+    <link type="text/css" href="css/app.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.dataTables.css">
+    <!-- end of global css -->
+    <link rel="stylesheet" type="text/css" href="css/pages/datatables.css">
+</head>
+
+<body>
+<!-- header logo: style can be found in header-->
+<header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a href="index.html" class="logo">
+            <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            <img src="img/logo_blue.png" alt="logo"/>
+        </a>
+        <!-- Header Navbar: style can be found in header-->
+        <!-- Sidebar toggle button-->
+        <!-- Sidebar toggle button-->
+        <div>
+            <a href="javascript:void(0)" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i
+                    class="fa fa-fw fa-bars"></i>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="dropdown notifications-menu">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"> <i
+                            class="fa  fa-fw fa-bell-o black"></i>
+                        <span class="label label-danger">3</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-notifications table-striped">
+                        <li>
+                            <a href="" class="notification striped-col">
+                                <img class="notif-image img-circle" src="img/authors/avatar7.jpg" alt="avatar-image">
+                                <div class="notif-body"><strong>Anderson</strong> shared post from
+                                    <strong>Ipsum</strong>.
+                                    <br>
+                                    <small>Just Now</small>
+                                </div>
+                                <span class="label label-success label-mini msg-lable">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="notification">
+                                <img class="notif-image img-circle" src="img/authors/avatar6.jpg" alt="avatar-image">
+                                <div class="notif-body"><strong>Williams</strong> liked <strong>Lorem Ipsum</strong>
+                                    typesetting.
+                                    <br>
+                                    <small>5 minutes ago</small>
+                                </div>
+                                <span class="label label-success label-mini msg-lable">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="notification striped-col">
+                                <img class="notif-image img-circle" src="img/authors/avatar5.jpg" alt="avatar-image">
+                                <div class="notif-body">
+                                    <strong>Robinson</strong> started follwing <strong>Trac Theme</strong>.
+                                    <br>
+                                    <small>14/10/2014 1:31 pm</small>
+                                </div>
+                                <span class="label label-success label-mini msg-lable">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="notification">
+                                <img class="notif-image img-circle" src="img/authors/avatar1.jpg" alt="avatar-image">
+                                <div class="notif-body">
+                                    <strong>Franklin</strong> Liked <strong>Trending Designs</strong> Post.
+                                    <br>
+                                    <small>5 days ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-footer"><a href="javascript:void(0)">View All messages</a></li>
+                    </ul>
+                </li>
+                <!-- User Account: style can be found in dropdown-->
+                <li class="dropdown user user-menu">
+                    <a href="javascript:void(0)" class="dropdown-toggle padding-user" data-toggle="dropdown">
+                        <img src="img/authors/user.jpg" class="img-circle img-responsive pull-left" alt="User Image">
+                        <div class="riot">
+                            <div>
+                                <i class="caret"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User name-->
+                        <li class="user-name text-center">
+                            <span>Jayson Wiley</span>
+                        </li>
+                        <!-- Menu Body -->
+                        <li class="p-t-3">
+                            <a href="user_profile.html">
+                                Profile<i class="fa fa-fw fa-user pull-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="edit_user.html">
+                                Settings <i class="fa fa-fw fa-cog pull-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="lockscreen.html">
+                                Lock <i class="fa fa-fw fa-lock pull-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login.html">
+                                Logout <i class="fa fa-fw fa-sign-out pull-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="wrapper">
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-aside">
+        <!-- sidebar: style can be found in sidebar-->
+        <section class="sidebar">
+            <div id="menu" role="navigation">
+                <div class="nav_profile">
+                    <div class="media profile-left">
+                        <a class="pull-left profile-thumb" href="javascript:void(0)">
+                            <img src="img/authors/user.jpg" class="img-circle" alt="User Image">
+                        </a>
+                        <div class="content-profile">
+                            <h4 class="media-heading">
+                                Jayson Wiley
+                            </h4>
+                            <p>Admin</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navigation">
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-fw fa-home"></i>
+                            <span class="mm-text ">Dashboard 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index2.html">
+                            <i class="menu-icon fa fa-fw fa-dashboard"></i>
+                            <span class="mm-text ">Dashboard 2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ui_elements.html">
+                            <i class="menu-icon fa fa-fw fa-cube"></i>
+                            <span class="mm-text ">Elements</span>
+                        </a>
+                    </li>
+                    <li class="menu-dropdown">
+                        <a href="#">
+                            <i class="menu-icon fa fa-check-square"></i>
+                            <span>Forms</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="form_elements.html">
+                                    <i class="fa fa-fw fa-fire"></i> Form Elements
+                                </a>
+                            </li>
+                            <li>
+                                <a href="form_features.html">
+                                    <i class="fa fa-fw fa-file-text-o"></i> Form Features
+                                </a>
+                            </li>
+                            <li>
+                                <a href="form_components.html">
+                                    <i class="fa fa-fw fa-warning"></i> Form Components
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <i class="menu-icon fa fa-fw fa-table"></i>
+                            <span class="mm-text ">Typography</span>
+                        </a>
+                    </li>
+                    <li class="menu-dropdown">
+                        <a href="#">
+                            <i class="menu-icon fa fa-desktop"></i>
+                            <span>
+                                    UI Components
+                                </span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="notifications.html">
+                                    <i class="fa fa-fw fa-flag"></i> Notifications
+                                </a>
+                            </li>
+                            <li>
+                                <a href="icons.html">
+                                    <i class="fa fa-fw fa-font"></i> Icons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="timeline.html">
+                                    <i class="fa fa-fw fa-columns"></i> Timeline
+                                </a>
+                            </li>
+                            <li>
+                                <a href="alerts.html">
+                                    <i class="fa fa-fw fa-suitcase"></i> Alerts
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="widgets.html">
+                            <i class="menu-icon fa fa-fw fa-shopping-basket"></i>
+                            <span class="mm-text "> Widgets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendar.html">
+                            <i class="menu-icon fa fa-fw fa-calendar"></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                    <li class="menu-dropdown">
+                        <a href="#">
+                            <i class="menu-icon fa fa-bar-chart-o"></i>
+                            <span>Charts</span> <span class="fa arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="flot_knob_charts.html">
+                                    <i class="fa fa-fw fa-area-chart"></i> Flot & Knob Charts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="advanced_charts.html">
+                                    <i class="fa fa-fw fa-line-chart"></i> Advanced Charts
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-dropdown active">
+                        <a href="#"> <i class="menu-icon fa fa-table"></i>
+                            <span>Tables</span>
+                            <span class="fa arrow">
+                                </span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="simple_tables.html">
+                                    <i class="fa fa-fw fa-tasks"></i> Simple tables
+                                </a>
+                            </li>
+                            <li class="active" id="active">
+                                <a href="advanced_tables.html">
+                                    <i class="fa fa-fw fa-table"></i> Advanced Tables
+                                </a>
+                            </li>
+                            <li>
+                                <a href="responsive_datatables.html">
+                                    <i class="fa fa-fw fa-table"></i> Responsive DataTables
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-dropdown">
+                        <a href="#"> <i class="menu-icon fa fa-fw fa-users"></i> <span>Users</span> <span
+                                class="fa arrow"></span> </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="user_profile.html">
+                                    <i class="fa fa-fw fa-user-md"></i> User Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="addnew_user.html">
+                                    <i class="fa fa-fw fa-user"></i> Add New User
+                                </a>
+                            </li>
+                            <li>
+                                <a href="users_list.html">
+                                    <i class="fa fa-list" aria-hidden="true"></i> Users List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-dropdown">
+                        <a href="gv_maps.html">
+                            <i class="menu-icon fa fa-map-marker"></i>
+                            <span>Maps</span>
+                        </a>
+                    </li>
+                    <li class="menu-dropdown ">
+                        <a href="#">
+                            <i class="menu-icon fa fa-files-o"></i>
+                            <span>Pages</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="session_timeout.html">
+                                    <i class="fa fa-fw fa-list-alt"></i> Session Timeout
+                                </a>
+                            </li>
+                            <li>
+                                <a href="login.html">
+                                    <i class="fa fa-fw fa-sign-in"></i> Login
+                                </a>
+                            </li>
+                            <li>
+                                <a href="register.html">
+                                    <i class="fa fa-fw fa-sign-out"></i> Register
+                                </a>
+                            </li>
+                            <li>
+                                <a href="forgot_password.html">
+                                    <i class="fa fa-fw fa-bars"></i> Forgot Password
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reset_password.html">
+                                    <i class="fa fa-fw fa-th-large"></i> Reset Password
+                                </a>
+                            </li>
+                            <li>
+                                <a href="lockscreen.html">
+                                    <i class="fa fa-fw fa-lock"></i> Lockscreen
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-dropdown">
+                        <a href="#">
+                            <i class="menu-icon fa fa-th"></i>
+                            <span>Extra Pages</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="blank.html">
+                                    <i class="fa fa-fw fa-file-o"></i> Blank
+                                </a>
+                            </li>
+                            <li>
+                                <a href="invoice.html">
+                                    <i class="fa fa-fw fa-newspaper-o"></i> Invoice
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact_us.html">
+                                    <i class="fa fa-fw fa-phone"></i> Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="404.html">
+                                    <i class="fa fa-fw fa-unlink"></i> 404 Error
+                                </a>
+                            </li>
+                            <li>
+                                <a href="500.html">
+                                    <i class="fa fa-fw fa-frown-o"></i> 500 Error
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-dropdown">
+                        <a href="#">
+                            <i class="menu-icon fa fa-sitemap"></i>
+                            <span>
+                                    Menu levels
+                                </span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw fa-sitemap"></i> Level 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-fw fa-sitemap"></i> Level 1
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="sub-menu sub-submenu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-fw fa-sitemap"></i> Level 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-fw fa-sitemap"></i> Level 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-fw fa-sitemap"></i> Level 2
+                                            <span class="fa arrow"></span>
+                                        </a>
+                                        <ul class="sub-menu sub-submenu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-fw fa-sitemap"></i> Level 3
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-fw fa-sitemap"></i> Level 3
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-fw fa-sitemap"></i> Level 3
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- / .navigation -->
+            </div>
+            <!-- menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+    <aside class="right-aside">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>Advanced Tables</h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <i class="fa fa-fw fa-table"></i> Basic Data Table
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>email</th>
+                                        <th>Phone</th>
+                                        <th>Department</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Roman Runolfsdottir</td>
+                                        <td>Roman24@yahoo.com</td>
+                                        <td>429-509-9163</td>
+                                        <td>Toys</td>
+                                        <td>49428</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Doug Senger</td>
+                                        <td>Doug.Senger12@hotmail.com</td>
+                                        <td>619-213-3654</td>
+                                        <td>Music</td>
+                                        <td>3166</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kennedi Torphy</td>
+                                        <td>Kennedi3@gmail.com</td>
+                                        <td>366-116-8461</td>
+                                        <td>Automotive</td>
+                                        <td>49301</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Freeda Treutel</td>
+                                        <td>Freeda.Treutel63@gmail.com</td>
+                                        <td>410-159-8618</td>
+                                        <td>Electronics</td>
+                                        <td>8252</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amos Gottlieb</td>
+                                        <td>Amos.Gottlieb57@hotmail.com</td>
+                                        <td>067-740-2584</td>
+                                        <td>Kids</td>
+                                        <td>40248</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Santos Sipes</td>
+                                        <td>Santos_Sipes75@hotmail.com</td>
+                                        <td>432-008-7647</td>
+                                        <td>Games</td>
+                                        <td>356</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sandy Wyman</td>
+                                        <td>Sandy_Wyman33@yahoo.com</td>
+                                        <td>799-719-5149</td>
+                                        <td>Music</td>
+                                        <td>26994</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hilda Hirthe</td>
+                                        <td>Hilda_Hirthe@gmail.com</td>
+                                        <td>702-898-2035</td>
+                                        <td>Home</td>
+                                        <td>32700</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Madge Lowe</td>
+                                        <td>Madge_Lowe55@hotmail.com</td>
+                                        <td>438-643-6504</td>
+                                        <td>Beauty</td>
+                                        <td>24829</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brett Olson</td>
+                                        <td>Brett59@hotmail.com</td>
+                                        <td>031-668-8313</td>
+                                        <td>Outdoors</td>
+                                        <td>24327</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aileen Hand</td>
+                                        <td>Aileen.Hand52@yahoo.com</td>
+                                        <td>495-265-2018</td>
+                                        <td>Automotive</td>
+                                        <td>39495</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emerson Brakus</td>
+                                        <td>Emerson_Brakus@gmail.com</td>
+                                        <td>880-538-9580</td>
+                                        <td>Games</td>
+                                        <td>37667</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mandy Gulgowski</td>
+                                        <td>Mandy_Gulgowski@yahoo.com</td>
+                                        <td>686-439-7326</td>
+                                        <td>Industrial</td>
+                                        <td>37378</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brittany Dibbert</td>
+                                        <td>Brittany_Dibbert@hotmail.com</td>
+                                        <td>662-842-8983</td>
+                                        <td>Music</td>
+                                        <td>293</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Macy Marks</td>
+                                        <td>Macy_Marks@gmail.com</td>
+                                        <td>620-493-8379</td>
+                                        <td>Outdoors</td>
+                                        <td>32749</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gage Fisher</td>
+                                        <td>Gage.Fisher90@hotmail.com</td>
+                                        <td>833-190-3441</td>
+                                        <td>Baby</td>
+                                        <td>33967</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lawson Wintheiser</td>
+                                        <td>Lawson_Wintheiser@gmail.com</td>
+                                        <td>263-807-6214</td>
+                                        <td>Movies</td>
+                                        <td>12143</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leann Nienow</td>
+                                        <td>Leann_Nienow@yahoo.com</td>
+                                        <td>854-724-8186</td>
+                                        <td>Music</td>
+                                        <td>19789</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Polly Kuhic</td>
+                                        <td>Polly98@hotmail.com</td>
+                                        <td>390-322-1517</td>
+                                        <td>Health</td>
+                                        <td>47484</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Troy Wuckert</td>
+                                        <td>Troy35@yahoo.com</td>
+                                        <td>566-666-3953</td>
+                                        <td>Baby</td>
+                                        <td>33154</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dominic Leffler</td>
+                                        <td>Dominic.Leffler94@yahoo.com</td>
+                                        <td>572-920-5685</td>
+                                        <td>Movies</td>
+                                        <td>34222</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cordie Funk</td>
+                                        <td>Cordie.Funk60@yahoo.com</td>
+                                        <td>978-284-8680</td>
+                                        <td>Grocery</td>
+                                        <td>36814</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mariane Cruickshank</td>
+                                        <td>Mariane24@hotmail.com</td>
+                                        <td>627-403-5459</td>
+                                        <td>Games</td>
+                                        <td>9848</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Giovanna Little</td>
+                                        <td>Giovanna_Little@yahoo.com</td>
+                                        <td>414-374-6948</td>
+                                        <td>Books</td>
+                                        <td>13287</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Santa Nolan</td>
+                                        <td>Santa74@hotmail.com</td>
+                                        <td>184-858-1792</td>
+                                        <td>Kids</td>
+                                        <td>42723</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jordane Sawayn</td>
+                                        <td>Jordane.Sawayn@gmail.com</td>
+                                        <td>742-229-1406</td>
+                                        <td>Shoes</td>
+                                        <td>16084</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meaghan Okuneva</td>
+                                        <td>Meaghan44@gmail.com</td>
+                                        <td>267-660-3828</td>
+                                        <td>Computers</td>
+                                        <td>4187</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Charlie Tillman</td>
+                                        <td>Charlie97@yahoo.com</td>
+                                        <td>560-033-8903</td>
+                                        <td>Beauty</td>
+                                        <td>24886</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Edison Wunsch</td>
+                                        <td>Edison_Wunsch@hotmail.com</td>
+                                        <td>400-017-7548</td>
+                                        <td>Garden</td>
+                                        <td>19725</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Imani Mann</td>
+                                        <td>Imani44@gmail.com</td>
+                                        <td>500-516-8839</td>
+                                        <td>Grocery</td>
+                                        <td>15656</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Steve Gutkowski</td>
+                                        <td>Steve.Gutkowski@gmail.com</td>
+                                        <td>553-584-0137</td>
+                                        <td>Clothing</td>
+                                        <td>29224</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Llewellyn Ratke</td>
+                                        <td>Llewellyn58@hotmail.com</td>
+                                        <td>790-595-5505</td>
+                                        <td>Beauty</td>
+                                        <td>32260</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ali Reinger</td>
+                                        <td>Ali25@hotmail.com</td>
+                                        <td>777-088-6923</td>
+                                        <td>Outdoors</td>
+                                        <td>6895</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Edison Sauer</td>
+                                        <td>Edison31@hotmail.com</td>
+                                        <td>418-084-5373</td>
+                                        <td>Computers</td>
+                                        <td>37820</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Guadalupe Legros</td>
+                                        <td>Guadalupe_Legros37@hotmail.com</td>
+                                        <td>727-205-8400</td>
+                                        <td>Computers</td>
+                                        <td>27315</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gaston Mraz</td>
+                                        <td>Gaston.Mraz@yahoo.com</td>
+                                        <td>318-988-0440</td>
+                                        <td>Tools</td>
+                                        <td>39710</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luciano Zemlak</td>
+                                        <td>Luciano42@gmail.com</td>
+                                        <td>840-592-6240</td>
+                                        <td>Tools</td>
+                                        <td>3844</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfred Koepp</td>
+                                        <td>Alfred_Koepp@hotmail.com</td>
+                                        <td>025-399-0305</td>
+                                        <td>Baby</td>
+                                        <td>823</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hailee Brakus</td>
+                                        <td>Hailee_Brakus@hotmail.com</td>
+                                        <td>216-518-3767</td>
+                                        <td>Jewelery</td>
+                                        <td>29643</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Franz Swaniawski</td>
+                                        <td>Franz_Swaniawski@gmail.com</td>
+                                        <td>697-627-5395</td>
+                                        <td>Clothing</td>
+                                        <td>34518</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- First Basic Table Ends Here-->
+            <!-- Second Data Table Starts Here-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel">
+                        <div class="panel-heading  clearfix">
+                            <h3 class="panel-title">
+                                <i class="fa fa-fw fa-th"></i> Show / Hide Columns
+                            </h3>
+                        </div>
+                        <div class="panel-body table-responsive">
+                            <strong>
+                                Toggle column:
+                            </strong>
+                            <div class="btn-group" style="margin:10px 0;">
+                                <button type="button" class="toggle-vis btn btn-default" data-column="0">Name</button>
+                                <button type="button" class="toggle-vis btn btn-default" data-column="1">User Name
+                                </button>
+                                <button type="button" class="toggle-vis btn btn-default" data-column="2">Email</button>
+                                <button type="button" class="toggle-vis btn btn-default" data-column="3">Department
+                                </button>
+                                <button type="button" class="toggle-vis btn btn-default" data-column="4">Contact
+                                </button>
+                            </div>
+                            <table class="table table-striped table-bordered table_width" id="example">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>Department</th>
+                                    <th>Contact</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Sarah Leannon</td>
+                                    <td>Sarah22</td>
+                                    <td>Sarah.Leannon13@hotmail.com</td>
+                                    <td>Toys</td>
+                                    <td>269-277-7340</td>
+                                </tr>
+                                <tr>
+                                    <td>Prudence Braun</td>
+                                    <td>Prudence.Braun</td>
+                                    <td>Prudence_Braun99@yahoo.com</td>
+                                    <td>Home</td>
+                                    <td>259-294-8730</td>
+                                </tr>
+                                <tr>
+                                    <td>Frederik Beier</td>
+                                    <td>Frederik_Beier71</td>
+                                    <td>Frederik_Beier88@yahoo.com</td>
+                                    <td>Health</td>
+                                    <td>115-781-3501</td>
+                                </tr>
+                                <tr>
+                                    <td>Devyn Heathcote</td>
+                                    <td>Devyn.Heathcote</td>
+                                    <td>Devyn.Heathcote@yahoo.com</td>
+                                    <td>Garden</td>
+                                    <td>030-811-3564</td>
+                                </tr>
+                                <tr>
+                                    <td>Mellie Kuhic</td>
+                                    <td>Mellie83</td>
+                                    <td>Mellie_Kuhic73@yahoo.com</td>
+                                    <td>Clothing</td>
+                                    <td>341-136-6740</td>
+                                </tr>
+                                <tr>
+                                    <td>Nova Sauer</td>
+                                    <td>Nova33</td>
+                                    <td>Nova_Sauer@hotmail.com</td>
+                                    <td>Music</td>
+                                    <td>243-061-3771</td>
+                                </tr>
+                                <tr>
+                                    <td>Demetrius Mills</td>
+                                    <td>Demetrius33</td>
+                                    <td>Demetrius.Mills@gmail.com</td>
+                                    <td>Kids</td>
+                                    <td>254-829-7615</td>
+                                </tr>
+                                <tr>
+                                    <td>Hope Hessel</td>
+                                    <td>Hope25</td>
+                                    <td>Hope_Hessel@gmail.com</td>
+                                    <td>Books</td>
+                                    <td>767-138-4997</td>
+                                </tr>
+                                <tr>
+                                    <td>Jackeline Champlin</td>
+                                    <td>Jackeline.Champlin</td>
+                                    <td>Jackeline.Champlin58@yahoo.com</td>
+                                    <td>Jewelery</td>
+                                    <td>059-603-4311</td>
+                                </tr>
+                                <tr>
+                                    <td>Meaghan Renner</td>
+                                    <td>Meaghan_Renner</td>
+                                    <td>Meaghan20@gmail.com</td>
+                                    <td>Automotive</td>
+                                    <td>939-379-9525</td>
+                                </tr>
+                                <tr>
+                                    <td>Peggie Kassulke</td>
+                                    <td>Peggie_Kassulke</td>
+                                    <td>Peggie_Kassulke@hotmail.com</td>
+                                    <td>Clothing</td>
+                                    <td>039-431-8024</td>
+                                </tr>
+                                <tr>
+                                    <td>Paige Walsh</td>
+                                    <td>Paige_Walsh</td>
+                                    <td>Paige.Walsh@gmail.com</td>
+                                    <td>Health</td>
+                                    <td>129-485-9542</td>
+                                </tr>
+                                <tr>
+                                    <td>Lamont Hettinger</td>
+                                    <td>Lamont.Hettinger77</td>
+                                    <td>Lamont75@yahoo.com</td>
+                                    <td>Automotive</td>
+                                    <td>056-955-2547</td>
+                                </tr>
+                                <tr>
+                                    <td>Giovanni Mosciski</td>
+                                    <td>Giovanni.Mosciski77</td>
+                                    <td>Giovanni14@yahoo.com</td>
+                                    <td>Music</td>
+                                    <td>013-913-2683</td>
+                                </tr>
+                                <tr>
+                                    <td>Gregoria Baumbach</td>
+                                    <td>Gregoria21</td>
+                                    <td>Gregoria_Baumbach@gmail.com</td>
+                                    <td>Shoes</td>
+                                    <td>613-910-1426</td>
+                                </tr>
+                                <tr>
+                                    <td>Orval Howe</td>
+                                    <td>Orval84</td>
+                                    <td>Orval_Howe64@hotmail.com</td>
+                                    <td>Grocery</td>
+                                    <td>679-519-4414</td>
+                                </tr>
+                                <tr>
+                                    <td>Angelica Conroy</td>
+                                    <td>Angelica_Conroy</td>
+                                    <td>Angelica.Conroy44@gmail.com</td>
+                                    <td>Industrial</td>
+                                    <td>360-505-8432</td>
+                                </tr>
+                                <tr>
+                                    <td>Gillian Hickle</td>
+                                    <td>Gillian.Hickle30</td>
+                                    <td>Gillian57@gmail.com</td>
+                                    <td>Home</td>
+                                    <td>159-164-6997</td>
+                                </tr>
+                                <tr>
+                                    <td>Willa Feeney</td>
+                                    <td>Willa58</td>
+                                    <td>Willa.Feeney17@hotmail.com</td>
+                                    <td>Games</td>
+                                    <td>939-683-3718</td>
+                                </tr>
+                                <tr>
+                                    <td>Elyse Cassin</td>
+                                    <td>Elyse.Cassin</td>
+                                    <td>Elyse.Cassin72@hotmail.com</td>
+                                    <td>Outdoors</td>
+                                    <td>584-891-5946</td>
+                                </tr>
+                                <tr>
+                                    <td>Miracle Hessel</td>
+                                    <td>Miracle.Hessel</td>
+                                    <td>Miracle.Hessel@gmail.com</td>
+                                    <td>Shoes</td>
+                                    <td>549-158-1206</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethyl Pfannerstill</td>
+                                    <td>Ethyl_Pfannerstill</td>
+                                    <td>Ethyl_Pfannerstill@gmail.com</td>
+                                    <td>Shoes</td>
+                                    <td>643-622-2951</td>
+                                </tr>
+                                <tr>
+                                    <td>Adah Ortiz</td>
+                                    <td>Adah95</td>
+                                    <td>Adah48@gmail.com</td>
+                                    <td>Tools</td>
+                                    <td>270-691-3304</td>
+                                </tr>
+                                <tr>
+                                    <td>Berniece Klein</td>
+                                    <td>Berniece_Klein</td>
+                                    <td>Berniece_Klein63@yahoo.com</td>
+                                    <td>Health</td>
+                                    <td>211-699-9576</td>
+                                </tr>
+                                <tr>
+                                    <td>Jordi Breitenberg</td>
+                                    <td>Jordi59</td>
+                                    <td>Jordi.Breitenberg@yahoo.com</td>
+                                    <td>Sports</td>
+                                    <td>694-292-9691</td>
+                                </tr>
+                                <tr>
+                                    <td>Adalberto Satterfield</td>
+                                    <td>Adalberto94</td>
+                                    <td>Adalberto77@yahoo.com</td>
+                                    <td>Books</td>
+                                    <td>095-203-5357</td>
+                                </tr>
+                                <tr>
+                                    <td>Reese Turner</td>
+                                    <td>Reese21</td>
+                                    <td>Reese27@hotmail.com</td>
+                                    <td>Tools</td>
+                                    <td>225-264-1503</td>
+                                </tr>
+                                <tr>
+                                    <td>Tad Maggio</td>
+                                    <td>Tad17</td>
+                                    <td>Tad41@hotmail.com</td>
+                                    <td>Baby</td>
+                                    <td>238-050-3173</td>
+                                </tr>
+                                <tr>
+                                    <td>Arlo Smitham</td>
+                                    <td>Arlo_Smitham</td>
+                                    <td>Arlo_Smitham@hotmail.com</td>
+                                    <td>Movies</td>
+                                    <td>797-948-0375</td>
+                                </tr>
+                                <tr>
+                                    <td>Orlando Pfannerstill</td>
+                                    <td>Orlando20</td>
+                                    <td>Orlando17@yahoo.com</td>
+                                    <td>Sports</td>
+                                    <td>683-899-2503</td>
+                                </tr>
+                                <tr>
+                                    <td>Susan Hessel</td>
+                                    <td>Susan_Hessel88</td>
+                                    <td>Susan.Hessel60@gmail.com</td>
+                                    <td>Home</td>
+                                    <td>004-134-6430</td>
+                                </tr>
+                                <tr>
+                                    <td>Luigi Veum</td>
+                                    <td>Luigi_Veum</td>
+                                    <td>Luigi75@hotmail.com</td>
+                                    <td>Toys</td>
+                                    <td>846-211-9311</td>
+                                </tr>
+                                <tr>
+                                    <td>Emmie Rau</td>
+                                    <td>Emmie_Rau7</td>
+                                    <td>Emmie_Rau@hotmail.com</td>
+                                    <td>Games</td>
+                                    <td>151-075-1800</td>
+                                </tr>
+                                <tr>
+                                    <td>Jessika Johns</td>
+                                    <td>Jessika66</td>
+                                    <td>Jessika_Johns19@yahoo.com</td>
+                                    <td>Beauty</td>
+                                    <td>850-092-7783</td>
+                                </tr>
+                                <tr>
+                                    <td>Elmore Hartmann</td>
+                                    <td>Elmore_Hartmann</td>
+                                    <td>Elmore_Hartmann@gmail.com</td>
+                                    <td>Computers</td>
+                                    <td>821-435-4775</td>
+                                </tr>
+                                <tr>
+                                    <td>Liliana Schowalter</td>
+                                    <td>Liliana67</td>
+                                    <td>Liliana56@gmail.com</td>
+                                    <td>Tools</td>
+                                    <td>615-363-6678</td>
+                                </tr>
+                                <tr>
+                                    <td>Elmira Zboncak</td>
+                                    <td>Elmira_Zboncak</td>
+                                    <td>Elmira_Zboncak45@yahoo.com</td>
+                                    <td>Music</td>
+                                    <td>313-074-4827</td>
+                                </tr>
+                                <tr>
+                                    <td>Domenic Larkin</td>
+                                    <td>Domenic_Larkin32</td>
+                                    <td>Domenic_Larkin@gmail.com</td>
+                                    <td>Computers</td>
+                                    <td>463-196-1446</td>
+                                </tr>
+                                <tr>
+                                    <td>Josh Wolff</td>
+                                    <td>Josh_Wolff</td>
+                                    <td>Josh_Wolff@yahoo.com</td>
+                                    <td>Automotive</td>
+                                    <td>302-250-6870</td>
+                                </tr>
+                                <tr>
+                                    <td>Cullen Rosenbaum</td>
+                                    <td>Cullen_Rosenbaum</td>
+                                    <td>Cullen.Rosenbaum6@yahoo.com</td>
+                                    <td>Grocery</td>
+                                    <td>928-465-2210</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- second datatable end -->
+            <!-- third datatable start -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel filterable">
+                        <div class="panel-heading clearfix  ">
+                            <div class="panel-title pull-left">
+                                <i class="ti-export"></i> <b>Want to export data?</b>
+                            </div>
+                            <div class="tools pull-right"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="table1">
+                                    <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>User email</th>
+                                        <th>
+                                            Account Type
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Demetrius</td>
+                                        <td>Cole</td>
+                                        <td>Demetrius.Cole@yahoo.com</td>
+                                        <td>Credit Card Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sydnee</td>
+                                        <td>Beahan</td>
+                                        <td>Sydnee_Beahan41@gmail.com</td>
+                                        <td>Home Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Susanna</td>
+                                        <td>Skiles</td>
+                                        <td>Susanna.Skiles@gmail.com</td>
+                                        <td>Investment Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dean</td>
+                                        <td>Okuneva</td>
+                                        <td>Dean.Okuneva@hotmail.com</td>
+                                        <td>Savings Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jameson</td>
+                                        <td>Hane</td>
+                                        <td>Jameson.Hane75@yahoo.com</td>
+                                        <td>Investment Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jamar</td>
+                                        <td>Mohr</td>
+                                        <td>Jamar80@hotmail.com</td>
+                                        <td>Savings Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jazlyn</td>
+                                        <td>Bergnaum</td>
+                                        <td>Jazlyn_Bergnaum11@yahoo.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Eldridge</td>
+                                        <td>Maggio</td>
+                                        <td>Eldridge_Maggio@yahoo.com</td>
+                                        <td>Home Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rubie</td>
+                                        <td>Kuhic</td>
+                                        <td>Rubie54@hotmail.com</td>
+                                        <td>Auto Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Karli</td>
+                                        <td>Grady</td>
+                                        <td>Karli20@gmail.com</td>
+                                        <td>Auto Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Claude</td>
+                                        <td>Hilll</td>
+                                        <td>Claude.Hilll@yahoo.com</td>
+                                        <td>Investment Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dameon</td>
+                                        <td>Streich</td>
+                                        <td>Dameon_Streich@gmail.com</td>
+                                        <td>Money Market Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jalen</td>
+                                        <td>Schimmel</td>
+                                        <td>Jalen3@hotmail.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fatima</td>
+                                        <td>Heidenreich</td>
+                                        <td>Fatima3@yahoo.com</td>
+                                        <td>Credit Card Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jaydon</td>
+                                        <td>Volkman</td>
+                                        <td>Jaydon_Volkman26@hotmail.com</td>
+                                        <td>Investment Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Santos</td>
+                                        <td>Tremblay</td>
+                                        <td>Santos.Tremblay@gmail.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emie</td>
+                                        <td>Ondricka</td>
+                                        <td>Emie_Ondricka@yahoo.com</td>
+                                        <td>Investment Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saige</td>
+                                        <td>Bergnaum</td>
+                                        <td>Saige39@yahoo.com</td>
+                                        <td>Credit Card Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brock</td>
+                                        <td>Crona</td>
+                                        <td>Brock26@yahoo.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Liana</td>
+                                        <td>Harvey</td>
+                                        <td>Liana.Harvey32@hotmail.com</td>
+                                        <td>Savings Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haylie</td>
+                                        <td>Stiedemann</td>
+                                        <td>Haylie.Stiedemann@yahoo.com</td>
+                                        <td>Savings Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hanna</td>
+                                        <td>Wuckert</td>
+                                        <td>Hanna44@gmail.com</td>
+                                        <td>Home Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aron</td>
+                                        <td>Hintz</td>
+                                        <td>Aron.Hintz@hotmail.com</td>
+                                        <td>Investment Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Eunice</td>
+                                        <td>Ankunding</td>
+                                        <td>Eunice.Ankunding72@yahoo.com</td>
+                                        <td>Savings Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mona</td>
+                                        <td>VonRueden</td>
+                                        <td>Mona.VonRueden@yahoo.com</td>
+                                        <td>Credit Card Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Celestino</td>
+                                        <td>Grant</td>
+                                        <td>Celestino.Grant@yahoo.com</td>
+                                        <td>Credit Card Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zelda</td>
+                                        <td>Wuckert</td>
+                                        <td>Zelda_Wuckert@yahoo.com</td>
+                                        <td>Auto Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Elmo</td>
+                                        <td>Schaden</td>
+                                        <td>Elmo43@gmail.com</td>
+                                        <td>Home Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Andres</td>
+                                        <td>Hintz</td>
+                                        <td>Andres.Hintz1@yahoo.com</td>
+                                        <td>Auto Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mandy</td>
+                                        <td>Senger</td>
+                                        <td>Mandy4@yahoo.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hayley</td>
+                                        <td>Veum</td>
+                                        <td>Hayley.Veum@hotmail.com</td>
+                                        <td>Investment Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wilmer</td>
+                                        <td>Hoppe</td>
+                                        <td>Wilmer_Hoppe@gmail.com</td>
+                                        <td>Home Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lyric</td>
+                                        <td>Rau</td>
+                                        <td>Lyric_Rau39@gmail.com</td>
+                                        <td>Money Market Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mariela</td>
+                                        <td>Davis</td>
+                                        <td>Mariela_Davis43@hotmail.com</td>
+                                        <td>Checking Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estefania</td>
+                                        <td>Spencer</td>
+                                        <td>Estefania.Spencer@gmail.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dolores</td>
+                                        <td>Rau</td>
+                                        <td>Dolores_Rau@hotmail.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Norma</td>
+                                        <td>Bahringer</td>
+                                        <td>Norma34@hotmail.com</td>
+                                        <td>Personal Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Letitia</td>
+                                        <td>Parisian</td>
+                                        <td>Letitia96@gmail.com</td>
+                                        <td>Checking Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Earlene</td>
+                                        <td>Stracke</td>
+                                        <td>Earlene.Stracke64@hotmail.com</td>
+                                        <td>Home Loan Account</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lawson</td>
+                                        <td>Sanford</td>
+                                        <td>Lawson.Sanford@yahoo.com</td>
+                                        <td>Home Loan Account</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- third datatable end -->
+            <!-- fourth datatable start -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel filterable">
+                        <div class="panel-heading clearfix">
+                            <h3 class="panel-title pull-left m-t-6">
+                                <i class="ti-control-shuffle"></i> Add / Remove rows
+                            </h3>
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-primary btn-sm" id="addButton">Add row</button>
+                                <button type="button" class="btn btn-danger btn-sm" id="delButton">Delete row</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table" id="table3">
+                                    <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>User email</th>
+                                        <th>
+                                            Contact
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Eveline</td>
+                                        <td>Trantow</td>
+                                        <td>Eveline_Trantow@gmail.com</td>
+                                        <td>457-997-1592</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Glen</td>
+                                        <td>Jakubowski</td>
+                                        <td>Glen76@hotmail.com</td>
+                                        <td>771-231-5487</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Elaina</td>
+                                        <td>Prohaska</td>
+                                        <td>Elaina.Prohaska14@hotmail.com</td>
+                                        <td>976-696-7144</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dwight</td>
+                                        <td>Mohr</td>
+                                        <td>Dwight_Mohr@yahoo.com</td>
+                                        <td>031-955-0746</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kim</td>
+                                        <td>Cruickshank</td>
+                                        <td>Kim_Cruickshank@yahoo.com</td>
+                                        <td>937-691-5468</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kameron</td>
+                                        <td>Mante</td>
+                                        <td>Kameron77@gmail.com</td>
+                                        <td>727-927-3894</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Osborne</td>
+                                        <td>Kutch</td>
+                                        <td>Osborne.Kutch24@yahoo.com</td>
+                                        <td>818-219-1436</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Magdalena</td>
+                                        <td>Bogan</td>
+                                        <td>Magdalena.Bogan@gmail.com</td>
+                                        <td>357-438-6912</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rhiannon</td>
+                                        <td>Rice</td>
+                                        <td>Rhiannon_Rice@yahoo.com</td>
+                                        <td>784-055-2906</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lucile</td>
+                                        <td>Keeling</td>
+                                        <td>Lucile58@hotmail.com</td>
+                                        <td>242-185-2271</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Eli</td>
+                                        <td>Kovacek</td>
+                                        <td>Eli.Kovacek@gmail.com</td>
+                                        <td>767-230-6149</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Max</td>
+                                        <td>Padberg</td>
+                                        <td>Max_Padberg@yahoo.com</td>
+                                        <td>609-627-4084</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Norval</td>
+                                        <td>Rath</td>
+                                        <td>Norval74@gmail.com</td>
+                                        <td>248-631-0145</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Grady</td>
+                                        <td>Lesch</td>
+                                        <td>Grady.Lesch43@hotmail.com</td>
+                                        <td>579-377-4526</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ernie</td>
+                                        <td>Kub</td>
+                                        <td>Ernie32@gmail.com</td>
+                                        <td>687-425-8040</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Helen</td>
+                                        <td>Durgan</td>
+                                        <td>Helen43@yahoo.com</td>
+                                        <td>762-249-0859</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peggie</td>
+                                        <td>Grady</td>
+                                        <td>Peggie27@hotmail.com</td>
+                                        <td>360-045-8748</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jordy</td>
+                                        <td>Mayert</td>
+                                        <td>Jordy43@yahoo.com</td>
+                                        <td>496-621-5551</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adrienne</td>
+                                        <td>Reilly</td>
+                                        <td>Adrienne46@yahoo.com</td>
+                                        <td>697-173-8927</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Karley</td>
+                                        <td>Homenick</td>
+                                        <td>Karley_Homenick60@hotmail.com</td>
+                                        <td>930-799-2042</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Darion</td>
+                                        <td>Christiansen</td>
+                                        <td>Darion.Christiansen86@yahoo.com</td>
+                                        <td>899-822-5178</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luz</td>
+                                        <td>Kilback</td>
+                                        <td>Luz.Kilback@gmail.com</td>
+                                        <td>784-712-6332</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lindsey</td>
+                                        <td>Tremblay</td>
+                                        <td>Lindsey_Tremblay@yahoo.com</td>
+                                        <td>783-584-2841</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Colt</td>
+                                        <td>MacGyver</td>
+                                        <td>Colt73@yahoo.com</td>
+                                        <td>800-711-3591</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Natasha</td>
+                                        <td>Schamberger</td>
+                                        <td>Natasha.Schamberger68@gmail.com</td>
+                                        <td>588-666-7244</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Earlene</td>
+                                        <td>Windler</td>
+                                        <td>Earlene87@gmail.com</td>
+                                        <td>579-545-2605</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keyshawn</td>
+                                        <td>Wiegand</td>
+                                        <td>Keyshawn_Wiegand33@yahoo.com</td>
+                                        <td>013-558-0632</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Priscilla</td>
+                                        <td>Crona</td>
+                                        <td>Priscilla.Crona@hotmail.com</td>
+                                        <td>699-185-0198</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Clarabelle</td>
+                                        <td>Legros</td>
+                                        <td>Clarabelle.Legros@gmail.com</td>
+                                        <td>229-547-4531</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amaya</td>
+                                        <td>Murazik</td>
+                                        <td>Amaya_Murazik38@gmail.com</td>
+                                        <td>616-668-8398</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marcelle</td>
+                                        <td>Torphy</td>
+                                        <td>Marcelle17@gmail.com</td>
+                                        <td>381-767-6748</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Norberto</td>
+                                        <td>Huels</td>
+                                        <td>Norberto.Huels75@gmail.com</td>
+                                        <td>505-191-3299</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cordie</td>
+                                        <td>Metz</td>
+                                        <td>Cordie_Metz@yahoo.com</td>
+                                        <td>383-212-8444</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dennis</td>
+                                        <td>Grant</td>
+                                        <td>Dennis_Grant@hotmail.com</td>
+                                        <td>757-860-2177</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Laurine</td>
+                                        <td>Wiza</td>
+                                        <td>Laurine.Wiza@hotmail.com</td>
+                                        <td>844-454-0123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Isidro</td>
+                                        <td>Howe</td>
+                                        <td>Isidro.Howe28@hotmail.com</td>
+                                        <td>570-437-2025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Montana</td>
+                                        <td>Bauch</td>
+                                        <td>Montana30@gmail.com</td>
+                                        <td>651-720-7969</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Montana</td>
+                                        <td>Schmitt</td>
+                                        <td>Montana_Schmitt@yahoo.com</td>
+                                        <td>421-495-4064</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Celestino</td>
+                                        <td>Dach</td>
+                                        <td>Celestino.Dach@gmail.com</td>
+                                        <td>718-592-7075</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payton</td>
+                                        <td>Wuckert</td>
+                                        <td>Payton23@yahoo.com</td>
+                                        <td>458-553-7848</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fourth datatable end -->
+            <!-- fifth row datatable -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <i class="fa fa-fw fa-table"></i> Responsive Column Hiding Data Table
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table5" class="table display responsive nowrap table_width">
+                                    <thead>
+                                    <tr>
+                                        <th>First name</th>
+                                        <th>Last name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                        <th>Extn.</th>
+                                        <th>E-mail</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Tiger</td>
+                                        <td>Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td>61</td>
+                                        <td>2011/04/25</td>
+                                        <td>$320,800</td>
+                                        <td>5421</td>
+                                        <td>t.nixon@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrett</td>
+                                        <td>Winters</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>63</td>
+                                        <td>2011/07/25</td>
+                                        <td>$170,750</td>
+                                        <td>8422</td>
+                                        <td>g.winters@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashton</td>
+                                        <td>Cox</td>
+                                        <td>Junior Technical Author</td>
+                                        <td>San Francisco</td>
+                                        <td>66</td>
+                                        <td>2009/01/12</td>
+                                        <td>$86,000</td>
+                                        <td>1562</td>
+                                        <td>a.cox@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cedric</td>
+                                        <td>Kelly</td>
+                                        <td>Senior Javascript Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>22</td>
+                                        <td>2012/03/29</td>
+                                        <td>$433,060</td>
+                                        <td>6224</td>
+                                        <td>c.kelly@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Airi</td>
+                                        <td>Satou</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>33</td>
+                                        <td>2008/11/28</td>
+                                        <td>$162,700</td>
+                                        <td>5407</td>
+                                        <td>a.satou@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brielle</td>
+                                        <td>Williamson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>New York</td>
+                                        <td>61</td>
+                                        <td>2012/12/02</td>
+                                        <td>$372,000</td>
+                                        <td>4804</td>
+                                        <td>b.williamson@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Herrod</td>
+                                        <td>Chandler</td>
+                                        <td>Sales Assistant</td>
+                                        <td>San Francisco</td>
+                                        <td>59</td>
+                                        <td>2012/08/06</td>
+                                        <td>$137,500</td>
+                                        <td>9608</td>
+                                        <td>h.chandler@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rhona</td>
+                                        <td>Davidson</td>
+                                        <td>Integration Specialist</td>
+                                        <td>Tokyo</td>
+                                        <td>55</td>
+                                        <td>2010/10/14</td>
+                                        <td>$327,900</td>
+                                        <td>6200</td>
+                                        <td>r.davidson@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Colleen</td>
+                                        <td>Hurst</td>
+                                        <td>Javascript Developer</td>
+                                        <td>San Francisco</td>
+                                        <td>39</td>
+                                        <td>2009/09/15</td>
+                                        <td>$205,500</td>
+                                        <td>2360</td>
+                                        <td>c.hurst@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sonya</td>
+                                        <td>Frost</td>
+                                        <td>Software Engineer</td>
+                                        <td>Edinburgh</td>
+                                        <td>23</td>
+                                        <td>2008/12/13</td>
+                                        <td>$103,600</td>
+                                        <td>1667</td>
+                                        <td>s.frost@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jena</td>
+                                        <td>Gaines</td>
+                                        <td>Office Manager</td>
+                                        <td>London</td>
+                                        <td>30</td>
+                                        <td>2008/12/19</td>
+                                        <td>$90,560</td>
+                                        <td>3814</td>
+                                        <td>j.gaines@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quinn</td>
+                                        <td>Flynn</td>
+                                        <td>Support Lead</td>
+                                        <td>Edinburgh</td>
+                                        <td>22</td>
+                                        <td>2013/03/03</td>
+                                        <td>$342,000</td>
+                                        <td>9497</td>
+                                        <td>q.flynn@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Charde</td>
+                                        <td>Marshall</td>
+                                        <td>Regional Director</td>
+                                        <td>San Francisco</td>
+                                        <td>36</td>
+                                        <td>2008/10/16</td>
+                                        <td>$470,600</td>
+                                        <td>6741</td>
+                                        <td>c.marshall@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haley</td>
+                                        <td>Kennedy</td>
+                                        <td>Senior Marketing Designer</td>
+                                        <td>London</td>
+                                        <td>43</td>
+                                        <td>2012/12/18</td>
+                                        <td>$313,500</td>
+                                        <td>3597</td>
+                                        <td>h.kennedy@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tatyana</td>
+                                        <td>Fitzpatrick</td>
+                                        <td>Regional Director</td>
+                                        <td>London</td>
+                                        <td>19</td>
+                                        <td>2010/03/17</td>
+                                        <td>$385,750</td>
+                                        <td>1965</td>
+                                        <td>t.fitzpatrick@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael</td>
+                                        <td>Silva</td>
+                                        <td>Marketing Designer</td>
+                                        <td>London</td>
+                                        <td>66</td>
+                                        <td>2012/11/27</td>
+                                        <td>$198,500</td>
+                                        <td>1581</td>
+                                        <td>m.silva@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paul</td>
+                                        <td>Byrd</td>
+                                        <td>Chief Financial Officer (CFO)</td>
+                                        <td>New York</td>
+                                        <td>64</td>
+                                        <td>2010/06/09</td>
+                                        <td>$725,000</td>
+                                        <td>3059</td>
+                                        <td>p.byrd@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gloria</td>
+                                        <td>Little</td>
+                                        <td>Systems Administrator</td>
+                                        <td>New York</td>
+                                        <td>59</td>
+                                        <td>2009/04/10</td>
+                                        <td>$237,500</td>
+                                        <td>1721</td>
+                                        <td>g.little@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bradley</td>
+                                        <td>Greer</td>
+                                        <td>Software Engineer</td>
+                                        <td>London</td>
+                                        <td>41</td>
+                                        <td>2012/10/13</td>
+                                        <td>$132,000</td>
+                                        <td>2558</td>
+                                        <td>b.greer@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dai</td>
+                                        <td>Rios</td>
+                                        <td>Personnel Lead</td>
+                                        <td>Edinburgh</td>
+                                        <td>35</td>
+                                        <td>2012/09/26</td>
+                                        <td>$217,500</td>
+                                        <td>2290</td>
+                                        <td>d.rios@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenette</td>
+                                        <td>Caldwell</td>
+                                        <td>Development Lead</td>
+                                        <td>New York</td>
+                                        <td>30</td>
+                                        <td>2011/09/03</td>
+                                        <td>$345,000</td>
+                                        <td>1937</td>
+                                        <td>j.caldwell@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yuri</td>
+                                        <td>Berry</td>
+                                        <td>Chief Marketing Officer (CMO)</td>
+                                        <td>New York</td>
+                                        <td>40</td>
+                                        <td>2009/06/25</td>
+                                        <td>$675,000</td>
+                                        <td>6154</td>
+                                        <td>y.berry@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caesar</td>
+                                        <td>Vance</td>
+                                        <td>Pre-Sales Support</td>
+                                        <td>New York</td>
+                                        <td>21</td>
+                                        <td>2011/12/12</td>
+                                        <td>$106,450</td>
+                                        <td>8330</td>
+                                        <td>c.vance@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Doris</td>
+                                        <td>Wilder</td>
+                                        <td>Sales Assistant</td>
+                                        <td>Sidney</td>
+                                        <td>23</td>
+                                        <td>2010/09/20</td>
+                                        <td>$85,600</td>
+                                        <td>3023</td>
+                                        <td>d.wilder@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Angelica</td>
+                                        <td>Ramos</td>
+                                        <td>Chief Executive Officer (CEO)</td>
+                                        <td>London</td>
+                                        <td>47</td>
+                                        <td>2009/10/09</td>
+                                        <td>$1,200,000</td>
+                                        <td>5797</td>
+                                        <td>a.ramos@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gavin</td>
+                                        <td>Joyce</td>
+                                        <td>Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>42</td>
+                                        <td>2010/12/22</td>
+                                        <td>$92,575</td>
+                                        <td>8822</td>
+                                        <td>g.joyce@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jennifer</td>
+                                        <td>Chang</td>
+                                        <td>Regional Director</td>
+                                        <td>Singapore</td>
+                                        <td>28</td>
+                                        <td>2010/11/14</td>
+                                        <td>$357,650</td>
+                                        <td>9239</td>
+                                        <td>j.chang@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brenden</td>
+                                        <td>Wagner</td>
+                                        <td>Software Engineer</td>
+                                        <td>San Francisco</td>
+                                        <td>28</td>
+                                        <td>2011/06/07</td>
+                                        <td>$206,850</td>
+                                        <td>1314</td>
+                                        <td>b.wagner@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fiona</td>
+                                        <td>Green</td>
+                                        <td>Chief Operating Officer (COO)</td>
+                                        <td>San Francisco</td>
+                                        <td>48</td>
+                                        <td>2010/03/11</td>
+                                        <td>$850,000</td>
+                                        <td>2947</td>
+                                        <td>f.green@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shou</td>
+                                        <td>Itou</td>
+                                        <td>Regional Marketing</td>
+                                        <td>Tokyo</td>
+                                        <td>20</td>
+                                        <td>2011/08/14</td>
+                                        <td>$163,000</td>
+                                        <td>8899</td>
+                                        <td>s.itou@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michelle</td>
+                                        <td>House</td>
+                                        <td>Integration Specialist</td>
+                                        <td>Sidney</td>
+                                        <td>37</td>
+                                        <td>2011/06/02</td>
+                                        <td>$95,400</td>
+                                        <td>2769</td>
+                                        <td>m.house@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Suki</td>
+                                        <td>Burks</td>
+                                        <td>Developer</td>
+                                        <td>London</td>
+                                        <td>53</td>
+                                        <td>2009/10/22</td>
+                                        <td>$114,500</td>
+                                        <td>6832</td>
+                                        <td>s.burks@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prescott</td>
+                                        <td>Bartlett</td>
+                                        <td>Technical Author</td>
+                                        <td>London</td>
+                                        <td>27</td>
+                                        <td>2011/05/07</td>
+                                        <td>$145,000</td>
+                                        <td>3606</td>
+                                        <td>p.bartlett@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gavin</td>
+                                        <td>Cortez</td>
+                                        <td>Team Leader</td>
+                                        <td>San Francisco</td>
+                                        <td>22</td>
+                                        <td>2008/10/26</td>
+                                        <td>$235,500</td>
+                                        <td>2860</td>
+                                        <td>g.cortez@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Martena</td>
+                                        <td>Mccray</td>
+                                        <td>Post-Sales support</td>
+                                        <td>Edinburgh</td>
+                                        <td>46</td>
+                                        <td>2011/03/09</td>
+                                        <td>$324,050</td>
+                                        <td>8240</td>
+                                        <td>m.mccray@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unity</td>
+                                        <td>Butler</td>
+                                        <td>Marketing Designer</td>
+                                        <td>San Francisco</td>
+                                        <td>47</td>
+                                        <td>2009/12/09</td>
+                                        <td>$85,675</td>
+                                        <td>5384</td>
+                                        <td>u.butler@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Howard</td>
+                                        <td>Hatfield</td>
+                                        <td>Office Manager</td>
+                                        <td>San Francisco</td>
+                                        <td>51</td>
+                                        <td>2008/12/16</td>
+                                        <td>$164,500</td>
+                                        <td>7031</td>
+                                        <td>h.hatfield@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hope</td>
+                                        <td>Fuentes</td>
+                                        <td>Secretary</td>
+                                        <td>San Francisco</td>
+                                        <td>41</td>
+                                        <td>2010/02/12</td>
+                                        <td>$109,850</td>
+                                        <td>6318</td>
+                                        <td>h.fuentes@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vivian</td>
+                                        <td>Harrell</td>
+                                        <td>Financial Controller</td>
+                                        <td>San Francisco</td>
+                                        <td>62</td>
+                                        <td>2009/02/14</td>
+                                        <td>$452,500</td>
+                                        <td>9422</td>
+                                        <td>v.harrell@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Timothy</td>
+                                        <td>Mooney</td>
+                                        <td>Office Manager</td>
+                                        <td>London</td>
+                                        <td>37</td>
+                                        <td>2008/12/11</td>
+                                        <td>$136,200</td>
+                                        <td>7580</td>
+                                        <td>t.mooney@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jackson</td>
+                                        <td>Bradshaw</td>
+                                        <td>Director</td>
+                                        <td>New York</td>
+                                        <td>65</td>
+                                        <td>2008/09/26</td>
+                                        <td>$645,750</td>
+                                        <td>1042</td>
+                                        <td>j.bradshaw@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Olivia</td>
+                                        <td>Liang</td>
+                                        <td>Support Engineer</td>
+                                        <td>Singapore</td>
+                                        <td>64</td>
+                                        <td>2011/02/03</td>
+                                        <td>$234,500</td>
+                                        <td>2120</td>
+                                        <td>o.liang@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bruno</td>
+                                        <td>Nash</td>
+                                        <td>Software Engineer</td>
+                                        <td>London</td>
+                                        <td>38</td>
+                                        <td>2011/05/03</td>
+                                        <td>$163,500</td>
+                                        <td>6222</td>
+                                        <td>b.nash@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sakura</td>
+                                        <td>Yamamoto</td>
+                                        <td>Support Engineer</td>
+                                        <td>Tokyo</td>
+                                        <td>37</td>
+                                        <td>2009/08/19</td>
+                                        <td>$139,575</td>
+                                        <td>9383</td>
+                                        <td>s.yamamoto@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thor</td>
+                                        <td>Walton</td>
+                                        <td>Developer</td>
+                                        <td>New York</td>
+                                        <td>61</td>
+                                        <td>2013/08/11</td>
+                                        <td>$98,540</td>
+                                        <td>8327</td>
+                                        <td>t.walton@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Finn</td>
+                                        <td>Camacho</td>
+                                        <td>Support Engineer</td>
+                                        <td>San Francisco</td>
+                                        <td>47</td>
+                                        <td>2009/07/07</td>
+                                        <td>$87,500</td>
+                                        <td>2927</td>
+                                        <td>f.camacho@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Serge</td>
+                                        <td>Baldwin</td>
+                                        <td>Data Coordinator</td>
+                                        <td>Singapore</td>
+                                        <td>64</td>
+                                        <td>2012/04/09</td>
+                                        <td>$138,575</td>
+                                        <td>8352</td>
+                                        <td>s.baldwin@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zenaida</td>
+                                        <td>Frank</td>
+                                        <td>Software Engineer</td>
+                                        <td>New York</td>
+                                        <td>63</td>
+                                        <td>2010/01/04</td>
+                                        <td>$125,250</td>
+                                        <td>7439</td>
+                                        <td>z.frank@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zorita</td>
+                                        <td>Serrano</td>
+                                        <td>Software Engineer</td>
+                                        <td>San Francisco</td>
+                                        <td>56</td>
+                                        <td>2012/06/01</td>
+                                        <td>$115,000</td>
+                                        <td>4389</td>
+                                        <td>z.serrano@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jennifer</td>
+                                        <td>Acosta</td>
+                                        <td>Junior Javascript Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>43</td>
+                                        <td>2013/02/01</td>
+                                        <td>$75,650</td>
+                                        <td>3431</td>
+                                        <td>j.acosta@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cara</td>
+                                        <td>Stevens</td>
+                                        <td>Sales Assistant</td>
+                                        <td>New York</td>
+                                        <td>46</td>
+                                        <td>2011/12/06</td>
+                                        <td>$145,600</td>
+                                        <td>3990</td>
+                                        <td>c.stevens@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hermione</td>
+                                        <td>Butler</td>
+                                        <td>Regional Director</td>
+                                        <td>London</td>
+                                        <td>47</td>
+                                        <td>2011/03/21</td>
+                                        <td>$356,250</td>
+                                        <td>1016</td>
+                                        <td>h.butler@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lael</td>
+                                        <td>Greer</td>
+                                        <td>Systems Administrator</td>
+                                        <td>London</td>
+                                        <td>21</td>
+                                        <td>2009/02/27</td>
+                                        <td>$103,500</td>
+                                        <td>6733</td>
+                                        <td>l.greer@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jonas</td>
+                                        <td>Alexander</td>
+                                        <td>Developer</td>
+                                        <td>San Francisco</td>
+                                        <td>30</td>
+                                        <td>2010/07/14</td>
+                                        <td>$86,500</td>
+                                        <td>8196</td>
+                                        <td>j.alexander@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shad</td>
+                                        <td>Decker</td>
+                                        <td>Regional Director</td>
+                                        <td>Edinburgh</td>
+                                        <td>51</td>
+                                        <td>2008/11/13</td>
+                                        <td>$183,000</td>
+                                        <td>6373</td>
+                                        <td>s.decker@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael</td>
+                                        <td>Bruce</td>
+                                        <td>Javascript Developer</td>
+                                        <td>Singapore</td>
+                                        <td>29</td>
+                                        <td>2011/06/27</td>
+                                        <td>$183,000</td>
+                                        <td>5384</td>
+                                        <td>m.bruce@datatables.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Donna</td>
+                                        <td>Snider</td>
+                                        <td>Customer Support</td>
+                                        <td>New York</td>
+                                        <td>27</td>
+                                        <td>2011/01/25</td>
+                                        <td>$112,000</td>
+                                        <td>4226</td>
+                                        <td>d.snider@datatables.net</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fifth row datatable end -->
+        </section>
+        <!-- /.content -->
+    </aside>
+    <!-- /.right-side -->
+</div>
+<!-- ./wrapper -->
+<!-- global js -->
+<script src="js/app.js" type="text/javascript"></script>
+<script type="text/javascript" src="vendors/datatables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="vendors/datatables/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="vendors/datatables/js/buttons.print.min.js"></script>
+<script type="text/javascript" src="vendors/datatables/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="vendors/datatables/js/buttons.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables/js/dataTables.responsive.js"></script>
+<!-- end of page level js -->
+<script type="text/javascript" src="js/pages/advanced_tables.js"></script>
+</body>
+
+</html>

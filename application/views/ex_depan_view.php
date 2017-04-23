@@ -68,7 +68,7 @@
              
              
              <a href="<?php echo site_url("ex_lihat_data") ?>" class="btn btn-sq-lg btn-primary">
-                <i class="fa fa-user-circle-o fa-5x"></i><br/>
+                <i class="fa fa-users fa-5x"></i><br/>
                 Data   <br /> tahanan  
             </a>
 

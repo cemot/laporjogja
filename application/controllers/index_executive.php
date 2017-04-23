@@ -1,5 +1,5 @@
 <?php
-class index_executive extends ex_controller  {
+class index_executive extends super_controller  {
 	function index_executive(){
 		parent::__construct();
 		// echo "pilihan ".$this->session->userdata("pilihan"); exit;

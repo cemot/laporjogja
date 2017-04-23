@@ -1,5 +1,5 @@
 <?php
-class laporan_per_lokasi extends ex_controller  {
+class laporan_per_lokasi extends super_controller  {
 	function laporan_per_lokasi(){
 		parent::__construct();
 		$this->load->helper("tanggal");

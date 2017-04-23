@@ -1,5 +1,5 @@
 <?php
-class ex_anev extends ex_controller {
+class ex_anev extends super_controller {
 // kesehatan,kekuatan, keturunan, masuk surga
 	var $controller ;
 

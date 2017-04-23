@@ -1,5 +1,5 @@
 <?php
-class ex_grafik_lap extends ex_controller  {
+class ex_grafik_lap extends super_controller  {
 	function __consruct(){
 		parent::__construct();
 	}
@@ -134,7 +134,7 @@ class ex_grafik_lap extends ex_controller  {
 
 		$data_array['query'] = $this->db->query($query)->row_array();
 		// show_array($data_array['query'] ); exit;
-		// echo $this->db->last_query(); exit;
+		// echo $this->db->last_query();  
 		$data_array['tahun'] = $tahun;
 		$data_array['title'] = $title;
 
