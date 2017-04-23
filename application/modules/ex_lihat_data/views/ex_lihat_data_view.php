@@ -1,10 +1,4 @@
-<link href="<?php echo base_url("assets") ?>/css/jquery.dataTables.css" rel="stylesheet">
-
-<script src="<?php echo base_url("assets") ?>/js/bootstrap-datepicker.js"></script>
-
-<script src="<?php echo base_url("assets") ?>/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
-<link href="<?php echo base_url("assets") ?>/css/eblokir.css" rel="stylesheet">
+ 
         <!-- Content Header (Page header) -->
         
 
@@ -15,19 +9,19 @@
 
             <form role="form" action="" id="btn-cari" >
             <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
               <div class="form-group">
                 <label for="Tanggal">Tanggal Masuk</label>
                 <input name="tgl_masuk" id="tgl_masuk" type="text" class="form-control tanggal" placeholder="Tanggal Masuk" data-date-format="dd-mm-yyyy"></input>
               </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
               <div class="form-group">
                 <label for="Tanggal">Tanggal Ekspirasi</label>
                 <input name="tgl_ekspirasi" id="tgl_ekspirasi" type="text" class="form-control tanggal" placeholder="Tanggal Ekspirasi" data-date-format="dd-mm-yyyy"></input>
               </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
               <div class="form-group">
                 <label for="Tanggal">Lokasi Lapas</label>
                 <input name="asal_upt" id="asal_upt" type="text" class="form-control" placeholder="Lokasi Lapas"></input>
@@ -65,7 +59,7 @@
             </form>
             
 
-
+<div id="" style="overflow-y: scroll; min-height:400px;">
 <table width="100%" border="0" id="biro_jasa" class="table table-striped 
              table-bordered table-hover dataTable no-footer" role="grid">
 <thead>
@@ -81,7 +75,7 @@
 </thead>
 </table>
             
-
+</div>
 
 
 <?php 

@@ -1,5 +1,5 @@
 <?php
-class ex_import_data extends ex_controller {
+class ex_import_data extends super_controller {
  	var $controller ;
 
 	function ex_import_data(){
