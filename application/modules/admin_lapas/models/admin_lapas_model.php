@@ -10,7 +10,7 @@ function data($param){
 
 	//show_array($param);
 
-	$arr_column = array("lapas");
+	$arr_column = array(0=>"id","lapas","kapasitas");
 
 	$sort_by = $arr_column[$param['sort_by']];
 
