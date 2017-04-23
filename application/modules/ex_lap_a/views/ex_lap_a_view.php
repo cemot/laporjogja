@@ -15,57 +15,7 @@
             </div>
         </div>
     </div> 
- <!-- 
-
-
-
-<div class="row">
-<div class="col-md-9">
-    <div class="panel panel-default">
-            <div class="panel-heading">PENCARIAN</div>
-            <div class="panel-body">
-            
-              
-                <form class="form-inline" id="fuckyouform">
-                      <div class="form-group">
-                         
-                        <input type="text" class="form-control" 
-                        id="tanggal_awal" placeholder="Tangal Awal" 
-                        data-date-format="dd-mm-yyyy" value="<?php echo $tanggal_awal ?>" 
-                        name="tanggal_awal" style="width:100px">
-                      </div>
-                      <div class="form-group">
-                         
-                        <input type="text" class="form-control" 
-                        id="tanggal_akhir" placeholder="Tanggal Akhir"
-                        data-date-format="dd-mm-yyyy" style="width:100px"
-                        name="tanggal_akhir" value="<?php echo $tanggal_akhir ?>" >
-                      </div>
-                      
-                      <div class="form-group">
-                         
-                        <input type="text" class="form-control" style="width:200px"
-                        id="no_rangka" placeholder="NOMOR RANGKA / BPKB"
-                        name="no_rangka">
-                      </div>
-                      <div class="form-group">
-                       <?php 
-              $arr_status = $this->cm->arr_status;
-            echo form_dropdown('',array(),'','id="arr_status" class="form-control"');
-             ?>
-                      </div>
-                     
-             
-                      <a href="#"  id="btn_cari"   class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Cari</a>
-                      <a href="#" onclick="reset_cari();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
-              </form>
-                
-                
-                
-            </div>
-        </div>
-</div>
- -->
+ 
 
 
 <div class="row">
@@ -199,6 +149,10 @@
 
 <p></p>
 
+
+
+<div id="" style="overflow-y: scroll; min-height:400px;">
+
 <table width="100%"  border="0" class="table table-striped 
              table-bordered table-hover dataTable no-footer" id="leasing" role="grid">
 <thead>
@@ -216,7 +170,7 @@
 	
 </thead>
 </table>
-
+</div>
 </div>    
      
 
