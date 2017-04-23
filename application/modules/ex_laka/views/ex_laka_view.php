@@ -107,7 +107,7 @@
 <div class="col-md-12">
 
  
-
+<div id="" style="overflow-y: scroll; min-height:400px;">
 <table width="100%"  border="0" class="table table-striped 
              table-bordered table-hover dataTable no-footer" id="leasing" role="grid">
 <thead>
@@ -125,7 +125,7 @@
 	
 </thead>
 </table>
-
+</div>
 </div>    
      
 
