@@ -1,5 +1,5 @@
 <?php
-class laporan_bulanan extends ex_controller  {
+class laporan_bulanan extends super_controller  {
 	function laporan_bulanan(){
 		parent::__construct();
 		$this->load->helper("tanggal");

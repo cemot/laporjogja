@@ -43,13 +43,23 @@ function data($param){
     }
 
 
-    if($param['userdata']['jenis']=="polres") {
-    	$this->db->where("id_polres",$param['userdata']['id_polres']); 
-    }
-    else if ($param['userdata']['jenis']=="polsek") {
-    	$this->db->where("id_polsek",$param['userdata']['id_polsek']); 
+    // if($param['userdata']['jenis']=="polres") {
+    // 	$this->db->where("id_polres",$param['userdata']['id_polres']); 
+    // }
+    // else if ($param['userdata']['jenis']=="polsek") {
+    // 	$this->db->where("id_polsek",$param['userdata']['id_polsek']); 
+    // }
+
+
+    if($param['nomor'] <> ''  ){
+    	$nomor = $param['nomor'];
+    	$this->db->where("nomor like '%$nomor%'",null,false);
     }
 
+     if($param['pelapor_nama'] <> ''  ){
+    	$pelapor_nama = $param['pelapor_nama'];
+    	$this->db->where("pelapor_nama like '%$pelapor_nama%'",null,false);
+    }
 
 	($param['limit'] != null ? $this->db->limit($param['limit']['end'], $param['limit']['start']) : '');
 		//$this->db->limit($param['limit']['end'], $param['limit']['start']) ;

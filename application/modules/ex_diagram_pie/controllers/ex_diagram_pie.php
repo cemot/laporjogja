@@ -1,5 +1,5 @@
 <?php
-class ex_diagram_pie extends ex_controller {
+class ex_diagram_pie extends super_controller {
  	var $controller ;
 
 	function ex_diagram_pie(){

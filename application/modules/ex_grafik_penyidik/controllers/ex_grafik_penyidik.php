@@ -1,5 +1,5 @@
 <?php
-class ex_grafik_penyidik extends ex_controller  {
+class ex_grafik_penyidik extends super_controller  {
 	function ex_grafik_penyidik(){
 		parent::__construct();
 		$this->load->model("coremodel","cm");

@@ -1,33 +1,3 @@
-<link href="<?php echo base_url("assets") ?>/css/datepicker.css" rel="stylesheet">
-<link href="<?php echo base_url("assets") ?>/css/jquery.dataTables.css" rel="stylesheet">
-<link href="<?php echo base_url("assets") ?>/select2/dist/css/select2.min.css" rel="stylesheet">
-<!--   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- -->
-
-
-<script src="<?php echo base_url("assets") ?>/js/bootstrap-datepicker.js"></script>
-
-<script src="<?php echo base_url("assets") ?>/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
-<script src="<?php echo base_url("assets") ?>/select2/dist/js/select2.full.min.js"></script>
-
-<!--  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-  <script src="<?php echo base_url("assets") ?>/js/jquery.maphilight.min.js"></script>
-
-<script src="<?php echo base_url("assets") ?>/js/jquery.imagemapster.js"></script>
-
- 
- 
-
-
-<link href="<?php echo base_url("assets") ?>/css/eblokir.css" rel="stylesheet">
-
-
-<!-- <script src="<?php echo base_url('assets/highcharts/highcharts.js'); ?>"></script> -->
-
- <script src="<?php echo base_url('assets/highcharts/highcharts.js'); ?>"></script>
-
-
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">
             <div class="alert alert-danger" role="alert" id="message">
@@ -137,7 +107,7 @@
 
              <a id="query_button" class="btn btn-primary" type="submit" onclick="tampildata()"><i class="fa fa-eye"></i> Tampilkan</a>
 
-             <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button>
+           <!--   <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button> -->
               </form>
 
 

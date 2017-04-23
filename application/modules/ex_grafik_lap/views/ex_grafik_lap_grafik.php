@@ -1,14 +1,9 @@
-<link href="<?php echo base_url("assets") ?>/css/datepicker.css" rel="stylesheet">
-<link href="<?php echo base_url("assets") ?>/css/jquery.dataTables.css" rel="stylesheet">
+<!--  <link rel="stylesheet" href="<?php echo base_url("assets2") ?>/vendors/morrisjs/css/morris.css">
 
-<script src="<?php echo base_url("assets") ?>/js/bootstrap-datepicker.js"></script>
-
-<script src="<?php echo base_url("assets") ?>/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
-<link href="<?php echo base_url("assets") ?>/css/eblokir.css" rel="stylesheet">
- <script src="<?php echo base_url('assets/highcharts/highcharts.js'); ?>"></script>
-
-
+<script src="<?php echo base_url("assets2") ?>/vendors/raphael/raphael.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url("assets2") ?>/vendors/morrisjs/js/morris.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url("assets2") ?>/js/plugins/jquery.flot.spline.js" type="text/javascript"></script> -->
+  
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">
             <div class="alert alert-danger" role="alert" id="message">
@@ -61,82 +56,47 @@
 
 <div id="grafik" style="height: 423px;">
 
-  <div id="view"></div>
-
+   
 </div>
 
-</div>
+<!-- <div id="sales_chart"></div>
+ -->
+
 
 <script type="text/javascript">
   $(document).ready(function() {
 
-    $('#view').highcharts({
-        
-chart: {
-        type: 'column'
-    },
-    title: {
-        text: '<?php echo $title; ?> '
-    },
-    subtitle: {
-        text: '<?php echo $title.' Tahun : '.$tahun; ?>'
-    },
-    xAxis: {
-        categories: [
-            'Januari',
-            'Februari',
-            'Maret',
-            'April',
-            'Mei',
-            'Juni',
-            'Juli',
-            'Agustus',
-            'September',
-            'Oktober',
-            'November',
-            'Desember'
-        ],
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Jumlah kasus'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y} Kasus</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
-    },
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    series: [{
-        name: 'Jumlah ',
-        data: [
-        0,0,0,0,0,0,0,0,0,0,0
-       // 49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4
-        <?php 
-            // foreach($query as $index =>$vl):
-            //                 echo $vl.', ';
-            // endforeach;
-        ?>
-        
-        ]
-
-            }]
-
-    });
-
+     
+  // Morris.Bar({
+  //       element: 'sales_chart',
+  //       data: [
+  //           {y: '2009', n: 70, b: 48},
+  //           {y: '2010', n: 97, b: 63},
+  //           {y: '2011', n: 58, b: 45},
+  //           {y: '2012', n: 70, b: 48},
+  //           {y: '2013', n: 43, b: 35},
+  //           {y: '2014', n: 65, b: 43},
+  //           {y: '2015', n: 77, b: 61},
+  //           {y: '2016', n: 43, b: 35}
+  //       ],
+  //       resize: true,
+  //       xkey: 'y',
+  //       ykeys: ['n', 'b'],
+  //       labels: ['Model A', 'Model B'],
+  //       barColors: ["#2283BF", "#E7EFF5"],
+  //       hideHover: 'auto',
+  //       gridLineColor: '#E5E5E5'
+  //   });
 
     $("#cari_button").click(function() {
+
+
+
+
+     
+
+
+
 
       var nilai = $('#tahun').val();
       

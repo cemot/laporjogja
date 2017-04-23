@@ -1,5 +1,5 @@
 <?php
-class ex_lap_b extends ex_controller {
+class ex_lap_b extends super_controller {
 // kesehatan,kekuatan, keturunan, masuk surga
 	var $controller ;
 

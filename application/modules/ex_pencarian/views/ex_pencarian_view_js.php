@@ -95,6 +95,8 @@ $('#btn-get').on('click', function() {
   var result = $('#builder-basic').queryBuilder('getRules');
 
   //console.log(result);
+
+  $("#myPleaseWait").show();
   
   if (!$.isEmptyObject(result)) {
     //alert(JSON.stringify(result, null, 2));
@@ -104,6 +106,7 @@ $('#btn-get').on('click', function() {
     	data : {json_data : result}, 
     	success : function (obj){
     		//console(obj)
+         $("#myPleaseWait").hide();
     		$("#hasil_pencarian").html(obj);
     	}
     });

@@ -215,24 +215,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "application/modules/ex_diagram_pie/controllers/ex_diagram_pie.php",
-			"settings":
-			{
-				"buffer_size": 1337,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/ex_diagram_pie/views/ex_diagram_pie_view.php",
-			"settings":
-			{
-				"buffer_size": 1500,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -276,106 +258,98 @@
 	[
 		"/Users/firman/htdocs/laporjogja",
 		"/Users/firman/htdocs/laporjogja/application",
+		"/Users/firman/htdocs/laporjogja/application/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_fungsi/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_fungsi/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_kesatuan/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_kesatuan/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_kesatuan/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_pengguna/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admin_polda/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_laka/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_a/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_a/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_a/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_b/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_b/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_c/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_d/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_penyidik/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_diagram_pie",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_diagram_pie/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_diagram_pie/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_import_data/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_import_data/views",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_laka/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_laka/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_laka/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_c/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_d",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_d/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_d/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_d/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/views",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_c/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_d/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_lantas/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_bulanan/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_bulanan/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_grafik_waktu/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_grafik_waktu/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_grafik_waktu/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_harian/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_mingguan/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_mingguan/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_per_lokasi/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_per_lokasi/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_per_lokasi/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/pencarian/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/pencarian/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/pencarian/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/pengaturan/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/pengaturan/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_laka/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_laka/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_c",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_c/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_c/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_d",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_d/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_d/views",
-		"/Users/firman/htdocs/laporjogja/application/views/js"
+		"/Users/firman/htdocs/laporjogja/application/modules.new/ex_lap_a",
+		"/Users/firman/htdocs/laporjogja/application/modules.new/ex_lap_a/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules.new/ex_lap_a/models",
+		"/Users/firman/htdocs/laporjogja/application/modules.new/ex_lap_a/views",
+		"/Users/firman/htdocs/laporjogja/application/modules.new/lap_a/models",
+		"/Users/firman/htdocs/laporjogja/assets2",
+		"/Users/firman/htdocs/laporjogja/assets2/js",
+		"/Users/firman/htdocs/laporjogja/clean",
+		"/Users/firman/htdocs/laporjogja/clean/files"
 	],
 	"file_history":
 	[
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views/ex_grafik_lap_grafik_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views/ex_grafik_lap_grafik.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/controllers/ex_grafik_lap.php",
+		"/Users/firman/htdocs/laporjogja/application/views/newtheme.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/controllers/ex_pencarian.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views/ex_pencarian_view_js.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/controllers/ex_anev.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views/ex_pencarian_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views/ex_anev_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_d/controllers/ex_lap_d.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_d/views/ex_lap_d_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_laka/controllers/ex_laka.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_laka/views/ex_laka_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/controllers/ex_lap_b.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views/ex_lap_b_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/controllers/ex_lap_a.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/views/ex_lap_a_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules.new/ex_lap_a/controllers/ex_lap_a.php",
+		"/Users/firman/htdocs/laporjogja/application/views/template_executive.php",
+		"/Users/firman/htdocs/laporjogja/application/controllers/index_executive.php",
+		"/Users/firman/htdocs/laporjogja/application/views/ex_depan_view.php",
+		"/Users/firman/htdocs/laporjogja/application/views/menu_ex.php",
+		"/Users/firman/htdocs/laporjogja/application/views/menu_op.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/models/lap_b_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/models/lap_a_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules.new/lap_a/models/lap_a_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_grafik_view.php",
+		"/Users/firman/htdocs/laporjogja/application/views/template_baru.php",
+		"/Users/firman/htdocs/laporjogja/application/views/depan_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form_js.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form_tersangka.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/admin_pengguna/controllers/admin_pengguna.php",
+		"/Users/firman/htdocs/laporjogja/application/views/template_admindik.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/admin_pengguna/views/admin_pengguna_view.php",
+		"/Users/firman/htdocs/laporjogja/index.php",
+		"/Users/firman/htdocs/laporjogja/application/controllers/depan_baru.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/controllers/lap_a.php",
+		"/Users/firman/htdocs/laporjogja/assets2/css/app.css",
+		"/Users/firman/htdocs/laporjogja/application/modules/login/views/login-form/assets/plugins/jquery-slimscroll/examples/disable-fade-out.html",
+		"/Users/firman/htdocs/laporjogja/clean/files/responsive_datatables.html",
+		"/Users/firman/htdocs/laporjogja/application/views/template_admin.php",
+		"/Users/firman/htdocs/laporjogja/application/controllers/index_administrator.php",
+		"/Users/firman/htdocs/laporjogja/application/libraries/super_controller.php",
+		"/Users/firman/htdocs/laporjogja/assets2/js/app.js",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_diagram_pie/controllers/ex_diagram_pie.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_diagram_pie/views/ex_diagram_pie_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/views/admin_lapas_view_js.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/views/admin_lapas_view_form.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/views/admin_lapas_view.php",
@@ -385,26 +359,17 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/controllers/admin_lapas.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/models/admin_lapas_model.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views/ex_grafik_penyidik_grafik.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/views/ex_lap_a_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views/ex_lap_b_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/models/ex_lap_b_model.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_c/views/penyidik_lap_c_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views/ex_grafik_lap_grafik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/views/ex_lihat_data_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/controllers/ex_lihat_data.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/views/lihat_data_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views/ex_grafik_lap_grafik.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/controllers/ex_grafik_lap.php",
-		"/Users/firman/htdocs/laporjogja/application/controllers/index_executive.php",
-		"/Users/firman/htdocs/laporjogja/application/views/ex_depan_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/views/grafik_lap_grafik.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/views/grafik_lap_grafik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/controllers/grafik_lap.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_import_data/views/ex_import_data_preview.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_import_data/views/ex_import_data_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_import_data/controllers/ex_import_data.php",
-		"/Users/firman/htdocs/laporjogja/index.php",
-		"/Users/firman/htdocs/laporjogja/application/views/template_executive.php",
 		"/Users/firman/htdocs/laporjogja/application/models/admindik_lap_b_model.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/controllers/penyidik_lap_b.php",
 		"/Users/firman/htdocs/laporjogja/application/models/coremodel.php",
@@ -421,7 +386,6 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_b/views/admindik_lap_b_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_c/views/admindik_lap_c_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_d/views/admindik_lap_d_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view.php",
 		"/Users/firman/htdocs/laporjogja/a.txt",
 		"/Users/firman/htdocs/laporjogja/systme.php",
 		"/Users/firman/htdocs/laporjogja/application/controllers/general.php",
@@ -430,18 +394,13 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views/ex_grafik_penyidik_grafik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/models/ex_lap_a_model.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/views/ex_lap_a_view_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/controllers/lap_a.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_c/views/lap_c_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_d/views/lap_d_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_lantas/views/lap_lantas_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/models/lap_a_model.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/controllers/lap_b.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_c/controllers/lap_c.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_d/controllers/lap_d.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_lantas/controllers/lap_lantas.php",
-		"/Users/firman/htdocs/laporjogja/application/views/template_admin.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_fungsi/views/admin_fungsi_view_js.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_fungsi/views/admin_fungsi_view_form.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_fungsi/models/admin_fungsi_model.php",
@@ -454,15 +413,11 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_kesatuan/views/admin_kesatuan_view_form.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_kesatuan/views/admin_kesatuan_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views/ex_lap_b_view_detail_perkembangan.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/controllers/ex_lap_b.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/views/ex_lap_a_view_detail_perkembangan.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/views/penyidik_lap_b_view_detail_perkembangan.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views/ex_lap_b_view_detail.php",
-		"/Users/firman/htdocs/laporjogja/application/views/template_baru.php",
-		"/Users/firman/htdocs/laporjogja/application/views/template_admindik.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views/ex_lap_b_view_detail_detail.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/views/ex_lap_a_view_detail.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/controllers/ex_lap_a.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/views/ex_lap_a_view_detail_detail.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_b/views/admindik_lap_b_view_detail.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_b/views/admindik_lap_b_view_detail_detail.php",
@@ -471,39 +426,9 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/controllers/penyidik_lap_a.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views/penyidik_lap_a_view_detail_detail.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_detail.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/models/lap_b_model.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_a/views/admindik_lap_a_view_detail.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_a/controllers/admindik_lap_a.php",
-		"/Users/firman/htdocs/laporjogja/application/models/admindik_lap_a_model.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view_form_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view_form.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views/ex_anev_view_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/controllers/ex_anev.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views/ex_anev_view.php",
-		"/Users/firman/htdocs/laporjogja/query-builder.sql",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views/ex_anev_hasil_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/models/ex_anev_model.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/controllers/ex_pencarian.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/controllers/ex_pencarian.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views/ex_pencarian_hasil_view.php",
-		"/Users/firman/htdocs/laporjogja/view_pencarian.sql",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views/ex_lap_b_view_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/models/penyidik_lap_a_model.php",
-		"/Users/firman/htdocs/laporjogja/query2.sql",
-		"/Users/firman/htdocs/laporjogja/sql_changelog.sql",
-		"/Users/firman/htdocs/laporjogja/application/modules/pencarian/controllers/pencarian.php",
-		"/Users/firman/htdocs/laporjogja/test.js",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views/ex_pencarian_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views/ex_pencarian_view_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_a/views/admindik_lap_a_view_detail_perkembangan.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_b/views/admindik_lap_b_view_detail_perkembangan.php",
-		"/Users/firman/htdocs/laporjogja/application/views/js/general_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/models/penyidik_lap_b_model.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views/penyidik_lap_a_view_detail_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views/penyidik_lap_a_view_detail_perkembangan.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_c/views/penyidik_lap_c_view_detail_perkembangan.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_d/views/penyidik_lap_d_view_detail_perkembangan.php"
+		"/Users/firman/htdocs/laporjogja/application/models/admindik_lap_a_model.php"
 	],
 	"find":
 	{
@@ -521,6 +446,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dashbo",
+			"jquery",
+			".navbar",
+			"clean",
+			"picker",
+			"render_baru",
+			"admin",
+			"render_admin",
+			"admin_controller",
+			"img",
+			"blan",
+			"master_controller",
 			"where",
 			" $",
 			"render_admin",
@@ -636,19 +573,7 @@
 			"SELAMAT DATANG",
 			"polres",
 			"v_lap_bb",
-			"lap_b",
-			"polres",
-			"',",
-			"`,",
-			"SPKT",
-			"nomor",
-			"admindik",
-			"\"lap",
-			"lap",
-			"Lap",
-			"lap",
-			"lap_b",
-			"H3"
+			"lap_b"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -666,243 +591,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "application/modules/ex_diagram_pie/controllers/ex_diagram_pie.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1337,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								661,
-								707
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										765,
-										775
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/dot.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										603,
-										610
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 163.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "application/modules/ex_diagram_pie/views/ex_diagram_pie_view.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1294,
-								1294
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1331,
-										1341
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/dot.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										892,
-										899
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 291.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -955,6 +645,22 @@
 		"selected_items":
 		[
 			[
+				"ex_depan_view.php",
+				"application/views/ex_depan_view.php"
+			],
+			[
+				"app.css",
+				"assets2/css/app.css"
+			],
+			[
+				"logout",
+				"application/modules/login/views/login-form/assets/plugins/jquery-slimscroll/examples/disable-fade-out.html"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
 				"ex_depanvi",
 				"application/views/ex_depan_view.php"
 			],
@@ -995,10 +701,6 @@
 				"application/modules/lap_b/controllers/lap_b.php"
 			],
 			[
-				"index",
-				"index.php"
-			],
-			[
 				"lap_la",
 				"application/modules/lap_lantas/controllers/lap_lantas.php"
 			],
@@ -1033,10 +735,6 @@
 			[
 				"admindik_lap_a_model.php",
 				"application/models/admindik_lap_a_model.php"
-			],
-			[
-				"ex_depan_view.php",
-				"application/views/ex_depan_view.php"
 			],
 			[
 				"exec",
@@ -1457,14 +1155,6 @@
 			[
 				"public_lapor_kejadian",
 				"www/static/public_lapor_kejadian.html"
-			],
-			[
-				"umum_info_balik_nama.html",
-				"www/static/umum_info_balik_nama.html"
-			],
-			[
-				"databae",
-				"wskalbar/application/config/database.php"
 			]
 		],
 		"width": 0.0

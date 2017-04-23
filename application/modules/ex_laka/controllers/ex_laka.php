@@ -1,5 +1,5 @@
 <?php
-class ex_laka extends ex_controller {
+class ex_laka extends super_controller {
  	var $controller ;
 
 	function ex_laka(){

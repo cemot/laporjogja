@@ -1,14 +1,3 @@
-<link href="<?php echo base_url("assets") ?>/css/datepicker.css" rel="stylesheet">
-<link href="<?php echo base_url("assets") ?>/css/jquery.dataTables.css" rel="stylesheet">
-
-<script src="<?php echo base_url("assets") ?>/js/bootstrap-datepicker.js"></script>
-
-<script src="<?php echo base_url("assets") ?>/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
-<link href="<?php echo base_url("assets") ?>/css/eblokir.css" rel="stylesheet">
- <script src="<?php echo base_url('assets/highcharts/highcharts.js'); ?>"></script>
-
-
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">
             <div class="alert alert-danger" role="alert" id="message">
