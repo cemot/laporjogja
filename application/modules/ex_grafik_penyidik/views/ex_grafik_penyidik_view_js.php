@@ -49,12 +49,14 @@ $("#jenis").change(function(){
 
    $("#frmcari").submit(function(){
         //alert('hello');
-
+        //$("#Pleaewait")
+        $('#myPleaseWait').modal('show'); 
         $.ajax({
             url : '<?php echo site_url("$this->controller/get_grafik/$url") ?>',
             data : $(this).serialize(),
             type : 'post',
             success : function(hasil){
+        $('#myPleaseWait').modal('hide'); 
                     $("#hasil").html(hasil);
                 }
             

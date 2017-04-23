@@ -14,6 +14,11 @@
               <tr><td width="30%" >Nama Lapas </td>
               <TD><input type="text" class="form-control" name="lapas" id="lapas" placeholder="Nama lapas" /> </TD></tr>
 
+              <tr>
+               
+              <tr><td width="30%" >Kapasitas maksimal </td>
+              <TD><input type="text" class="form-control" name="kapasitas" id="kapasitas" placeholder="Kapasitas maksimal" /> </TD></tr>
+
 
               
 
