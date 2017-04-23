@@ -147,6 +147,7 @@ $("#titleModal").html('EDIT DATA LAPAS');
 
 			$("#id").val(obj.id);
 			$("#lapas").val(obj.lapas);
+			$("#kapasitas").val(obj.kapasitas);
 			 
 			 
 
