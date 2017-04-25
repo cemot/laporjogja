@@ -54,8 +54,9 @@ class pengaturan extends master_controller  {
 		$arr['userdata'] = $userdata;
 		$content = $this->load->view($this->controller."_view",$arr,true);
 
-		$this->set_subtitle("PENGATURAN DATA POLDA");
-		$this->set_title("PENGATURAN DATA POLDA");
+		$jenis = strtoupper($userdata['jenis']);
+		$this->set_subtitle("PENGATURAN DATA $jenis ");
+		$this->set_title("PENGATURAN DATA $jenis ");
 		$this->set_content($content);
 		$this->render_baru();
 	}
