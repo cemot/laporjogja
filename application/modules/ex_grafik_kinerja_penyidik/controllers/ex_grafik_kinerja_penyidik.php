@@ -30,7 +30,7 @@ class ex_grafik_kinerja_penyidik extends super_controller  {
 		$data = $post;
 		extract($post);
 
-		$sql = "select 
+		$sql = "select *  from (select 
 			x.id, x.nama, 
 			sum(p21) as p21, 
 			sum(sidik) as sidik,
@@ -54,12 +54,28 @@ class ex_grafik_kinerja_penyidik extends super_controller  {
 			join pengguna op on a.user_id = op.id ";
 
 			if($jenis=="polresall") {
-			$sql .= " left join m_polsek sek on sek.id_polsek = u.id_polsek ";
+			$sql .= " left join m_polsek sek on sek.id_polsek = op.id_polsek ";
 			$sql .= " left join m_polres res on res.id_polres = sek.id_polsek ";
 			}
 
 
 			$sql.= " where p.level='2' ";
+
+			if($jenis<>'x') {
+				//$sql.= " and u.jenis ='$jenis' "
+				if($jenis == "polres") {
+					$sql .=" and op.jenis='$jenis' and op.id_polres = '$id_polres' ";
+				}
+				else if ($jenis=="polsek") {
+					$sql .=" and op.jenis='$jenis' and op.id_polsek = '$id_polsek' ";
+				}
+				else if ($jenis=="polda") {
+					$sql .=" and op.jenis='$jenis' ";
+				}
+				else {
+					$sql .= " and op.id_polres = '$id_polres' ";
+				}
+			}
 
 
 			$sql .=" union 
@@ -76,98 +92,60 @@ class ex_grafik_kinerja_penyidik extends super_controller  {
 			join lap_b_penyidik lp on   lp.id_penyidik = p.id 
 			join lap_b a on lp.lap_b_id =  a.lap_b_id 
 
-			join pengguna op on a.user_id = op.id 
+			join pengguna op on a.user_id = op.id ";
 
-			where p.level='2' ) x
-
-			group by x.id";
-
-
-
-
-
-		$sql="select 
-			mk.id_kelompok, 
-			mk.kelompok, 
-			sum(if(month(x.tanggal)=1,1,0)) jan,
-			sum(if(month(x.tanggal)=2,1,0)) feb,
-			sum(if(month(x.tanggal)=3,1,0)) mar,
-			sum(if(month(x.tanggal)=4,1,0)) apr,
-			sum(if(month(x.tanggal)=5,1,0)) mei,
-			sum(if(month(x.tanggal)=6,1,0)) jun,
-			sum(if(month(x.tanggal)=7,1,0)) jul,
-			sum(if(month(x.tanggal)=8,1,0)) agu,
-			sum(if(month(x.tanggal)=9,1,0)) sep,
-			sum(if(month(x.tanggal)=10,1,0)) okt,
-			sum(if(month(x.tanggal)=11,1,0)) nov,
-			sum(if(month(x.tanggal)=12,1,0)) des
-
-		from 
-			m_kelompok_kejahatan mk 
-			left join m_golongan_kejahatan a on mk.id_kelompok = a.id_kelompok 
-			join (
-				select 
-					'a' as tb, 
-					lap_a_id, 
-					kp_tanggal as tanggal, 
-					id_gol_kejahatan, 
-					user_id 
-				from 
-					lap_a 
-				union 
-				select 
-					'b' as tb, 
-					lap_b_id, 
-					kejadian_tanggal as tanggal, 
-					id_gol_kejahatan, 
-					user_id 
-				from 
-					lap_b
-			) x on a.id = x.id_gol_kejahatan 
-			join pengguna u on u.id = x.user_id 
-
-		";
-
-		if($jenis=="polresall") {
-			$sql .= " left join m_polsek sek on sek.id_polsek = u.id_polsek ";
+			if($jenis=="polresall") {
+			$sql .= " left join m_polsek sek on sek.id_polsek = op.id_polsek ";
 			$sql .= " left join m_polres res on res.id_polres = sek.id_polsek ";
-		}
-
-
-		$sql .= " where 
-
-		mk.id_kelompok = '$id_kelompok' 
-		and year(tanggal) = '$tahun' ";
-
-
-		if($jenis<>'x') {
-			//$sql.= " and u.jenis ='$jenis' "
-			if($jenis == "polres") {
-				$sql .=" and u.jenis='$jenis' and u.id_polres = '$id_polres' ";
 			}
-			else if ($jenis=="polsek") {
-				$sql .=" and u.jenis='$jenis' and u.id_polsek = '$id_polsek' ";
+
+			$sql .= "where p.level='2' ";
+
+			if($jenis<>'x') {
+				if($jenis == "polres") {
+					$sql .=" and op.jenis='$jenis' and op.id_polres = '$id_polres' ";
+				}
+				else if ($jenis=="polsek") {
+					$sql .=" and op.jenis='$jenis' and op.id_polsek = '$id_polsek' ";
+				}
+				else if ($jenis=="polda") {
+					$sql .=" and op.jenis='$jenis' ";
+				}
+				else {
+					$sql .= " and op.id_polres = '$id_polres' ";
+				}
 			}
-			else if ($jenis=="polda") {
-				$sql .=" and u.jenis='$jenis' ";
-			}
-			else {
-				$sql .= " and u.id_polres = '$id_polres' ";
-			}
-		}
 
-		 
 
-		$sql .= " group by mk.id_kelompok ";
+			$sql .= " ) x group by x.id) y 
 
-		// echo $sql; 
-		// exit; 
+			 order by y.p21 desc limit 10";
 
+
+
+
+ 
+ 
 		$res = $this->db->query($sql);
-		// echo " sql ". $this->db->last_query(); exit;
+		//echo $this->db->last_query(); exit;
+		$arr = array();
 
-		$data['data'] = $res->row();
-		// show_array($data['data']); exit;
+		$n=1;
+		foreach($res->result() as $row ) : 
+			 
+			 $arr['P21'][$n]=$row->p21; 
+			 $arr['Penyelidikan'][$n]=$row->sidik; 
+			 $arr['Penyidikan'][$n]=$row->lidik; 
+			 $arr['Total'][$n]= $row->p21+$row->sidik + $row->lidik; 
+
+		$n++;	  
+		endforeach;
+
+
+
+		$data['data'] = $res;
+		$data['arr'] = $arr;
+		// show_array($data['arr']); exit;
 		 
 		$this->load->view($this->controller."_view_graph",$data);
 
