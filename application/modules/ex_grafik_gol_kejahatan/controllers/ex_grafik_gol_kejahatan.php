@@ -11,7 +11,7 @@ class ex_grafik_gol_kejahatan extends super_controller  {
 	
 	function index(){
 
-		$title = "GRAFIK DATA JENIS KEJAHATAN	";
+		$title = "GRAFIK DATA GOLONGAN KEJAHATAN	";
 		$data_array['controller'] = $controller;
 		$content = $this->load->view($this->controller."_view",$data_array,true);
 		// echo $table;
@@ -48,7 +48,9 @@ class ex_grafik_gol_kejahatan extends super_controller  {
 		}
 
 
-		$sql .= " where year(tanggal) = '$tahun' ";
+		$sql .= " where year(tanggal) = '$tahun' 
+			and mk.id_kelompok in (1,2,3,4,5)
+		";
 
 
 		if($jenis<>'x') {
@@ -82,6 +84,7 @@ class ex_grafik_gol_kejahatan extends super_controller  {
 		// 	endforeach;
 
 		$data['data'] = $res;
+		$data['title'] = "GRAFIK GOLONGAN KEJAHATAN ";
 
 		 
 		$this->load->view($this->controller."_view_graph",$data);
