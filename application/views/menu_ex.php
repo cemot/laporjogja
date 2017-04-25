@@ -62,7 +62,7 @@
 
                  <li><a href="<?php echo site_url("ex_grafik_gol_kejahatan"); ?>"> GRAFIK GOLONGAN  KEJAHATAN </a></li>
 
-                  <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan"); ?>"> GRAFIK JE  KEJAHATAN </a></li>
+                  <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan"); ?>"> GRAFIK JENIS  KEJAHATAN </a></li>
 
 
                  <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan_bulan"); ?>"> GRAFIK JENIS  KEJAHATAN PER BULAN </a></li>   
