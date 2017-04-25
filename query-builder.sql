@@ -1,47 +1,47 @@
-select 
-	mk.id_kelompok, 
-	mk.kelompok, 
-	-- count(x.id_gol_kejahatan) as jumlah 
-	sum(if(month(x.tanggal)=1,1,0)) jan,
-	sum(if(month(x.tanggal)=2,1,0)) feb,
-	sum(if(month(x.tanggal)=3,1,0)) mar,
-	sum(if(month(x.tanggal)=4,1,0)) apr,
-	sum(if(month(x.tanggal)=5,1,0)) mei,
-	sum(if(month(x.tanggal)=6,1,0)) jun,
-	sum(if(month(x.tanggal)=7,1,0)) jul,
-	sum(if(month(x.tanggal)=8,1,0)) agu,
-	sum(if(month(x.tanggal)=9,1,0)) sep,
-	sum(if(month(x.tanggal)=10,1,0)) okt,
-	sum(if(month(x.tanggal)=11,1,0)) nov,
-	sum(if(month(x.tanggal)=12,1,0)) des
+select *from (
+select u.id,u.nama , 
+sum(if(penyelesaian='p21',1,0)) as p21, 
+sum(if(penyelesaian='lidik',1,0)) as lidik, 
+sum(if(penyelesaian='sidik',1,0)) as sidik, 
+count(x.id_penyidik) as total  
+from  pengguna u 
 
-from 
-	m_kelompok_kejahatan mk 
-	left join m_golongan_kejahatan a on mk.id_kelompok = a.id_kelompok 
-	join (
-		select 
-			'a' as tb, 
-			lap_a_id, 
-			kp_tanggal as tanggal, 
-			id_gol_kejahatan, 
-			user_id 
-		from 
-			lap_a 
-		union 
-		select 
-			'b' as tb, 
-			lap_b_id, 
-			kejadian_tanggal as tanggal, 
-			id_gol_kejahatan, 
-			user_id 
-		from 
-			lap_b
-	) x on a.id = x.id_gol_kejahatan 
-	join pengguna u on u.id = x.user_id 
-
--- where 
+left join ( 
  
--- 	year(tanggal) = '2017' 
- group by mk.id_kelompok 
--- order by 
--- 	count(x.id_gol_kejahatan) desc
+select 
+	'a' as tb, 
+	a.lap_a_id, 
+	kp_tanggal as tanggal, 
+	id_gol_kejahatan, 
+	user_id, 
+	penyelesaian ,
+    p.id_penyidik 
+from 
+	lap_a a 
+    join lap_a_penyidik p on p.lap_a_id 
+    
+    
+union 
+select 
+	'b' as tb, 
+	a.lap_b_id, 
+	kejadian_tanggal as tanggal, 
+	id_gol_kejahatan, 
+	user_id, 
+	penyelesaian , 
+    p.id_penyidik 
+from 
+	lap_b a 
+
+
+
+
+    join lap_b_penyidik p on p.lap_b_id ) x 
+    
+on x.id_penyidik = u.id
+
+group by u.id ) y 
+
+order by y.p21 desc
+
+
