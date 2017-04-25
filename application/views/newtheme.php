@@ -54,7 +54,7 @@ else {
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/css/custom.css">
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/vendors/datatables/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/vendors/datatables/css/dataTables.bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/css/pages/datatables.css">
 
@@ -68,15 +68,17 @@ else {
  <link href="<?php echo base_url("assets") ?>/select2/dist/css/select2.min.css" rel="stylesheet">
 
 
+
+
 <script src="<?php echo base_url("assets2") ?>/js/app.js" type="text/javascript"></script>
-
-
 <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/jquery.dataTables.min.js"></script>
 
-<!-- <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/dataTables.bootstrap.min.js"></script>
- -->
+<script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo base_url("assets2") ?>/vendors/mark.js/jquery.mark.js" charset="UTF-8"></script>
+<script src="<?php echo base_url("assets2") ?>/vendors/datatablesmark.js/js/datatables.mark.min.js" charset="UTF-8"></script>
 <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/bootstrap-table/js/bootstrap-table.min.js"></script>
- 
+<script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/tableExport.jquery.plugin/tableExport.min.js"></script>
+
 <script type="text/javascript" src="<?php echo base_url("assets2") ?>/js/pages/responsive_datatables.js"></script>
 
 
@@ -86,9 +88,6 @@ else {
  <script src="<?php echo base_url("assets") ?>/js/bootstrap-dialog.min.js"></script>
 <script src="<?php echo base_url("assets") ?>/select2/dist/js/select2.full.min.js"></script>
 <script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
-
-
-
     <!-- end of global css -->
 </head>
 <style type="text/css">

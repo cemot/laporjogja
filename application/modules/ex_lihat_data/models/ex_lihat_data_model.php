@@ -21,7 +21,8 @@ class ex_lihat_data_model extends CI_Model {
 		 $kolom = array(0=>"id",
 							"no_reg",
 							"tgl_masuk", 
-							'tgl_ekpirasi'							 
+							'tgl_ekpirasi',
+							'hukuman'							 
 		 	);
 
 				

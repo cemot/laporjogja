@@ -115,6 +115,7 @@ function index(){
         		$row['nama'],
                 flipdate($row['tgl_masuk']),
                 flipdate($row['tgl_ekspirasi']),
+                $row['hukuman'],
                 $row['asal_upt'],
                 $row['pasal_kejahatan'],
         		
