@@ -87,7 +87,7 @@
                   <div class="form-group">
                          
                         <input type="text" class="tanggal form-control" 
-                        id="tanggal_awal" placeholder="Tangal Awal" 
+                        id="tanggal_awal" placeholder="Tanggal Awal" 
                         data-date-format="dd-mm-yyyy"  
                         name="tanggal_awal" style="width:120px">
                       </div>

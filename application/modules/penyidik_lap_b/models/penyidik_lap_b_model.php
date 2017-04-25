@@ -58,15 +58,15 @@ function get_data_perkembangan($param){
 
 	// show_array($param);
 
-	$kol = array(
-			1=>"tanggal",
-			"lidik",
-			"tahap",
-			"no_dokumen",
-			"keterangan",
-			"file_dokumen");
+	// $kol = array(
+	// 		1=>"tanggal",
+	// 		"lidik",
+	// 		"tahap",
+	// 		"no_dokumen",
+	// 		"keterangan",
+	// 		"file_dokumen");
 
-	$arr_column = array("lidik","tahap","no_dokumen","tanggal","keterangan");
+	$arr_column = array("id","tanggal","lidik","tahap","no_dokumen","keterangan");
 
 	$sort_by = $arr_column[$param['sort_by']];
 

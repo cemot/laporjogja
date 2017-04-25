@@ -22,27 +22,27 @@ class grafik_penyidik extends admin_controller  {
 
 		if($url == 1) {
 			$table = "lap_a";
-			$title = "Data Grafik Penyidik Lap. A";
+			$title = "Data Grafik Penyidik LP Model A";
 		}
 
 		if($url == 2) {
 			$table = "lap_b";
-			$title = "Data Grafik Penyidik Lap. B";
+			$title = "Data Grafik Penyidik LP Model B";
 		} 
 
 		if($url == 3) {
 			$table = "lap_c";
-			$title = "Data Grafik Penyidik Lap. C";
+			$title = "Data Grafik Penyidik LP Model C";
 		} 
 
 		if($url == 4) {
 			$table = "lap_d";
-			$title = "Data Grafik Penyidik Lap. D";
+			$title = "Data Grafik Penyidik LP Model D";
 		}
 
 		if($url == 5) {
 			$table = "lap_laka_lantas";
-			$title = "Data Grafik Penyidik Lap. LAKA LANTAS";
+			$title = "Data Grafik Penyidik LP  LAKA LANTAS";
 		}
 
 		
@@ -95,27 +95,27 @@ class grafik_penyidik extends admin_controller  {
 		if($url == 1){
 			$table_penyidik = "lap_a_penyidik";
 			$table_utama = "lap_a"; 
-			$title = "Data Grafik Penyidik Lap. A";
+			$title = "Data Grafik Penyidik LP MODEL A";
 		}
 		if($url == 2){
 			$table_penyidik = "lap_b_penyidik";
 			$table_utama = "lap_b"; 
-			$title = "Data Grafik Penyidik Lap. B";
+			$title = "Data Grafik Penyidik LP MODEL B";
 		}
 		if($url == 3){
 			$table_penyidik = "lap_c_penyidik";
 			$table_utama = "lap_c"; 
-			$title = "Data Grafik Penyidik Lap. C";
+			$title = "Data Grafik Penyidik LP MODEL C";
 		}
 		if($url == 4){
 			$table_penyidik = "lap_d_penyidik";
 			$table_utama = "lap_d"; 
-			$title = "Data Grafik Penyidik Lap. D";
+			$title = "Data Grafik Penyidik LP MODEL D";
 		}
 		if($url == 5){
 			$table_penyidik = "lap_laka_penyidik";
 			$table_utama = "lap_laka_lantas"; 
-			$title = "Data Grafik Penyidik Lap. LAKA LANTAS";
+			$title = "Data Grafik Penyidik LP MODEL LAKA LANTAS";
 		}
 	if (!empty($polsek)) {
 		$this->db->where('id_polsek', $polsek);
