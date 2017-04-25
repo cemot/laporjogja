@@ -74,7 +74,7 @@
 
              <a href="<?php echo site_url("ex_diagram_pie") ?>" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-pie-chart fa-5x"></i><br/>
-                Statistik  <br /> tahanan &amp; lapas   
+                Statistik  <br /> Narapidana Lapas   
             </a>
 
              

@@ -59,6 +59,10 @@
                  <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/3"); ?>">GRAFIK PENYIDIK LAP. C</a></li>
                  <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/4"); ?>">GRAFIK PENYIDIK LAP. D</a></li>
                  <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/5"); ?>">GRAFIK PENYIDIK LAP. LAKA LANTAS</a></li>   
+
+                 <li><a href="<?php echo site_url("ex_grafik_gol_kejahatan"); ?>"> GRAFIK JENIS  KEJAHATAN </a></li>
+                 <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan_bulan"); ?>"> GRAFIK JENIS  KEJAHATAN PER BULAN </a></li>   
+
             </ul>
         </li>
 
@@ -66,7 +70,7 @@
         <li class="menu-dropdown">
             <a href="#">
                 <i class="menu-icon fa fa-users"></i>
-                <span>DATA TAHANAN</span>
+                <span>DATA NAPI & LAPAS</span>
                 <span class="fa arrow"></span>
             </a>
             <ul class="sub-menu">

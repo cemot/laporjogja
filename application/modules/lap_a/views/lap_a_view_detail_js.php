@@ -63,28 +63,7 @@ $(document).ready(function(){
 
 
 
-
-		//  $("#add_tersangka").click(function(){  // tambah baru 
-		//  	// alert('hello');
-
-		//    $("#modal_tersangka").modal('show');
-		//    $("#modal_tersangka_judul").html('TAMBAH DATA TERSANGKA');
-		//    $(".tombol").prop('value','SIMPAN DATA TERSANGKA');
-		//    $("#form_tersangka").prop('action','<?php echo site_url("$controller/tersangka_simpan/$lap_a_id") ?>')
-		//  });
-
-		
-		// $("#add_saksi").click(function(){  // tambah baru 
-
-
-		//    $("#modal_saksi").modal('show');
-		//    // $("#modal_saksi_judul").html('TAMBAH DATA SAKSI');
-		//    // $(".tombol").prop('value','SIMPAN DATA SAKSI');
-		//    // $("#form_saksi").prop('action','<?php echo site_url("$controller/saksi_simpan/$lap_a_id") ?>');
-		//  });
-
-
-		// $("#form_tersangka").submit
+ 
 
 	$("#form_tersangka").submit(function(){  // formulir tersangka handler 
 

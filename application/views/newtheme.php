@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html>
-<?php $userdata = $_SESSION['userdata']; ?>
-
-<?php 
+<?php $userdata = $_SESSION['userdata'];  
                                       
 
-                                      // show_array($userdata);
+                                      
 
-                                      if($userdata['jenis']=="polres") {
-                                           $inst =  $this->cm->get_detail_polres($userdata['id_polres']);
-                                      }
-                                      else if($userdata['jenis']=="polsek") {
-                                           $inst =  $this->cm->get_detail_polsek($userdata['id_polsek']);
-                                      }
-                                      else  {
-                                           $inst =  ' D.I.Y';
-                                      }
+if($userdata['jenis']=="polres") {
+ $inst =  $this->cm->get_detail_polres($userdata['id_polres']);
+}
+else if($userdata['jenis']=="polsek") {
+ $inst =  $this->cm->get_detail_polsek($userdata['id_polsek']);
+}
+else  {
+ $inst =  ' D.I.Y';
+}
 
-                                      if($userdata['level']=="0") {
-                                        $userlevel = "SUPER ADMIN";
-                                        $homepage= "index_administrator";
-                                      }
-                                      else if($userdata['level']=="1") {
-                                        $userlevel = "ADMINDIK";
-                                        $homepage= "index_administrator";
-                                      }
-                                      else if($userdata['level']=="2") {
-                                        $userlevel = "PENYIDIK";
-                                        $homepage= "index_penyidik";
-                                        
-                                      }
-                                      else if($userdata['level']=="3") {
-                                        $userlevel = "OPERATOR";
-                                        $homepage = 'depan_baru';
-                                      }
-                                      else {
-                                        $userlevel = "EXECUTIVE";
-                                        $homepage = 'index_executive';
-                                      }
+if($userdata['level']=="0") {
+    $userlevel = "SUPER ADMIN";
+    $homepage= "index_administrator";
+}
+else if($userdata['level']=="1") {
+    $userlevel = "ADMINDIK";
+    $homepage= "index_administrator";
+}
+else if($userdata['level']=="2") {
+    $userlevel = "PENYIDIK";
+    $homepage= "index_penyidik";
 
-                                    ?>
+}
+else if($userdata['level']=="3") {
+    $userlevel = "OPERATOR";
+    $homepage = 'depan_baru';
+}
+else {
+    $userlevel = "EXECUTIVE";
+    $homepage = 'index_executive';
+}
+
+?>
 <head>
     <meta charset="UTF-8">
     <title>Sistem Informasi Laporan Polisi</title>
@@ -56,7 +54,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/css/custom.css">
 
 
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/vendors/datatables/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/vendors/datatables/css/dataTables.bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/css/pages/datatables.css">
 
@@ -70,17 +68,15 @@
  <link href="<?php echo base_url("assets") ?>/select2/dist/css/select2.min.css" rel="stylesheet">
 
 
-
-
 <script src="<?php echo base_url("assets2") ?>/js/app.js" type="text/javascript"></script>
+
+
 <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/jquery.dataTables.min.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url("assets2") ?>/vendors/mark.js/jquery.mark.js" charset="UTF-8"></script>
-<script src="<?php echo base_url("assets2") ?>/vendors/datatablesmark.js/js/datatables.mark.min.js" charset="UTF-8"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/dataTables.bootstrap.min.js"></script>
+ -->
 <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/bootstrap-table/js/bootstrap-table.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/tableExport.jquery.plugin/tableExport.min.js"></script>
-
+ 
 <script type="text/javascript" src="<?php echo base_url("assets2") ?>/js/pages/responsive_datatables.js"></script>
 
 
@@ -92,6 +88,7 @@
 <script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
 
 
+
     <!-- end of global css -->
 </head>
 <style type="text/css">
@@ -101,7 +98,7 @@
 </style>
 <body>
 
-<div class="modal fade bs-example-modal-sm" id="myPleaseWait" tabindex="-1"
+    <div class="modal fade bs-example-modal-sm" id="myPleaseWait" tabindex="-1"
     role="dialog" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -109,18 +106,18 @@
                 <h4 class="modal-title">
                     <span class="glyphicon glyphicon-time">
                     </span>Sedang memproses. Harap Tunggu...
-                 </h4>
+                </h4>
             </div>
             <div class="modal-body">
                 <div class="progress">
                     <div class="progress-bar progress-bar-info
                     progress-bar-striped active"
                     style="width: 100%">
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 

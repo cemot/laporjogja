@@ -3,6 +3,7 @@
 <script src="<?php echo base_url("assets2") ?>/vendors/raphael/raphael.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url("assets2") ?>/vendors/morrisjs/js/morris.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url("assets2") ?>/js/plugins/jquery.flot.spline.js" type="text/javascript"></script> -->
+<script src="<?php echo base_url('assets/highcharts/highcharts.js'); ?>"></script>
   
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">

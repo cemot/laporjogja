@@ -1,7 +1,11 @@
+
 <script>
 $(function () {
 
-  $('#view').highcharts({
+
+
+
+$('#view').highcharts({
         
 chart: {
         type: 'column'
@@ -14,18 +18,24 @@ chart: {
     },
     xAxis: {
         categories: [
-            'Januari',
-            'Februari',
-            'Maret',
-            'April',
-            'Mei',
-            'Juni',
-            'Juli',
-            'Agustus',
-            'September',
-            'Oktober',
-            'November',
-            'Desember'
+
+           <?php 
+            foreach($data->result() as $row ) : 
+                echo "'$row->kelompok',";
+            endforeach;
+            ?>
+            // 'Januari',
+            // 'Februari',
+            // 'Maret',
+            // 'April',
+            // 'Mei',
+            // 'Juni',
+            // 'Juli',
+            // 'Agustus',
+            // 'September',
+            // 'Oktober',
+            // 'November',
+            // 'Desember'
         ],
         crosshair: true
     },
@@ -51,13 +61,13 @@ chart: {
     },
     series: [
         {
-            name: 'Jumlah ',
+            name: 'JENIS KEJAHATAN ',
             data: [
         
                 <?php 
-                    foreach($query as $x => $val) : 
-                        echo "$val".",";
-                    endforeach;
+                     foreach($data->result() as $row  ) : 
+                        echo "$row->jumlah,";
+                     endforeach;
                 ?>
         
         
@@ -73,7 +83,7 @@ chart: {
         ]
 
     });
-        
+      
 });  
 
 

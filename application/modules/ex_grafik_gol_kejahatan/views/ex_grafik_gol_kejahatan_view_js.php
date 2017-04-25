@@ -1,15 +1,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
 
-
-
-
-
-$(".ds2").select2({
-  placeholder: "Pilih "
-});
-
-
+ 
 $("#search_polres").hide();
 $("#search_polsek").hide();
 
@@ -37,12 +29,12 @@ $("#jenis").change(function(){
       var jenis = "polsekpolres";
   }
 
-  $.ajax({
-    url : '<?php echo site_url("general/get_fungsi_terkait") ?>/'+jenis,
-    success : function(htmldata) {
-       $("#id_fungsi").html(htmldata);
-    }
-  });
+  // $.ajax({
+  //   url : '<?php echo site_url("general/get_fungsi_terkait") ?>/'+jenis,
+  //   success : function(htmldata) {
+  //      $("#id_fungsi").html(htmldata);
+  //   }
+  // });
 
 
 });
