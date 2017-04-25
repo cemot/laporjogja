@@ -19,19 +19,24 @@ chart: {
     xAxis: {
         categories: [
 
+            <?php 
+                foreach($data->result() as $row) : 
+                    echo "'$row->nama',";
+                endforeach;
+            ?>
             
-            'Januari',
-            'Februari',
-            'Maret',
-            'April',
-            'Mei',
-            'Juni',
-            'Juli',
-            'Agustus',
-            'September',
-            'Oktober',
-            'November',
-            'Desember'
+            // 'Januari',
+            // 'Februari',
+            // 'Maret',
+            // 'April',
+            // 'Mei',
+            // 'Juni',
+            // 'Juli',
+            // 'Agustus',
+            // 'September',
+            // 'Oktober',
+            // 'November',
+            // 'Desember'
         ],
         crosshair: true
     },
@@ -56,20 +61,37 @@ chart: {
         }
     },
     series: [
-        {
-            name: 'BULAN',
-            data: [
-        
-                <?php 
-                     echo "$data->jan, $data->feb, $data->mar, $data->apr, 
-                     $data->mei, $data->jun, $data->jul, $data->agu, 
-                     $data->sep, $data->okt, $data->nov, $data->des, ";
-                ?>
-        
-        
-            ]
 
-        }
+            <?php 
+                foreach($arr  as $a=>$b) : 
+                    echo "{";
+
+                        echo "name : '$a', ";
+                        echo "data : [";
+                            foreach($b as $y) : 
+                                echo "$y,";
+                            endforeach;
+                        echo "]";
+
+                    echo "},";
+                endforeach;
+            ?>
+
+
+        // {
+        //     name: 'BULAN',
+        //     data: [
+        
+        //         <?php 
+        //              echo "$data->jan, $data->feb, $data->mar, $data->apr, 
+        //              $data->mei, $data->jun, $data->jul, $data->agu, 
+        //              $data->sep, $data->okt, $data->nov, $data->des, ";
+        //         ?>
+        
+        
+        //     ]
+
+        // }
 
         
 

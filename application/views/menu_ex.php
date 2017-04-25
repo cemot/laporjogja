@@ -66,7 +66,7 @@
 
 
                  <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan_bulan"); ?>"> GRAFIK JENIS  KEJAHATAN PER BULAN </a></li>   
-                 <!-- <li><a href="<?php echo site_url("ex_grafik_kinerja_penyidik"); ?>"> GRAFIK KINERJA PENYIDIK </a></li>   --> 
+                 <li><a href="<?php echo site_url("ex_grafik_kinerja_penyidik"); ?>"> GRAFIK KINERJA PENYIDIK </a></li>  
 
             </ul>
         </li>
