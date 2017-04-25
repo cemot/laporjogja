@@ -1,7 +1,11 @@
+
 <script>
 $(function () {
 
-  $('#view').highcharts({
+
+
+
+$('#view').highcharts({
         
 chart: {
         type: 'column'
@@ -14,6 +18,8 @@ chart: {
     },
     xAxis: {
         categories: [
+
+            
             'Januari',
             'Februari',
             'Maret',
@@ -51,13 +57,13 @@ chart: {
     },
     series: [
         {
-            name: 'Jumlah ',
+            name: 'BULAN',
             data: [
         
                 <?php 
-                    foreach($query as $x => $val) : 
-                        echo "$val".",";
-                    endforeach;
+                     echo "$data->jan, $data->feb, $data->mar, $data->apr, 
+                     $data->mei, $data->jun, $data->jul, $data->agu, 
+                     $data->sep, $data->okt, $data->nov, $data->des, ";
                 ?>
         
         
@@ -73,7 +79,7 @@ chart: {
         ]
 
     });
-        
+      
 });  
 
 

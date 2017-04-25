@@ -39,6 +39,23 @@
                   </select>
                   </div>
 
+                   
+
+
+                  <div class="form-group">
+                      <?php    
+                     //$arr_bulan=array("x"=>"== SEMUA BULAN == ");
+                      
+                      $arr_jenis = $this->cm->get_arr_dropdown("m_kelompok_kejahatan","id_kelompok","kelompok","kelompok");
+                      // $arr_jenis = $this->cm->add_arr_head($arr_jenis,"x","== SEMUA BULAN ==");
+
+                      echo form_dropdown("id_kelompok",$arr_jenis,'','id="id_kelompok" class="form-control ds2" ');
+                     ?>
+                   
+                  </div>
+
+
+
                   <div class="form-group">
                          <?php
                           $arr = array("x"=>"POLDA KESELURUHAN ",
@@ -77,23 +94,7 @@
                          ?>                         
                       </div>
 
-                     <div class="form-group">
-                         
-                         <?php
-                         $arr_fungsi = $this->cm->get_arr_function('polda');
-                         $arr_fungsi = $this->cm->add_arr_head($arr_fungsi,"x"," = SEMUA =");
-                         echo form_dropdown("id_fungsi",$arr_fungsi,"",'id="id_fungsi" class="form-control"');
-
-                         ?>                         
-                      </div>  
-
-                  
-
-               
-
-
-
-                     <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i> Cari</button>
+                      <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i> Cari</button>
                      </form>
                
                   </div>
@@ -119,6 +120,6 @@
 
 
 <?php 
-$this->load->view($controller."_view_js") ;
+$this->load->view($this->controller."_view_js") ;
 $this->load->view("js/general_js"); 
 ?>

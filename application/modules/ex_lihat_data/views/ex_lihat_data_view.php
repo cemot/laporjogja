@@ -64,12 +64,13 @@
              table-bordered table-hover dataTable no-footer" role="grid">
 <thead>
   <tr  > 
-        <th width="5%" >No. Reg</th>
-        <th width="15%" >Nama</th>
-        <th width="5%" >Tgl. Masuk</th>
-        <th width="5%" >Tgl. Ekspirasi</th>
-        <th width="15%" >Lokasi Lapas</th>
-        <th width="15%" >Pasal Kejahatan</th>
+        <th width="5%" >NO.REG</th>
+        <th width="15%" >NAMA</th>
+        <th width="5%" >MASUK</th>
+        <th width="5%" >EKSPIRASI</th>
+        <th width="5%" >VONIS</th>
+        <th width="10%" >LAPAS/RUTAN</th>
+        <th width="15%" >PASAL</th>
     </tr>
   
 </thead>

@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html>
-<?php $userdata = $_SESSION['userdata']; ?>
-
-<?php 
+<?php $userdata = $_SESSION['userdata'];  
                                       
 
-                                      // show_array($userdata);
+                                      
 
-                                      if($userdata['jenis']=="polres") {
-                                           $inst =  $this->cm->get_detail_polres($userdata['id_polres']);
-                                      }
-                                      else if($userdata['jenis']=="polsek") {
-                                           $inst =  $this->cm->get_detail_polsek($userdata['id_polsek']);
-                                      }
-                                      else  {
-                                           $inst =  ' D.I.Y';
-                                      }
+if($userdata['jenis']=="polres") {
+ $inst =  $this->cm->get_detail_polres($userdata['id_polres']);
+}
+else if($userdata['jenis']=="polsek") {
+ $inst =  $this->cm->get_detail_polsek($userdata['id_polsek']);
+}
+else  {
+ $inst =  ' D.I.Y';
+}
 
-                                      if($userdata['level']=="0") {
-                                        $userlevel = "SUPER ADMIN";
-                                        $homepage= "index_administrator";
-                                      }
-                                      else if($userdata['level']=="1") {
-                                        $userlevel = "ADMINDIK";
-                                        $homepage= "index_administrator";
-                                      }
-                                      else if($userdata['level']=="2") {
-                                        $userlevel = "PENYIDIK";
-                                        $homepage= "index_penyidik";
-                                        
-                                      }
-                                      else if($userdata['level']=="3") {
-                                        $userlevel = "OPERATOR";
-                                        $homepage = 'depan_baru';
-                                      }
-                                      else {
-                                        $userlevel = "EXECUTIVE";
-                                        $homepage = 'index_executive';
-                                      }
+if($userdata['level']=="0") {
+    $userlevel = "SUPER ADMIN";
+    $homepage= "index_administrator";
+}
+else if($userdata['level']=="1") {
+    $userlevel = "ADMINDIK";
+    $homepage= "index_administrator";
+}
+else if($userdata['level']=="2") {
+    $userlevel = "PENYIDIK";
+    $homepage= "index_penyidik";
 
-                                    ?>
+}
+else if($userdata['level']=="3") {
+    $userlevel = "OPERATOR";
+    $homepage = 'depan_baru';
+}
+else {
+    $userlevel = "EXECUTIVE";
+    $homepage = 'index_executive';
+}
+
+?>
 <head>
     <meta charset="UTF-8">
     <title>Sistem Informasi Laporan Polisi</title>
@@ -90,8 +88,6 @@
  <script src="<?php echo base_url("assets") ?>/js/bootstrap-dialog.min.js"></script>
 <script src="<?php echo base_url("assets") ?>/select2/dist/js/select2.full.min.js"></script>
 <script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script>
-
-
     <!-- end of global css -->
 </head>
 <style type="text/css">
@@ -101,7 +97,7 @@
 </style>
 <body>
 
-<div class="modal fade bs-example-modal-sm" id="myPleaseWait" tabindex="-1"
+    <div class="modal fade bs-example-modal-sm" id="myPleaseWait" tabindex="-1"
     role="dialog" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -109,18 +105,18 @@
                 <h4 class="modal-title">
                     <span class="glyphicon glyphicon-time">
                     </span>Sedang memproses. Harap Tunggu...
-                 </h4>
+                </h4>
             </div>
             <div class="modal-body">
                 <div class="progress">
                     <div class="progress-bar progress-bar-info
                     progress-bar-striped active"
                     style="width: 100%">
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 
