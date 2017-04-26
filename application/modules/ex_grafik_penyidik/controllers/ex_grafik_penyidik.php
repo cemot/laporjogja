@@ -143,6 +143,7 @@ class ex_grafik_penyidik extends super_controller  {
 		->join("$table_utama a","a.$id=pa.$id")
 		->where("year(tanggal)= '$tahun'",null,false)
 		->group_by("u.id");
+		//->order_by("count(*) as total")
 
 	if($post['jenis']<>'x'  ) {
 
@@ -179,8 +180,14 @@ class ex_grafik_penyidik extends super_controller  {
 	$res = $this->db->get();
 	// echo $this->db->last_query(); exit;
 
+	$sql = $this->db->last_query();
+
+	$sql2 = "select * from ($sql) x order by x.total desc limit 20";
+
+	$res2 = $this->db->query($sql2);
+
 	$arr = array();
-	foreach($res->result() as $row ) : 
+	foreach($res2->result() as $row ) : 
 		$arr[] = array("nama"=>$row->nama."( Total $row->total kasus )", "data"=>array($row->januari,
 								$row->februari,
 								$row->maret,
