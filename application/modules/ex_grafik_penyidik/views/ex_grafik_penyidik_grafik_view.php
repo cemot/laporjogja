@@ -62,3 +62,38 @@ $(function () {
 });
 </script>
 <div id="view"></div>
+
+<div class="row">
+  <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+              <th>No. </th>
+              <th>NAMA </th>
+              <th width="10%">P21 </th>
+              <th width="10%">PENYELIDIKAN</th>
+              <th width="10%">PENYIDIKAN  </th>
+              <th width="10%">TOTAL </th>
+            </tr>
+
+            <?php 
+                $n=0;
+                foreach($rec_penyidik->result() as $row) : 
+                $n++;
+
+            ?>
+            <tr>
+              <td ><?php echo $n; ?> </td>
+              <td ><?php echo $row->nama; ?> </td>
+              <td align="center"><?php echo $row->p21; ?> </td>
+              <td align="center"><?php echo $row->sidik; ?> </td>
+              <td align="center"><?php echo $row->lidik; ?> </td>
+              <td align="center"><?php echo $row->total; ?>  </td>
+            </tr>
+
+            <?php  endforeach; ?>
+
+        </table>
+
+  </div>
+
+</div>
