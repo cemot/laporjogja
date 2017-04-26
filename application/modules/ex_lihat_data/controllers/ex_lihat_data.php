@@ -113,9 +113,10 @@ function index(){
         	$arr_data[] = array(
                 $row['no_reg'],
         		$row['nama'],
+                $row['hukuman'],
                 flipdate($row['tgl_masuk']),
                 flipdate($row['tgl_ekspirasi']),
-                $row['hukuman'],
+                
                 $row['asal_upt'],
                 $row['pasal_kejahatan'],
         		

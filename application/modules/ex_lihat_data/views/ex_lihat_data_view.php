@@ -66,9 +66,10 @@
   <tr  > 
         <th width="5%" >NO.REG</th>
         <th width="15%" >NAMA</th>
+         <th width="5%" >VONIS</th>
         <th width="5%" >MASUK</th>
         <th width="5%" >EKSPIRASI</th>
-        <th width="5%" >VONIS</th>
+       
         <th width="10%" >LAPAS/RUTAN</th>
         <th width="15%" >PASAL</th>
     </tr>
