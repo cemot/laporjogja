@@ -220,6 +220,66 @@ class ex_grafik_penyidik extends super_controller  {
 		// // echo $nilai;
 		// exit();
 		
+
+		/// summaries table 
+		extract($post);
+		$sql = "select *  from (select 
+			x.id, x.nama, 
+			sum(p21) as p21, 
+			sum(sidik) as sidik,
+			sum(lidik) as lidik, 
+			count(*) as total
+
+
+			from (select 'a' as tb, 
+			p.id ,
+			p.nama, 
+			lp.$id  as lap_id , 
+			a.penyelesaian , 
+			if(a.penyelesaian = 'p21',1,0) as p21, 
+			if(a.penyelesaian = 'sidik',1,0) as sidik, 
+			if(a.penyelesaian = 'lidik',1,0) as lidik, 
+			op.jenis,a.user_id 	 
+			from pengguna  p 
+			join $table_penyidik lp on   lp.id_penyidik = p.id 
+			join $table_utama a on lp.$id =  a.$id 
+
+			join pengguna op on a.user_id = op.id ";
+
+			if($jenis=="polresall") {
+			$sql .= " left join m_polsek sek on sek.id_polsek = op.id_polsek ";
+			$sql .= " left join m_polres res on res.id_polres = sek.id_polsek ";
+			}
+
+
+			$sql.= " where p.level='2' ";
+
+			if($jenis<>'x') {
+				//$sql.= " and u.jenis ='$jenis' "
+				if($jenis == "polres") {
+					$sql .=" and op.jenis='$jenis' and op.id_polres = '$id_polres' ";
+				}
+				else if ($jenis=="polsek") {
+					$sql .=" and op.jenis='$jenis' and op.id_polsek = '$id_polsek' ";
+				}
+				else if ($jenis=="polda") {
+					$sql .=" and op.jenis='$jenis' ";
+				}
+				else {
+					$sql .= " and op.id_polres = '$id_polres' ";
+				}
+			}
+
+
+			$sql .= " ) x group by x.id) y 
+
+			 order by y.total desc limit 20 ";
+
+			 //echo $sql;
+
+
+		$data_array['rec_penyidik'] = $this->db->query($sql);
+			 
 		$this->load->view($controller."_grafik_view",$data_array);
 
 	}
