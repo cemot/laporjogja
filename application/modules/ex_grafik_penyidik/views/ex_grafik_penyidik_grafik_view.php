@@ -67,12 +67,12 @@ $(function () {
   <div class="col-md-12">
         <table class="table table-bordered table-hover">
             <tr>
-              <th>No. </th>
-              <th>NAMA </th>
-              <th width="10%">P21 </th>
-              <th width="10%">PENYELIDIKAN</th>
-              <th width="10%">PENYIDIKAN  </th>
-              <th width="10%">TOTAL </th>
+              <th  align="center">NO. </th>
+              <th  align="center">NAMA </th>
+              <th  align="center" width="10%" style="text-align: center;">P21 </th>
+              <th  align="center" width="10%" style="text-align: center;">PENYELIDIKAN</th>
+              <th  align="center" width="10%" style="text-align: center;">PENYIDIKAN  </th>
+              <th  align="center" width="10%" style="text-align: center;">TOTAL </th>
             </tr>
 
             <?php 
