@@ -259,42 +259,75 @@
 		"/Users/firman/htdocs/laporjogja",
 		"/Users/firman/htdocs/laporjogja/application",
 		"/Users/firman/htdocs/laporjogja/application/modules",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_diagram_pie/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan_bulan/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan_bulan/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_kinerja_penyidik/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_kinerja_penyidik/views",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/controllers",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/models",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/grafik_penyidik/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/grafik_penyidik/models",
-		"/Users/firman/htdocs/laporjogja/application/modules/grafik_penyidik/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_per_lokasi/controllers",
-		"/Users/firman/htdocs/laporjogja/application/modules/laporan_per_lokasi/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/laporan_grafik_waktu/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_laka/models",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/models",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/models",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_c/models",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_d/models",
 		"/Users/firman/htdocs/laporjogja/application/views"
 	],
 	"file_history":
 	[
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views/ex_anev_hasil_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/controllers/ex_anev.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_kinerja_penyidik/controllers/ex_grafik_kinerja_penyidik.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/controllers/ex_grafik_penyidik.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views/ex_grafik_penyidik_grafik_view.php",
+		"/Users/firman/htdocs/laporjogja/system/core/CodeIgniter.php",
+		"/Users/firman/htdocs/laporjogja/index.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/views/ex_lihat_data_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/controllers/ex_lihat_data.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_kinerja_penyidik/views/ex_grafik_kinerja_penyidik_view_graph.php",
+		"/Users/firman/htdocs/laporjogja/application/views/menu_ex.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan/views/ex_grafik_jenis_kejahatan_view_js.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan/views/ex_grafik_jenis_kejahatan_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan/views/ex_grafik_jenis_kejahatan_view_graph.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan/controllers/ex_grafik_jenis_kejahatan.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/pengaturan/controllers/pengaturan.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/views/ex_grafik_gol_kejahatan_view_graph.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/controllers/ex_grafik_gol_kejahatan.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/controllers/penyidik_lap_b.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/views/ex_lap_b_view_detail_perkembangan.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/controllers/ex_lap_b.php",
+		"/Users/firman/htdocs/laporjogja/application/models/admindik_lap_b_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views/penyidik_lap_a_view_detail_perkembangan.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views/penyidik_lap_a_view_detail_js.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/views/penyidik_lap_b_view_detail_js.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/models/penyidik_lap_b_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/models/penyidik_lap_a_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_c/models/penyidik_lap_c_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_d/models/penyidik_lap_d_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_laka/models/penyidik_laka_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/controllers/penyidik_lap_a.php",
+		"/Users/firman/htdocs/laporjogja/query-builder.sql",
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_kinerja_penyidik/views/ex_grafik_kinerja_penyidik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/grafik_penyidik/views/grafik_penyidik_grafik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/grafik_penyidik/views/grafik_penyidik_grafik.php",
-		"/Users/firman/htdocs/laporjogja/index.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/grafik_penyidik/controllers/grafik_penyidik.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/controllers/ex_grafik_penyidik.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/controllers/ex_lihat_data.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/models/ex_lihat_data_model.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/views/ex_lihat_data_view.php",
-		"/Users/firman/htdocs/laporjogja/query-builder.sql",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views/ex_grafik_penyidik_view_js.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_jenis_kejahatan_bulan/views/ex_grafik_jenis_kejahatan_bulan_view_js.php",
 		"/Users/firman/htdocs/laporjogja/application/views/newtheme.php",
@@ -304,11 +337,7 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_js.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_detail_js.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form_js.php",
-		"/Users/firman/htdocs/laporjogja/application/views/menu_ex.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/views/ex_grafik_gol_kejahatan_view_graph.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/controllers/ex_grafik_gol_kejahatan.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views/ex_grafik_penyidik_grafik.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_penyidik/views/ex_grafik_penyidik_grafik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views/ex_grafik_lap_grafik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_lap/views/ex_grafik_lap_grafik.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_grafik_gol_kejahatan/views/ex_grafik_gol_kejahatan_view.php",
@@ -358,12 +387,10 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/views/grafik_lap_grafik_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/controllers/ex_pencarian.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views/ex_pencarian_view_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/controllers/ex_anev.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_pencarian/views/ex_pencarian_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_anev/views/ex_anev_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_d/controllers/ex_lap_d.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_laka/controllers/ex_laka.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/controllers/ex_lap_b.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/controllers/ex_lap_a.php",
 		"/Users/firman/htdocs/laporjogja/application/modules.new/ex_lap_a/controllers/ex_lap_a.php",
 		"/Users/firman/htdocs/laporjogja/application/views/template_executive.php",
@@ -389,29 +416,7 @@
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/views/admin_lapas_view.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/controllers/admin_lapas.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/admin_lapas/models/admin_lapas_model.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/models/ex_lap_b_model.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lihat_data/views/lihat_data_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/views/grafik_lap_grafik.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/grafik_lap/controllers/grafik_lap.php",
-		"/Users/firman/htdocs/laporjogja/application/models/admindik_lap_b_model.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/controllers/penyidik_lap_b.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views/penyidik_lap_a_view_detail.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/views/penyidik_lap_b_view_detail.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/views/penyidik_lap_b_view_detail_detail.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_b/views/penyidik_lap_b_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_a/views/penyidik_lap_a_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_c/views/penyidik_lap_c_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_lap_d/views/penyidik_lap_d_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/penyidik_laka/views/penyidik_laka_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_laka/views/admindik_laka_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_a/views/admindik_lap_a_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_b/views/admindik_lap_b_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_c/views/admindik_lap_c_view.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/admindik_lap_d/views/admindik_lap_d_view.php",
-		"/Users/firman/htdocs/laporjogja/a.txt",
-		"/Users/firman/htdocs/laporjogja/systme.php",
-		"/Users/firman/htdocs/laporjogja/application/controllers/general.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_a/models/ex_lap_a_model.php"
+		"/Users/firman/htdocs/laporjogja/application/modules/ex_lap_b/models/ex_lap_b_model.php"
 	],
 	"find":
 	{
@@ -429,6 +434,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<th",
+			"<td",
+			"td>",
+			"td",
+			"th",
+			"lap_a",
+			"lap_a_penyidik",
+			"lap_a_id",
+			"u.",
+			"ex_grafik_gol_kejahatan",
+			"ex_grafik_jenis_kejahatan_bulan",
 			"Lap.",
 			"lap",
 			"Lap",
@@ -545,18 +561,7 @@
 			"grafik_lap",
 			"render_baru",
 			"pencarian",
-			"PENCARIAN",
-			"pencarian",
-			"render_admin",
-			"penyidik_lap_d_model",
-			"penyidik_lap_d",
-			"render_admin",
-			"penyidik_laka_model",
-			"penyidik_laka",
-			"lap_a",
-			"lap_b_model",
-			"lap_a_model",
-			"lap_a"
+			"PENCARIAN"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -628,6 +633,42 @@
 		"selected_items":
 		[
 			[
+				"codei",
+				"system/core/CodeIgniter.php"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"menu_ex",
+				"application/views/menu_ex.php"
+			],
+			[
+				"menu",
+				"application/views/menu_ex.php"
+			],
+			[
+				"pengaturan",
+				"application/modules/pengaturan/controllers/pengaturan.php"
+			],
+			[
+				"penyidik_lap_b_model.php",
+				"application/modules/penyidik_lap_b/models/penyidik_lap_b_model.php"
+			],
+			[
+				"admindiklapb",
+				"application/models/admindik_lap_b_model.php"
+			],
+			[
+				"admindik_lap_b_model.php",
+				"application/models/admindik_lap_b_model.php"
+			],
+			[
+				"querybui",
+				"query-builder.sql"
+			],
+			[
 				"inde",
 				"index.php"
 			],
@@ -636,19 +677,11 @@
 				"application/views/newtheme.php"
 			],
 			[
-				"index",
-				"index.php"
-			],
-			[
 				"query",
 				"query-builder.sql"
 			],
 			[
 				"menue",
-				"application/views/menu_ex.php"
-			],
-			[
-				"menu",
 				"application/views/menu_ex.php"
 			],
 			[
@@ -710,10 +743,6 @@
 			[
 				"coremodel",
 				"application/models/coremodel.php"
-			],
-			[
-				"admindik_lap_b_model.php",
-				"application/models/admindik_lap_b_model.php"
 			],
 			[
 				"coremode",
@@ -910,10 +939,6 @@
 			[
 				"lapbb",
 				"application/models/view_lap_bb.sql"
-			],
-			[
-				"admindiklapb",
-				"application/modules/admindik_lap_b/controllers/admindik_lap_b.php"
 			],
 			[
 				"admindiklapa",
@@ -1118,26 +1143,6 @@
 			[
 				"databa",
 				"application/config/database.php"
-			],
-			[
-				"autolo",
-				"application/config/autoload.php"
-			],
-			[
-				"get",
-				"wskalbar/getdata.php"
-			],
-			[
-				"umum_data_pajak",
-				"www/static/umum_data_pajak.html"
-			],
-			[
-				"umum_pendaftaran",
-				"www/static/umum_pendaftaran.html"
-			],
-			[
-				"umum_status_kendaraan.html",
-				"www/static/umum_status_kendaraan.html"
 			]
 		],
 		"width": 0.0
@@ -1176,7 +1181,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 342.0,
+	"side_bar_width": 309.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

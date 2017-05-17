@@ -25,7 +25,45 @@ foreach($kasus_record->result() as $row) :
 
 
 <div class="col-md-6">
-<h3>JUMLAH KASUS <?php echo number_format($kasus_jumlah2,0); ?> </h3>
+<div class="row">
+ <div class="col-md-7">
+ <h3>JUMLAH KASUS <?php echo number_format($kasus_jumlah2,0); ?> </h3>
+
+ </div>
+
+ <div class="col-md-5">
+ <div class="alert alert-info" role="alert">
+ <?php 
+ 	$selisih = $kasus_jumlah2 - $kasus_jumlah; 
+
+ 	if($kasus_jumlah2 > $kasus_jumlah )
+ 	{
+ 		$beda = $kasus_jumlah2 - $kasus_jumlah;
+ 		$beda = abs($beda);
+ 		$persen = ($beda / $kasus_jumlah2) * 100;
+ 		// echo "nomor 2<br />";
+ 	}
+ 	else {
+ 		// echo "nomor 1<br />";
+ 		$beda = $kasus_jumlah - $kasus_jumlah2;
+ 		$beda = abs($beda);
+ 		// echo "beda berapa $beda ";
+ 		$persen = ($beda / $kasus_jumlah) * 100;
+ 		// echo " $persen ($beda / $kasus_jumlah) * 100 ";
+ 	}
+
+ 	//echo "<br /> atau $persentase". number_format($persentase,2,0);
+
+ 	$tanda = ($selisih > 0 ) ? "+":"-";
+ 	$persen = number_format($persen,2);
+ 	
+ 	echo $tanda.$beda. "<br >";
+ 	echo $tanda. $persen. " %<br >";
+
+ ?>
+ </div>
+ </div>
+</div>
 
 <b> Data berdasarkan golongan kejahatan </b>
 <table class="table" width="100%">
