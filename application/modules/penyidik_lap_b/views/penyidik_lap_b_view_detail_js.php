@@ -2,7 +2,36 @@
 <script src="<?php echo base_url("assets") ?>/js/jquery.loadJSON.js"></script> 
 </script>
 <script type="text/javascript">
+
+
+
+
 $(document).ready(function(){
+
+
+
+  $mce = tinymce.init({
+  selector: '#isi',
+  height: 500,
+  menubar: false,
+
+  setup: function (editor) {
+        editor.on('change', function () {
+            editor.save();
+        });
+    },
+  
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table contextmenu paste code'
+  ],  
+  toolbar: 'undo redo | table |  insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image ',
+  content_css: [
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    '//www.tinymce.com/css/codepen.min.css']
+});
+
 
    
 
@@ -70,6 +99,42 @@ $("#formpenyelesaian").submit(function(){
     
 });
 
+$("#form_monitor").submit(function(){
+    //alert('test'); 
+    
+                    $.ajax({
+                    url : $("#form_monitor").prop('action'),
+                    type : 'post',
+                    data :  $("#form_monitor").serialize(),
+                    dataType : 'json',
+                    success : function(obj) {
+                      $('#myPleaseWait').modal('hide'); 
+                      if(obj.error==false) {
+                          BootstrapDialog.alert({
+                              type: BootstrapDialog.TYPE_PRIMARY,
+                              title: 'Informasi',
+                              message: obj.message,
+                               
+                          });   
+
+                      // $('#grid_perkembangan').DataTable().ajax.reload(); 
+                      
+                      }
+                      else {
+                        BootstrapDialog.alert({
+                            type: BootstrapDialog.TYPE_DANGER,
+                            title: 'Error',
+                            message: obj.message,
+                             
+                        }); 
+                      }
+                    }
+                  });
+
+    return false;
+    
+});
+
 
 // get detail 
 $.ajax({
@@ -93,7 +158,132 @@ $.ajax({
 
 // });				 
  
+$("#id_template").change(function(){
 
+  if($(this).val() != 'x') {
+
+    $.ajax({
+          url : '<?php echo site_url("$this->controller/get_template") ?>',
+          data : {id : $(this).val() },
+          dataType : 'json',
+          type : 'post',
+          success : function(jsonData) {
+            tinyMCE.activeEditor.setContent(jsonData.isi);
+          }
+    });
+
+  }
+
+  // alert('test');
+
+});
+
+
+/// save template 
+$("#tombol").click(function(){
+
+    if($("#id_template").val() == 'x') {  // baru 
+
+
+      // $('#myModal').modal('show');
+      $("#modal_nama").modal('show');
+      // $('#myModal').modal('show');
+
+
+    }
+    else { // update template yang ada 
+
+        v_isi = tinymce.get('isi').getContent();
+        v_id =  $("#id_template").val();
+
+        $.ajax({
+            url : '<?php  echo site_url("$this->controller/updatetemplate") ?>',
+            data : {id : v_id, isi : v_isi }, 
+            type : 'post',
+            dataType : 'json' , 
+            
+            success : function(jsonData) {
+
+                   if(jsonData.error==false) {
+                  BootstrapDialog.alert({
+                          type: BootstrapDialog.TYPE_PRIMARY,
+                          title: 'Informasi',
+                          message: jsonData.message,
+                           
+                      });   
+
+                  // $('#grid_perkembangan').DataTable().ajax.reload(); 
+                                
+                  }
+                  else {
+                    BootstrapDialog.alert({
+                        type: BootstrapDialog.TYPE_DANGER,
+                        title: 'Error',
+                        message: jsonData.message,
+                         
+                    }); 
+                  }
+
+            }
+        });
+    }
+
+    return false;
+
+});
+
+
+
+$("#simpantemplate").click(function(){
+
+   // v_isi = tinymce.get('#isi').getContent();
+
+   v_isi = tinymce.get('isi').getContent();
+   v_nama = $("#nama_template").val();
+
+   $("#modal_nama").modal('hide');
+
+   // console.log(v_isi); 
+   // console.log(v_isi2);
+
+   $.ajax({
+      url : '<?php echo site_url("$this->controller/simpantemplate") ?>',
+      data : {nama : v_nama, isi : v_isi},
+      dataType : 'json',
+      type : 'post', 
+      success : function(jsonData){
+          console.log(jsonData); 
+
+
+          if(jsonData.error==false) {
+                      BootstrapDialog.alert({
+                              type: BootstrapDialog.TYPE_PRIMARY,
+                              title: 'Informasi',
+                              message: jsonData.message,
+                               
+                          });   
+
+                      // $('#grid_perkembangan').DataTable().ajax.reload(); 
+                      $("#id_template").html('').html(jsonData.templateList);
+                      
+          }
+          else {
+            BootstrapDialog.alert({
+                type: BootstrapDialog.TYPE_DANGER,
+                title: 'Error',
+                message: jsonData.message,
+                 
+            }); 
+          }
+
+      }
+
+   });
+
+   // alert( v_isi ); 
+   return false;
+
+});
 
 	
 });
@@ -143,6 +333,7 @@ BootstrapDialog.show({
                              
                         }); 
                       }
+
                     }
                   });
 
@@ -192,6 +383,19 @@ function perkembangan_edit(id) {
 
       $("#id_pn").val(jsonData.id_pn);
       $("#id_lapas").val(jsonData.id_lapas);
+      $("#no_urut").val(jsonData.no_urut);
+     //  $("#isi").val(jsonData.isi);
+
+     if(jsonData.isi === null ) {
+        jsonData.isi = ""; 
+     }
+
+     // if(jsonData == "")
+     tinyMCE.activeEditor.setContent('');
+     if( jsonData.isi != ''   )
+      { 
+      tinyMCE.activeEditor.setContent(jsonData.isi);
+      } 
       //$("#nomor_dokumen").val(jsonData.nomor_dokumen);
 
       $.ajax({
@@ -212,6 +416,8 @@ function perkembangan_edit(id) {
 }
 
 
+
+
 function perkembangan_simpan(){
 
 // $("#formulir_perkembangan").submit();
@@ -220,6 +426,8 @@ function perkembangan_simpan(){
 $('#myPleaseWait').modal('show');
   $("#formulir_perkembangan").ajaxSubmit({
      dataType : 'json',
+     //data : $(this).serialize(), 
+    // type : 'post', 
      success : function(obj){
 
 

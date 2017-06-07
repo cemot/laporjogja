@@ -309,6 +309,7 @@ function get_data_perkembangan($lap_b_id){
             $arr_data[] = array(
                 $n,
                 flipdate($row['tanggal']), 
+                $row['no_urut'], 
                 $row['lidik'], 
                 $row['tahap'], 
                 $row['no_dokumen'],            
@@ -327,6 +328,7 @@ function get_data_perkembangan($lap_b_id){
      
      <ul class=\"dropdown-menu\">
         <li><a '#'  onclick=\"perkembangan_edit('". $id ."')\" ><span class=\"glyphicon glyphicon-edit\"></span> Edit </a></li>
+          <li><a target='blank'  href='".site_url("$this->controller/cetak_perkembangan/$id")."')\" ><span class=\"glyphicon glyphicon-print\"></span> Cetak </a></li>
         <li><a  href='#' onclick=\"perkembangan_hapus('". $id ."')\" ><span class=\"glyphicon glyphicon-remove\"></span> Hapus</a></li>
      </ul>
 
@@ -688,6 +690,117 @@ function perkembangan_hapus_dokumen() {
 
 
 
+}
+
+
+function cetak_perkembangan($id) {
+    $this->db->where("id",$id);
+    $data = $this->db->get("lap_b_perkembangan")->row_array(); 
+
+    $this->load->view("penyidik_lap_b_view_perkembangan_cetak",$data); 
+}
+
+function cetak_daftar_isi($lap_b_id) {
+    $this->db->select('a.*,b.tahap')
+    ->from('lap_b_perkembangan a'); 
+    $this->db->join("m_tahap b","a.id_tahap = b.id","left");
+
+                // "tanggal_awall" => $tanggal_awal, 
+                // "tanggal_akhir" => $tanggal_akhir,
+                // "id_fungsi" => $id_fungsi 
+
+    $this->db->order_by("tanggal,no_urut");
+
+    
+
+    
+    $this->db->where("a.lap_b_id",$lap_b_id);
+    $data['rec'] = $this->db->get(); 
+
+    $this->load->view("penyidik_lap_b_view_perkembangan_daftar_isi",$data); 
+
+}
+
+function set_monitor($lap_b_id) {
+    $post = $this->input->post(); 
+
+    extract($post);
+    // cek kesamaan dulu 
+    $sql = "SELECT * FROM lap_b 
+    WHERE mon_user='$mon_user'  
+    AND lap_b_id <> '$lap_b_id'"; 
+
+    $jumlah = $this->db->query($sql)->num_rows(); 
+
+    if($jumlah > 0 ) {
+        $arr = array("error"=>true,"message"=>"Username sudah digunakan");
+        echo json_encode($arr); 
+        exit;
+    }
+
+
+    $this->db->where("lap_b_id",$lap_b_id); 
+    $res  = $this->db->update("lap_b",$post); 
+
+    if($res) {
+        $arr = array("error"=>false,"message"=>"Akses monitoring berhasil disimpan");
+    }
+    else {
+        $arr = array("error"=>true,"message"=>"Akses monitoring gagal disimpan");
+    }
+
+    echo json_encode($arr); 
+}
+
+
+function get_template(){
+    $post = $this->input->post(); 
+
+    $this->db->where("id",$post['id']); 
+    $data = $this->db->get("template_dokumen")->row_array(); 
+
+    echo json_encode($data); 
+}
+
+
+function simpantemplate(){
+    $post = $this->input->post(); 
+
+    $res = $this->db->insert("template_dokumen",$post); 
+    $id = $this->db->insert_id();
+    if($res) {
+        $arr = array("error"=>false,"message"=>"Data template berhasil disimpan");
+        
+
+        $this->db->order_by("nama"); 
+        $rs  = $this->db->get("template_dokumen"); 
+        $html = "<option value='x'> = TEMPLATE BARU = </option>";
+        foreach($rs->result() as $row) : 
+            $sel = ($row->id == $id)?"selected":"";
+            $html .= "<option $sel value=$row->id> $row->nama </option>";
+        endforeach;
+
+        $arr['templateList'] = $html;
+
+    }
+    else {
+        $arr = array("error"=>true,"message"=>"Data template gagal disimpan");
+    }
+
+    echo json_encode($arr); 
+}
+
+function updatetemplate() {
+    $post = $this->input->post();
+    $this->db->where("id",$post['id']);
+    $res = $this->db->update("template_dokumen",$post); 
+    if($res){
+        $arr = array("error"=>false,"message"=>"Data template berhasil diupdate");
+    }
+    else {
+        $arr = array("error"=>true,"message"=>"Data template berhasil diupdate");
+    }
+    echo json_encode($arr);
 }
 
 }
