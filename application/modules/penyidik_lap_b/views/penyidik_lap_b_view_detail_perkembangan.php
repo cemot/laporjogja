@@ -141,7 +141,7 @@
                   <?php 
                   $arr_template = $this->cm->get_arr_dropdown("template_dokumen","id","nama","nama"); 
 
-                  $arr_template = $this->cm->add_arr_head($arr_template,"x","= BUAT TEMPLATE BARU = "); 
+                  $arr_template = $this->cm->add_arr_head($arr_template,"x","= PILIH TEMPLATE DOKUMEN = "); 
                   echo form_dropdown("",$arr_template,'','id="id_template" class="form-control"');
                   ?>
     
@@ -150,14 +150,15 @@
               </div>
               </div>
 
-               <div class="col-md-3">
+             <!--   <div class="col-md-3">
               
               <div class="form-group">
                 <label for="tombol">&nbsp; &nbsp;&nbsp;   </label><br />
                 <button class="btn btn-primary" id="tombol">SIMPAN TEMPLATE </button>
               </div>
               
-              </div>
+              </div> -->
+
             </div>
 
             Isi Dokumen : <br /> 

@@ -217,6 +217,7 @@
                 <li><a href="<?php echo site_url("admin_motif"); ?>">MOTIF KEJAHATAN</a></li>
                 <li><a href="<?php echo site_url("admin_pengadilan"); ?>">PENGADILAN</a></li>
                 <li><a href="<?php echo site_url("admin_lapas"); ?>">LAPAS</a></li>
+                 <li><a href="<?php echo site_url("admin_template"); ?>">TEMPLATE DOKUMEN PERKEMBANGAN KASUS</a></li>
                 
            </ul>
         </li>
