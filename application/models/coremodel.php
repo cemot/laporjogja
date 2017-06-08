@@ -407,5 +407,15 @@ function get_arr_function($jenis) {
 }
 
 
+function get_urutan(){
+  $this->db->order_by("no");
+  $res  = $this->db->get("m_urutan");
+  $arr = array();
+  foreach($res->result() as $row) : 
+    $arr[$row->no] = "$row->no.  $row->urutan";
+  endforeach;
+  return $arr;
+}
+
 }
 ?>
