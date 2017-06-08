@@ -57,9 +57,14 @@
 <form action="" id="formulir_perkembangan" method="post" enctype="multipart/form-data">
             <table width="100%"  class='table table-bordered'>
               
-                <tr><td width="30%" >NO. URUT</td>
+                <tr><td width="30%" >URUTAN</td>
               <TD>
-             <input type="text" name="no_urut" id="no_urut" class="form-control" placeholder="Nomor urut jika tanggal sama ">
+            <!--  <input type="text" name="no_urut" id="no_urut" class="form-control" placeholder="Nomor urut jika tanggal sama "> -->
+              <?php 
+                $arr_urut = $this->cm->get_urutan();
+                echo form_dropdown("no_urut",$arr_urut,'','class="form-control" id="no_urut"');
+
+              ?>
 
                </TD></tr>
 
