@@ -4,6 +4,32 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
+
+
+  $mce = tinymce.init({
+  selector: '#isi',
+  height: 500,
+  menubar: false,
+
+  setup: function (editor) {
+        editor.on('change', function () {
+            editor.save();
+        });
+    },
+  
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table contextmenu paste code'
+  ],  
+  toolbar: 'undo redo | table |  insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image ',
+  content_css: [
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    '//www.tinymce.com/css/codepen.min.css']
+});
+
+
+
    
 
 $(".tanggal").datepicker()
@@ -79,6 +105,47 @@ $("#formpenyelesaian").submit(function(){
 });
 
 
+
+
+
+$("#form_monitor").submit(function(){
+    //alert('test'); 
+    
+                    $.ajax({
+                    url : $("#form_monitor").prop('action'),
+                    type : 'post',
+                    data :  $("#form_monitor").serialize(),
+                    dataType : 'json',
+                    success : function(obj) {
+                      $('#myPleaseWait').modal('hide'); 
+                      if(obj.error==false) {
+                          BootstrapDialog.alert({
+                              type: BootstrapDialog.TYPE_PRIMARY,
+                              title: 'Informasi',
+                              message: obj.message,
+                               
+                          });   
+
+                      // $('#grid_perkembangan').DataTable().ajax.reload(); 
+                      
+                      }
+                      else {
+                        BootstrapDialog.alert({
+                            type: BootstrapDialog.TYPE_DANGER,
+                            title: 'Error',
+                            message: obj.message,
+                             
+                        }); 
+                      }
+                    }
+                  });
+
+    return false;
+    
+});
+
+
+
 // get detail 
 $.ajax({
   url : '<?php echo site_url("$this->controller/get_lap_a_detail/$lap_a_id") ?>',
@@ -92,6 +159,29 @@ $.ajax({
       $("#divalasan").show();
     }
   }
+});
+
+
+
+
+$("#id_template").change(function(){
+
+  if($(this).val() != 'x') {
+
+    $.ajax({
+          url : '<?php echo site_url("penyidik_lap_b/get_template") ?>',
+          data : {id : $(this).val() },
+          dataType : 'json',
+          type : 'post',
+          success : function(jsonData) {
+            tinyMCE.activeEditor.setContent(jsonData.isi);
+          }
+    });
+
+  }
+
+  // alert('test');
+
 });
 
 
@@ -192,6 +282,19 @@ function perkembangan_edit(id) {
       $("#id_pn").val(jsonData.id_pn);
       $("#id_lapas").val(jsonData.id_lapas);
       //$("#nomor_dokumen").val(jsonData.nomor_dokumen);
+
+
+       if(jsonData.isi === null ) {
+        jsonData.isi = ""; 
+       }
+
+       // if(jsonData == "")
+      tinyMCE.activeEditor.setContent('');
+     if( jsonData.isi != ''   )
+      { 
+      tinyMCE.activeEditor.setContent(jsonData.isi);
+      } 
+
 
       $.ajax({
         url:'<?php echo site_url("general/get_dropdown_tahap"); ?>/',

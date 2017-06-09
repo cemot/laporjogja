@@ -329,6 +329,7 @@ function get_data_perkembangan($lap_b_id){
      <ul class=\"dropdown-menu\">
         <li><a '#'  onclick=\"perkembangan_edit('". $id ."')\" ><span class=\"glyphicon glyphicon-edit\"></span> Edit </a></li>
           <li><a target='blank'  href='".site_url("$this->controller/cetak_perkembangan/$id")."')\" ><span class=\"glyphicon glyphicon-print\"></span> Cetak </a></li>
+
         <li><a  href='#' onclick=\"perkembangan_hapus('". $id ."')\" ><span class=\"glyphicon glyphicon-remove\"></span> Hapus</a></li>
      </ul>
 
@@ -345,6 +346,7 @@ function get_data_perkembangan($lap_b_id){
          
         echo json_encode($responce); 
     }
+
 
 
 
@@ -709,7 +711,7 @@ function cetak_daftar_isi($lap_b_id) {
                 // "tanggal_akhir" => $tanggal_akhir,
                 // "id_fungsi" => $id_fungsi 
 
-    $this->db->order_by("tanggal,no_urut");
+    $this->db->order_by("no_urut");
 
     
 

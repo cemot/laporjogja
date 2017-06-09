@@ -1,7 +1,16 @@
+<script type="text/javascript" src="<?php echo base_url("assets/tinymce/js/tinymce/tinymce.min.js"); ?>"></script>
+
+
+<script type="text/javascript" src="<?php echo base_url("assets/tinymce/js/tinymce/jquery.tinymce.min.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/tinymce/js/tinymce/plugins/table/"); ?>/plugin.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/tinymce/js/tinymce/plugins/paste/"); ?>/plugin.min.js"></script>  
+
+
 <p>
 </p>
 
 <a href="javascript:perkembangan_baru();" class="btn btn-success"><span class="glyphicon glyphicon-add"></span>Tambah Perkembangan Kasus </a>
+<a target="blank" href="<?php echo site_url("$this->controller/cetak_daftar_isi/$lap_a_id") ?>" class="btn btn-success"><span class="glyphicon glyphicon-print"></span>Cetak Daftar Isi </a>
 <p></p>
 
 <table width="100%"  border="0" class="table table-striped 
@@ -29,7 +38,7 @@
 
 
 <div class="modal fade" id="perkembangan_modal" tabindex="-1" role="dialog" aria-labelledby="perkembangan_modal">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -39,6 +48,21 @@
         
 <form action="" id="formulir_perkembangan" method="post" enctype="multipart/form-data">
             <table width="100%"  class='table table-bordered'>
+
+
+
+
+                 <tr><td width="30%" >URUTAN</td>
+              <TD>
+            <!--  <input type="text" name="no_urut" id="no_urut" class="form-control" placeholder="Nomor urut jika tanggal sama "> -->
+              <?php 
+                $arr_urut = $this->cm->get_urutan();
+                echo form_dropdown("no_urut",$arr_urut,'','class="form-control" id="no_urut"');
+
+              ?>
+
+               </TD></tr>
+
               <tr>
 
                 <tr><td width="30%" >APAKAH DAPAT DITINGKATKAN KE PROSES PENYIDIKAN </td>
@@ -111,6 +135,45 @@
             <tr><td >Upload dokumen (max 2Mb) <br /> 
             hanya menerima extensi .jpg, .jpeg, .png, .pdf, .xlsx, .doc, .docx</td>
             <TD><input type="file" name="file_dokumen" id="file_dokumen"></TD></tr>
+
+
+
+
+            <tr><td colspan="2">
+
+            <div class="row">
+              <div class="col-md-9">
+
+               <div class="form-group">
+                <label for="id_template">Pilih Template Dokumen</label>
+                  <?php 
+                  $arr_template = $this->cm->get_arr_dropdown("template_dokumen","id","nama","nama"); 
+
+                  $arr_template = $this->cm->add_arr_head($arr_template,"x","= PILIH TEMPLATE DOKUMEN = "); 
+                  echo form_dropdown("",$arr_template,'','id="id_template" class="form-control"');
+                  ?>
+    
+
+
+              </div>
+              </div>
+
+             <!--   <div class="col-md-3">
+              
+              <div class="form-group">
+                <label for="tombol">&nbsp; &nbsp;&nbsp;   </label><br />
+                <button class="btn btn-primary" id="tombol">SIMPAN TEMPLATE </button>
+              </div>
+              
+              </div> -->
+
+            </div>
+
+            Isi Dokumen : <br /> 
+            <textarea id="isi" name="isi"></textarea>
+            </td></tr>
+
+
 
                </table>
             <input type="hidden" name="id" value=""  id="id"  />   

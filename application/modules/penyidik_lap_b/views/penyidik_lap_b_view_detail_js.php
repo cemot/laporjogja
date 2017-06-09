@@ -383,7 +383,7 @@ function perkembangan_edit(id) {
 
       $("#id_pn").val(jsonData.id_pn);
       $("#id_lapas").val(jsonData.id_lapas);
-      $("#no_urut").val(jsonData.no_urut);
+      $("#no_urut").val(jsonData.no_urut).attr('selected','selected');
      //  $("#isi").val(jsonData.isi);
 
      if(jsonData.isi === null ) {
@@ -396,7 +396,7 @@ function perkembangan_edit(id) {
       { 
       tinyMCE.activeEditor.setContent(jsonData.isi);
       } 
-      //$("#nomor_dokumen").val(jsonData.nomor_dokumen);
+      
 
       $.ajax({
         url:'<?php echo site_url("general/get_dropdown_tahap"); ?>/',

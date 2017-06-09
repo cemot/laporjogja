@@ -6,9 +6,7 @@
 <script type="text/javascript" src="<?php echo base_url("assets/tinymce/js/tinymce/plugins/table/"); ?>/plugin.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/tinymce/js/tinymce/plugins/paste/"); ?>/plugin.min.js"></script>  
 
-<script type="text/javascript">
-
-</script>
+ 
 
 <p>
 </p>

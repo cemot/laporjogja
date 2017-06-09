@@ -3,6 +3,8 @@ $(document).ready(function(){
 
    
 
+  // $("#id_penyidik").select2();
+
 		 var dt = $("#grid_penyidik").DataTable(
 		 	{
 		 		// "order": [[ 0, "desc" ]],
