@@ -311,6 +311,7 @@ function get_data_perkembangan($lap_a_id){
             $arr_data[] = array(
                 $n,
                 flipdate($row['tanggal']), 
+                $row['no_urut'], 
                 $row['lidik'], 
                 $row['tahap'], 
                 $row['no_dokumen'],            

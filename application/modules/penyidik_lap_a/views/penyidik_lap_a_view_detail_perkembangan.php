@@ -19,6 +19,7 @@
   <tr style="background-color:#CCC">
         <th width="3%">NO.</th>
          <th width="10%">TANGGAL</th>
+         <th width="10%">NO. URUT</th>
         <th width="10%">LIDIK/SIDIK</th>
         <th width="29%">TAHAP</th>
         <th width="19%">NO DOKUMEN</th>
