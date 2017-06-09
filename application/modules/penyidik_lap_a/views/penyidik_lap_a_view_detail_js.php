@@ -273,6 +273,7 @@ function perkembangan_edit(id) {
       
       $("#proses_penyidikan").val(jsonData.proses_penyidikan).attr('selected','selected');
       $("#lidik").val(jsonData.lidik).attr('selected','selected');
+      $("#no_urut").val(jsonData.no_urut).attr('selected','selected');
 
       $("#no_dokumen").val(jsonData.no_dokumen);
       $("#tanggal").val(jsonData.tanggal);
