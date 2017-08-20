@@ -80,8 +80,12 @@
             <tr><td  >Tanggal proses</td>
             <TD><input type="text" name="tanggal" id="tanggal" class="form-control tanggal" placeholder="Tangal Proses" data-date-format="dd-mm-yyyy"></TD></tr>
 
-            <tr><td  >Keterangan</td>
-            <TD><textarea name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan"></textarea></TD></tr>
+            <!-- <tr><td  >Keterangan</td>
+            <TD><textarea name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan"></textarea></TD></tr> -->
+
+            <tr><td>Keterangan </td>
+            <td> <?php echo $this->ckeditor->editor('keterangan','');?>  
+            </td></tr>
 
 
             <tr><td  >Pengadilan Negeri</td>

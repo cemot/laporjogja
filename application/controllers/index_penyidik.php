@@ -1,5 +1,5 @@
 <?php
-class index_penyidik extends penyidik_controller  {
+class index_penyidik extends super_controller  {
 	function index_penyidik(){
 		parent::__construct();
 		// echo "pilihan ".$this->session->userdata("pilihan"); exit;
@@ -18,7 +18,7 @@ class index_penyidik extends penyidik_controller  {
 		$this->set_subtitle("PENYIDIK DASHBOARD");
 		$this->set_title("PENYIDIK DASHBOARD");
 		$this->set_content($content);
-		$this->render_admin();
+		$this->render();
 	}
 }
 ?>

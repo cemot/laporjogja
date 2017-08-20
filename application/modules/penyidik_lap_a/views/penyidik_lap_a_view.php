@@ -79,6 +79,13 @@
 <div class="row">
   <div class="col-md-12">
 
+
+<p>
+<?php echo $this->ckeditor->editor('keterangan','');?>
+</p>
+
+
+
     <div class="panel panel-default">
                 <div class="panel-heading"><b>PENCARIAN</b></div>
                 <div class="panel-body">

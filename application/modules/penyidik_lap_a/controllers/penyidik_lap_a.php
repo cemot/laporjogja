@@ -11,6 +11,7 @@ class penyidik_lap_a extends penyidik_controller {
         $this->load->model("penyidik_lap_a_model","am");
 		$this->controller = get_class($this);
 		$this->userdata = $_SESSION['userdata'];
+        $this->load->library('ckeditor');
 
 	}
 
