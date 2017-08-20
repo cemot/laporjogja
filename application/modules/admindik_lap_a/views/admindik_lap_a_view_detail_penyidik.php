@@ -1,3 +1,7 @@
+<script type="text/javascript" src="<?php echo base_url("assets/select2/dist/js/select2.min.js") ?>" ></script>
+<link href="<?php echo base_url("assets/select2/dist/css/select2.min.css") ?>" rel="stylesheet">
+
+
 <p>
 </p>
 
@@ -35,6 +39,31 @@
       <div class="modal-body">
         
 <form action="" id="formulir_penyidik" method="post">
+
+        <div class="form-group">
+          <label for="id_penyidik">Nama / NRP  Penyidik</label>
+          <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+          <?php 
+                $arr_penyidik = $this->dm->get_arr_data_penyidik();
+                echo form_dropdown("id_penyidik",$arr_penyidik,'','id="id_penyidik" class="form-control"');
+              ?>
+        </div>
+
+        <!--   <div class="form-group">
+            <label for="id_penyidik">Nama / NRP  Penyidik</label>
+            <?php 
+                $arr_penyidik = $this->dm->get_arr_data_penyidik();
+                echo form_dropdown("id_penyidik",$arr_penyidik,'','id="id_penyidik" class="form-control"');
+              ?>
+
+          </div> -->
+
+
+
+         <!--  <input type="hidden" name="id" value=""  id="id"  />   
+            <input type="hidden" name="lap_a_id" value=""  id="lap_a_id" value="<?php echo $lap_a_id; ?>"  /> 
+
+
             <table width="100%"  class='table table-bordered'>
               <tr>
                
@@ -47,9 +76,9 @@
 
                </TD></tr></table>
             <input type="hidden" name="id" value=""  id="id"  />   
-            <input type="hidden" name="lap_a_id" value=""  id="lap_a_id" value="<?php echo $lap_a_id; ?>"  /> 
+            <input type="hidden" name="lap_a_id" value=""  id="lap_a_id" value="<?php echo $lap_a_id; ?>"  />  -->
             
-             </form>
+</form>
 
 
 

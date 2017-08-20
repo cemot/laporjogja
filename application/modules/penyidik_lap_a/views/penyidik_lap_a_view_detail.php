@@ -45,6 +45,10 @@
 
      <li role="presentation"><a href="#status" aria-controls="status" role="tab" data-toggle="tab">Status Kasus</a>
      </li>
+
+
+      <li role="presentation"><a href="#monitor" aria-controls="monitor" role="tab" data-toggle="tab">Akses Monitoring  Kasus</a>
+     </li>
     
   </ul>
 
@@ -98,6 +102,11 @@
 
     <div role="tabpanel" class="tab-pane" id="status">
     <?php $this->load->view($this->controller."_view_detail_status"); ?>  
+     
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="monitor">
+    <?php $this->load->view($this->controller."_view_detail_monitor"); ?>  
      
     </div>
 

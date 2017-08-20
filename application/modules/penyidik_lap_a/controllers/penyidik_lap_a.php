@@ -262,7 +262,9 @@ function get_data_perkembangan($lap_a_id){
         $draw = $_REQUEST['draw']; // get the requested page 
         $start = $_REQUEST['start'];
         $limit = $_REQUEST['length']; // get how many rows we want to have into the grid 
-        $sidx = isset($_REQUEST['order'][0]['column'])?$_REQUEST['order'][0]['column']:"tanggal"; // get index row - i.e. user click to sort 
+        // $sidx = isset($_REQUEST['order'][0]['column'])?$_REQUEST['order'][0]['column']:"no_urut"; // get index row - i.e. user click to sort 
+        $sidx = ($_REQUEST['order'][0]['column']=="0")?"2":$_REQUEST['order'][0]['column']; // get index row - i.e. user click to sort 
+
         $sord = isset($_REQUEST['order'][0]['dir'])?$_REQUEST['order'][0]['dir']:"asc"; // get the direction if(!$sidx) $sidx =1;  
         
         // $nama = (isset($_REQUEST['columns'][1]['search']['value']))?$_REQUEST['columns'][1]['search']['value']:"";
@@ -312,6 +314,7 @@ function get_data_perkembangan($lap_a_id){
             $arr_data[] = array(
                 $n,
                 flipdate($row['tanggal']), 
+                $row['no_urut'], 
                 $row['lidik'], 
                 $row['tahap'], 
                 $row['no_dokumen'],            
@@ -329,6 +332,7 @@ function get_data_perkembangan($lap_a_id){
      
      <ul class=\"dropdown-menu\">
         <li><a '#'  onclick=\"perkembangan_edit('". $id ."')\" ><span class=\"glyphicon glyphicon-edit\"></span> Edit </a></li>
+         <li><a target='blank'  href='".site_url("$this->controller/cetak_perkembangan/$id")."')\" ><span class=\"glyphicon glyphicon-print\"></span> Cetak </a></li>
         <li><a  href='#' onclick=\"perkembangan_hapus('". $id ."')\" ><span class=\"glyphicon glyphicon-remove\"></span> Hapus</a></li>
      </ul>
 
@@ -697,6 +701,75 @@ function perkembangan_hapus_dokumen() {
 
 
 
+}
+
+
+
+
+function cetak_perkembangan($id) {
+    $this->db->where("id",$id);
+    $data = $this->db->get("lap_a_perkembangan")->row_array(); 
+
+    $this->load->view("penyidik_lap_a_view_perkembangan_cetak",$data); 
+}
+
+
+function cetak_daftar_isi($lap_a_id) {
+    $this->db->select('a.*,b.tahap')
+    ->from('lap_a_perkembangan a'); 
+    $this->db->join("m_tahap b","a.id_tahap = b.id","left");
+
+                // "tanggal_awall" => $tanggal_awal, 
+                // "tanggal_akhir" => $tanggal_akhir,
+                // "id_fungsi" => $id_fungsi 
+
+    $this->db->order_by("no_urut");
+
+    
+
+    
+    $this->db->where("a.lap_a_id",$lap_a_id);
+    $data['rec'] = $this->db->get(); 
+
+    // echo $this->db->last_query(); exit;
+
+    $this->load->view("penyidik_lap_a_view_perkembangan_daftar_isi",$data); 
+
+}
+
+
+
+function set_monitor($lap_a_id) {
+    $post = $this->input->post(); 
+
+    extract($post);
+    // cek kesamaan dulu 
+    $sql = "SELECT * FROM lap_a 
+    WHERE mon_user='$mon_user'  
+    AND lap_a_id <> '$lap_a_id'"; 
+
+    $jumlah = $this->db->query($sql)->num_rows(); 
+
+    if($jumlah > 0 ) {
+        $arr = array("error"=>true,"message"=>"Username sudah digunakan");
+        echo json_encode($arr); 
+        exit;
+    }
+
+
+    $this->db->where("lap_a_id",$lap_a_id); 
+    $res  = $this->db->update("lap_a",$post); 
+
+    // echo $this->db->last_query(); 
+
+    if($res) {
+        $arr = array("error"=>false,"message"=>"Akses monitoring berhasil disimpan");
+    }
+    else {
+        $arr = array("error"=>true,"message"=>"Akses monitoring gagal disimpan");
+    }
+
+    echo json_encode($arr); 
 }
 
 

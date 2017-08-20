@@ -178,7 +178,8 @@ class ex_grafik_penyidik extends super_controller  {
 	}
 
 	$res = $this->db->get();
-	// echo $this->db->last_query(); exit;
+	// echo $this->db->last_query(); 
+	// exit;
 
 	$sql = $this->db->last_query();
 
@@ -252,6 +253,9 @@ class ex_grafik_penyidik extends super_controller  {
 			}
 
 
+
+
+
 			$sql.= " where p.level='2' ";
 
 			if($jenis<>'x') {
@@ -268,6 +272,12 @@ class ex_grafik_penyidik extends super_controller  {
 				else {
 					$sql .= " and op.id_polres = '$id_polres' ";
 				}
+			}
+
+
+			if($post['id_fungsi']<> 'x') {
+				// $this->db->where("a.id_fungsi",$post['id_fungsi']);
+				$sql .= " and a.id_fungsi = '$id_fungsi'";
 			}
 
 

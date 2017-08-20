@@ -323,6 +323,7 @@ function get_perkembangan($lap_a_id){
 
     
     $this->db->where("a.lap_a_id",$lap_a_id);
+    $this->db->order_by("no_urut");
     $res = $this->db->get();
     return $res;
 }

@@ -338,7 +338,7 @@ function get_perkembangan($lap_b_id){
 
     
     $this->db->where("a.lap_b_id",$lap_b_id);
-    $this->db->order_by("a.tanggal");
+    $this->db->order_by("a.no_urut");
     // $this->db->order_by("a.tanggal, b.id_lidik");
 
     $res = $this->db->get();
