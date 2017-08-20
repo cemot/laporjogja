@@ -294,5 +294,24 @@ function get_json_detail($id){
 	echo json_encode($data);
 }
 
+
+public function get_kesatuan($jenis){
+
+	$id_kesatuan = $this->uri->segment(4);
+	
+	$jenis = ($jenis=="polda")?"polda":"polrespolsek";
+
+	$this->db->where("jenis",$jenis);
+	$res = $this->db->get("m_kesatuan");
+	foreach($res->result() as $row ) : 
+		$sel = ( $row->id_kesatuan == $id_kesatuan ) ?"selected":"";
+		echo "<option value=$row->id_kesatuan $sel>$row->kesatuan </option> \n ";
+	endforeach;
+
+}
+
+
+
+
 }
 ?>

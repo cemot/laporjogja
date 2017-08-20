@@ -20,18 +20,30 @@ $(document).ready(function(){
   	if(   $("#jenis").val() == "polda"   || $("#jenis").val() == "x"   ){
   		$("#tr_polsek").hide();
   		$("#tr_polres").hide();
-  		$("#tr_satuan").show();
+  		
   	}
   	else if($("#jenis").val() == "polres") {
   		$("#tr_polres").show();
   		$("#tr_polsek").hide();
-  		$("#tr_satuan").hide();
+  		 
   	}
   	else {
   		$("#tr_polres").show();
   		$("#tr_polsek").show();
-  		$("#tr_satuan").hide();
+  		 
   	}
+
+
+  	$.ajax({
+  		url : '<?php echo site_url("$controller/get_kesatuan") ?>/'+$("#jenis").val(),
+  		success : function(htmlData){
+  			$("#tr_satuan").show(); 
+
+  			$("#id_kesatuan").html(htmlData);
+  		}
+  	})
+
+
 
   });
 
