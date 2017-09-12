@@ -79,8 +79,22 @@ $setting = $this->cm->get_setting();
     <td>&nbsp;</td>
     <td>6.</td>
     <td>TELAH MELAPOR DI </td>
-    <td>: </td>
-    <td>Polda Banten *)</td>
+    <td>:</td>
+    <td>
+    <?php 
+    if($userdata['jenis']=='polres'){
+      echo "KEPOLISIAN " . $userdata['nama_polres'];
+      
+    }
+    else if ($userdata['jenis']=='polsek'){
+      echo "KEPOLISIAN " . $userdata['nama_polsek'];
+    }
+    else {
+        echo "POLDA D.I.Y ";
+    }
+  ?>
+
+    </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -120,11 +134,11 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center">Serang, <?php echo tgl_indo(flipdate($tanggal)) ?> </td>
+    <td align="center"><?php echo $ttd['tempat'] ?>,  <?php echo tgl_indo(flipdate($tanggal)) ?> </td>
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center">a.n Kepala KEPALA KEPOLISIAN DAERAH BANTEN </td>
+    <td align="center">a.n KEPALA KEPOLISIAN <?php echo $ttd['instansi'];  ?></td>
   </tr>
   <tr>
     <td align="center">PELAPOR</td>

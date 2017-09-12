@@ -2705,6 +2705,13 @@ function cetak_surat_pernyataan($id) {
 
 function cetak_tanda_bukti($id){
 		$data = $this->dm->detail($id);
+
+		// echo "userdata "; 
+		$userdata = $_SESSION['userdata'];
+		// show_array($userdata);
+		// show_array($data); 
+		// exit;
+		$data['userdata'] = $userdata; 
 		$data['terlapor']= $this->dm->get_data_terlapor($id);
 
 		$data['ttd'] = $this->get_header_by_user_id($data['user_id']);
