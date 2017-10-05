@@ -83,7 +83,7 @@ $(function () {
             ?>
             <tr>
               <td ><?php echo $n; ?> </td>
-              <td ><?php echo $row->nama; ?> </td>
+              <td ><a href="#bawah" onclick="detailkasus('<?php echo $row->id ?>')" > <?php echo $row->nama; ?> </a> </td>
               <td align="center"><?php echo $row->p21; ?> </td>
               <td align="center"><?php echo $row->sidik; ?> </td>
               <td align="center"><?php echo $row->lidik; ?> </td>
@@ -97,3 +97,5 @@ $(function () {
   </div>
 
 </div>
+
+

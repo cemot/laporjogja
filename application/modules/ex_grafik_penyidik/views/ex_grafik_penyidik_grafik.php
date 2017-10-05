@@ -1,5 +1,18 @@
 <script src="<?php echo base_url('assets/highcharts/highcharts.js'); ?>"></script>
 
+
+
+<style id="jsbin-css">
+    @media (min-width: 768px) {
+      .modal-xl {
+        width: 90%;
+       max-width:1200px;
+      }
+    }
+
+</style>
+
+
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">
             <div class="alert alert-danger" role="alert" id="message">
@@ -115,6 +128,36 @@
 </div>
 
 </div>
+
+
+<!-- <div class="row">
+  <div class="col-md-12" id="datakasus">
+
+   
+</div>
+</div> -->
+
+
+
+<!-- Modal -->
+<div  class="modal fade modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">DETAIL KASUS PENYIDIK</h4>
+      </div>
+      <div class="modal-body" id="datakasus">
+         
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+       <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 

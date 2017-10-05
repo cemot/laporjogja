@@ -311,7 +311,7 @@ function get_data_perkembangan($lap_b_id){
                 // $filelink= " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
                 //     <img src='".base_url("assets/images/delete.png")."'>
                 // </a>";
-                $filelink =  '<a target="blank" href="'.base_url("documents/$filename").'"> '.$row['file_dokumen'].' </a>';
+                $filelink =  '<a target="blank" href="'.base_url("documents/$filename").'"> '.$row['file_dokumen'].' </a> ';
             }
 
              
