@@ -539,6 +539,9 @@ function get_header_by_user_id($user_id) {
 	$user = $this->db->get("pengguna")->row_array();
 	// echo $this->db->last_query(); 
 
+	// show_array($user); 
+	// exit;
+
 	$ret = array();
 	$ret['nama_polda']  = $data['nama_polda'];
 	if($user['jenis']=='polda') {
@@ -546,7 +549,7 @@ function get_header_by_user_id($user_id) {
 	
 		$polda = $this->db->get('m_setting_polda')->row_array();
 
-		$ret['instansi'] = '<br />';
+		$ret['instansi'] = $polda['nama_polda'];  // 'D.I YOGYAKARTA';
 		$ret['ttd_nama'] = $data['ttd_nama'];
 		$ret['ttd_nrp'] = $data['ttd_nrp'];
 		$ret['ttd_jabatan'] = $data['ttd_jabatan'];

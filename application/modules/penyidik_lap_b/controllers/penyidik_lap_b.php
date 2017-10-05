@@ -302,6 +302,16 @@ function get_data_perkembangan($lap_b_id){
         foreach($result as $row) : 
             $n++;
         
+
+            if(empty($row['file_dokumen']) or !file_exists("./documents/".$row['file_dokumen']) ) {
+                $filelink = "-";
+            } 
+            else {
+                $filelink=anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']). " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
+                    <img src='".base_url("assets/images/delete.png")."'>
+                </a>";
+            }
+
              
             $id = $row['id'];
             $row['lidik']  = ($row['lidik']=="1")?"Penyidikan":"Penyelidikan";
@@ -315,10 +325,11 @@ function get_data_perkembangan($lap_b_id){
                 $row['no_dokumen'],            
                 
                 $row['keterangan'], 
+                $filelink, 
                 
-                (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']). " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
-                    <img src='".base_url("assets/images/delete.png")."'>
-                </a>",
+                // (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']). " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
+                //     <img src='".base_url("assets/images/delete.png")."'>
+                // </a>",
                                  
                                  
                                  
