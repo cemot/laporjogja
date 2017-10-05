@@ -348,7 +348,8 @@ function get_detail_golongan(){
 function getdokumen($file) {
 	$data = file_get_contents("./documents/$file");
 
-	force_download($file,$data);
+	echo $data;
+	//force_download($file,$data);
 
 }
 
