@@ -2616,6 +2616,9 @@ function cetak_laporan($id) {
 
 
 		// show_array($data); exit;
+		$userdata = $_SESSION['userdata'];
+	 
+		$data['userdata'] = $userdata; 
 		$data['tersangka'] = $this->dm->get_data_tersangka($id);
 		$data['korban'] = $this->dm->get_data_korban($id);
 		$data['saksi'] = $this->dm->get_data_saksi($id);
@@ -2708,9 +2711,7 @@ function cetak_tanda_bukti($id){
 
 		// echo "userdata "; 
 		$userdata = $_SESSION['userdata'];
-		// show_array($userdata);
-		// show_array($data); 
-		// exit;
+	 
 		$data['userdata'] = $userdata; 
 		$data['terlapor']= $this->dm->get_data_terlapor($id);
 
