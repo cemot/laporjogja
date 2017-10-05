@@ -80,8 +80,7 @@ $setting = $this->cm->get_setting();
     <td>6.</td>
     <td>TELAH MELAPOR DI </td>
     <td>:</td>
-    <td>
-    <?php 
+    <td><?php 
     if($userdata['jenis']=='polres'){
       echo "KEPOLISIAN " . $userdata['nama_polres'];
       
@@ -134,7 +133,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center"><?php echo $ttd['tempat'] ?>,  <?php echo tgl_indo(flipdate($tanggal)) ?> </td>
+    <td align="center"><?php echo $ttd['tempat'] ?>,  <?php echo ucwords(strtolower(tgl_indo(flipdate($tanggal)))) ?> </td>
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
