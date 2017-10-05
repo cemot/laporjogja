@@ -310,5 +310,44 @@ function get_polsek(){
 
 
 }
+
+
+function get_kasus_per_user($iduser) {
+
+	$this->db->select("l.tanggal,l.nomor,l.tindak_pidana")
+	->from("lap_a l")
+	->join("lap_a_penyidik lp ","l.lap_a_id=lp.lap_a_id")
+	->group_by("l.lap_a_id")
+	->where("lp.id_penyidik",$iduser)
+	->order_by("l.tanggal");
+
+
+	$rs = $this->db->get();
+	$data['dataKasus']= $rs;
+
+	// cari data user 
+
+	$this->db->select("p.*,polsek.nama_polsek, polres.nama_polres")
+	->from("pengguna p")
+	->join("m_polres polres","polres.id_polres=p.id_polres",'left')
+	->join("m_polsek polsek","polsek.id_polsek=p.id_polsek",'left'); 
+
+	$this->db->where("id",$iduser); 
+
+	$datauser = $this->db->get()->row_array();
+
+	// echo $this->db->last_query(); 
+
+	$data['datauser'] = $datauser;
+
+
+	$this->load->view($this->controller."_list_kasus",$data); 
+
+
+
+}
+
+
+
 }
 ?>

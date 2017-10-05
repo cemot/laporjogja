@@ -70,7 +70,28 @@ $("#jenis").change(function(){
 
 
 
+
 });
+
+
+function detailkasus(id) {
+  // alert('tampilakn');
+
+  $.ajax({
+      url : '<?php echo site_url("$this->controller/get_kasus_per_user") ?>/'+id,
+      success : function(htmldata) {
+        $("#datakasus").html(htmldata);
+
+        $('#myModal').modal('show');
+
+      }
+  });
+
+
+
+
+
+}
 
 
 </script>
