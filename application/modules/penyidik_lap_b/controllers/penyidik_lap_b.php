@@ -301,15 +301,17 @@ function get_data_perkembangan($lap_b_id){
         $n=0;
         foreach($result as $row) : 
             $n++;
-        
+            $filename = $row['file_dokumen']; 
 
             if(empty($row['file_dokumen']) or !file_exists("./documents/".$row['file_dokumen']) ) {
                 $filelink = "-";
             } 
             else {
-                $filelink=anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']). " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
-                    <img src='".base_url("assets/images/delete.png")."'>
-                </a>";
+                // anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']).
+                // $filelink= " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
+                //     <img src='".base_url("assets/images/delete.png")."'>
+                // </a>";
+                $filelink =  '<a target="blank" href="'.base_url("documents/$filename").'"> '.$row['file_dokumen'].' </a>';
             }
 
              
