@@ -16,7 +16,9 @@ $setting = $this->cm->get_setting();
     <td width="49%" align="center">KEPOLISIAN NEGARA REPUBLIK INDONESIA<br />
         <?php echo $ttd['nama_polda']. "<br />"; 
 	 if($userdata['jenis']<>'polda') { 
+
   echo $ttd['instansi'].'<br />'; }
+
 	echo $ttd['alamat']; 
 	
 	?>
