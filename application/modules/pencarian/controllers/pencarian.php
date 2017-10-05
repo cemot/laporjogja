@@ -54,10 +54,28 @@ class pencarian extends master_controller {
 
 		    array(
 		   	"id" => "nomor",
-			"label" => "Nomor Laporan",
+			"label" => "Nomor LP",
 			"type" => "string",
 			"operators" => array('equal', 'contains')
 		   	), 
+
+
+		   	array(
+		   	"id" => "nrp_operator",
+			"label" => "NRP Operator ",
+			"type" => "string",
+			"operators" => array('equal', 'contains')
+		   	), 
+
+
+		   	array(
+		   	"id" => "nrp_penyidik",
+			"label" => "NRP PENYIDIK",
+			"type" => "string",
+			"operators" => array('equal', 'contains')
+		   	), 
+
+		   	
 
 		   	array(
 		   	"id" => "id_gol_kejahatan",
