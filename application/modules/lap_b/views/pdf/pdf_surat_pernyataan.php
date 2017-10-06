@@ -73,7 +73,7 @@ $setting = $this->cm->get_setting();
 <table width="100%" border="0" cellpadding="0">
   <tr>
     <td width="58%">&nbsp;</td>
-    <td width="42%" align="center">Serang, <?php echo tgl_indo(flipdate($tanggal));  ?> </td>
+    <td width="42%" align="center"><?php echo $ttd['tempat'] ?>,  <?php echo ucwords(strtolower(tgl_indo(flipdate($tanggal)))) ?>  </td>
   </tr>
   <tr>
     <td>&nbsp;</td>

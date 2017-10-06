@@ -2693,6 +2693,9 @@ function cetak_surat_pernyataan($id) {
 		 
 		$pdf->AddPage('P');
 		//$data = array();
+
+		$data['ttd'] = $this->get_header_by_user_id($data['user_id']);
+
 		$html = $this->load->view("pdf/pdf_surat_pernyataan",$data,true);		 
 		$pdf->writeHTML($html, true, false, true, false, '');
 		 
