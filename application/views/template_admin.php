@@ -227,6 +227,7 @@
 
                  <li><a href="<?php echo site_url("admin_kesatuan"); ?>">KESATUAN</a></li>
                  <li><a href="<?php echo site_url("admin_subdit"); ?>">SUBDIT/UNIT</a></li>
+                 <li><a href="<?php echo site_url("admin_unit"); ?>">UNIT/PANIT</a></li>
                 
            </ul>
         </li>
