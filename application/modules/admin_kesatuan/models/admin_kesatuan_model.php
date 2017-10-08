@@ -1,6 +1,6 @@
 <?php
 class admin_kesatuan_model extends CI_Model {
-	function admin_kesatuan_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

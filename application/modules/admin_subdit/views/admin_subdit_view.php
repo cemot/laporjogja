@@ -12,6 +12,14 @@
 </style>
 
 
+<div class="row" style="margin-bottom: 10px;">
+
+<div class="col-md-1">
+         
+        <a href="javascript:baru();" class="btn btn-success"><span class="glyphicon glyphicon-add"></span>Tambah Baru </a>
+    </div>
+</div>
+
 
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">
@@ -31,38 +39,45 @@
 
 <div class="row" style="margin-bottom:20px;">
 
-    <div class="col-md-2">
-         <?php 
-             
-             $arr_kesatuan = $this->dm->get_arr_kesatuan();
-             $arr_kesatuan = $this->cm->add_arr_head($arr_kesatuan,'x',"= SEMUA = ");
-              
-              echo form_dropdown("search_id_kesatuan",$arr_kesatuan,'','class="form-control" id="search_id_kesatuan"');
+<div class="col-md-3">
+     <input id="txt_cari" type="text" Placeholder="Cari Subdit/Unit" class="form-control"   />
+</div>
+<div class="col-md-3">
+     <?php 
+                 $arr = array("x"=>"== SEMUA JENIS ==","polda"=>"POLDA","polrespolsek"=>"POLRES/POLSEK");
+                 echo form_dropdown("search_jenis",$arr,'','id="search_jenis" class="form-control"');
               ?>
-    </div>
+</div>
+<div class="col-md-3">
+   
+ <?php 
+                  echo form_dropdown("search_id_kesatuan",array(),'','id="search_id_kesatuan" class="form-control"'); 
+                  ?>
+</div>
 
-     <div class="col-md-2">
-           <?php 
-                  echo form_dropdown("search_id_subdit",array(),'','id="search_id_subdit" class="form-control"'); 
-             ?>
-    </div>
+<div class="col-md-1">
+ <a id="btn_cari"  href="#" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>Cari </a>
+</div>
+<div class="col-md-1">
+ <a id="btn_reset"  href="#" class="btn btn-danger"><span class="glyphicon glyphicon-reset"></span>Reset </a>
+</div>
+ <!--     
+            <span id="btn_cari" class="input-group-addon btn" >
+            <span class="glyphicon glyphicon-search"></span> Cari</span>
+            <span id="btn_reset" class="input-group-addon btn" >
+            <span class="glyphicon glyphicon-ban-circle"></span> Reset</span>
+        </div> -->
 
 
- <div class="col-md-2">
-           <?php 
-                  echo form_dropdown("search_id_unit",array(),'','id="search_id_unit" class="form-control"'); 
-             ?>
-    </div>
 
-
-
-       <div class="col-md-4">
+<!--        <div class="col-md-12">
 
     
-        <div class="input-group">
+        
         <div class="col-md-12"  style="padding-left: 0px; padding-right: 2px;">
-            <input id="txt_cari" type="text" Placeholder="Cari nama" class="form-control"   /></div>
-             
+             <input id="txt_cari" type="text" Placeholder="Cari nama" class="form-control"   /></div>
+
+         <div class="input-group">  
             <span id="btn_cari" class="input-group-addon btn" >
             <span class="glyphicon glyphicon-search"></span> Cari</span>
             <span id="btn_reset" class="input-group-addon btn" >
@@ -72,9 +87,17 @@
     <div class="col-md-2">
          
         <a href="javascript:baru();" class="btn btn-success"><span class="glyphicon glyphicon-add"></span>Tambah Baru </a>
-    </div>
+    </div> -->
 </div>
  
+
+<!-- 
+            <?php 
+                 $arr = array("x"=>"==PILIH JENIS ==","polda"=>"POLDA","polrespolsek"=>"POLRES/POLSEK");
+                 echo form_dropdown("jenis",$arr,'','id="jenis" class="form-control"');
+              ?>
+ -->
+
 <div class="row">
 <div class="col-md-12">
  
@@ -84,16 +107,11 @@
              table-bordered table-hover dataTable no-footer" id="datagrid" role="grid">
 <thead>
 	<tr style="background-color:#CCC">
-
-        <th width="15%">USERNAME/NRP</th>
-        <th width="19%">NAMA</th>
-        <th width="19%">PANGKAT</th>
-        <th width="19%">POLSEK/POLRES</th>
-        <!-- <th width="18%">ALAMAT</th> -->
-        <th width="12%">NO. HP</th>
-        <th width="22%">EMAIL</th>
+        <th  >SUBDIT/UNIT</th>
+        <th  >DIREKTORAT/SATUAN</th>
+        <th  >TINGKAT</th>
          
-      <th width="14%">PROSES</th>
+        <th  >#</th>
     </tr>
 	
 </thead>
@@ -109,5 +127,4 @@
 <?php 
 $this->load->view($controller."_view_form"); 
 $this->load->view($controller."_view_js"); 
-$this->load->view("js/general_js"); 
 ?>

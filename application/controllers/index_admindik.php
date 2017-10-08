@@ -1,6 +1,6 @@
 <?php
 class index_admindik extends admindik_controller  {
-	function index_admindik(){
+	function __construct(){
 		parent::__construct();
 		// echo "pilihan ".$this->session->userdata("pilihan"); exit;
 		$this->load->model("coremodel","cm");

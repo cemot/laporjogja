@@ -44,33 +44,37 @@
 
                
 
-
-              <!-- <tr><td>Tingkat User</td>
+      
+              <tr  id="tr_satuan"><td>KESATUAN</td>
               <TD>
               <?php 
-              $arr_jenis = array("polda"=>"POLDA","polres"=>"POLRES","polsek"=>"POLSEK");
-              $arr_jenis = $this->cm->add_arr_head($arr_jenis,"x","== PILIH JENIS INSTANSI ==");
-
-              echo form_dropdown("jenis",$arr_jenis,'','class="form-control" id="jenis"');
-              ?>
-              </TD></tr>
-
-              <tr  id="tr_polres"><td>POLRES</td>
-              <TD>
-              <?php 
-              $arr_polres = $this->cm->get_arr_dropdown("m_polres","id_polres","nama_polres","nama_polres");
-              echo form_dropdown("id_polres",$arr_polres,'','class="form-control" id="id_polres" onchange="get_data_polres(this,\'#id_polsek\',1)"');
-              ?>
-              </TD></tr>
-
-
-               <tr id="tr_polsek"><td>POLSEK</td>
-              <TD>
-              <?php 
+             
+             $arr_kesatuan = $this->dm->get_arr_kesatuan();
               
-              echo form_dropdown("id_polsek",array(),'','class="form-control" id="id_polsek"');
+              echo form_dropdown("id_kesatuan",$arr_kesatuan,'','class="form-control" id="id_kesatuan"');
               ?>
-              </TD></tr> -->
+
+              </TD></tr>
+
+               <tr><td width="30%" >Subdit / Unit </td>
+              <TD>
+                  <?php 
+                  echo form_dropdown("id_subdit",array(),'','id="id_subdit" class="form-control"'); 
+                  ?>
+
+              </TD>
+
+            </tr>
+
+
+             <tr><td width="30%" >Unit / Panit</td>
+              <TD>
+                <?php 
+                  echo form_dropdown("id_unit",array(),'','id="id_unit" class="form-control"'); 
+                  ?>
+              </TD>
+
+            </tr>
 
 
 

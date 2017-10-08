@@ -1,6 +1,6 @@
 <?php
 class index_administrator extends admin_controller  {
-	function index_administrator(){
+	function __construct(){
 		parent::__construct();
 		// echo "pilihan ".$this->session->userdata("pilihan"); exit;
 	}

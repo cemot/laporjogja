@@ -14,15 +14,29 @@
               <tr><td width="30%" >Tingkat  </td>
               <TD>
               <?php 
-                 $arr = array("polda"=>"POLDA","polrespolsek"=>"POLRES/POLSEK");
+                 $arr = array("x"=>"==PILIH JENIS ==","polda"=>"POLDA","polrespolsek"=>"POLRES/POLSEK");
                  echo form_dropdown("jenis",$arr,'','id="jenis" class="form-control"');
               ?>
 
               </TD></tr>
 
               <tr>               
-              <tr><td width="30%" >Nama Kesatuan </td>
-              <TD><input type="text" class="form-control" name="kesatuan" id="kesatuan" placeholder="Nama Kesatuan " /> </TD></tr>
+              <tr><td width="30%" >Direktorat / Satuan </td>
+              <TD>
+                  <?php 
+                  echo form_dropdown("id_kesatuan",array(),'','id="id_kesatuan" class="form-control"'); 
+                  ?>
+              </TD>
+
+            </tr>
+
+
+            <tr><td width="30%" >Subdit / Unit </td>
+              <TD>
+                 <input type="text" name="subdit" class="form-control" id="subdit" />
+              </TD>
+
+            </tr>
 
 
               
@@ -34,7 +48,7 @@
                 
               
             </table>
-            <input type="hidden" name="id_kesatuan" value=""  id="id_kesatuan"  />
+            <input type="hidden" name="id_subdit" value=""  id="id_subdit"  />
        
             
              </form>

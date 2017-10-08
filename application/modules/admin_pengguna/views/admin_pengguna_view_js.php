@@ -10,7 +10,7 @@ $(document).ready(function(){
 
   $("#tr_polsek").hide();
   $("#tr_polres").hide();
-  $("#tr_satuan").hide();
+  // $("#tr_satuan").hide();
 
   
 
@@ -34,18 +34,27 @@ $(document).ready(function(){
   	}
 
 
-  	$.ajax({
-  		url : '<?php echo site_url("$controller/get_kesatuan") ?>/'+$("#jenis").val(),
-  		success : function(htmlData){
-  			$("#tr_satuan").show(); 
 
-  			$("#id_kesatuan").html(htmlData);
-  		}
-  	})
+  	get_kesatuan($("#jenis").val(),'x','#id_kesatuan');
+
+  	 
 
 
 
   });
+
+
+
+
+  $("#id_kesatuan").change(function(){
+  	 get_subdit($(this).val(),'x','#id_subdit');
+  });
+
+
+  $("#id_subdit").change(function(){
+  	 get_unit($(this).val(),'x','#id_unit');
+  });
+
 
 
 
@@ -85,6 +94,46 @@ $(document).ready(function(){
 			});
 	
 });
+
+
+function get_kesatuan(a,b,target){
+
+	 	$.ajax({
+  		url : '<?php echo site_url("$controller/get_kesatuan") ?>/'+a+'/'+b,
+  		success : function(htmlData){
+  			$("#tr_satuan").show(); 
+
+  			$(target).html(htmlData);
+  		}
+  	})
+}
+
+
+function get_subdit(a,b,target){
+
+	 	$.ajax({
+  		url : '<?php echo site_url("$controller/get_subdit") ?>/'+a+'/'+b,
+  		success : function(htmlData){
+  			// $("#tr_satuan").show(); 
+
+  			$(target).html(htmlData);
+  		}
+  	})
+}
+
+
+
+function get_unit(a,b,target){
+
+	 	$.ajax({
+  		url : '<?php echo site_url("$controller/get_unit") ?>/'+a+'/'+b,
+  		success : function(htmlData){
+  			// $("#tr_satuan").show(); 
+
+  			$(target).html(htmlData);
+  		}
+  	})
+}
 
 function hapus(id){
 
@@ -194,6 +243,11 @@ $("#titleModal").html('EDIT DATA PENGGUNA');
 			$("#jenis").val(obj.jenis).attr('selected','selected');
 
 
+			// get_subdit(obj.id_kesatuan,obj.id_subdit,'#id_subdit');
+			get_kesatuan(obj.jenis,'x','#id_kesatuan');
+			get_subdit(obj.id_kesatuan,obj.id_subdit,'#id_subdit');
+			get_unit(obj.id_subdit,obj.id_unit,'#id_unit');
+
 
 			if(   obj.jenis == "polda" ){
 			  		$("#tr_polsek").hide();
@@ -220,14 +274,7 @@ $("#titleModal").html('EDIT DATA PENGGUNA');
 
 
 			  	}
-			 
-
-			 
-
-
-
-			
-
+	
 
 		}
 

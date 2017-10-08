@@ -1,6 +1,6 @@
 <?php
 class coremodel extends CI_Model {
-        function coremodel() {
+        function __construct() {
                 parent::__construct();
         }
         
