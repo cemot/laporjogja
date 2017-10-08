@@ -208,16 +208,25 @@
                 <li><a href="<?php echo site_url("admin_polres"); ?>">POLRES</a></li>
                 <li><a href="<?php echo site_url("admin_polsek"); ?>">POLSEK</a></li>
                 <li><a href="<?php echo site_url("admin_kelompok_kejahatan"); ?>">KELOMPOK KEJAHATAN</a></li>
+
+
+
+
+
                  <li><a href="<?php echo site_url("admin_golongan_kejahatan"); ?>">GOLONGAN KEJAHATAN</a></li>
                 <li><a href="<?php echo site_url("admin_pasal"); ?>">PASAL</a></li>
                 <li><a href="<?php echo site_url("admin_fungsi"); ?>">FUNGSI TERKAIT</a></li>
 
-                <li><a href="<?php echo site_url("admin_kesatuan"); ?>">KESATUAN</a></li>
+                
                 <li><a href="<?php echo site_url("admin_tempat"); ?>">KATEGORI TEMPAT KEJAHATAN</a></li>
                 <li><a href="<?php echo site_url("admin_motif"); ?>">MOTIF KEJAHATAN</a></li>
                 <li><a href="<?php echo site_url("admin_pengadilan"); ?>">PENGADILAN</a></li>
                 <li><a href="<?php echo site_url("admin_lapas"); ?>">LAPAS</a></li>
                  <li><a href="<?php echo site_url("admin_template"); ?>">TEMPLATE DOKUMEN PERKEMBANGAN KASUS</a></li>
+
+
+                 <li><a href="<?php echo site_url("admin_kesatuan"); ?>">KESATUAN</a></li>
+                 <li><a href="<?php echo site_url("admin_subdit"); ?>">SUBDIT/UNIT</a></li>
                 
            </ul>
         </li>

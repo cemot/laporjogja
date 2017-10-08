@@ -1,6 +1,6 @@
 <?php
 class a_pengguna_model extends CI_Model {
-	function a_pengguna_model(){
+	function __construct(){
 		parent::__construct();
 	}
 
@@ -26,13 +26,17 @@ function data($param){
 	->join("m_polres res","res.id_polres = a.id_polres",'left')
 	->join("m_polsek sek","sek.id_polsek=a.id_polsek","left")
 	->join("m_kesatuan sat","sat.id_kesatuan=a.id_kesatuan","left")
-	->join("m_level l",'l.id=a.level','left');
+	->join("m_level l",'l.id=a.level','left')
+	->join("m_unit unit","unit.id_unit=a.id_unit","left");
+
 
 	if($param['nama'] <> '') {
 		$nama = $param['nama'];
 		//$this->db->like('nama',$param['nama']);
 		$this->db->where(" ( nama like '%$nama%' or user_id like '%$nama%' )",null,false);
 	}
+
+
 
 	extract($param); 
 
@@ -67,11 +71,15 @@ function data($param){
 
  
 function detail($id){
-	$this->db->where("id",$id);
-	$ret = $this->db->get('pengguna');
+	
+	$this->db->select('u.*, unit.id_subdit')
+	->from('pengguna u') 
+	->join('m_unit unit','unit.id_unit = u.id_unit')
+	->where("u.id",$id);
+	$ret = $this->db->get();
 	return $ret;
 }
-
+// 00088821
 	
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 class penyidik_lap_b_model extends CI_Model {
-	function penyidik_lap_b_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

@@ -94,13 +94,32 @@
               <tr  id="tr_satuan"><td>KESATUAN</td>
               <TD>
               <?php 
-              // $arr_polres = $this->cm->get_arr_dropdown("m_kesatuan","id_kesatuan","kesatuan","kesatuan");
-              // echo form_dropdown("id_kesatuan",$arr_polres,'','class="form-control" id="id_kesatuan"');
+             
               
-              echo form_dropdown("m_kesatuan",array(),'','class="form-control" id="id_kesatuan"');
+              echo form_dropdown("id_kesatuan",array(),'','class="form-control" id="id_kesatuan"');
               ?>
 
               </TD></tr>
+
+               <tr><td width="30%" >Subdit / Unit </td>
+              <TD>
+                  <?php 
+                  echo form_dropdown("id_subdit",array(),'','id="id_subdit" class="form-control"'); 
+                  ?>
+
+              </TD>
+
+            </tr>
+
+
+             <tr><td width="30%" >Unit / Panit</td>
+              <TD>
+                <?php 
+                  echo form_dropdown("id_unit",array(),'','id="id_unit" class="form-control"'); 
+                  ?>
+              </TD>
+
+            </tr>
                  
 
                 

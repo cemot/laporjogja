@@ -3,7 +3,7 @@ class admin_pengguna extends admin_controller {
 
 	var $controller ;
 
-	function admin_pengguna(){
+	function __construct(){
 		parent::__construct();
 		// $this->load->model("core_model","cm");
 		$this->load->model("coremodel","cm");
@@ -188,6 +188,7 @@ function simpan(){
 			 
 			unset($data['id']);
 			unset($data['user_pass2']);
+			unset($data['id_subdit']);
 			$data['id'] = md5(microtime()); 
 
 			$data['user_pass'] = md5($data['user_pass']);
@@ -245,6 +246,7 @@ function update(){
 			 
 			 
 			unset($data['user_pass2']);
+			unset($data['id_subdit']);
 
 			if($data['user_pass'] == "") {
 				unset($data['user_pass2']);
@@ -303,6 +305,7 @@ public function get_kesatuan($jenis){
 
 	$this->db->where("jenis",$jenis);
 	$res = $this->db->get("m_kesatuan");
+	echo "<option value='x'>= PILIH  = </option>";
 	foreach($res->result() as $row ) : 
 		$sel = ( $row->id_kesatuan == $id_kesatuan ) ?"selected":"";
 		echo "<option value=$row->id_kesatuan $sel>$row->kesatuan </option> \n ";
@@ -310,7 +313,41 @@ public function get_kesatuan($jenis){
 
 }
 
+function get_subdit($jenis) {
 
+	$id_subdit = $this->uri->segment(4);
+
+	$this->db->where("id_kesatuan",$jenis); 
+	$this->db->order_by("subdit");
+	$rs = $this->db->get("m_subdit");
+	$arr= array();
+	echo "<option value='x'>= PILIH  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		$sel=($row->id_subdit==$id_subdit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_subdit $sel> $row->subdit </option>  ";
+	endforeach;
+}
+
+
+
+function get_unit($jenis) {
+
+	$id_unit = $this->uri->segment(4);
+
+	$this->db->where("id_subdit",$jenis); 
+	$this->db->order_by("unit");
+	$rs = $this->db->get("m_unit");
+	$arr= array();
+	echo "<option value='x'>= PILIH  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		$sel=($row->id_unit==$id_unit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_unit $sel> $row->unit </option>  ";
+	endforeach;
+}
 
 
 }

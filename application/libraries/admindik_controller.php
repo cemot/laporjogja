@@ -2,7 +2,7 @@
 class admindik_controller extends CI_Controller {
 
 var $pilihan; 
-	function admindik_controller() {
+	function __construct() {
 		parent::__construct();  
 
 

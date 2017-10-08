@@ -2,7 +2,7 @@
 class super_controller extends CI_Controller {
 
 var $pilihan; 
-	function super_controller() {
+	function __construct() {
 		parent::__construct();  
 
 

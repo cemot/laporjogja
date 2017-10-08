@@ -3,7 +3,7 @@ class admindik_penyidik extends admindik_controller {
 
 	var $controller ;
 
-	function admindik_penyidik(){
+	function __construct(){
 		parent::__construct();
 		// $this->load->model("core_model","cm");
 		$this->load->model("coremodel","cm");
@@ -44,7 +44,9 @@ function get_data(){
         // $level = (isset($_REQUEST['columns'][1]['search']['value']))?$_REQUEST['columns'][2]['search']['value']:"x";
         // $tanggal_awal = $_REQUEST['columns'][4]['search']['value'];
         $nama = $_REQUEST['columns'][1]['search']['value'];
-        $level = $_REQUEST['columns'][2]['search']['value'];
+        $id_kesatuan = (!empty($_REQUEST['columns'][2]['search']['value']))?$_REQUEST['columns'][2]['search']['value']:"x"; 
+        $id_subdit = (!empty($_REQUEST['columns'][3]['search']['value']))?$_REQUEST['columns'][3]['search']['value']:"x"; 
+        $id_unit = (!empty($_REQUEST['columns'][4]['search']['value']))?$_REQUEST['columns'][4]['search']['value']:"x"; 
 
 
       //  order[0][column]
@@ -55,8 +57,11 @@ function get_data(){
 				"sort_direction" => $sord,
 				"limit" => null,
 				"nama" =>$nama,
-				"level"=>($level == "")?"x":$level,
-				"userdata" => $userdata
+				// "level"=>($level == "")?"x":$level,
+				"userdata" => $userdata, 
+				"id_kesatuan" => $id_kesatuan,
+				"id_subdit" => $id_subdit, 
+				"id_unit" => $id_unit
 				 
 		);     
            
@@ -197,6 +202,8 @@ function simpan(){
 			unset($data['id']);
 			unset($data['user_pass2']);
 
+			unset($data['id_subdit']);
+
 			$data['user_pass'] = md5($data['user_pass']);
 
 			$data['level'] = 2;
@@ -308,6 +315,80 @@ function get_json_detail($id){
 	$data = $this->dm->detail($id)->row_array();
 	// show_array($data);
 	echo json_encode($data);
+}
+
+
+function get_subdit($jenis) {
+
+	$id_subdit = $this->uri->segment(4);
+
+	$this->db->where("id_kesatuan",$jenis); 
+	$this->db->order_by("subdit");
+	$rs = $this->db->get("m_subdit");
+	$arr= array();
+	echo "<option value='x'>= PILIH  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		$sel=($row->id_subdit==$id_subdit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_subdit $sel> $row->subdit </option>  ";
+	endforeach;
+}
+
+
+
+function get_unit($jenis) {
+
+	$id_unit = $this->uri->segment(4);
+
+	$this->db->where("id_subdit",$jenis); 
+	$this->db->order_by("unit");
+	$rs = $this->db->get("m_unit");
+	$arr= array();
+	echo "<option value='x'>= PILIH  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		$sel=($row->id_unit==$id_unit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_unit $sel> $row->unit </option>  ";
+	endforeach;
+}
+
+
+function get_subdit_cari($jenis) {
+
+	$id_subdit = $this->uri->segment(4);
+
+	$this->db->where("id_kesatuan",$jenis); 
+	$this->db->order_by("subdit");
+	$rs = $this->db->get("m_subdit");
+	$arr= array();
+	echo "<option value='x'>= SEMUA  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		$sel=($row->id_subdit==$id_subdit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_subdit $sel> $row->subdit </option>  ";
+	endforeach;
+}
+
+
+
+function get_unit_cari($jenis) {
+
+	$id_unit = $this->uri->segment(4);
+
+	$this->db->where("id_subdit",$jenis); 
+	$this->db->order_by("unit");
+	$rs = $this->db->get("m_unit");
+	$arr= array();
+	echo "<option value='x'>= SEMUA  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		$sel=($row->id_unit==$id_unit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_unit $sel> $row->unit </option>  ";
+	endforeach;
 }
 
 }

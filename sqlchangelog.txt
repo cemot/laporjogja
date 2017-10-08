@@ -1,0 +1,2 @@
+ALTER TABLE `pengguna` ADD `id_unit` CHAR(32) NULL AFTER `jabatan`; 
+
