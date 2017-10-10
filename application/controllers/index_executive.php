@@ -1,6 +1,6 @@
 <?php
 class index_executive extends super_controller  {
-	function index_executive(){
+	function __construct(){
 		parent::__construct();
 		// echo "pilihan ".$this->session->userdata("pilihan"); exit;
 		$this->load->model("coremodel","cm");

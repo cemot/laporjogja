@@ -3,7 +3,7 @@ class ex_anev extends super_controller {
 // kesehatan,kekuatan, keturunan, masuk surga
 	var $controller ;
 
-	function ex_anev(){
+	function __construct(){
 		parent::__construct();
 		// $this->load->model("core_model","cm");
 		$this->load->model("coremodel","cm");

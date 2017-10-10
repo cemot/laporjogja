@@ -1,6 +1,6 @@
 <?php
 class admindik_lap_a_model extends CI_Model {
-	function admindik_lap_a_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

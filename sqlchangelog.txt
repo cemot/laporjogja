@@ -1,2 +1,7 @@
 ALTER TABLE `pengguna` ADD `id_unit` CHAR(32) NULL AFTER `jabatan`; 
 
+delete from lap_a_penyidik where id='4388362b282b6e75f580cc9b9d584237' ;
+
+delete from lap_a_penyidik where id ='0dde89ba71f2e2ed9524f9ca260393ce' ;
+
+-- benerkan inputnya. jangan sampai kecolongan 
