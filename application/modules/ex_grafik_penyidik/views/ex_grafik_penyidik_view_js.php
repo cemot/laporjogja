@@ -74,11 +74,11 @@ $("#jenis").change(function(){
 });
 
 
-function detailkasus(id) {
+function detailkasus(id,tahun,tbname,tbpenyidik,index) {
   // alert('tampilakn');
 
   $.ajax({
-      url : '<?php echo site_url("$this->controller/get_kasus_per_user") ?>/'+id,
+      url : '<?php echo site_url("$this->controller/get_kasus_per_user") ?>/'+id+'/'+tahun+'/'+tbname+'/'+tbpenyidik+'/'+index,
       success : function(htmldata) {
         $("#datakasus").html(htmldata);
 

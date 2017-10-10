@@ -3,7 +3,7 @@ class ex_pencarian extends super_controller {
 // kesehatan,kekuatan, keturunan, masuk surga
 	var $controller ;
 
-	function ex_pencarian(){
+	function __construct(){
 		parent::__construct();
 		// $this->load->model("core_model","cm");
 		$this->load->model("coremodel","cm");

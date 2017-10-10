@@ -1,6 +1,6 @@
 <?php
 class ex_anev_model extends CI_Model {
-	function ex_anev_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

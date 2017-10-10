@@ -1,6 +1,6 @@
 <?php
 class ex_grafik_penyidik extends super_controller  {
-	function ex_grafik_penyidik(){
+	function __construct(){
 		parent::__construct();
 		$this->load->model("coremodel","cm");
 		// $this->load->model("ex_grafik_penyidik_model","dm");
@@ -198,7 +198,7 @@ class ex_grafik_penyidik extends super_controller  {
 								$row->juli,
 								$row->agustus,
 								$row->september,
-								$row->oktover,
+								$row->oktober,
 								$row->november,
 								$row->desember
 						  			));
@@ -212,7 +212,7 @@ class ex_grafik_penyidik extends super_controller  {
 	 	//exit;
 
 
-		$data_array['penyidik'] = $penyidik;
+		// $data_array['penyidik'] = $penyidik;
 		
 		$data_array['tahun'] = $tahun;
 		$data_array['title'] = $title;
@@ -285,10 +285,16 @@ class ex_grafik_penyidik extends super_controller  {
 
 			 order by y.total desc limit 20 ";
 
-			 //echo $sql;
+			 // echo $sql;
 
 
 		$data_array['rec_penyidik'] = $this->db->query($sql);
+
+
+
+		$data_array['table_penyidik'] = $table_penyidik ;
+		$data_array['table_utama'] = $table_utama;
+		$data_array['id'] = $id;
 			 
 		$this->load->view($controller."_grafik_view",$data_array);
 
@@ -314,15 +320,25 @@ function get_polsek(){
 
 function get_kasus_per_user($iduser) {
 
+	$tahun = $this->uri->segment(4);
+	$tbname = $this->uri->segment(5);
+	$table_penyidik = $this->uri->segment(6);
+	$id = $this->uri->segment(7);
+
+	// show_array($this->uri->uri_to_assoc());
+	// exit;
+
 	$this->db->select("l.tanggal,l.nomor,l.tindak_pidana")
-	->from("lap_a l")
-	->join("lap_a_penyidik lp ","l.lap_a_id=lp.lap_a_id")
-	->group_by("l.lap_a_id")
+	->from("$tbname l")
+	->join("$table_penyidik lp ","l.$id=lp.$id")
+	->group_by("l.$id")
 	->where("lp.id_penyidik",$iduser)
 	->order_by("l.tanggal");
 
+	$this->db->where("year(l.tanggal) = $tahun",null,false);
 
 	$rs = $this->db->get();
+	// echo $this->db->last_query(); 
 	$data['dataKasus']= $rs;
 
 	// cari data user 
@@ -333,6 +349,7 @@ function get_kasus_per_user($iduser) {
 	->join("m_polsek polsek","polsek.id_polsek=p.id_polsek",'left'); 
 
 	$this->db->where("id",$iduser); 
+
 
 	$datauser = $this->db->get()->row_array();
 
