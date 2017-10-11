@@ -81,7 +81,8 @@
 
 
 <p>
-<?php echo $this->ckeditor->editor('keterangan','');?>
+<?php 
+// echo $this->ckeditor->editor('keterangan','');?>
 </p>
 
 

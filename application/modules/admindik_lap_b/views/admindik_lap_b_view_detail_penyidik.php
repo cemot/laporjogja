@@ -11,7 +11,9 @@
 
         <th width="15%">NRP</th>
         <th width="19%">NAMA</th>
+        <th width="19%">KOORDINATOR</th>
         <th width="19%">PANGKAT</th>
+
         <th width="19%">POLSEK/POLRES</th>
         <!-- <th width="18%">ALAMAT</th> -->
         <th width="12%">NO. HP</th>
@@ -30,10 +32,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="titleModal">Tambah Penyidik</h4>
+        <h4 class="modal-title" id="titleModal">Tambah Penyidik <?php 
+echo "lap b id".$lap_b_id;  
+?></h4>
       </div>
       <div class="modal-body">
-        
+       
 <form action="" id="formulir_penyidik" method="post">
             <table width="100%"  class='table table-bordered'>
               <tr>
@@ -45,9 +49,20 @@
                 echo form_dropdown("id_penyidik",$arr_penyidik,'','id="id_penyidik" class="form-control"');
               ?>
 
-               </TD></tr></table>
+               </TD></tr>
+
+                <tr><td width="30%" >Koordinator</td>
+              <TD>
+              <?php 
+                $arr_koor = array(0=>"Tidak","Ya");
+                echo form_dropdown("koordinator",$arr_koor,'','id="koordinator" class="form-control"');
+              ?>
+
+               </TD></tr>
+
+             </table>
             <input type="hidden" name="id" value=""  id="id"  />   
-            <input type="hidden" name="lap_b_id" value=""  id="lap_b_id" value="<?php echo $lap_b_id; ?>"  /> 
+            <input type="hidden" name="lap_b_id"   id="lap_b_id" value="<?php echo $lap_b_id; ?>"  /> 
             
              </form>
 
