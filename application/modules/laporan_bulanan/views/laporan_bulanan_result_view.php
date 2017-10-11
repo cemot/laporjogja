@@ -9,6 +9,20 @@ $arr_bulan = $this->cm->arr_bulan;
 </h4></center>
 <hr />
 
+<style type="text/css">
+  
+.containerx {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+</style>
+
+<div class="containerx" >
+
+
+
 <table class="table table-bordered">
  
     <tr>
@@ -85,8 +99,7 @@ $arr_bulan = $this->cm->arr_bulan;
     </tr>
      <?php  
 	 $xx=0;
-	 //$rec_kejahatan = $this->lm->get_data_gol_kejahatan($row_kel->id_kelompok,$bulan,$tahun,$jenis,$id_polres);
-	 foreach($rec_kejahatan->result() as $rw) : 
+ 	 foreach($rec_kejahatan->result() as $rw) : 
 	 $xx++;
 	 
 	 $tunggakan = $arr_sebelum[$rw->id];
@@ -114,3 +127,4 @@ $arr_bulan = $this->cm->arr_bulan;
     </tr>
     <?php endforeach; ?>
   </table>
+</div>

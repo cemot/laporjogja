@@ -1,6 +1,6 @@
 <?php
 class laporan_harian extends super_controller  {
-	function laporan_harian(){
+	function __construct(){
 		parent::__construct();
 		$this->load->helper("tanggal");
 		$this->load->model("laporan_model","lm");

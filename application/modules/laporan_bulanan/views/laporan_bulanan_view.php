@@ -91,7 +91,7 @@
 
              <a id="query_button" class="btn btn-primary" type="submit" onclick="tampildata()"><i class="fa fa-eye"></i> Tampilkan</a>
 
-             <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button>
+            <!--  <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button> -->
               </form>
 
 
