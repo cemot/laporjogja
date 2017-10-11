@@ -15,8 +15,9 @@
 
         <th width="15%">NRP</th>
         <th width="19%">NAMA</th>
-        <th width="19%">PANGKAT</th>
         <th width="19%">KOODINATOR</th>
+        <th width="19%">PANGKAT</th>
+
         <th width="19%">POLSEK/POLRES</th>
         <!-- <th width="18%">ALAMAT</th> -->
         <th width="12%">NO. HP</th>
