@@ -37,15 +37,21 @@ $("#jenis").change(function(){
       var jenis = "polsekpolres";
   }
 
-  $.ajax({
-    url : '<?php echo site_url("general/get_fungsi_terkait") ?>/'+jenis,
-    success : function(htmldata) {
-       $("#id_fungsi").html(htmldata);
-    }
-  });
+  // $.ajax({
+  //   url : '<?php echo site_url("general/get_fungsi_terkait") ?>/'+jenis,
+  //   success : function(htmldata) {
+  //      $("#id_fungsi").html(htmldata);
+  //   }
+  // });
 
 
-});
+  get_kesatuan($(this).val(),'#id_kesatuan');
+
+}); // end of jenis 
+
+
+
+
 
 
 
@@ -70,8 +76,60 @@ $("#jenis").change(function(){
 
 
 
+$("#id_kesatuan").change(function(){
+    get_subdit($(this).val(),"#id_subdit");
 
 });
+
+
+$("#id_subdit").change(function(){
+    get_unit($(this).val(),"#id_unit");
+
+});
+
+
+});
+
+
+function get_kesatuan(id,target){
+
+      $.ajax({
+      url : '<?php echo site_url("$controller/get_kesatuan") ?>/'+id,
+      success : function(htmlData){       
+
+        $(target).html(htmlData);
+      }
+    })
+  
+}
+
+
+
+function get_subdit(a,target){
+
+    $.ajax({
+      url : '<?php echo site_url("$controller/get_subdit") ?>/'+a,
+      success : function(htmlData){
+         
+
+        $(target).html(htmlData);
+      }
+    })
+}
+
+
+
+function get_unit(a,target){
+
+    $.ajax({
+      url : '<?php echo site_url("$controller/get_unit") ?>/'+a,
+      success : function(htmlData){
+        // $("#tr_satuan").show(); 
+
+        $(target).html(htmlData);
+      }
+    })
+}
 
 
 function detailkasus(id,tahun,tbname,tbpenyidik,index) {

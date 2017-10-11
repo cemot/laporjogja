@@ -85,7 +85,20 @@ class ex_kinerja_penyidik extends super_controller  {
 		$controller = get_class($this);
 
 		$post = $this->input->post();
-		// show_array($post);
+		// show_array($post); 
+
+	
+
+    if(!isset($post['id_kesatuan'])) {
+    	$post['id_kesatuan']="x";
+    }
+
+     if(!isset($post['id_subdit'])) {
+    	$post['id_subdit']="x";
+    }
+     if(!isset($post['id_unit'])) {
+    	$post['id_unit']="x";
+    }
 
 		// echo $polsek;
 		// exit();
@@ -153,7 +166,27 @@ class ex_kinerja_penyidik extends super_controller  {
 			join $table_penyidik lp on   lp.id_penyidik = p.id 
 			join $table_utama a on lp.$id =  a.$id 
 
-			join pengguna op on a.user_id = op.id ";
+			join pengguna op on a.user_id = op.id 
+
+			left join m_unit unit on unit.id_unit = p.id_unit
+
+			";
+
+
+			if($post['id_kesatuan']<>'x') {
+				$this->db->where("p.id_kesatuan",$post['id_kesatuan']);
+			}
+
+			if($post['id_subdit']<>'x') {
+				$this->db->where("unit.id_subdit",$post['id_subdit']);
+			}
+
+			if($post['id_unit']<>'x') {
+				$this->db->where("p.id_unit",$post['id_unit']);
+			}
+
+
+
 
 			if($jenis=="polresall") {
 			$sql .= " left join m_polsek sek on sek.id_polsek = op.id_polsek ";
@@ -183,10 +216,12 @@ class ex_kinerja_penyidik extends super_controller  {
 			}
 
 
-			if($post['id_fungsi']<> 'x') {
-				// $this->db->where("a.id_fungsi",$post['id_fungsi']);
-				$sql .= " and a.id_fungsi = '$id_fungsi'";
-			}
+			// if($post['id_fungsi']<> 'x') {
+			// 	// $this->db->where("a.id_fungsi",$post['id_fungsi']);
+			// 	$sql .= " and a.id_fungsi = '$id_fungsi'";
+			// }
+
+
 
 
 			$sql .= " ) x group by x.id) y 
@@ -270,6 +305,72 @@ function get_kasus_per_user($iduser) {
 
 
 
+}
+
+
+function get_kesatuan($jenis) {
+
+// 	x
+// polda
+// polres
+// polresall
+// polsek
+
+if($jenis=="polda" or $jenis=="x") {
+	$jenis="polda";
+}
+else {
+	$jenis="polrespolsek";
+}
+
+
+
+
+
+	$this->db->where("jenis",$jenis);
+	$this->db->order_by("kesatuan");
+	$rs = $this->db->get("m_kesatuan");
+	echo "<option value='x'>= SEMUA  = </option>";
+	foreach($rs->result() as $row ) : 
+		echo "<option value=$row->id_kesatuan>$row->kesatuan</option>";
+	endforeach;
+}
+
+
+function get_subdit($jenis) {
+
+	// $id_subdit = $this->uri->segment(4);
+
+	$this->db->where("id_kesatuan",$jenis); 
+	$this->db->order_by("subdit");
+	$rs = $this->db->get("m_subdit");
+	$arr= array();
+	echo "<option value='x'>= SEMUA  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		// $sel=($row->id_subdit==$id_subdit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_subdit> $row->subdit </option>  ";
+	endforeach;
+}
+
+
+
+function get_unit($jenis) {
+
+	// $id_unit = $this->uri->segment(4);
+
+	$this->db->where("id_subdit",$jenis); 
+	$this->db->order_by("unit");
+	$rs = $this->db->get("m_unit");
+	$arr= array();
+	echo "<option value='x'>= SEMUA  = </option>";
+	$sel="";
+	foreach($rs->result() as $row) :
+		// $sel=($row->id_unit==$id_unit)?"selected":"";
+		// $arr[$row->id_kesatuan] = $row->kesatuan;
+		echo "<option value=$row->id_unit  > $row->unit </option>  ";
+	endforeach;
 }
 
 

@@ -101,7 +101,7 @@ function get_subdit(a,b,target){
 	 	$.ajax({
   		url : '<?php echo site_url("$controller/get_subdit") ?>/'+a+'/'+b,
   		success : function(htmlData){
-  			// $("#tr_satuan").show(); 
+  			 
 
   			$(target).html(htmlData);
   		}
