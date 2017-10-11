@@ -15,7 +15,9 @@
 
         <th width="15%">NRP</th>
         <th width="19%">NAMA</th>
+        <th width="19%">KOODINATOR</th>
         <th width="19%">PANGKAT</th>
+
         <th width="19%">POLSEK/POLRES</th>
         <!-- <th width="18%">ALAMAT</th> -->
         <th width="12%">NO. HP</th>
@@ -42,21 +44,25 @@
 
         <div class="form-group">
           <label for="id_penyidik">Nama / NRP  Penyidik</label>
-          <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+         
           <?php 
                 $arr_penyidik = $this->dm->get_arr_data_penyidik();
                 echo form_dropdown("id_penyidik",$arr_penyidik,'','id="id_penyidik" class="form-control"');
               ?>
         </div>
 
-        <!--   <div class="form-group">
-            <label for="id_penyidik">Nama / NRP  Penyidik</label>
-            <?php 
-                $arr_penyidik = $this->dm->get_arr_data_penyidik();
-                echo form_dropdown("id_penyidik",$arr_penyidik,'','id="id_penyidik" class="form-control"');
-              ?>
 
-          </div> -->
+         <div class="form-group">
+          <label for="id_penyidik">Koordinator</label>
+         
+         <?php 
+                $arr_koor = array(0=>"Tidak","Ya");
+                echo form_dropdown("koordinator",$arr_koor,'','id="koordinator" class="form-control"');
+              ?>
+        </div>
+ 
+            <input type="hidden" name="id" value=""  id="id"  />   
+            <input type="hidden" name="lap_a_id"   id="lap_a_id" value="<?php echo $lap_a_id; ?>"  />
 
 
 

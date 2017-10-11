@@ -5,3 +5,12 @@ delete from lap_a_penyidik where id='4388362b282b6e75f580cc9b9d584237' ;
 delete from lap_a_penyidik where id ='0dde89ba71f2e2ed9524f9ca260393ce' ;
 
 -- benerkan inputnya. jangan sampai kecolongan 
+
+
+a4013dc662d9b0945645cc889c5ac2e6
+
+
+
+ALTER TABLE `lap_b_penyidik` ADD `koordinator` INT NULL DEFAULT '0' AFTER `lap_b_id`; 
+
+ALTER TABLE `lap_a_penyidik` ADD `koordinator` INT NULL DEFAULT '0' AFTER `lap_a_id`; 

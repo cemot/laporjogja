@@ -2,7 +2,7 @@
 class admindik_lap_a extends admindik_controller {
  	var $controller ;
 
-	function admindik_lap_a(){
+	function __construct(){
 		parent::__construct();
 		 
 		$this->load->model("coremodel","cm");
@@ -209,6 +209,8 @@ function get_data_penyidik($lap_a_id){
         
         foreach($result as $row) : 
         //$daft_id = $row['daft_id'];
+
+            $koordinator = ($row['koordinator']==1)?"Ya":"Tidak";
              
             $id = $row['idlp'];
             $polres_polsek = "";
@@ -232,6 +234,7 @@ function get_data_penyidik($lap_a_id){
                                  
                                 $row['user_id'], 
                                 $row['nama'], 
+                                $koordinator,
                                 $row['pangkat'],
 
                                 $polres_polsek,
@@ -259,11 +262,34 @@ function get_data_penyidik($lap_a_id){
  
 // function cek_penyidik($id_penyidik)
 
+function cek_penyidik($id_penyidik){
+   $post = $this->input->post();
+
+   $this->db->where("id_penyidik",$id_penyidik); 
+   $this->db->where("lap_a_id",$post['lap_a_id']);
+   $rs = $this->db->get("lap_a_penyidik");
+   if($rs->num_rows() > 0 ) {
+    $this->form_validation->set_message('cek_penyidik', ' %s Penyidik sudah ada.  ');
+    return false;
+   }
+
+   $this->db->where("koordinator","1"); 
+   $this->db->where("lap_a_id",$post['lap_a_id']);
+   $rs = $this->db->get("lap_a_penyidik");
+   if($rs->num_rows() > 0 and $post['koordinator'] == 1 ) {
+    $this->form_validation->set_message('cek_penyidik', ' Koordinator sudah ada.  ');
+    return false;
+   }
+
+
+}
+
+
 function penyidik_simpan($lap_a_id){
         $data=$this->input->post();
         
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('id_penyidik','Penyidik','call_back_cek_penyidik'); 
+        $this->form_validation->set_rules('id_penyidik','Penyidik','callback_cek_penyidik'); 
          
                 
          
