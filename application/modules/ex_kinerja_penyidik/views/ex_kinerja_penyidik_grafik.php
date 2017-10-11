@@ -39,13 +39,13 @@
                 <div class="panel-body">
 
 
-<form class="form-horizontal">
+<form class="form-horizontal" id="frmcari">
 <div class="row">
   <div class="col-md-6">
 
   <div class="form-group">
-    <label for="tahun" class="col-sm-3 control-label">Tahun</label>
-    <div class="col-sm-9">
+    <label for="tahun" class="col-sm-4 control-label">Tahun</label>
+    <div class="col-sm-8">
        <select class="form-control" name="tahun" id="tahun">
                     <option value="">- Pilih Tahun -</option>
                     <?php
@@ -60,8 +60,8 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="jenis" class="col-sm-3 control-label">POLRES / POLSEK</label>
-    <div class="col-sm-9">
+    <label for="jenis" class="col-sm-4 control-label">POLRES / POLSEK</label>
+    <div class="col-sm-8">
       <?php
                           $arr = array("x"=>"POLDA KESELURUHAN ",
                                       "polda"=>"POLDA",
@@ -78,8 +78,8 @@
 
 
     <div class="form-group">
-    <label for="inputPassword3" class="col-sm-3 control-label">TINGKAT</label>
-    <div class="col-sm-9">
+    <label for="inputPassword3" class="col-sm-4 control-label">POLRES</label>
+    <div class="col-sm-8">
      <?php
                           
                          $arr_polres = $this->cm->get_arr_dropdown("m_polres","id_polres","nama_polres","nama_polres");
@@ -97,8 +97,8 @@
 
 
     <div class="form-group" id="search_polsek">
-    <label for="id_polres" class="col-sm-3 control-label">POLSEK</label>
-    <div class="col-sm-9">
+    <label for="id_polres" class="col-sm-4 control-label">POLSEK</label>
+    <div class="col-sm-8">
     <?php
                          echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control"');
 
@@ -112,18 +112,51 @@
 
 <div class="col-md-6">
 
-  <div class="form-group" ">
-    <label for="id_polres" class="col-sm-3 control-label">POLSEK</label>
-    <div class="col-sm-9">
+  <div class="form-group">
+    <label for="id_kesatuan" class="col-sm-4 control-label">DIR/KESATUAN</label>
+    <div class="col-sm-8">
     <?php
-                         echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control"');
+                         echo form_dropdown("id_kesatuan",array(),"",'id="id_kesatuan" class="form-control"');
 
                          ?>   
     </div>
   </div>
 
+
+  <div class="form-group">
+    <label for="id_subdit" class="col-sm-4 control-label">SUBDIT/UNIT</label>
+    <div class="col-sm-8">
+    <?php
+                         echo form_dropdown("id_subdit",array(),"",'id="id_subdit" class="form-control"');
+
+                         ?>   
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="id_unit" class="col-sm-4 control-label">UNIT / PANIT</label>
+    <div class="col-sm-8">
+    <?php
+                         echo form_dropdown("id_unit",array(),"",'id="id_unit" class="form-control"');
+
+                         ?>   
+    </div>
+  </div>
+
+
 </div>
 
+
+
+</div>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+     <button id="cari_button" class="btn btn-primary btn-block" type="submit"><i class="glyphicon glyphicon-search"></i> Tampilkan</button>
+  </div>
+  <div class="col-md-4"></div>
+</div>
 
 </div>
 
@@ -140,7 +173,7 @@
 </div>
 
 
-
+<!-- 
 <div class="row">
   <div class="col-md-12">
 
@@ -227,7 +260,7 @@
 
 
   </div>
-</div>
+</div> -->
 
 <div class="col-md-12">
 <!-- 
