@@ -21,6 +21,20 @@
 $n=0;
 foreach ($rec_perkembangan->result() as  $value)  : 
      $n++;
+
+
+      
+    $filename = $value->file_dokumen; 
+
+    if(empty($value->file_dokumen) or !file_exists("./documents/".$value->file_dokumen) ) {
+                $filelink = "-";
+            } 
+    else {
+       
+        $filelink =  '<a target="_blank" href="'.
+        base_url("documents/$filename").'"> '.$value->file_dokumen.' </a> ';
+    }
+
  
 ?>
 <tr >
@@ -29,11 +43,7 @@ foreach ($rec_perkembangan->result() as  $value)  :
         <td><?php echo ($value->lidik=="1")?"Penyidikan":"Penyelidikan"; ?></td>
         
         <td><?php echo $value->tahap; ?></td>
-        <td><?php echo $value->no_dokumen.'<br />';  echo 
-
-            (empty($value->file_dokumen))?"-":anchor("general/getdokumen/".$value->file_dokumen,$value->file_dokumen); 
-
-        ?></td>
+        <td><?php echo  $filelink;        ?></td>
         
         
         <td><?php echo $value->keterangan; ?></td>

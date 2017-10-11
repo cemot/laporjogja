@@ -310,6 +310,19 @@ function get_data_perkembangan($lap_a_id){
              
             $id = $row['id'];
             $row['lidik']  = ($row['lidik']=="1")?"Penyidikan":"Penyelidikan";
+
+
+
+            if(empty($row['file_dokumen']) or !file_exists("./documents/".$row['file_dokumen']) ) {
+                $filelink = "-";
+            } 
+            else {
+                // anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']).
+                // $filelink= " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
+                //     <img src='".base_url("assets/images/delete.png")."'>
+                // </a>";
+                $filelink =  '<a target="blank" href="'.base_url("documents/$filename").'"> '.$row['file_dokumen'].' </a> ';
+            }
          
             $arr_data[] = array(
                 $n,
@@ -320,10 +333,7 @@ function get_data_perkembangan($lap_a_id){
                 $row['no_dokumen'],            
                 
                 $row['keterangan'], 
-                
-                (empty($row['file_dokumen']))?"-":anchor("general/getdokumen/".$row['file_dokumen'],$row['file_dokumen']). " <a href=javascript:hapus_dokumen('$id') title='Hapus Dokumen'> 
-                    <img src='".base_url("assets/images/delete.png")."'>
-                </a>",
+                $filelink,
                                  
                                  
                               

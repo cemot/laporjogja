@@ -301,6 +301,7 @@ function get_data_perkembangan($lap_b_id){
         $n=0;
         foreach($result as $row) : 
             $n++;
+           
             $filename = $row['file_dokumen']; 
 
             if(empty($row['file_dokumen']) or !file_exists("./documents/".$row['file_dokumen']) ) {

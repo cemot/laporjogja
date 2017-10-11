@@ -24,7 +24,7 @@
       <td><?php echo $row->user_id ?></td>
       <td><?php echo $row->nama ?></td>
       <td><?php echo $row->pangkat ?></td>
-      <td><?php echo $row->polres_polsek ?></td>
+      <td><?php //echo $row->polres_polsek ?></td>
       <td><?php echo $row->nomor_hp ?></td>
       <td><?php echo $row->email ?></td>
       </tr>
