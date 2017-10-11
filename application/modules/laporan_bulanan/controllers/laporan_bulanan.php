@@ -1,6 +1,6 @@
 <?php
 class laporan_bulanan extends super_controller  {
-	function laporan_bulanan(){
+	function __construct(){
 		parent::__construct();
 		$this->load->helper("tanggal");
 		$this->load->model("laporan_bulan_model","lm");
@@ -100,13 +100,13 @@ function get_laporan(){
 
 
 	$dp = $this->db->get("m_setting_polda")->row();
-		//$dp = $res->row();
+		 
 		$data['nama_polda'] = $dp->nama_polda;
 
 		if($data['jenis']=="polres") {
 			$this->db->where("id_polres",$data['id_polres']);
 			$ds = $this->db->get("m_polres")->row();
-			$this->db->last_query();
+			 
 			$data['nama_polres'] = $ds->nama_polres;
 		}
 		else {
@@ -121,11 +121,11 @@ function get_laporan(){
 		$data['jenis'],
 		$data['id_polres']);
 
-	$data['arr_sebelum'] = 
-						$this->lm->get_jml_sebelum($post['bulan'],
-							$post['tahun'],
-							$post['jenis'],
-							$post['id_polres']
+	$data['arr_sebelum'] =  
+						$this->lm->get_jml_sebelum($data['bulan'],
+							$data['tahun'],
+							$data['jenis'],
+							$data['id_polres']
 							);
 
 

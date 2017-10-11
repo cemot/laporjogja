@@ -1,7 +1,7 @@
 <?php
 
 class laporan_model extends CI_Model {
-	function laporan_model(){
+	function __construct(){
 		parent::__construct();
 	}
 
