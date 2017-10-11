@@ -24,6 +24,20 @@ class pencarian extends master_controller {
 		$array = array(
 
 			array(
+		   	"id" => "laporan",
+			"label" => "Jenis laporan",
+			"type" => "string",
+			"input" => "select",
+			"values" =>  array(
+								"lap_a"  => "LAPORAN TIPE A",
+								"lap_b"  => "LAPORAN TIPE B",
+								"lap_c"  => "LAPORAN TIPE C",
+								"lap_d"  => "LAPORAN TIPE D",
+								"lap_laka_latas"  =>  "LAPORAN LAKA LANTAS"),
+			"operators" => array('equal')
+		   	), 
+
+			array(
 		   	"id" => "pelapor_nama",
 			"label" => "Nama pelapor / pemohon",
 			"type" => "string",
@@ -42,7 +56,19 @@ class pencarian extends master_controller {
 		   	), 
 
 
-		    array(
+		   	array(
+		   	"id" => "id_kelompok",
+			"label" => "Jenis Kejahatan",
+			"type" => "string",
+			"input" => "select",
+			"values" => $this->cm->get_arr_dropdown("m_kelompok_kejahatan","id_kelompok","kelompok",'kelompok')
+			,
+			"operators" => array('equal')
+			 
+		   	), 
+
+
+		   	array(
 		   	"id" => "pasal",
 			"label" => "Pasal",
 			"type" => "string",			 
@@ -50,33 +76,72 @@ class pencarian extends master_controller {
 			 
 		   	), 
 
+
+
+		   	array(
+		   	"id" => "pelapor_umur",
+			"label" => "Umur pelapor minimal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
 		   
+
+		   array(
+		   	"id" => "pelapor_umur2",
+			"label" => "Umur pelapor maximal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
+
+
+		   array(
+		   	"id" => "tersangka_umur",
+			"label" => "Umur tersangka minimal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
+		   
+
+		   array(
+		   	"id" => "tersangka_umur2",
+			"label" => "Umur tersangka maximal",
+			"type" => "string",			 
+			"operators" => array('equal')			 
+		   	), 
+
+
+
+		   array(
+		   	"id" => "pelapor_id_pekerjaan",
+			"label" => "Pekerjaan pelapor",
+			"type" => "string",
+			"input" => "select",
+			"values" => $this->cm->get_arr_dropdown("m_pekerjaan","id_pekerjaan","pekerjaan",'pekerjaan')
+			,
+			"operators" => array('equal')
+			 
+		   	), 
+
+		   array(
+		   	"id" => "tersangka_id_pekerjaan",
+			"label" => "Pekerjaan tersangka",
+			"type" => "string",
+			"input" => "select",
+			"values" => $this->cm->get_arr_dropdown("m_pekerjaan","id_pekerjaan","pekerjaan",'pekerjaan')
+			,
+			"operators" => array('equal')
+			 
+		   	), 
+
 
 		    array(
 		   	"id" => "nomor",
-			"label" => "Nomor LP",
+			"label" => "Nomor Laporan",
 			"type" => "string",
 			"operators" => array('equal', 'contains')
 		   	), 
 
-
-		   	array(
-		   	"id" => "nrp_operator",
-			"label" => "NRP Operator ",
-			"type" => "string",
-			"operators" => array('equal', 'contains')
-		   	), 
-
-
-		   	array(
-		   	"id" => "nrp_penyidik",
-			"label" => "NRP PENYIDIK",
-			"type" => "string",
-			"operators" => array('equal', 'contains')
-		   	), 
-
-		   	
-
+		   
 		   	array(
 		   	"id" => "id_gol_kejahatan",
 			"label" => "Golongan Kejahatan",
@@ -87,6 +152,31 @@ class pencarian extends master_controller {
 			"operators" => array('equal')
 			 
 		   	), 
+
+
+		   /*	array(
+		   	"id" => "id_gol_kejahatan",
+			"label" => "Golongan Kejahatan",
+			"type" => "string",
+			"input" => "select",
+			"plugin" => 'selectize', 
+			"plugin_config" => array(
+					"valueField"       =>  "id",
+					"labelField"       =>  "name",
+					"searchField"       =>  "name",
+					"sortField"       =>  "name",
+					"create"       =>  "true",
+					"maxItems"       =>  "1",
+					"plugins"       =>  "['remove_button']",
+					"onInitialize"       => "function() {var that = this;if (localStorage.demoData === undefined) {\$.getJSON('".site_url('general/json_gol_kejahatan')."', function(data) {localStorage.demoData = JSON.stringify(data);data.forEach(function(item) {that.addOption(item);});});}else{JSON.parse(localStorage.demoData).forEach(function(item) {that.addOption(item);});}}",
+
+					),
+
+			"valueSetter" => "function(rule, value) {rule.$elfind('.rule-value-container input')[0].selectize.setValue(value);}"		 
+		 
+			 
+		   	), */
+
 
 		   	array(
 		   	"id" => "id_jenis_lokasi",
@@ -127,13 +217,31 @@ class pencarian extends master_controller {
 
 
 
+		 //   	array(
+		 //   	"id" => "kp_awal",
+			// "label" => "Tanggal Kejadian Awal",
+			// "type" => "date",
+			// "operators" => array('equal'),
+			// "validation" => array("format"=>"DD-MM-YYYY"),
+			// "plugin"   => "datepicker",
+			// "plugin_config" => array(
+										 
+			// 				"format"  => "dd-mm-yyyy",
+			// 				"todayBtn"  => "linked",
+			// 				"todayHighlight"  => true,
+			// 				"autoclose"  => true
+			// 						)			 
+		 //   	)  , 
+
 		   	array(
 		   	"id" => "kp_awal",
 			"label" => "Tanggal Kejadian Awal",
 			"type" => "string",
 			"operators" => array('equal')			 
-		   	)  , 
+		   	)  
 
+
+		   	,
 		   	array(
 		   	"id" => "kp_akhir",
 			"label" => "Tanggal Kejadian Akhir",
@@ -356,6 +464,7 @@ class pencarian extends master_controller {
 
 
 			);
+		 
 		 
 
 
