@@ -74,7 +74,7 @@ function detail($id){
 	
 	$this->db->select('u.*, unit.id_subdit')
 	->from('pengguna u') 
-	->join('m_unit unit','unit.id_unit = u.id_unit')
+	->join('m_unit unit','unit.id_unit = u.id_unit','left')
 	->where("u.id",$id);
 	$ret = $this->db->get();
 	return $ret;
