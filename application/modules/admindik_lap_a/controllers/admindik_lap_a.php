@@ -210,9 +210,12 @@ function get_data_penyidik($lap_a_id){
         foreach($result as $row) : 
         //$daft_id = $row['daft_id'];
 
-            $koordinator = ($row['koordinator']==1)?"Ya":"Tidak";
+           $id = $row['idlp'];
+           $lap_a_id = $row['lap_a_id'];
+            $koordinator = ($row['koordinator']==1)?'<h4><span class="label label-primary">Ya</span></h4>':"Tidak ".
+            "<a    href=javascript:set_koordinator('$lap_a_id','$id')>Set Koordinator</a>";
              
-            $id = $row['idlp'];
+            
             $polres_polsek = "";
 
             //echo "jenis =". $row['jenis'] . "<br />";
@@ -338,6 +341,20 @@ function penyidik_hapus(){
         $ret = array("error"=>true,"message"=>"Data gagal dihapus");
     }
     echo json_encode($ret);
+}
+
+function set_koordinator(){
+    $post = $this->input->post();
+
+    $this->db->where("lap_a_id",$post['lap_a_id']);
+    $this->db->update("lap_a_penyidik",array("koordinator"=>0));
+
+    $this->db->where("id",$post['id']);
+    $this->db->update("lap_a_penyidik",array("koordinator"=>1));
+
+    $arr['error'] = false;
+    $arr['message'] = "Koordinator berhasil disimpan";
+    echo json_encode($arr);
 }
 
 }
