@@ -21,6 +21,43 @@ class laporan_bulanan extends super_controller  {
 		$this->render();
 	}
 
+	function cetak(){
+		$data = $this->input->get();
+
+
+	$dp = $this->db->get("m_setting_polda")->row();
+		 
+		$data['nama_polda'] = $dp->nama_polda;
+
+		if($data['jenis']=="polres") {
+			$this->db->where("id_polres",$data['id_polres']);
+			$ds = $this->db->get("m_polres")->row();
+			 
+			$data['nama_polres'] = $ds->nama_polres;
+		}
+		else {
+			$data['nama_polres'] = '';
+		}
+
+
+	// show_array($data);
+		$data['rec_kejahatan'] = $this->lm->get_data_gol_kejahatan2(
+		$data['bulan'],
+		$data['tahun'],
+		$data['jenis'],
+		$data['id_polres']);
+
+	$data['arr_sebelum'] =  
+						$this->lm->get_jml_sebelum($data['bulan'],
+							$data['tahun'],
+							$data['jenis'],
+							$data['id_polres']
+							);
+
+
+	$this->load->view("laporan_bulanan_cetak_view",$data);
+	}
+
 
 	function pdf() {
 		$post = $this->input->get();

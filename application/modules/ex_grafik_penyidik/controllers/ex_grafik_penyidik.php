@@ -229,6 +229,7 @@ class ex_grafik_penyidik extends super_controller  {
 			sum(p21) as p21, 
 			sum(sidik) as sidik,
 			sum(lidik) as lidik, 
+			sum(sp3) as sp3, 
 			count(*) as total
 
 
@@ -240,6 +241,7 @@ class ex_grafik_penyidik extends super_controller  {
 			if(a.penyelesaian = 'p21',1,0) as p21, 
 			if(a.penyelesaian = 'sidik',1,0) as sidik, 
 			if(a.penyelesaian = 'lidik',1,0) as lidik, 
+			if(a.penyelesaian = 'sp3',1,0) as sp3, 
 			op.jenis,a.user_id 	 
 			from pengguna  p 
 			join $table_penyidik lp on   lp.id_penyidik = p.id 

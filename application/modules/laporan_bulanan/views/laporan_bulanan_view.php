@@ -22,7 +22,8 @@
     <div class="panel-heading"><b>PENCARIAN</b></div>
     <div class="panel-body">
       
-      <form id="frmlaporan" action="<?php echo site_url("$this->controller/pdf") ?>" target="blank">
+      <!-- <form id="frmlaporan" action="<?php echo site_url("$this->controller/pdf") ?>" target="blank"> -->
+      <form id="frmlaporan" action="<?php echo site_url("$this->controller/cetak") ?>" target="blank">
               <div class="form-group">
                 <label for="jenis">PILIHAN INSTANSI </label>
                <?php
@@ -91,7 +92,7 @@
 
              <a id="query_button" class="btn btn-primary" type="submit" onclick="tampildata()"><i class="fa fa-eye"></i> Tampilkan</a>
 
-            <!--  <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button> -->
+             <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button>
               </form>
 
 
