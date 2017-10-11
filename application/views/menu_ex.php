@@ -72,6 +72,27 @@
         </li>
 
 
+         <li class="menu-dropdown">
+            <a href="#">
+                <i class="menu-icon fa fa-bar-chart"></i>
+                <span>KINERJA PENYIDIK</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="sub-menu">
+               
+                 
+                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/1"); ?>">LAP. A</a></li>
+                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/2"); ?>">LAP. B</a></li>
+                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/3"); ?>">LAP. C</a></li>
+                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/4"); ?>">LAP. D</a></li>
+                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/5"); ?>">LAP. LAKA LANTAS</a></li>   
+
+                 
+
+            </ul>
+        </li>
+
+
         <li class="menu-dropdown">
             <a href="#">
                 <i class="menu-icon fa fa-users"></i>
