@@ -258,7 +258,7 @@ function get_data_penyidik($param){
 	// show_array($param);
 
 	$arr_column = array("user_id",
-						"nama",
+						"nama","koordinator",
 						"nomor_hp","email",
 						"pangkat",
 						"level"
@@ -267,7 +267,7 @@ function get_data_penyidik($param){
 	$sort_by = $arr_column[$param['sort_by']];
 
 	$this->db->select("a.*, lp.koordinator, b.pangkat, l.level  as level2,
-	   res.nama_polres, sek.nama_polsek,lp.id as idlp
+	   res.nama_polres, sek.nama_polsek,lp.id as idlp, lp.lap_b_id
 	 ")->from('pengguna a',false)
 	->join('m_pangkat b','a.id_pangkat=b.id_pangkat','left')
 	->join("m_polres res","res.id_polres = a.id_polres",'left')
@@ -282,7 +282,7 @@ function get_data_penyidik($param){
 	($param['limit'] != null ? $this->db->limit($param['limit']['end'], $param['limit']['start']) : '');
 		//$this->db->limit($param['limit']['end'], $param['limit']['start']) ;
        
-    // ($param['sort_by'] != null) ? $this->db->order_by($sort_by,$param['sort_direction']) :'';
+    ($param['sort_by'] != null) ? $this->db->order_by($sort_by,$param['sort_direction']) :'';
         
 	$res = $this->db->get();
 		// echo $this->db->last_query();

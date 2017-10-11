@@ -137,4 +137,62 @@ BootstrapDialog.show({
  		 
 	   
 
+function set_koordinator(vlap_b_id,vid){
+
+BootstrapDialog.show({
+            message : 'ANDA AKAN MENGUBAH PENYIDIK SEBAGAI KOORDINATOR. ANDA YAKIN  ?  ',
+            title: 'KONFIRMASI GANTI KOORDINATOR PENYIDIK',
+            draggable: true,
+            buttons : [
+              {
+                label : 'IYA',
+                cssClass : 'btn-primary',
+                hotkey: 13,
+                action : function(dialogItself){
+
+
+                  dialogItself.close();
+                  $('#myPleaseWait').modal('show'); 
+                  $.ajax({
+                    url : '<?php echo site_url("$controller/set_koordinator") ?>',
+                    type : 'post',
+                    data : {id : vid, lap_b_id :vlap_b_id  },
+                    dataType : 'json',
+                    success : function(obj) {
+                      $('#myPleaseWait').modal('hide'); 
+                      if(obj.error==false) {
+                          BootstrapDialog.alert({
+                              type: BootstrapDialog.TYPE_PRIMARY,
+                              title: 'Informasi',
+                              message: obj.message,
+                               
+                          });   
+
+                      $('#grid_penyidik').DataTable().ajax.reload(); 
+                      
+                      }
+                      else {
+                        BootstrapDialog.alert({
+                            type: BootstrapDialog.TYPE_DANGER,
+                            title: 'Error',
+                            message: obj.message,
+                             
+                        }); 
+                      }
+                    }
+                  });
+
+                }
+              },
+              {
+                label : 'TIDAK',
+                cssClass : 'btn-danger',
+                action: function(dialogItself){
+                    dialogItself.close();
+                }
+              }
+            ]
+          });
+}
+   
 </script>
