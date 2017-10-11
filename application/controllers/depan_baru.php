@@ -1,6 +1,6 @@
 <?php
 class depan_baru extends master_controller  {
-	function depan_baru(){
+	function __construct(){
 		parent::__construct();
 		// echo "pilihan ".$this->session->userdata("pilihan"); exit;
 		$this->load->model("coremodel","cm");

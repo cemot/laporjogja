@@ -3,7 +3,7 @@ class lap_d extends master_controller {
 // kesehatan,kekuatan, keturunan, masuk surga
 	var $controller ;
 
-	function lap_d(){
+	function __construct(){
 		parent::__construct();
 		// $this->load->model("core_model","cm");
 		$this->load->model("coremodel","cm");

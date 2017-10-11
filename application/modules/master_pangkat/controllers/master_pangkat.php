@@ -3,7 +3,7 @@ class master_pangkat extends admin_controller {
 
 	var $controller ;
 
-	function master_pangkat(){
+	function __construct(){
 		parent::__construct();
 		// $this->load->model("core_model","cm");
 		$this->load->model("coremodel","cm");

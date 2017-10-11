@@ -30,6 +30,117 @@
         </div>
     </div> 
 
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="panel panel-default">
+                <div class="panel-heading"><b>PENCARIAN</b></div>
+                <div class="panel-body">
+
+
+<form class="form-horizontal">
+<div class="row">
+  <div class="col-md-6">
+
+  <div class="form-group">
+    <label for="tahun" class="col-sm-3 control-label">Tahun</label>
+    <div class="col-sm-9">
+       <select class="form-control" name="tahun" id="tahun">
+                    <option value="">- Pilih Tahun -</option>
+                    <?php
+                      $tahun = date("Y");
+
+                      for($x = date('Y'); $x >= 2000; $x--) {
+                          $sel = ($x==$tahun)?"selected":"";
+                          echo "<option $sel value='".$x."'>".$x."</option>";
+                        }
+                    ?>
+                  </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="jenis" class="col-sm-3 control-label">POLRES / POLSEK</label>
+    <div class="col-sm-9">
+      <?php
+                          $arr = array("x"=>"POLDA KESELURUHAN ",
+                                      "polda"=>"POLDA",
+                                      "polres"=>"POLRES",
+                                      "polresall"=>"POLRES KESELURUHAN",
+                                      "polsek"=>"POLSEK"
+                                      
+                                      );
+                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control"');
+
+                         ?>
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-3 control-label">TINGKAT</label>
+    <div class="col-sm-9">
+     <?php
+                          
+                         $arr_polres = $this->cm->get_arr_dropdown("m_polres","id_polres","nama_polres","nama_polres");
+
+                         $arr_polres = $this->cm->add_arr_head($arr_polres,"x","=  PILIH POLRES =");
+
+
+                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+
+                         ?>
+    </div>
+  </div>
+
+
+
+
+    <div class="form-group" id="search_polsek">
+    <label for="id_polres" class="col-sm-3 control-label">POLSEK</label>
+    <div class="col-sm-9">
+    <?php
+                         echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control"');
+
+                         ?>   
+    </div>
+  </div>
+
+
+
+</div>
+
+<div class="col-md-6">
+
+  <div class="form-group" ">
+    <label for="id_polres" class="col-sm-3 control-label">POLSEK</label>
+    <div class="col-sm-9">
+    <?php
+                         echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control"');
+
+                         ?>   
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+
+</form>
+
+
+ 
+
+
+                </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="row">
   <div class="col-md-12">
 

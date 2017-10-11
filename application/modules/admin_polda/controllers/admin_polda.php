@@ -1,6 +1,6 @@
 <?php
 class admin_polda extends admin_controller  {
-	function admin_polda(){
+	function __construct(){
 		parent::__construct();
 		$this->load->helper("tanggal");
 		$this->load->model("coremodel","cm");

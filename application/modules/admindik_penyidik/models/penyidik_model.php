@@ -95,14 +95,17 @@ function data($param){
 
 
 function get_arr_kesatuan(){
-	$userdata = $this->session->userdata("userdata");
+	$userdata = $_SESSION['userdata']; // $this->session->userdata("userdata");
+
+	//show_array($userdata); 
 
 	$jenis = ($userdata['jenis']=="polda")?"polda":"polrespolsek";
 
 	$this->db->where("jenis",$jenis);
 	$this->db->order_by("kesatuan");
 	$res = $this->db->get("m_kesatuan");
-	// echo $this->db->last_query(); 
+	//echo $this->db->last_query(); 
+	// exit;
 	foreach($res->result() as $row) : 
 		$arr[$row->id_kesatuan] = $row->kesatuan;
 	endforeach;

@@ -1,6 +1,6 @@
 <?php
 class lap_lantas_model extends CI_Model {
-	function lap_lantas_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

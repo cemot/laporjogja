@@ -2,7 +2,7 @@
 class lap_lantas extends master_controller {
  	var $controller ;
 
-	function lap_lantas(){
+	function __construct(){
 		parent::__construct();
 		 
 		$this->load->model("coremodel","cm");

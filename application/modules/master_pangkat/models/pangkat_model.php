@@ -1,6 +1,6 @@
 <?php
 class pangkat_model extends CI_Model {
-	function pangkat_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

@@ -1,6 +1,6 @@
 <?php
 class admin_fungsi_model extends CI_Model {
-	function admin_fungsi_model(){
+	function __construct(){
 		parent::__construct();
 	}
 
