@@ -231,6 +231,20 @@
            </ul>
         </li>
 
+
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          KINERJA PENYIDIK<b class="caret"></b></a>
+          <ul class="dropdown-menu multi-level">
+                
+                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/1"); ?>">LAP. A</a></li>
+                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/2"); ?>">LAP. B</a></li>
+                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/3"); ?>">LAP. C</a></li>
+                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/4"); ?>">LAP. D</a></li>
+                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/5"); ?>">LAP. LAKA LANTAS</a></li>   
+           </ul>
+        </li>
+
         <li>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           DATA TAHANAN<b class="caret"></b></a>
