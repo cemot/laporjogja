@@ -2,7 +2,7 @@
 class lap_a extends master_controller {
  	var $controller ;
 
-	function lap_a(){
+	function __construct(){
 		parent::__construct();
 		 
 		$this->load->model("coremodel","cm");

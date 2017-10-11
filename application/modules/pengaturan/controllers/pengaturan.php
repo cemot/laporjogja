@@ -1,6 +1,6 @@
 <?php
 class pengaturan extends master_controller  {
-	function pengaturan(){
+	function __construct(){
 		parent::__construct();
 		$this->load->helper("tanggal");
 		$this->load->model("coremodel","cm");

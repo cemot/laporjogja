@@ -1,6 +1,6 @@
 <?php
 class pencarian_model extends CI_Model {
-	function pencarian_model(){
+	function __construct(){
 		parent::__construct();
 	}
 
