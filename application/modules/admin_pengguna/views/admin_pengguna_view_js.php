@@ -244,7 +244,7 @@ $("#titleModal").html('EDIT DATA PENGGUNA');
 
 
 			// get_subdit(obj.id_kesatuan,obj.id_subdit,'#id_subdit');
-			get_kesatuan(obj.jenis,'x','#id_kesatuan');
+			get_kesatuan(obj.jenis,obj.id_kesatuan,'#id_kesatuan');
 			get_subdit(obj.id_kesatuan,obj.id_subdit,'#id_subdit');
 			get_unit(obj.id_subdit,obj.id_unit,'#id_unit');
 
