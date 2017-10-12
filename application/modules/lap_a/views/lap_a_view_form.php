@@ -38,6 +38,9 @@
             <?php 
 
             $id_gol_kejahatan = isset($id_gol_kejahatan)?$id_gol_kejahatan:"";
+
+            $arr_golongan_kejahatan = $this->cm->add_arr_head($arr_golongan_kejahatan,"x","== PILIH JENIS KEJAHATAN ==");
+
             echo form_dropdown("id_gol_kejahatan",$arr_golongan_kejahatan,
             $id_gol_kejahatan,'id="id_gol_kejahatan" class="form-control ds2"') ?>
 

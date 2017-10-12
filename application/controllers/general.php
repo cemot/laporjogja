@@ -1,9 +1,8 @@
 <?php 
 
-
 class general extends CI_Controller {
 
-	function general(){
+	function __construct(){
 		parent::__construct();
 
 		$this->load->helper('download');
