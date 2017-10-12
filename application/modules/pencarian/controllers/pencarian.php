@@ -58,7 +58,7 @@ class pencarian extends master_controller {
 
 		   	array(
 		   	"id" => "id_kelompok",
-			"label" => "Jenis Kejahatan",
+			"label" => "Golongan Kejahatan", // jenis kejahatan 
 			"type" => "string",
 			"input" => "select",
 			"values" => $this->cm->get_arr_dropdown("m_kelompok_kejahatan","id_kelompok","kelompok",'kelompok')
@@ -144,7 +144,7 @@ class pencarian extends master_controller {
 		   
 		   	array(
 		   	"id" => "id_gol_kejahatan",
-			"label" => "Golongan Kejahatan",
+			"label" => "Jenis Kejahatan",  // golongan kejahatan 
 			"type" => "string",
 			"input" => "select",
 			"values" => $this->cm->add_arr_head($this->cm->get_arr_dropdown("m_golongan_kejahatan","id","golongan_kejahatan",'golongan_kejahatan'),'x','= SEMUA KEJAHATAN ==')
