@@ -25,7 +25,7 @@
                  <li><a href="<?php echo site_url("ex_lap_a"); ?>">LAPORAN POLISI MODEL A</a></li>
                 <li><a href="<?php echo site_url("ex_lap_b"); ?>">LAPORAN POLISI MODEL B</a></li>
                 <li><a href="<?php echo site_url("ex_lap_c"); ?>">LAPORAN POLISI MODEL C</a></li>
-                <li><a href="<?php echo site_url("ex_lap_d"); ?>">LAPORAN POLISI MODEL D</a></li>
+                <li><a href="<?php echo site_url("ex_lap_d"); ?>">LAPORAN POLISI BENCANA ALAM</a></li>
                 <li><a href="<?php echo site_url("ex_lap_lantas"); ?>">LAPORAN LAKA LANTAS</a></li>
             </ul>
         </li>
@@ -52,12 +52,12 @@
                  <li><a href="<?php echo site_url("ex_grafik_lap/grafik/1"); ?>">GRAFIK LAPORAN A</a></li>
                 <li><a href="<?php echo site_url("ex_grafik_lap/grafik/2"); ?>">GRAFIK LAPORAN B</a></li>
                 <li><a href="<?php echo site_url("ex_grafik_lap/grafik/3"); ?>">GRAFIK LAPORAN C</a></li>
-                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/4"); ?>">GRAFIK LAPORAN D</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/4"); ?>">GRAFIK LAPORAN POLISI BENCANA ALAM</a></li>
                  <li><a href="<?php echo site_url("ex_grafik_lap/grafik/5"); ?>">GRAFIK LAPORAN LAKA LANTAS</a></li>
                  <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/1"); ?>">GRAFIK PENYIDIK LAP. A</a></li>
                  <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/2"); ?>">GRAFIK PENYIDIK LAP. B</a></li>
                  <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/3"); ?>">GRAFIK PENYIDIK LAP. C</a></li>
-                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/4"); ?>">GRAFIK PENYIDIK LAP. D</a></li>
+                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/4"); ?>">GRAFIK PENYIDIK LAP. POLISI BENCANA ALAM</a></li>
                  <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/5"); ?>">GRAFIK PENYIDIK LAP. LAKA LANTAS</a></li>   
 
                  <li><a href="<?php echo site_url("ex_grafik_gol_kejahatan"); ?>"> GRAFIK GOLONGAN  KEJAHATAN </a></li>
@@ -84,7 +84,7 @@
                  <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/1"); ?>">LAP. A</a></li>
                  <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/2"); ?>">LAP. B</a></li>
                  <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/3"); ?>">LAP. C</a></li>
-                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/4"); ?>">LAP. D</a></li>
+                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/4"); ?>">LAP. POLISI BENCANA ALAM</a></li>
                  <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/5"); ?>">LAP. LAKA LANTAS</a></li>   
 
                  

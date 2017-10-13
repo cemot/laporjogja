@@ -1,6 +1,6 @@
 <?php
 class admin_lapas_model extends CI_Model {
-	function admin_lapas_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

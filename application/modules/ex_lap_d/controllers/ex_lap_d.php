@@ -2,7 +2,7 @@
 class ex_lap_d extends super_controller {
  	var $controller ;
 
-	function ex_lap_d(){
+	function __construct(){
 		parent::__construct();
 		 
 		$this->load->model("coremodel","cm");

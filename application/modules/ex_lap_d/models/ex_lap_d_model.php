@@ -1,6 +1,6 @@
 <?php
 class ex_lap_d_model extends CI_Model {
-	function ex_lap_d_model(){
+	function __construct(){
 		parent::__construct();
 	}
 

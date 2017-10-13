@@ -1,6 +1,6 @@
 <?php
 class grafik_penyidik extends admin_controller  {
-	function grafik_penyidik(){
+	function __construct(){
 		parent::__construct();
 		$this->load->model("coremodel","cm");
 		// $this->load->model("grafik_penyidik_model","dm");

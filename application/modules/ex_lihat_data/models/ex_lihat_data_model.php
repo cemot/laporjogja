@@ -3,7 +3,7 @@
 class ex_lihat_data_model extends CI_Model {
 
 
-	function ex_lihat_data_model(){
+	function __construct(){
 		parent::__construct();
 	}
 
