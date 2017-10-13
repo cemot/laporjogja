@@ -2,7 +2,7 @@
 class penyidik_lap_d extends penyidik_controller {
  	var $controller ;
 
-	function penyidik_lap_d(){
+	function __construct(){
 		parent::__construct();
 		 
 		$this->load->model("coremodel","cm");

@@ -2,7 +2,7 @@
 class ex_lihat_data extends super_controller {
     var $controller ;
 
-    function ex_lihat_data(){
+    function __construct(){
         parent::__construct();
          
         $this->load->model("coremodel","cm");

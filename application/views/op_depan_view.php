@@ -53,7 +53,7 @@
 
             <a href="<?php echo site_url("lap_d") ?>" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-globe  fa-5x"></i><br/>
-                Laporan Polisi  <br /> Model D  
+                Laporan Polisi  <br /> Bencana Alam
             </a>
 
              <a href="<?php echo site_url("pencarian") ?>" class="btn btn-sq-lg btn-primary">

@@ -3,7 +3,7 @@ class admin_lapas extends admin_controller {
 
 	var $controller ;
 
-	function admin_lapas(){
+	function __construct(){
 		parent::__construct();
 		// $this->load->model("core_model","cm");
 		$this->load->model("coremodel","cm");
