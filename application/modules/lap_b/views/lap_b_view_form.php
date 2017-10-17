@@ -51,10 +51,14 @@
 
             <?php 
 
+
+
             $arr_golongan_kejahatan = $this->cm->add_arr_head($arr_golongan_kejahatan,"x","== PILIH JENIS KEJAHATAN ==");
 
+            $id_gol_kejahatan = isset($id_gol_kejahatan)?$id_gol_kejahatan:"";
+
             echo form_dropdown("id_gol_kejahatan",
-            $arr_golongan_kejahatan,"",'id="id_gol_kejahatan" class="form-control ds2"') ?>
+            $arr_golongan_kejahatan,$id_gol_kejahatan,'id="id_gol_kejahatan" class="form-control ds2"') ?>
 
       </td>
 

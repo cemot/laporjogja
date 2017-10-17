@@ -223,7 +223,10 @@ function simpan(){
 		
 		$this->form_validation->set_rules('tanggal','Tanggal','required'); 
 		// $this->form_validation->set_rules('id_pasal','Pasal','required');
-		 
+		$this->form_validation->set_rules('id_gol_kejahatan','Jenis Kejahatan','callback_cek_gol');
+		$this->form_validation->set_rules('id_jenis_lokasi','Lokasi Kejadian','callback_cek_lokasi');
+		$this->form_validation->set_rules('id_fungsi','Fungsi terkait','callback_cek_fungsi');
+ 
 		$this->form_validation->set_message('required', ' %s Harus diisi ');
 		
  		$this->form_validation->set_error_delimiters('', '<br>');
@@ -339,9 +342,17 @@ function edit($id){
 
 		// show_array($data); exit;
 		//$data = $arr['message'];
+		
+
+		$this->db->where("lap_b_id",$id);
+		$data = $this->db->get("lap_b")->row_array();
+
+
 		$data['action']="update";
 		$data['mode']="U";
 		$data['controller'] = $this->controller;
+
+
 
 
 		$data['arr_golongan'] = $this->cm->get_arr_dropdown("m_golongan", 
@@ -350,7 +361,8 @@ function edit($id){
 		$data['arr_golongan_kejahatan'] = $this->cm->get_arr_gol_kejahatan();
 
 
-		$data['arr_gol_kejahatan'] = $this->cm->get_arr_dropdown("m_golongan_kejahatan", 
+		$data['arr_gol_kejahatan'] = 
+		$this->cm->get_arr_dropdown("m_golongan_kejahatan", 
 			"id","golongan_kejahatan",'golongan_kejahatan');
 
 		$data['arr_jenis_lokasi'] = $this->cm->get_arr_dropdown("m_jenis_lokasi", 
@@ -398,12 +410,64 @@ function edit($id){
 		$this->set_content($content);
 		$this->render_baru();
 	}
+
+
+function cek_gol($id) {
+	if(empty($id)){
+		$this->form_validation->set_message('cek_gol', ' %s Harus diisi ');
+		return false;
+	}
+
+
+	if($id=="x") {
+		$this->form_validation->set_message('cek_gol', ' %s Harus diisi ');
+		return false;
+	}
+
+
+}
+
+
+
+function cek_lokasi($id) {
+	if(empty($id)){
+		$this->form_validation->set_message('cek_lokasi', ' %s Harus diisi ');
+		return false;
+	}
+
+
+	if($id=="x") {
+		$this->form_validation->set_message('cek_lokasi', ' %s Harus diisi ');
+		return false;
+	}
+
+
+}
+
+function cek_fungsi($id) {
+	if(empty($id)){
+		$this->form_validation->set_message('cek_fungsi', ' %s Harus diisi ');
+		return false;
+	}
+
+
+	if($id=="x") {
+		$this->form_validation->set_message('cek_fungsi', ' %s Harus diisi ');
+		return false;
+	}
+
+
+}
+
 function update(){
 		// sleep(2);
 		$data=$this->input->post();
 		
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('tanggal','Tanggal','required'); 
+		$this->form_validation->set_rules('id_gol_kejahatan','Jenis Kejahatan','callback_cek_gol');
+		$this->form_validation->set_rules('id_jenis_lokasi','Lokasi Kejadian','callback_cek_lokasi');
+		$this->form_validation->set_rules('id_fungsi','Fungsi terkait','callback_cek_fungsi');
 		// $this->form_validation->set_rules('id_pasal','Pasal','required');
  		
 		 
