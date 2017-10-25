@@ -150,11 +150,7 @@ $setting = $this->cm->get_setting();
     <td align="center"><?php echo $setting->ttd_jabatan; ?></td>
   </tr>
   <tr>
-    <td align="center">&nbsp;</td>
-    <td align="center">&nbsp;</td>
-  </tr>
-  <tr>
-    <td align="center">&nbsp;</td>
+    <td align="center"></td>
     <td align="center">&nbsp;</td>
   </tr>
   <tr>
@@ -170,12 +166,16 @@ $setting = $this->cm->get_setting();
     <td align="center">&nbsp;</td>
   </tr>
   <tr>
+    <td align="center"></td>
     <td align="center">&nbsp;</td>
-    <td align="center"><u><?php echo $setting->ttd_nama; ?></u></td>
+  </tr>
+  <tr>
+    <td align="center"><u><?php echo $pelapor_nama; ?></u></td>
+    <td align="center"><u><?php echo $pen_lapor_nama; ?><?php // echo $setting->ttd_nama; ?></u></td>
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center"><?php echo $setting->ttd_nrp; ?></td>
+    <td align="center"><?php echo $pen_lapor_nrp // $setting->ttd_nrp; ?></td>
   </tr>
 </table>
 <p>&nbsp;</p>
