@@ -1,6 +1,6 @@
 <?php 
 class sync extends CI_Controller {
-	function sync(){
+	function __construct(){
 		parent::__construct();
 	}
 

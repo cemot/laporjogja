@@ -573,10 +573,20 @@ function get_header_by_user_id($user_id) {
 
 	else if ($user['jenis']=='polsek') {
 		//echo "polsek";
-		$this->db->select('*')->from('m_polsek s')
+		$this->db->select('s.*,r.nama_polres')->from('m_polsek s')
 		->join('m_polres r','r.id_polres = s.id_polres');
 		$this->db->where("s.id_polsek",$user['id_polsek']);
 		$dt_polsek = $this->db->get()->row_array();
+
+		// echo "<hr />";
+		// echo "data polsek " ;
+
+		// showx_array($dt_polsek);
+
+		// echo "<hr />";
+
+		// echo $this->db->last_query(); 
+		// exit;
 
 		$ret['instansi'] = $dt_polsek['nama_polres'].'<br />'. $dt_polsek['nama_polsek'];
 		$ret['ttd_nama'] = $dt_polsek['ttd_nama'];
@@ -585,6 +595,9 @@ function get_header_by_user_id($user_id) {
 		$ret['ttd_pangkat'] = $dt_polsek['ttd_pangkat'];
 		$ret['tempat'] = $dt_polsek['tempat'];
 		$ret['alamat'] = $dt_polsek['alamat'];
+
+		// show_array($dt_polsek); 
+		// exit;
 	}
 
 	//show_array($ret);
