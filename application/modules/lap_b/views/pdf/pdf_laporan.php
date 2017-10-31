@@ -7,6 +7,10 @@ font-size : 9px;
 	border-bottom : #000 solid 2px;
 }
 
+.alamat {
+  font-size: 8px;
+}
+
 </style>
 <?php 
 $setting = $this->cm->get_setting();
@@ -19,9 +23,12 @@ $setting = $this->cm->get_setting();
 
   echo $ttd['instansi'].'<br />'; }
 
-	echo $ttd['alamat']; 
+	 echo "<span id='alamat'>". ucwords(strtolower($ttd['alamat']))."</span>";  
 	
 	?>
+  <!-- <tr>
+    <td align="center" class="alamat"></td>
+  </tr> -->
         <hr></td>
     <td width="24%">&nbsp;</td>
     <td width="27%">&nbsp;</td>
@@ -193,10 +200,23 @@ $setting = $this->cm->get_setting();
     <td>&nbsp;</td>
     <td align="justify"><?php echo $kejadian_uraian; ?></td>
   </tr>
+
+<!-- <tr><td width="100%" colspan="2"> <hr /> </td>
+</tr> -->
   <tr>
-    <td colspan="3"><hr />
+    <td width="100%" colspan="2"><hr /> Setelah pelapor memberikan keterangan, kemudian untuk menguatkan keterangannya pelapor membubuhkan tanda tangannya di bawah ini : </td>
+    
+  </tr>
+
+  <tr>
+    <td  width="100%"  colspan="3"><hr />
     TINDAKAN YANG DIAMBIL : Menerima laporan, Membuat LP, Membuat Surat Tanda Terima Laporan Polisi </td>
   </tr>
+
+<tr> <td width="100%"   colspan="3"><hr />
+  Demikian Laporan Polisi ini dibuat dengan sebenar - benarnya mengingat Sumpah Jabatan kemudian ditutup dan ditanda tangani di <?php echo $ttd['tempat'] ?> pada tanggal <?php  echo ucwords(strtolower(tgl_indo(flipdate($tanggal)))) ?>
+</td></tr>
+
 </table>
 <table width="100%" border="0" cellpadding="0">
   <tr>
