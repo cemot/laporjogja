@@ -19,7 +19,7 @@
               <TD>
               <?php 
                 $arr_jk = array("L"=>"Laki-laki","P"=>"Perempuan");
-                echo form_dropdown("saksi_jk",$arr_jk,'','id="tersangja_jk" class="form-control"');
+                echo form_dropdown("saksi_jk",$arr_jk,'','id="saksi_jk" class="form-control"');
               ?>
               </TD></tr>
 

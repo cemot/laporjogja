@@ -43,9 +43,13 @@
 
                 <tr><td>Tempat Lahir </td>
               <TD><input type="text" class="form-control" name="tersangka_tmp_lahir" id="tersangka_tmp_lahir" placeholder="Tempat Lahir" /></TD></tr>
-
+<!-- 
                <tr><td>Tanggal Lahir </td>
               <TD><input type="text" class="tanggal form-control" name="tersangka_tgl_lahir" id="tersangka_tgl_lahir" placeholder="Tanggal Lahir" data-date-format="dd-mm-yyyy" /></TD></tr>
+ -->
+                <tr><td>Umur </td>
+              <TD><input type="text" class="form-control" name="tersangka_umur" id="tersangka_umur" placeholder="Umur tersangka"   /></TD></tr>
+
 
                 <tr><td>Agama </td>
               <TD>

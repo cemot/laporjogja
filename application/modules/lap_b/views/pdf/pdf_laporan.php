@@ -96,7 +96,7 @@ $setting = $this->cm->get_setting();
     		<b><?php 
 			$break = ($n>1)?"<br />":"";
 			echo  $break . $n. ". ". $row->tersangka_nama; ?></b>, 
-			<?php echo umur($row->tersangka_tgl_lahir); ?> Th,
+			<?php echo $row->tersangka_umur //umur($row->tersangka_tgl_lahir); ?> Th,
 			<?php echo ($tersangka_jk=="P")?" PEREMPUAN ":"LAKI - LAKI "; ?>, 
 			<?php echo $row->pekerjaan; ?> d/a  
  
@@ -166,7 +166,7 @@ $setting = $this->cm->get_setting();
   ?>
     <tr>
       <td width="6%"><?php echo $no ?>. </td>
-      <td width="94%"><?php echo $row->saksi_nama; ?>, <?php echo umur($row->saksi_tgl_lahir); ?> Th, <?php echo ($row->saksi_jk=="P")?"Perempuan":"Laki-laki"; ?>,  <?php echo $row->saksi_agama; ?>,<?php echo $row->pekerjaan; ?>, <?php echo $row->saksi_alamat; ?> - <?php echo $row->desa ?> - <?php echo $row->kecamatan; ?> - <?php echo $row->kota; ?> - <?php echo $row->provinsi; ?> </td>
+      <td width="94%"><?php echo $row->saksi_nama; ?>, <?php echo $row->saksi_umur // umur($row->saksi_tgl_lahir); ?> Th, <?php echo ($row->saksi_jk=="P")?"Perempuan":"Laki-laki"; ?>,  <?php echo $row->saksi_agama; ?>,<?php echo $row->pekerjaan; ?>, <?php echo $row->saksi_alamat; ?> - <?php echo $row->desa ?> - <?php echo $row->kecamatan; ?> - <?php echo $row->kota; ?> - <?php echo $row->provinsi; ?> </td>
     </tr>
       <?php endforeach; ?>  
   </table></td>

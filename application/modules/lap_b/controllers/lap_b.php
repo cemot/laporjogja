@@ -626,7 +626,8 @@ function get_lap_b_terlapor($lap_b_id) {
         	$arr_data[] = array(
    		 
 		$row['tersangka_nama'],
-		flipdate($row['tersangka_tgl_lahir']),
+		// flipdate($row['tersangka_tgl_lahir']),
+		$row['tersangka_umur'],
 		$row['tersangka_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -1786,7 +1787,8 @@ function temp_get_lap_b_terlapor() {
         	$arr_data[] = array(
    		 
 		$row['tersangka_nama'],
-		flipdate($row['tersangka_tgl_lahir']),
+		// flipdate($row['tersangka_tgl_lahir']),
+		$row['tersangka_umur'],
 		$row['tersangka_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
