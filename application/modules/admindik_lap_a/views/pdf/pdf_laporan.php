@@ -133,7 +133,7 @@ $setting = $this->cm->get_setting();
     <td>&nbsp;</td>
     <td>TMP/ TGL. LAHIR / UMUR </td>
     <td>:</td>
-    <td><?php echo $row->tersangka_tmp_lahir; ?> / <?php echo flipdate($row->tersangka_tgl_lahir); ?> / <?php echo umur($row->tersangka_tgl_lahir); ?> Tahun </td>
+    <td><?php echo $row->tersangka_tmp_lahir; ?> / <?php echo $tersangka_umur; ?> / <?php echo umur($row->tersangka_tgl_lahir); ?> Tahun </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
