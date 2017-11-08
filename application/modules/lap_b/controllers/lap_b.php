@@ -720,7 +720,8 @@ function get_lap_b_saksi($lap_b_id) {
         	$arr_data[] = array(
    		 
 		$row['saksi_nama'],
-		flipdate($row['saksi_tgl_lahir']),
+		// flipdate($row['saksi_tgl_lahir']),
+		$row['saksi_umur'],
 		$row['saksi_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -1979,7 +1980,8 @@ function temp_get_lap_b_saksi() {
         	$arr_data[] = array(
    		 
 		$row['saksi_nama'],
-		flipdate($row['saksi_tgl_lahir']),
+		// flipdate($row['saksi_tgl_lahir']),
+		$row['saksi_umur'],
 		$row['saksi_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],

@@ -556,7 +556,8 @@ function temp_get_lap_b_saksi($param){
 	$arr_column = array(
 		"saksi_nama",
 		"saksi_tgl_lahir",
-		"saksi_tmp_lahir",
+		// "saksi_tmp_lahir",
+		"saksi_umur",
 		"agama",
 		"suku",
 		"pekerjaan",
