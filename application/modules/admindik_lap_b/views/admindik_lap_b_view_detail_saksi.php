@@ -22,8 +22,8 @@ $n++;
     <TD><?php echo $row->saksi_tmp_lahir; ?></TD>
   </tr>
   <tr>
-    <td>Tanggal Lahir </td>
-    <TD><?php echo $row->saksi_tgl_lahir; ?></TD>
+    <td>Umur </td>
+    <TD><?php echo $row->saksi_umur; ?> Th</TD>
   </tr>
   <tr>
     <td>Agama </td>
