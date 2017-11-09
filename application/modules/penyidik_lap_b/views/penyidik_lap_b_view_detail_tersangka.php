@@ -20,9 +20,13 @@ $n++;
     <td>Tempat Lahir </td>
     <TD><?php echo $row->tersangka_tmp_lahir; ?></TD>
   </tr>
-  <tr>
+ <!--  <tr>
     <td>Tanggal Lahir </td>
     <TD><?php echo $row->tersangka_tgl_lahir; ?></TD>
+  </tr> -->
+  <tr>
+    <td>Umur</td>
+    <TD><?php echo $row->tersangka_umur; ?></TD>
   </tr>
   <tr>
     <td>Agama </td>
