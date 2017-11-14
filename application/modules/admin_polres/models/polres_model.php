@@ -31,7 +31,7 @@ function data($param){
     ($param['sort_by'] != null) ? $this->db->order_by($sort_by,$param['sort_direction']) :'';
         
 	$res = $this->db->get();
-		// echo $this->db->last_query();
+		 
  	return $res;
 
 
