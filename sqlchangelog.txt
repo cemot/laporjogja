@@ -30,3 +30,34 @@ where lap_a_id in (
 
 
 select lap_a_id from ( select lap_a_id, count(*) as total from lap_a_penyidik group by lap_a_id ) x where x.total = 1 ) 
+
+
+
+8 November 2017
+
+ALTER TABLE `lap_b_saksi` ADD `saksi_umur` INT NULL AFTER `saksi_tgl_lahir`;
+
+
+update lap_b_saksi set saksi_umur = year(current_date) - year(saksi_tgl_lahir); 
+
+
+
+ALTER TABLE `lap_b_tersangka` ADD `tersangka_umur` INT NULL AFTER `tersangka_tgl_lahir`;
+
+update lap_b_tersangka set tersangka_umur = year(current_date) - year(tersangka_tgl_lahir); 
+
+
+
+
+
+ALTER TABLE `lap_a_saksi` ADD `saksi_umur` INT NULL AFTER `saksi_tgl_lahir`;
+
+
+update lap_a_saksi set saksi_umur = year(current_date) - year(saksi_tgl_lahir); 
+
+
+
+ALTER TABLE `lap_a_tersangka` ADD `tersangka_umur` INT NULL AFTER `tersangka_tgl_lahir`;
+
+update lap_a_tersangka set tersangka_umur = year(current_date) - year(tersangka_tgl_lahir); 
+
