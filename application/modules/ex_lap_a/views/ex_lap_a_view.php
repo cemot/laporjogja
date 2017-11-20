@@ -21,19 +21,19 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-                <div class="panel-heading"><b>PENCARIAN</b></div>
-                <div class="panel-body">
+    <div class="card panel-default">
+                <div class="card-header"><b>PENCARIAN</b></div>
+                <div class="card-block">
                   <form class="form-inline" id="fuckyouform">
 
-                  <div class="form-group">
+                  <div class="input-group">
                          
                         <input type="text" class="tanggal form-control" 
                         id="tanggal_awal" placeholder="Tangal Awal" 
                         data-date-format="dd-mm-yyyy"  
                         name="tanggal_awal" style="width:120px">
                       </div>
-                      <div class="form-group">
+                      <div class="input-group">
                          
                         <input type="text" class="tanggal form-control" 
                         id="tanggal_akhir" placeholder="Tanggal Akhir"
@@ -42,7 +42,7 @@
                       </div>
 
 
-                      <div class="form-group">
+                      <div class="input-group">
                          <?php
                           $arr = array("x"=>"POLDA KESELURUHAN ",
                                       "polda"=>"POLDA",
@@ -58,7 +58,7 @@
                       </div>
 
 
-                      <div class="form-group" id="search_polres">
+                      <div class="input-group" id="search_polres">
                          <?php
                           
                          $arr_polres = $this->cm->get_arr_dropdown("m_polres","id_polres","nama_polres","nama_polres");
@@ -73,7 +73,7 @@
                       </div>
 
 
-                       <div class="form-group" id="search_polsek">
+                       <div class="input-group" id="search_polsek">
                          <?php
                           
                         
@@ -88,7 +88,7 @@
 
 
 
-                      <div class="form-group" id="search_polres">
+                      <div class="input-group" id="search_polres">
                          <?php
                           
                           $arr_status = $this->cm->arr_status_kasus;

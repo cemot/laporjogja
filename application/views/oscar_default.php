@@ -63,20 +63,21 @@ else {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url("assets/oscar") ?>/css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
     <!-- Head Libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>    
 
     <!-- Bawaan dari theme dulu -->
     <!-- <link type="text/css" href="<?php echo base_url("assets2") ?>/css/app.css" rel="stylesheet"/> -->
     <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/css/custom.css"> -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/vendors/datatables/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/css/pages/datatables.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/vendors/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets2") ?>/css/pages/datatables.css"> -->
     <link href="<?php echo base_url("assets") ?>/css/datepicker.css" rel="stylesheet">
     <link href="<?php echo base_url("assets") ?>/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url("assets") ?>/select2/dist/css/select2.min.css" rel="stylesheet">
     <script src="<?php echo base_url("assets2") ?>/js/app.js" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/dataTables.bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/datatables/js/dataTables.bootstrap.min.js"></script> -->
     <script src="<?php echo base_url("assets2") ?>/vendors/mark.js/jquery.mark.js" charset="UTF-8"></script>
     <script src="<?php echo base_url("assets2") ?>/vendors/datatablesmark.js/js/datatables.mark.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="<?php echo base_url("assets2") ?>/vendors/bootstrap-table/js/bootstrap-table.min.js"></script>
@@ -218,6 +219,8 @@ else {
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script> -->
     <script src="<?php echo base_url("assets/oscar") ?>/js/theme.js"></script>
     <script src="<?php echo base_url("assets/oscar") ?>/js/custom.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 </body>
 
 </html>

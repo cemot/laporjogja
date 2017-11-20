@@ -34,8 +34,9 @@ var $pilihan;
 	
 	function render(){
 		$arr = array();
+		$selector = $this->input->get("oldtheme");
 		$userdata = $_SESSION['userdata'];
-		if($userdata["level"] == "4"){
+		if($userdata["level"] == "4" && $selector != "yes"){
 			$this->load->view("oscar_default",$this->content);
 		}
 		else{
