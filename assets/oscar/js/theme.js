@@ -270,15 +270,15 @@
         return false;
 			});
 
-      document.addEventListener('click', function(event) {
-        var $rightSidebar = document.getElementsByClassName('right-sidebar')[0],
-            $chatPanel = document.getElementsByClassName('chat-panel')[0];
-        var isInsideContainer = $rightSidebar.contains( event.target ) || $chatPanel.contains(event.target);
-        if( !isInsideContainer ) {
-          document.body.classList.remove('right-sidebar-expand');
-          $chatPanel.hidden = 'hidden';
-        }
-      });
+      // document.addEventListener('click', function(event) {
+      //   var $rightSidebar = document.getElementsByClassName('right-sidebar')[0],
+      //       $chatPanel = document.getElementsByClassName('chat-panel')[0];
+      //   var isInsideContainer = $rightSidebar.contains( event.target ) || $chatPanel.contains(event.target);
+      //   if( !isInsideContainer ) {
+      //     document.body.classList.remove('right-sidebar-expand');
+      //     $chatPanel.hidden = 'hidden';
+      //   }
+      // });
 		},
 
     sidebarUserToggle: function() {
@@ -1311,22 +1311,22 @@
     },
 
     enableDatePicker: function() {
-      var el = $('.datepicker');
-      if( !el.length ) return;
-      var defaults = {
-      };
-      el.each(function(){
-        var $this = $(this),
-            options = $this.data('plugin-options');
+      // var el = $('.datepicker');
+      // if( !el.length ) return;
+      // var defaults = {
+      // };
+      // el.each(function(){
+      //   var $this = $(this),
+      //       options = $this.data('plugin-options');
 
-        if( this.unifato === undefined )
-          this.unifato = {};
+      //   if( this.unifato === undefined )
+      //     this.unifato = {};
 
-        if( options === undefined ) options = {};
-        options = $.extend({}, defaults, options);
-        $this.datepicker(options);
-        this.unifato.datepicker = $this.data('datepicker');
-      });
+      //   if( options === undefined ) options = {};
+      //   options = $.extend({}, defaults, options);
+      //   $this.datepicker(options);
+      //   this.unifato.datepicker = $this.data('datepicker');
+      // });
     },
 
     enableSelect2: function() {

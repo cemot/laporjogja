@@ -19,9 +19,9 @@
 
 <div class="row">
 <div class="col-md-9">
-    <div class="panel panel-default">
-            <div class="panel-heading">PENCARIAN</div>
-            <div class="panel-body">
+    <div class="card">
+            <div class="card-header">PENCARIAN</div>
+            <div class="card-body">
             
               
                 <form class="form-inline" id="fuckyouform">
@@ -49,7 +49,7 @@
                       <div class="form-group">
                        <?php 
               $arr_status = $this->cm->arr_status;
-            echo form_dropdown('',array(),'','id="arr_status" class="form-control"');
+            echo form_dropdown('',array(),'','id="arr_status" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
              ?>
                       </div>
                      
@@ -69,21 +69,21 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-                <div class="panel-heading"><b>PENCARIAN</b></div>
-                <div class="panel-body">
+    <div class="card">
+                <div class="card-header"><b>PENCARIAN</b></div>
+                <div class="card-body">
                   <form class="form-inline" id="fuckyouform">
 
                   <div class="form-group">
                          
-                        <input type="text" class="tanggal form-control" 
+                        <input type="text" class="tanggal form-control mb-2 mr-sm-2 mb-sm-0 mt-2" 
                         id="tanggal_awal" placeholder="Tangal Awal" 
                         data-date-format="dd-mm-yyyy"  
                         name="tanggal_awal" style="width:120px">
                       </div>
                       <div class="form-group">
                          
-                        <input type="text" class="tanggal form-control" 
+                        <input type="text" class="tanggal form-control mb-2 mr-sm-2 mb-sm-0 mt-2" 
                         id="tanggal_akhir" placeholder="Tanggal Akhir"
                         data-date-format="dd-mm-yyyy" style="width:120px"
                         name="tanggal_akhir"  >
@@ -99,7 +99,7 @@
                                       "polsek"=>"POLSEK"
                                       
                                       );
-                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control"');
+                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>
                          
@@ -114,7 +114,7 @@
                          $arr_polres = $this->cm->add_arr_head($arr_polres,"x","=  PILIH POLRES =");
 
 
-                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2" onchange="get_data_polres(this,\'#id_polsek\',1)"');
 
                          ?>
                          
@@ -128,7 +128,7 @@
 
                          
 
-                         echo form_dropdown("id_polsek",$arr_polres,"",'id="id_polsek" class="form-control"');
+                         echo form_dropdown("id_polsek",$arr_polres,"",'id="id_polsek" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>
                          
@@ -141,7 +141,7 @@
                           $arr_status = $this->cm->arr_status_kasus;
                           $arr_status = $this->cm->add_arr_head($arr_status,"x","== SEMUA  == ");
 
-                          echo form_dropdown("penyelesaian",$arr_status,'','id="penyelesaian" class="form-control"');
+                          echo form_dropdown("penyelesaian",$arr_status,'','id="penyelesaian" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
                           
 
                          ?>
@@ -150,8 +150,8 @@
                         
 
 
-                     <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search" id='btn_cari'></i> Cari</button>
-                      <a href="#" onclick="reset_cari();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
+                     <button id="cari_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit"><i class="glyphicon glyphicon-search" id='btn_cari'></i> Cari</button>
+                      <a href="#" onclick="reset_cari();" class="btn btn-danger mb-2 mr-sm-2 mb-sm-0 mt-2"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
                      
                   </form>
                 </div>
@@ -164,7 +164,7 @@
 <div class="row">
 <div class="col-md-12">
 
-<a href="<?php echo site_url("$controller/baru"); ?>" class="btn btn-success">Tambah Baru </a> 
+<a href="<?php echo site_url("$controller/baru"); ?>" class="btn btn-success mt-2">Tambah Baru </a> 
 <p></p>
 <div id="" style="overflow-y: scroll; min-height:400px;">
 <table width="100%"  border="0" class="table table-striped 
