@@ -26,14 +26,14 @@
 
                   <div class="form-group">
                          
-                        <input type="text" class="tanggal form-control" 
+                        <input type="text" class="tanggal form-control mb-2 mr-sm-2 mb-sm-0 mt-2" 
                         id="tanggal_awal" placeholder="Tangal Awal" 
                         data-date-format="dd-mm-yyyy"  
                         name="tanggal_awal" style="width:120px">
                       </div>
                       <div class="form-group">
                          
-                        <input type="text" class="tanggal form-control" 
+                        <input type="text" class="tanggal form-control mb-2 mr-sm-2 mb-sm-0 mt-2" 
                         id="tanggal_akhir" placeholder="Tanggal Akhir"
                         data-date-format="dd-mm-yyyy" style="width:120px"
                         name="tanggal_akhir"  >
@@ -49,7 +49,7 @@
                                       "polsek"=>"POLSEK"
                                       
                                       );
-                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control"');
+                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>
                          
@@ -64,7 +64,7 @@
                          $arr_polres = $this->cm->add_arr_head($arr_polres,"x","=  PILIH POLRES =");
 
 
-                         echo form_dropdown("id_pores",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+                         echo form_dropdown("id_pores",$arr_polres,"",'id="id_polres" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2" onchange="get_data_polres(this,\'#id_polsek\',1)"');
 
                          ?>
                          
@@ -78,7 +78,7 @@
 
                          
 
-                         echo form_dropdown("id_polsek",$arr_polres,"",'id="id_polsek" class="form-control"');
+                         echo form_dropdown("id_polsek",$arr_polres,"",'id="id_polsek" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>
                          
@@ -89,8 +89,8 @@
                      <!--  <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-search" id='btn_cari'></i>Cari</a> -->
 
 
-                     <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search" id='btn_cari'></i> Cari</button>
-                      <a href="#" onclick="reset_cari();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
+                     <button id="cari_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit"><i class="glyphicon glyphicon-search" id='btn_cari'></i> Cari</button>
+                      <a href="#" onclick="reset_cari();" class="btn btn-danger mb-2 mr-sm-2 mb-sm-0 mt-2"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
                      <!-- 
                       <button id="cari_button" class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search" id='btn_reset' onclick="return reset_cari();"></i> Reset</button>
  -->

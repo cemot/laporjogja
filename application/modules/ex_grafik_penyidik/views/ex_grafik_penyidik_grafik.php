@@ -36,11 +36,11 @@
     <div class="card">
                 <div class="card-header"><b>PENCARIAN</b></div>
                 <div class="card-body">
-                  <div class="form-inline">
-                  <form id="frmcari" method="post">
+                  <div>
+                  <form id="frmcari" method="post" class="form-inline">
                   <div class="form-group">
                          
-                  <select class="form-control" name="tahun" id="tahun">
+                  <select class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2" name="tahun" id="tahun">
                     <option value="">- Pilih Tahun -</option>
                     <?php
                       $tahun = date("Y");
@@ -62,7 +62,7 @@
                                       "polsek"=>"POLSEK"
                                       
                                       );
-                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control"');
+                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>
                          
@@ -77,7 +77,7 @@
                          $arr_polres = $this->cm->add_arr_head($arr_polres,"x","=  PILIH POLRES =");
 
 
-                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2" onchange="get_data_polres(this,\'#id_polsek\',1)"');
 
                          ?>
                          
@@ -86,7 +86,7 @@
 
                        <div class="form-group" id="search_polsek">
                          <?php
-                         echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control"');
+                         echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>                         
                       </div>
@@ -96,7 +96,7 @@
                          <?php
                          $arr_fungsi = $this->cm->get_arr_function('polda');
                          $arr_fungsi = $this->cm->add_arr_head($arr_fungsi,"x"," = SEMUA =");
-                         echo form_dropdown("id_fungsi",$arr_fungsi,"",'id="id_fungsi" class="form-control"');
+                         echo form_dropdown("id_fungsi",$arr_fungsi,"",'id="id_fungsi" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>                         
                       </div>  
@@ -107,7 +107,7 @@
 
 
 
-                     <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i> Cari</button>
+                     <button id="cari_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit"><i class="glyphicon glyphicon-search"></i> Cari</button>
                      </form>
                
                   </div>
