@@ -227,7 +227,7 @@ u.nama as pengguna ')
 ->join('m_warga_negara wn','a.pelapor_id_warga_negara=wn.id_warga_negara')
 
 
-->join('tiger_desa k_desa','k_desa.id = a.pelapor_id_desa ','left')
+->join('tiger_desa k_desa','k_desa.id = a.kejadian_id_desa ','left')
 ->join('tiger_kecamatan k_kec','k_kec.id = k_desa.id_kecamatan ','left')
 ->join('tiger_kota k_kota','k_kota.id = k_kec.id_kota ','left')
 ->join('tiger_provinsi k_prov','k_prov.id = k_kota.id_provinsi','left')

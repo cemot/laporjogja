@@ -2676,7 +2676,7 @@ function cetak_laporan($id) {
 		// exit;
 
 		$this->load->library('Pdf');
-		$pdf = new Pdf('L', 'mm', 'F4', true, 'UTF-8', false);
+		$pdf = new Pdf('P', 'mm', 'F4', true, 'UTF-8', false);
 		$pdf->SetTitle('LAPORAN KEPOLISIAN');
 		//$pdf->SetHeaderMargin(30);
 		//$pdf->SetTopMargin(10);
@@ -2696,7 +2696,7 @@ function cetak_laporan($id) {
 
 	 	// show_array($data); exit;
 		 
-		$pdf->AddPage('P');
+		$pdf->AddPage('P',array(220,330));
 		//$data = array();
 		$html = $this->load->view("pdf/pdf_laporan",$data,true);		 
 		$pdf->writeHTML($html, true, false, true, false, '');

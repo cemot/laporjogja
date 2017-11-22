@@ -211,44 +211,10 @@ $.ajax({
  		$("#pelapor_id_kesatuan").val(jsonData.pelapor_id_kesatuan).attr('selected','selected');
  		$("#pen_lapor_id_kesatuan").val(jsonData.pen_lapor_id_kesatuan).attr('selected','selected');
 
- 		// $("#id_golongan").val(jsonData.id_golongan).attr('selected','selected');
+ 		$("#kp_tempat_id_provinsi").val(jsonData.kp_tempat_prov_id).attr('selected','selected');
 
-
-
- 		// $.ajax({
-	  //     url:'<?php echo site_url("general/get_dropdown_kel_kejahatan"); ?>/',
-	  //     data : {id_kelompok : jsonData.id_kelompok, 
-	  //     		 id_golongan : jsonData.id_golongan },
-	  //     type : 'post',
-	  //     success: function(data){
-	  //       $("#id_kelompok").html('').append(data);
-	  //     }
-	  //   });
-
-
- 		// $.ajax({
-	  //     url:'<?php echo site_url("general/get_dropdown_gol_kejahatan"); ?>/',
-	  //     data : {id_kelompok : jsonData.id_kelompok, 
-	  //     		id_gol_kejahatan : jsonData.id_gol_kejahatan },
-	  //     type : 'post',
-	  //     success: function(data){
-	  //       $("#id_gol_kejahatan").html('').append(data);
-	  //     }
-	  //   });
-	  //$("#id_gol_kejahatan").val(rsdata.id_gol_kejahatan).attr('selected','selected');
-	 
-	  //$("#id_gol_kejahatan").select2().select2(jsonData.id_gol_kejahatan, jsonData.golongan_kejahatan);
-
-	  // $("#id_gol_kejahatan").select2(jsonData.id_gol_kejahatan, jsonData.golongan_kejahatan);
-	  //$("#id_gol_kejahatan").select2(jsonData.id_gol_kejahatan,null);
-
-	  console.log(jsonData.id_gol_kejahatan);
-	  console.log(jsonData.golongan_kejahatan);
-	  // jsonData.id_gol_kejahatan, 
-
-	  console.log(jsonData.id_golongan);
-	//  $("#id_gol_kejahatan").val(jsonData.id_gol_kejahatan).attr('selected','selected');
-
+ 		
+ 
 	  $.ajax({
 		url : '<?php echo site_url("general/get_detail_golongan") ?>',
 		data : {id_gol_kejahatan :jsonData.id_gol_kejahatan},

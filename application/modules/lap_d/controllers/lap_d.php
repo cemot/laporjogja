@@ -512,7 +512,7 @@ function cetak_laporan($id) {
 
 	 	// show_array($data); exit;
 		 
-		$pdf->AddPage('P');
+		$pdf->AddPage('P',array(220,330));
 		//$data = array();
 		$html = $this->load->view("pdf/pdf_laporan",$data,true);		 
 		$pdf->writeHTML($html, true, false, true, false, '');

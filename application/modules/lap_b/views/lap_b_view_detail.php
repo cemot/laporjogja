@@ -18,6 +18,8 @@
  </style>
 
 <a class="btn btn-danger" href="<?php echo $this->agent->referrer(); ?>"><span class="glyphicon glyphicon-arrow-left"></span></i> Kembali </a>
+<a  class="btn btn-warning" href="<?php echo site_url("$controller/edit/$lap_b_id") ?>"><span class="glyphicon glyphicon-pencil"></span></i> Edit data </a>
+
 <a target="blank" class="btn btn-success" href="<?php echo site_url("$controller/cetak_laporan/$lap_b_id") ?>"><span class="glyphicon glyphicon-print"></span></i> Cetak Laporan Polisi </a>
 <a target="blank" class="btn btn-success" href="<?php echo site_url("$controller/cetak_surat_pernyataan/$lap_b_id") ?>"><span class="glyphicon glyphicon-print"></span></i> Cetak Surat Pernyataan </a>
 <a target="blank" class="btn btn-success" href="<?php echo site_url("$controller/cetak_tanda_bukti/$lap_b_id") ?>"><span class="glyphicon glyphicon-print"></span></i> Cetak Tanda Bukti Lapor </a>
