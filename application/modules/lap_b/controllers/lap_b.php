@@ -559,6 +559,8 @@ function get_detail_json($id) {
 	$detail['pelapor_tgl_lahir'] = flipdate($detail['pelapor_tgl_lahir']);
 	$detail['kejadian_tanggal'] = flipdate($detail['kejadian_tanggal']);
 	$detail['kejadian_tanggal_lapor'] = flipdate($detail['kejadian_tanggal_lapor']);
+
+	// echo 'pelapor prov id '. $detail['pelapor_prov_id']. "<br />";
 	// show_array($detail); exit;
 	echo json_encode($detail);
 }

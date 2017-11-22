@@ -21,7 +21,7 @@ $setting = $this->cm->get_setting();
 	?>
         <hr></td>
     <td width="24%">&nbsp;</td>
-    <td width="27%">&nbsp;</td>
+    <td width="27%" align="right">LAP. MODEL A</td>
   </tr>
   <tr>
     <td align="left">&quot;PROJUSTITIA&quot;</td>
@@ -40,6 +40,9 @@ $setting = $this->cm->get_setting();
     <td colspan="3" align="center">&nbsp;</td>
   </tr>
 </table>
+
+
+
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td colspan="3"><hr />

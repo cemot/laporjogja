@@ -220,43 +220,12 @@ $.ajax({
 
  		$("#pelapor_id_provinsi").val(jsonData.pelapor_prov_id).attr('selected','selected');
 
- 		
- 		// $("#id_kelompok").val(jsonData.id_kelompok).attr('selected','selected');
+ 		 
+ 		// console.log('peapor id provinsi '+pelapor_prov_id); 
 
- 		// $.ajax({
-	  //     url:'<?php echo site_url("general/get_dropdown_gol_kejahatan"); ?>/',
-	  //     data : {id_kelompok : jsonData.id_kelompok, 
-	  //     		id_gol_kejahatan : jsonData.id_gol_kejahatan },
-	  //     type : 'post',
-	  //     success: function(data){
-	  //       $("#id_gol_kejahatan").html('').append(data);
-	  //     }
-	  //   });
-
-	  // $("#id_golongan").val(jsonData.id_golongan).attr('selected','selected');
+ 		// alert('peapor id provinsi '+jsonData.pelapor_prov_id); 
 
 
-
- 		// $.ajax({
-	  //     url:'<?php echo site_url("general/get_dropdown_kel_kejahatan"); ?>/',
-	  //     data : {id_kelompok : jsonData.id_kelompok, 
-	  //     		 id_golongan : jsonData.id_golongan },
-	  //     type : 'post',
-	  //     success: function(data){
-	  //       $("#id_kelompok").html('').append(data);
-	  //     }
-	  //   });
-
-
- 		// $.ajax({
-	  //     url:'<?php echo site_url("general/get_dropdown_gol_kejahatan"); ?>/',
-	  //     data : {id_kelompok : jsonData.id_kelompok, 
-	  //     		id_gol_kejahatan : jsonData.id_gol_kejahatan },
-	  //     type : 'post',
-	  //     success: function(data){
-	  //       $("#id_gol_kejahatan").html('').append(data);
-	  //     }
-	  //   });
 
 	  $.ajax({
 		url : '<?php echo site_url("general/get_detail_golongan") ?>',
@@ -271,6 +240,8 @@ $.ajax({
 		}
 	});
 
+
+	  // alamat pelapor section 
 
  		$.ajax({
 	      url:'<?php echo site_url("general/get_dropdown_kota_by_prop"); ?>/',

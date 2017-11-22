@@ -31,7 +31,7 @@ $setting = $this->cm->get_setting();
   </tr> -->
         <hr></td>
     <td width="24%">&nbsp;</td>
-    <td width="27%">&nbsp;</td>
+    <td width="27%" align="right">LAP. MODEL B</td>
   </tr>
   <tr>
     <td align="left">&quot;PROJUSTITIA&quot;</td>
