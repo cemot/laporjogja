@@ -48,7 +48,9 @@
 </div>     
 
 <div class="row">
-<div class="col-md-12" id="hasil_pencarian">
+<div class="col-md-12">
+<div style="overflow-y: scroll; min-height:400px;" id="hasil_pencarian">
+</div>
 </div>
 </div>
 

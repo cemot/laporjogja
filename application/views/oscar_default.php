@@ -95,7 +95,7 @@ else {
         <nav class="navbar">
             <!-- Logo Area -->
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">
+                <a href="<?= site_url("index_executive") ?>" class="navbar-brand">
                     <img class="logo-expand" alt="" src="<?php echo base_url("assets") ?>/images/logo-diy.png">
                     <img class="logo-collapse" alt="" src="<?php echo base_url("assets") ?>/images/polda_diy-collapse.png">
                     <!-- <p>OSCAR</p> -->
