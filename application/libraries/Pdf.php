@@ -10,18 +10,7 @@ class Pdf extends TCPDF
     }
 
 
-    public function Header() {
-    $headerData = $this->getHeaderData();
-    $this->SetFont('helvetica', '', 10);
-    $this->writeHTML('<p align="center">RAHASIA</p>');
-	}
-
-	public function Footer() {
-   // $headerData = $this->getFooterData();
-    $this->SetFont('helvetica', '', 10);
-    $this->writeHTML('<p align="center">RAHASIA</p>');
-	}
-
+ 
 
     /*public function Footer() {
 

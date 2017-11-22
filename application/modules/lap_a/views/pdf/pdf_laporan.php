@@ -176,7 +176,7 @@ $setting = $this->cm->get_setting();
 	?>
     </table></td>
     <td>&nbsp;</td>
-    <td><?php echo $kejadian_uraian; ?></td>
+    <td><?php echo $kp_uraian_singkat; ?></td>
   </tr>
   <tr>
     <td colspan="3"><hr />
