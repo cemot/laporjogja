@@ -126,7 +126,7 @@ else {
                                     <div class="col-8">
                                         <h3 class="mr-b-10 sub-heading-font-family fw-300"><?php echo  $userdata['nama']. " -  ".$userdata['user_id']; ?></h3>
                                     </div>
-                                    <div class="col-4 d-flex justify-content-end"><a href="logout.html" class="mr-t-10"><i class="material-icons list-icon">power_settings_new</i> Logout</a>
+                                    <div class="col-4 d-flex justify-content-end"><a href="<?= site_url("login/logout") ?>" class="mr-t-10"><i class="material-icons list-icon">power_settings_new</i> Logout</a>
                                     </div>
                                     <!-- /.col-4 -->
                                 </div>
