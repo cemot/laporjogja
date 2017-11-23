@@ -1,7 +1,7 @@
 <?php 
 
 class api extends CI_Controller {
-	function api() {
+	function __construct() {
 		parent::__construct(); 
 		$this->load->helper(array("tanggal","file"));
 	}
@@ -627,7 +627,8 @@ function dataProcess($jsondata) {
 			
 
 			$this->db->insert($tbname,$isidata); 
-			// echo $this->db->last_query();  
+			
+
 
 
 			foreach($val->child as $c_tb_name => $c_tb_data) : 
@@ -666,7 +667,58 @@ function dataProcess($jsondata) {
 
 }
 
+function do_import_lp() {
 
+	show_array($_FILES); 
+
+	$zip = new ZipArchive;
+
+	if ($zip->open($_FILES['userfile']['tmp_name']) === TRUE) {
+
+		$zip->extractTo('tmp_import/');
+		$zip->close();
+
+		$tmp_nama = explode(".", $_FILES['userfile']['name']); 
+
+		$dirname = $tmp_nama[0];
+
+		// echo $json_file_name; 
+
+		$json_file = "tmp_import/tmp_export/$dirname/jsondata.json";
+
+	 
+
+		$jsoncontent = file_get_contents("$json_file"); 
+
+		// echo $jsoncontent; 
+		$this->dataProcess($jsoncontent);
+
+		// copy file to document
+
+		$this->recurse_copy("tmp_import/tmp_export/$dirname/","documents/");
+
+
+	}
+
+}
+
+
+
+function recurse_copy($src,$dst) { 
+    $dir = opendir($src); 
+    @mkdir($dst); 
+    while(false !== ( $file = readdir($dir)) ) { 
+        if (( $file != '.' ) && ( $file != '..' )) { 
+            if ( is_dir($src . '/' . $file) ) { 
+                recurse_copy($src . '/' . $file,$dst . '/' . $file); 
+            } 
+            else { 
+                copy($src . '/' . $file,$dst . '/' . $file); 
+            } 
+        } 
+    } 
+    closedir($dir); 
+} 
 
 
 

@@ -225,7 +225,16 @@
           $userdata = $_SESSION['userdata'];
         ?>
         <li><a href="<?php echo site_url("pengaturan"); ?>">PENGATURAN DATA <?php echo strtoupper($userdata['jenis']) ?> </a></li>
-        <li><a href="<?php echo site_url("login/logout"); ?>">KELUAR</a></li> 
+        
+        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">EXPORT/IMPORT<b class="caret"></b></a>
+             <ul class="dropdown-menu multi-level">
+            <li><a href="<?php echo site_url("exim_user"); ?>">EXPORT DATA USER UNTUK SISTEM OFFLINE</a></li>
+            <li><a href="<?php echo site_url("exim_user/import_lp"); ?>">IMPORT DATA LP DARI SISTEM OFFLINE</a></li>
+            
+           </ul>
+
+
+        </li> 
 
 
         <?php 

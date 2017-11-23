@@ -224,6 +224,12 @@ function simpan(){
 			$data['lap_c_id'] = md5(microtime());
 
 
+			$userdata = $_SESSION['userdata'];
+			$data['jenis'] = $userdata['jenis'];
+			$data['id_polres'] = $userdata['id_polres'];
+			$data['id_polsek'] = $userdata['id_polsek'];
+
+
 			 $res = $this->db->insert("lap_c",$data);
 			 if($res) {
 			 	$ret = array("error"=>false,"message"=>"data berhasil disimpan");

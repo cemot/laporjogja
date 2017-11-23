@@ -124,7 +124,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center">a.n Kepala KEPALA KEPOLISIAN DAERAH BANTEN </td>
+    <td align="center">a.n KEPALA KEPOLISIAN <?php echo $ttd['instansi'];  ?> </td>
   </tr>
   <tr>
     <td align="center">PELAPOR</td>
@@ -156,7 +156,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center"><?php echo $setting->ttd_nrp; ?></td>
+    <td align="center"><?php echo $setting->ttd_pangkat. " NRP. ". $setting->ttd_nrp; ?></td>
   </tr>
 </table>
 <p>&nbsp;</p>
