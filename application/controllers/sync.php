@@ -128,8 +128,7 @@ function send(){
 
 
 			$this->db->insert("lap_a",$data_lap_a);
-			// echo $this->db->last_query()."<br />";
-
+ 
 			if(isset($data_lap_a_tersangka)) {
 				foreach($data_lap_a_tersangka as $row_tersangka): 
 					// show_array($row_tersangka);

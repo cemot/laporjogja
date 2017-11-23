@@ -171,11 +171,11 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center"><u><?php echo $pelapor_nama; ?></u></td>
-    <td align="center"><u><?php echo $mengetahui_nama; ?><?php // echo $setting->ttd_nama; ?></u></td>
+    <td align="center"><u><?php echo $mengetahui_nama; ?> <?php // echo $setting->ttd_nama; ?></u></td>
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center"><?php echo $mengetahui_nrp // $setting->ttd_nrp; ?></td>
+    <td align="center"><?php echo $mengetahui_pangkat. " NRP. ". $mengetahui_nrp // $setting->ttd_nrp; ?></td>
   </tr>
 </table>
 <p>&nbsp;</p>
