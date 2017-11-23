@@ -28,29 +28,29 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
+    <li class="nav-item"><a class="nav-link active" href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
     
-    <li role="presentation"><a href="#tersangka" aria-controls="tersangka" role="tab" data-toggle="tab">Tersangka</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tersangka" aria-controls="tersangka" role="tab" data-toggle="tab">Tersangka</a></li>
 
-     <li role="presentation"><a href="#saksi" aria-controls="saksi" role="tab" data-toggle="tab">Saksi</a></li>
+     <li class="nav-item"><a class="nav-link" href="#saksi" aria-controls="saksi" role="tab" data-toggle="tab">Saksi</a></li>
 
-     <li role="presentation"><a href="#korban" aria-controls="korban" role="tab" data-toggle="tab">Korban</a></li>
+     <li class="nav-item"><a class="nav-link" href="#korban" aria-controls="korban" role="tab" data-toggle="tab">Korban</a></li>
 
-      <li role="presentation"><a href="#barangbukti" aria-controls="barangbukti" role="tab" data-toggle="tab">Barang bukti</a></li>
+      <li class="nav-item"><a class="nav-link" href="#barangbukti" aria-controls="barangbukti" role="tab" data-toggle="tab">Barang bukti</a></li>
 
-      <li role="presentation"><a href="#penyidik" aria-controls="penyidik" role="tab" data-toggle="tab">Penyidik</a></li>
+      <li class="nav-item"><a class="nav-link" href="#penyidik" aria-controls="penyidik" role="tab" data-toggle="tab">Penyidik</a></li>
     
 
-     <li role="presentation"><a href="#perkembagan" aria-controls="perkembagan" role="tab" data-toggle="tab">Perkembangan kasus</a></li>
+     <li class="nav-item"><a class="nav-link" href="#perkembagan" aria-controls="perkembagan" role="tab" data-toggle="tab">Perkembangan kasus</a></li>
 
-     <li role="presentation"><a href="#status" aria-controls="status" role="tab" data-toggle="tab">Status Kasus</a>
+     <li class="nav-item"><a class="nav-link" href="#status" aria-controls="status" role="tab" data-toggle="tab">Status Kasus</a>
      </li>
     
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="detail"> 
+    <div class="tab-pane active" id="detail"> 
      
 
     
@@ -59,41 +59,41 @@
     
    
 
-    <div role="tabpanel" class="tab-pane" id="tersangka">
+    <div class="tab-pane" id="tersangka">
     
     <?php $this->load->view($this->controller."_view_detail_tersangka"); ?>
        
 
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="saksi">
+    <div class="tab-pane" id="saksi">
 
     <?php $this->load->view($this->controller."_view_detail_saksi"); ?>
          
 
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="korban">
+    <div class="tab-pane" id="korban">
       <?php $this->load->view($this->controller."_view_detail_korban"); ?>
 
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="barangbukti">
+    <div class="tab-pane" id="barangbukti">
 
     <?php $this->load->view($this->controller."_view_detail_barbuk"); ?>
 
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="penyidik">
+    <div class="tab-pane" id="penyidik">
     <?php $this->load->view($this->controller."_view_detail_penyidik"); ?>  
 
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="perkembagan">
+    <div class="tab-pane" id="perkembagan">
     <?php $this->load->view($this->controller."_view_detail_perkembangan"); ?>  
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="status">
+    <div class="tab-pane" id="status">
     <?php $this->load->view($this->controller."_view_detail_status"); ?>  
      
     </div>

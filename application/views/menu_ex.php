@@ -1,131 +1,108 @@
 <?php 
+$userdata = $_SESSION['userdata'];
+?>
 
-                $userdata = $_SESSION['userdata'];
-                ?>
-
-    <ul class="navigation">
-        <li>
-            <a href="<?php echo site_url("index_executive") ?>">
-                <i class="menu-icon fa fa-fw fa-home"></i>
-                <span class="mm-text ">DEPAN</span>
-            </a>
-        </li>
+<nav class="sidebar-nav">
+    <ul class="nav in side-menu">
         
-
-
-         
-        <li class="menu-dropdown">
-            <a href="#">
-                <i class="menu-icon fa fa-pencil-square-o"></i>
-                <span>LAPORAN</span>
-                <span class="fa arrow"></span>
+        <li>
+            <a href="<?php echo site_url("index_executive") ?>" class="ripple">
+                <i class="list-icon material-icons">home</i>
+                <span class="hide-menu">Depan</span>
             </a>
-            <ul class="sub-menu">
-               
-                 <li><a href="<?php echo site_url("ex_lap_a"); ?>">LAPORAN POLISI MODEL A</a></li>
-                <li><a href="<?php echo site_url("ex_lap_b"); ?>">LAPORAN POLISI MODEL B</a></li>
-                <li><a href="<?php echo site_url("ex_lap_c"); ?>">LAPORAN POLISI MODEL C</a></li>
-                <li><a href="<?php echo site_url("ex_lap_d"); ?>">LAPORAN POLISI BENCANA ALAM</a></li>
-                <li><a href="<?php echo site_url("ex_lap_lantas"); ?>">LAPORAN LAKA LANTAS</a></li>
+        </li>
+
+        <li class="menu-item-has-children">
+            <a href="javascript:void(0);" class="ripple">
+                <i class="list-icon material-icons">event_note</i>
+                <span class="hide-menu">Laporan</span>
+            </a>
+            <ul class="list-unstyled sub-menu">
+                <li><a href="<?php echo site_url("ex_lap_a"); ?>">Laporan polisi model a</a></li>
+                <li><a href="<?php echo site_url("ex_lap_b"); ?>">Laporan polisi model b</a></li>
+                <li><a href="<?php echo site_url("ex_lap_c"); ?>">Laporan polisi model c</a></li>
+                <li><a href="<?php echo site_url("ex_lap_d"); ?>">Laporan polisi bencana alam</a></li>
+                <li><a href="<?php echo site_url("ex_lap_lantas"); ?>">Laporan laka lantas</a></li>
             </ul>
         </li>
 
-
-          <li><a href="<?php echo site_url("ex_pencarian"); ?>"><i class="menu-icon fa  fa-search"></i>
-                <span class="mm-text ">PENCARIAN</span></a></li> 
-         <li><a href="<?php echo site_url("ex_anev"); ?>"><i class="menu-icon fa  fa-bars"></i><span class="mm-text ">ANEV</span></a></li>
-
-
-      
-
-
-
-
-        <li class="menu-dropdown">
-            <a href="#">
-                <i class="menu-icon fa fa-bar-chart"></i>
-                <span>DATA GRAFIK</span>
-                <span class="fa arrow"></span>
+        <li>
+            <a href="<?php echo site_url("ex_pencarian") ?>" class="ripple">
+                <i class="list-icon material-icons">search</i>
+                <span class="hide-menu">Pencarian</span>
             </a>
-            <ul class="sub-menu">
-               
-                 <li><a href="<?php echo site_url("ex_grafik_lap/grafik/1"); ?>">GRAFIK LAPORAN A</a></li>
-                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/2"); ?>">GRAFIK LAPORAN B</a></li>
-                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/3"); ?>">GRAFIK LAPORAN C</a></li>
-                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/4"); ?>">GRAFIK LAPORAN POLISI BENCANA ALAM</a></li>
-                 <li><a href="<?php echo site_url("ex_grafik_lap/grafik/5"); ?>">GRAFIK LAPORAN LAKA LANTAS</a></li>
-                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/1"); ?>">GRAFIK PENYIDIK LAP. A</a></li>
-                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/2"); ?>">GRAFIK PENYIDIK LAP. B</a></li>
-                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/3"); ?>">GRAFIK PENYIDIK LAP. C</a></li>
-                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/4"); ?>">GRAFIK PENYIDIK LAP. POLISI BENCANA ALAM</a></li>
-                 <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/5"); ?>">GRAFIK PENYIDIK LAP. LAKA LANTAS</a></li>   
+        </li>
 
-                 <li><a href="<?php echo site_url("ex_grafik_gol_kejahatan"); ?>"> GRAFIK GOLONGAN  KEJAHATAN </a></li>
+        <li>
+            <a href="<?php echo site_url("ex_anev") ?>" class="ripple">
+                <i class="list-icon material-icons">reorder</i>
+                <span class="hide-menu">Anev</span>
+            </a>
+        </li>
 
-                  <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan"); ?>"> GRAFIK JENIS  KEJAHATAN </a></li>
-
-
-                 <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan_bulan"); ?>"> GRAFIK JENIS  KEJAHATAN PER BULAN </a></li>   
-                 <li><a href="<?php echo site_url("ex_grafik_kinerja_penyidik"); ?>"> GRAFIK KINERJA PENYIDIK </a></li>  
-
+        <li class="menu-item-has-children">
+            <a href="javascript:void(0);" class="ripple">
+                <i class="list-icon material-icons">insert_chart</i>
+                <span class="hide-menu">Data Grafik</span>
+            </a>
+            <ul class="list-unstyled sub-menu">
+                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/1"); ?>">Grafik laporan a</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/2"); ?>">Grafik laporan b</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/3"); ?>">Grafik laporan c</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/4"); ?>">Grafik laporan polisi bencana alam</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_lap/grafik/5"); ?>">Grafik laporan laka lantas</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/1"); ?>">Grafik penyidik lap. a</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/2"); ?>">Grafik penyidik lap. b</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/3"); ?>">Grafik penyidik lap. c</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/4"); ?>">Grafik penyidik lap. polisi bencana alam</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_penyidik/grafik/5"); ?>">Grafik penyidik lap. laka lantas</a></li>   
+                <li><a href="<?php echo site_url("ex_grafik_gol_kejahatan"); ?>">Grafik golongan  kejahatan</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan"); ?>">Grafik jenis  kejahatan</a></li>
+                <li><a href="<?php echo site_url("ex_grafik_jenis_kejahatan_bulan"); ?>">Grafik jenis  kejahatan per bulan</a></li>   
+                <li><a href="<?php echo site_url("ex_grafik_kinerja_penyidik"); ?>">Grafik kinerja penyidik</a></li>  
             </ul>
         </li>
 
-
-         <li class="menu-dropdown">
-            <a href="#">
-                <i class="menu-icon fa fa-bar-chart"></i>
-                <span>KINERJA PENYIDIK</span>
-                <span class="fa arrow"></span>
+        <li class="menu-item-has-children">
+            <a href="javascript:void(0);" class="ripple">
+                <i class="list-icon material-icons">show_chart</i>
+                <span class="hide-menu">Kinerja Penyidik</span>
             </a>
-            <ul class="sub-menu">
-               
-                 
-                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/1"); ?>">LAP. A</a></li>
-                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/2"); ?>">LAP. B</a></li>
-                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/3"); ?>">LAP. C</a></li>
-                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/4"); ?>">LAP. POLISI BENCANA ALAM</a></li>
-                 <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/5"); ?>">LAP. LAKA LANTAS</a></li>   
-
-                 
-
+            <ul class="list-unstyled sub-menu">
+            <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/1"); ?>">Lap. a</a></li>
+            <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/2"); ?>">Lap. b</a></li>
+            <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/3"); ?>">Lap. c</a></li>
+            <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/4"); ?>">Lap. polisi bencana alam</a></li>
+            <li><a href="<?php echo site_url("ex_kinerja_penyidik/grafik/5"); ?>">Lap. laka lantas</a></li>   
             </ul>
         </li>
 
-
-        <li class="menu-dropdown">
-            <a href="#">
-                <i class="menu-icon fa fa-users"></i>
-                <span>DATA NAPI & LAPAS</span>
-                <span class="fa arrow"></span>
+        <li class="menu-item-has-children">
+            <a href="javascript:void(0);" class="ripple">
+                <i class="list-icon material-icons">group</i>
+                <span class="hide-menu">Data Napi & Lantas</span>
             </a>
-            <ul class="sub-menu">
-               
-                 <li><a href="<?php echo site_url("ex_lihat_data"); ?>">LIHAT DATA</a></li>
-                <li><a href="<?php echo site_url("ex_import_data"); ?>">IMPORT DATA</a></li>
-                <li><a href="<?php echo site_url("ex_diagram_pie"); ?>">DIAGRAM PIE</a></li> 
+            <ul class="list-unstyled sub-menu">
+                <li><a href="<?php echo site_url("ex_lihat_data"); ?>">Lihat data</a></li>
+                <li><a href="<?php echo site_url("ex_import_data"); ?>">Import data</a></li>
+                <li><a href="<?php echo site_url("ex_diagram_pie"); ?>">Diagram pie</a></li> 
             </ul>
         </li>
 
-
-     <li class="menu-dropdown">
-        <a href="#">
-            <i class="menu-icon fa  fa-th-large"></i>
-            <span>LAPORAN</span>
-            <span class="fa arrow"></span>
-        </a>
-        <ul class="sub-menu">
-            <li><a href="<?php echo site_url("laporan_harian"); ?>">LAPORAN HARIAN GANGGUAN KAMTIBMAS (LHGK)</a></li>
-                <li><a href="<?php echo site_url("laporan_mingguan"); ?>">LAPORAN MINGGUAN GANGGUAN KAMTIBMAS (LMGK)</a></li>
-                <li><a href="<?php echo site_url("laporan_bulanan"); ?>">LAPORAN BULANAN GANGGUAN KAMTIBMAS  </a></li>
-                <li><a href="<?php echo site_url("laporan_per_lokasi"); ?>">LAPORAN TIDAK KEJAHATAN PER LOKASI</a></li>
-                <li><a href="<?php echo site_url("laporan_grafik_waktu"); ?>">LAPORAN GRAFIK PENYEBARAN WAKTU </a></li>
-        </ul>
-    </li>
-                   
-
-
-
-                    
-                     
-</ul>
+        <li class="menu-item-has-children">
+            <a href="javascript:void(0);" class="ripple">
+                <i class="list-icon material-icons">developer_board</i>
+                <span class="hide-menu">Laporan</span>
+            </a>
+            <ul class="list-unstyled sub-menu">
+                <li><a href="<?php echo site_url("laporan_harian"); ?>">Laporan harian gangguan kamtibmas (LHGK)</a></li>
+                <li><a href="<?php echo site_url("laporan_mingguan"); ?>">Laporan mingguan gangguan kamtibmas (LMGK)</a></li>
+                <li><a href="<?php echo site_url("laporan_bulanan"); ?>">Laporan bulanan gangguan kamtibmas</a></li>
+                <li><a href="<?php echo site_url("laporan_per_lokasi"); ?>">Laporan tidak kejahatan per lokasi</a></li>
+                <li><a href="<?php echo site_url("laporan_grafik_waktu"); ?>">Laporan grafik penyebaran waktu</a></li>
+            </ul>
+        </li>
+                
+    </ul>
+    <!-- /.side-menu -->
+</nav>

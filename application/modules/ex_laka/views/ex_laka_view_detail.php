@@ -26,23 +26,23 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
+    <li class="nav-item"><a class="nav-link active" href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
    
-   <li role="presentation"><a href="#pasal" aria-controls="pasal" role="tab" data-toggle="tab">Pasal</a></li>
+   <li class="nav-item"><a class="nav-link" href="#pasal" aria-controls="pasal" role="tab" data-toggle="tab">Pasal</a></li>
 
 
-    <li role="presentation"><a href="#pengemudi" aria-controls="pengemudi" role="tab" data-toggle="tab">Pengemudi</a></li>
+    <li class="nav-item"><a class="nav-link" href="#pengemudi" aria-controls="pengemudi" role="tab" data-toggle="tab">Pengemudi</a></li>
 
-     <li role="presentation"><a href="#saksi" aria-controls="saksi" role="tab" data-toggle="tab">Saksi</a></li>
+     <li class="nav-item"><a class="nav-link" href="#saksi" aria-controls="saksi" role="tab" data-toggle="tab">Saksi</a></li>
 
-     <li role="presentation"><a href="#korban" aria-controls="korban" role="tab" data-toggle="tab">Korban</a></li>
+     <li class="nav-item"><a class="nav-link" href="#korban" aria-controls="korban" role="tab" data-toggle="tab">Korban</a></li>
 
-      <li role="presentation"><a href="#kendaraan" aria-controls="kendaraan" role="tab" data-toggle="tab">Kendaraan </a></li>
+      <li class="nav-item"><a class="nav-link" href="#kendaraan" aria-controls="kendaraan" role="tab" data-toggle="tab">Kendaraan </a></li>
 
-      <li role="presentation"><a href="#penyidik" aria-controls="penyidik" role="tab" data-toggle="tab">Penyidik</a></li>
+      <li class="nav-item"><a class="nav-link" href="#penyidik" aria-controls="penyidik" role="tab" data-toggle="tab">Penyidik</a></li>
     
 
-     <li role="presentation"><a href="#perkembagan" aria-controls="perkembagan" role="tab" data-toggle="tab">Perkembangan kasus</a></li>
+     <li class="nav-item"><a class="nav-link" href="#perkembagan" aria-controls="perkembagan" role="tab" data-toggle="tab">Perkembangan kasus</a></li>
     
   </ul>
 

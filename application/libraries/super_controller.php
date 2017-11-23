@@ -33,8 +33,15 @@ var $pilihan;
 	}
 	
 	function render(){
-		$arr = array();		 
-		$this->load->view("newtheme",$this->content);
+		$arr = array();
+		$selector = $this->input->get("oldtheme");
+		$userdata = $_SESSION['userdata'];
+		if($userdata["level"] == "4" && $selector != "yes"){
+			$this->load->view("oscar_default",$this->content);
+		}
+		else{
+			$this->load->view("newtheme",$this->content);
+		}
 		
 	}
 

@@ -45,9 +45,9 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-    <div class="panel-heading"><b>PENCARIAN</b></div>
-    <div class="panel-body">
+    <div class="card">
+    <div class="card-header"><b>PENCARIAN</b></div>
+    <div class="card-body">
       
       <form id="frmlaporan" action="<?php echo site_url("$this->controller/pdf") ?>" target="blank">
               <div class="form-group">

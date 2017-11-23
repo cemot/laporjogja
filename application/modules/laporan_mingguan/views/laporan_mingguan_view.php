@@ -49,23 +49,23 @@ function tampildata(){
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-                <div class="panel-heading"><b>PENCARIAN</b></div>
-                <div class="panel-body">
+    <div class="card">
+                <div class="card-header"><b>PENCARIAN</b></div>
+                <div class="card-body">
                   <div class="form-inline">
 
                   <div class="form-group">
                      <form id="frmlaporan" method="get" action="<?php echo site_url("$this->controller/pdf") ?>" target="blank" >    
-                   <input type="text" placeholder="Tanggal awal"  name="tanggal" class="tanggal form-control" data-date-format="dd-mm-yyyy" id="tanggal">
+                   <input type="text" placeholder="Tanggal awal"  name="tanggal" class="tanggal form-control mb-2 mr-sm-2 mb-sm-0 mt-2" data-date-format="dd-mm-yyyy" id="tanggal">
 
-                   <input type="text" placeholder="Tanggal akhir"  name="tanggal2" class="tanggal form-control" data-date-format="dd-mm-yyyy" id="tanggal2">
+                   <input type="text" placeholder="Tanggal akhir"  name="tanggal2" class="tanggal form-control mb-2 mr-sm-2 mb-sm-0 mt-2" data-date-format="dd-mm-yyyy" id="tanggal2">
 
 
-                    <a id="query_button" class="btn btn-primary" type="submit" onclick="tampildata()"><i class="fa fa-eye"></i> Tampilkan</a>
+                    <a id="query_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit" onclick="tampildata()"><i class="fa fa-eye"></i> Tampilkan</a>
 
-                     <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button>
+                     <button id="cari_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button>
                      
-                      <a href="#" onclick="reset_cari();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
+                      <a href="#" onclick="reset_cari();" class="btn btn-danger mb-2 mr-sm-2 mb-sm-0 mt-2"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
                     </form>
                   </div>
                 </div>

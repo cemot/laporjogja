@@ -19,14 +19,14 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-                <div class="panel-heading"><b>PENCARIAN</b></div>
-                <div class="panel-body">
-                  <div class="form-inline">
-                  <form id="frmcari" method="post">
+    <div class="card">
+                <div class="card-header"><b>PENCARIAN</b></div>
+                <div class="card-body">
+                  <div>
+                  <form id="frmcari" method="post" class="form-inline">
                   <div class="form-group">
                          
-                  <select class="form-control" name="tahun" id="tahun">
+                  <select class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2" name="tahun" id="tahun">
                     <option value="">- Pilih Tahun -</option>
                     <?php
                       $tahun = date("Y");
@@ -45,7 +45,7 @@
                       $arr_bulan = $this->cm->arr_bulan;
                       $arr_bulan = $this->cm->add_arr_head($arr_bulan,"x","== SEMUA BULAN ==");
 
-                      echo form_dropdown("bulan",$arr_bulan,'','id="bulan" class="form-control"');
+                      echo form_dropdown("bulan",$arr_bulan,'','id="bulan" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
                      ?>
                    
                   </div>
@@ -61,7 +61,7 @@
                                       "polsek"=>"POLSEK"
                                       
                                       );
-                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control"');
+                         echo form_dropdown("jenis",$arr,"",'id="jenis" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>
                          
@@ -76,7 +76,7 @@
                          $arr_polres = $this->cm->add_arr_head($arr_polres,"x","=  PILIH POLRES =");
 
 
-                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control" onchange="get_data_polres(this,\'#id_polsek\',1)"');
+                         echo form_dropdown("id_polres",$arr_polres,"",'id="id_polres" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2" onchange="get_data_polres(this,\'#id_polsek\',1)"');
 
                          ?>
                          
@@ -85,7 +85,7 @@
 
                        <div class="form-group" id="search_polsek">
                          <?php
-                         echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control"');
+                         echo form_dropdown("id_polsek",array(),"",'id="id_polsek" class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2"');
 
                          ?>                         
                       </div>
