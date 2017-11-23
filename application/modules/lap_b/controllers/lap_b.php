@@ -255,6 +255,14 @@ function simpan(){
 
 			$data['lap_b_id'] = md5(microtime());
 
+			$userdata = $_SESSION['userdata'];
+
+			// show_array($userdata); exit;
+
+			$data['jenis'] = $userdata['jenis'];
+			$data['id_polres'] = $userdata['id_polres'];
+			$data['id_polsek'] = $userdata['id_polsek'];
+
 			 $res = $this->db->insert("lap_b",$data);
 			 $lap_b_id = $this->db->insert_id();
 			 if($res) {

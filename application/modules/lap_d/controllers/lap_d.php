@@ -179,6 +179,12 @@ function simpan(){
 			// $data['nomor'] = $this->cm->get_lap_number($this->controller,$data); 
 
 			$data['lap_d_id'] = md5(microtime());
+
+			$userdata = $_SESSION['userdata'];
+			$data['jenis'] = $userdata['jenis'];
+			$data['id_polres'] = $userdata['id_polres'];
+			$data['id_polsek'] = $userdata['id_polsek'];
+			
 			 $res = $this->db->insert("lap_d",$data);
 			 if($res) {
 			 	$ret = array("error"=>false,"message"=>"data berhasil disimpan");

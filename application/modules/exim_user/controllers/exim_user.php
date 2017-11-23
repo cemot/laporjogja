@@ -80,6 +80,19 @@ class exim_user extends master_controller {
 
  }
 	 
+function import_lp() {
+		$data_array = array();
+	 
+ 
+		$content = $this->load->view("exim_import_lp_view",$data_array,true);
+
+		$this->set_subtitle("IMPORT DATA LP OFFLINE  ");
+		$this->set_title("IMPORT DATA LP OFFLINE  ");
+		$this->set_content($content);
+		$this->render_baru();
+}
+
+
 
 }
 ?>
