@@ -27,24 +27,24 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
+    <li class="nav-item"><a class="nav-link active" href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
 
     
 
-    <li role="presentation"><a href="#tersangka" aria-controls="tersangka" role="tab" data-toggle="tab">Tersangka</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tersangka" aria-controls="tersangka" role="tab" data-toggle="tab">Tersangka</a></li>
 
-     <li role="presentation"><a href="#saksi" aria-controls="saksi" role="tab" data-toggle="tab">Saksi</a></li>
+     <li class="nav-item"><a class="nav-link" href="#saksi" aria-controls="saksi" role="tab" data-toggle="tab">Saksi</a></li>
 
-     <li role="presentation"><a href="#korban" aria-controls="korban" role="tab" data-toggle="tab">Korban</a></li>
+     <li class="nav-item"><a class="nav-link" href="#korban" aria-controls="korban" role="tab" data-toggle="tab">Korban</a></li>
 
-      <li role="presentation"><a href="#barangbukti" aria-controls="barangbukti" role="tab" data-toggle="tab">Barang bukti</a></li>
+      <li class="nav-item"><a class="nav-link" href="#barangbukti" aria-controls="barangbukti" role="tab" data-toggle="tab">Barang bukti</a></li>
 
-      <li role="presentation"><a href="#penyidik" aria-controls="penyidik" role="tab" data-toggle="tab">Penyidik</a></li>
+      <li class="nav-item"><a class="nav-link" href="#penyidik" aria-controls="penyidik" role="tab" data-toggle="tab">Penyidik</a></li>
     
 
-     <li role="presentation"><a href="#perkembagan" aria-controls="perkembagan" role="tab" data-toggle="tab">Perkembangan kasus</a></li>
+     <li class="nav-item"><a class="nav-link" href="#perkembagan" aria-controls="perkembagan" role="tab" data-toggle="tab">Perkembangan kasus</a></li>
 
-     <li role="presentation"><a href="#status" aria-controls="status" role="tab" data-toggle="tab">Status Kasus</a>
+     <li class="nav-item"><a class="nav-link" href="#status" aria-controls="status" role="tab" data-toggle="tab">Status Kasus</a>
      </li>
     
   </ul>

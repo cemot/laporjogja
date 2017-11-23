@@ -41,11 +41,11 @@ font-weight:bold;
              
              
       
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="card">
+  <div class="card-header">
     <h3 class="panel-title">DETAIL KENDARAAN</h3>
   </div>
-  <div class="panel-body">
+  <div class="card-body">
       <table width="100%" border="0">
         <tr>
           <td width="35%">TANGGAL PENDAFTARAN</td>
@@ -184,11 +184,11 @@ font-weight:bold;
 $warna = ($approved=="1")?"green":"red";
 ?>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="card">
+  <div class="card-header">
     <h3 class="panel-title">DATA BLOKIR</h3>
   </div>
-  <div class="panel-body">
+  <div class="card-body">
       <table width="100%" border="0">
         <tr>
           <td width="35%">STATUS BLOKIR </td>
@@ -231,11 +231,11 @@ $warna = ($approved=="1")?"green":"red";
       
       
       
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="card">
+  <div class="card-header">
     <h3 class="panel-title">DATA KONTRAK</h3>
   </div>
-  <div class="panel-body">
+  <div class="card-body">
       <table width="100%" border="0">
         <tr>
           <td>KANTOR CABANG</td>
@@ -271,11 +271,11 @@ $warna = ($approved=="1")?"green":"red";
  
  
  
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="card">
+  <div class="card-header">
     <h3 class="panel-title">VERIFIKASI, VALIDASI DAN PENCETAKAN</h3>
   </div>
-  <div class="panel-body">
+  <div class="card-body">
   <center>
    <a onClick="history.back();" class="btn btn-md btn-danger btn-block"><span class="glyphicon glyphicon-arrow-left"> KEMBALI </span></a>  
    <hr/>

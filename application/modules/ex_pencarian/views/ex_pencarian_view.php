@@ -3,7 +3,7 @@
 <script src="<?php echo base_url("assets") ?>/jQuery.extendext-master/jQuery.extendext.min.js"></script>
 <script src="<?php echo base_url("assets") ?>/doT-master/doT.min.js"></script> 
 <script src="<?php echo base_url("assets") ?>/js/query-builder.min.js"></script>
-
+<?php $this->dontPopper = true; ?>
 
 <div class="row">
   <div id="salah" class="col-lg-12" style="display:none">
@@ -48,7 +48,9 @@
 </div>     
 
 <div class="row">
-<div class="col-md-12" id="hasil_pencarian">
+<div class="col-md-12">
+<div style="overflow-y: scroll; min-height:400px;" id="hasil_pencarian">
+</div>
 </div>
 </div>
 

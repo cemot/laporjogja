@@ -55,21 +55,21 @@ function tampildata(){
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-                <div class="panel-heading"><b>PENCARIAN</b></div>
-                <div class="panel-body">
-                  <div class="form-inline">
+    <div class="card">
+                <div class="card-header"><b>PENCARIAN</b></div>
+                <div class="card-body">
+                  <div>
 
                   
-                     <form id="frmlaporan" method="get" action="<?php echo site_url("$this->controller/pdf") ?>" target="blank" >   
+                     <form id="frmlaporan" class="form-inline" method="get" action="<?php echo site_url("$this->controller/pdf") ?>" target="blank" >   
                     
                     <div class="form-group">  
-                       <input type="text" placeholder="Tanggal"  name="tanggal" class="tanggal form-control" data-date-format="dd-mm-yyyy" id="tanggal" >
+                       <input type="text" placeholder="Tanggal"  name="tanggal" class="tanggal form-control mb-2 mr-sm-2 mb-sm-0 mt-2" data-date-format="dd-mm-yyyy" id="tanggal" >
 
-                       <a id="query_button" class="btn btn-primary" type="submit" onclick="tampildata()"><i class="fa fa-eye"></i> Tampilkan</a>
+                       <a id="query_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit" onclick="tampildata()"><i class="fa fa-eye"></i> Tampilkan</a>
 
-                         <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button>
-                          <a href="#" onclick="reset_cari();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Reset</a>
+                         <button id="cari_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit"><i class="glyphicon glyphicon-print"></i> Cetak</button>
+                          <a href="#" onclick="reset_cari();" class="btn btn-danger mb-2 mr-sm-2 mb-sm-0 mt-2"><i class="glyphicon glyphicon-remove"></i> Reset</a>
                     
                     </div>
 

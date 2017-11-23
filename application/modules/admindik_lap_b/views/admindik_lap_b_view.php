@@ -29,9 +29,9 @@
 
 <div class="row">
 <div class="col-md-9">
-    <div class="panel panel-default">
-            <div class="panel-heading">PENCARIAN</div>
-            <div class="panel-body">
+    <div class="card">
+            <div class="card-header">PENCARIAN</div>
+            <div class="card-body">
             
               
                 <form class="form-inline" id="fuckyouform">
@@ -79,9 +79,9 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-                <div class="panel-heading"><b>PENCARIAN</b></div>
-                <div class="panel-body">
+    <div class="card">
+                <div class="card-header"><b>PENCARIAN</b></div>
+                <div class="card-body">
                   <form class="form-inline" id="fuckyouform">
 
                   <div class="form-group">

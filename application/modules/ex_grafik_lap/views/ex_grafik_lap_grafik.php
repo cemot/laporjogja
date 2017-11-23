@@ -24,14 +24,14 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default">
-                <div class="panel-heading"><b>PENCARIAN</b></div>
-                <div class="panel-body">
+    <div class="card">
+                <div class="card-header"><b>PENCARIAN</b></div>
+                <div class="card-body">
                   <div class="form-inline">
 
                   <div class="form-group">
                          
-                  <select class="form-control" name="tahun" id="tahun">
+                  <select class="form-control mb-2 mr-sm-2 mb-sm-0 mt-2" name="tahun" id="tahun">
                     <option value="">- Pilih Tahun -</option>
                     <?php
                       for($x = date('Y'); $x >= 2000; $x--) {
@@ -40,8 +40,8 @@
                     ?>
                   </select>
 
-                     <button id="cari_button" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i> Cari</button>
-                      <a href="#" onclick="reset_cari();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
+                     <button id="cari_button" class="btn btn-primary mb-2 mr-sm-2 mb-sm-0 mt-2" type="submit"><i class="glyphicon glyphicon-search"></i> Cari</button>
+                      <a href="#" onclick="reset_cari();" class="btn btn-danger mb-2 mr-sm-2 mb-sm-0 mt-2"><i class="glyphicon glyphicon-remove"></i> Reset Query</a>
                
                   </div>
                 </div>
