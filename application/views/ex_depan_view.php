@@ -36,7 +36,7 @@
 
   <?php 
 
-    show_array($this->session->all_userdata());
+    // show_array($this->session->all_userdata());
 
   ?>
 </div>
