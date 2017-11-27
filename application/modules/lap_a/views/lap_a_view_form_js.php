@@ -404,7 +404,7 @@ $.ajax({
       $("#tersangka_id_pekerjaan").val(jsonData.tersangka_id_pekerjaan).attr('selected','selected');
       $("#tersangka_residivis").val(jsonData.tersangka_residivis).attr('selected','selected');
       $("#tersangka_klasifikasi").val(jsonData.tersangka_klasifikasi).attr('selected','selected');
-       $("#tersangka_id").val(jsonData.id);
+      $("#tersangka_id").val(jsonData.id);
       $("#tersangka_id_provinsi").val(jsonData.tersangka_prov_id).attr('selected','selected');
 
     
