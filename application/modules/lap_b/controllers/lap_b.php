@@ -806,7 +806,7 @@ function tersangka_simpan($lap_b_id){
 			 
 
 
-			$data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
+			// $data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
 			$data['lap_b_id'] = $lap_b_id;
 			 
 
@@ -968,7 +968,7 @@ function saksi_simpan($lap_b_id){
 			 
 
 
-			$data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
+			// $data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
 			$data['lap_b_id'] = $lap_b_id;
 			 
 
@@ -1907,7 +1907,7 @@ function tmp_tersangka_update(){
 			 
 
 
-			$data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
+			// $data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
 			//$data['lap_b_id'] = $lap_b_id;
 			 
 
@@ -2099,7 +2099,7 @@ function tmp_saksi_update(){
 			 
 
 
-			$data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
+			// $data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
 			//$data['lap_b_id'] = $lap_b_id;
 			 
 

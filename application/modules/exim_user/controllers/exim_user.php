@@ -73,7 +73,7 @@ class exim_user extends master_controller {
 
  		 $this->zip->add_data($filename, $data);
 
- 		 $this->zip->download($filename."_".date("dmYhis").'.zip');
+ 		 $this->zip->download($filename."_".date("dmYhis").'.lpjog');
 
 
 

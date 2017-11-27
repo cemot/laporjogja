@@ -520,7 +520,7 @@ class api extends CI_Controller {
 	 	// $zipdir = "tmp/polsek9c8071debae5c875a49240c8d41fec47"; 
 	 	// $this->zip->read_dir($zipdir);
 
-	 	$this->zip->download("$dirname".".zip");
+	 	$this->zip->download("$dirname".".lpjog");
 
 
 

@@ -22,14 +22,14 @@ function data($param){
 	$userdata = $_SESSION['userdata'];
 
 	if($userdata['jenis']=="polres") {
-		$this->db->where("u.id_polres",$userdata['id_polres']);
+		$this->db->where("v_lap_bb.id_polres",$userdata['id_polres']);
 	}
 	if($userdata['jenis']=="polsek") {
-		$this->db->where("u.id_polsek",$userdata['id_polsek']);
+		$this->db->where("v_lap_bb.id_polsek",$userdata['id_polsek']);
 	}
 
 
-	$this->db->where("u.jenis",$userdata['jenis']);
+	$this->db->where("v_lap_bb.jenis",$userdata['jenis']);
 	 
 
 
@@ -115,7 +115,7 @@ u.nama as pengguna ')
 ->join('tiger_kecamatan kec','kec.id = desa.id_kecamatan ','left')
 ->join('tiger_kota kota','kota.id = kec.id_kota ','left')
 ->join('tiger_provinsi prov','prov.id = kota.id_provinsi','left')
-->join('m_pekerjaan kerja','a.pelapor_id_pekerjaan','kerja.id_pekerjaan')
+->join('m_pekerjaan kerja','a.pelapor_id_pekerjaan = kerja.id_pekerjaan')
 ->join('m_agama agama','a.pelapor_id_agama=agama.id_agama','left')
 ->join('m_pendidikan pdk','a.pelapor_id_pendidikan=pdk.id_pendidikan','left')
 ->join('m_warga_negara wn','a.pelapor_id_warga_negara=wn.id_warga_negara','left')
