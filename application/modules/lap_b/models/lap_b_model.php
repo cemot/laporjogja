@@ -308,6 +308,7 @@ function get_lap_b_saksi_detail($id){
 	$this->db->where("t.id",$id);
 	$res = $this->db->get();
 	$data =  $res->row_array();
+	
 	 return $data; 
 }
 

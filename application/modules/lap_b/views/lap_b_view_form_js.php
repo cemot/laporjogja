@@ -430,6 +430,7 @@ $.ajax({
      
       $("#tersangka_id_provinsi").val(jsonData.tersangka_prov_id).attr('selected','selected');
 
+      $("#tersangka_id_pendidikan").val(jsonData.tersangka_id_pendidikan).attr('selected','selected');
     
     $.ajax({
       url:'<?php echo site_url("general/get_dropdown_kota_by_prop"); ?>/',
@@ -858,6 +859,8 @@ function saksi_edit(id){
 	$("#saksi_id_agama").val(jsonData.saksi_id_agama).attr('selected','selected');
 
 	$("#saksi_id_pekerjaan").val(jsonData.saksi_id_pekerjaan).attr('selected','selected');
+	$("#saksi_id_pendidikan").val(jsonData.saksi_id_pendidikan).attr('selected','selected');
+
 
 	$("#saksi_residivis").val(jsonData.saksi_residivis).attr('selected','selected');
 	$("#saksi_klasifikasi").val(jsonData.saksi_klasifikasi).attr('selected','selected');
