@@ -41,7 +41,7 @@ class Login extends CI_Controller {
  			$_SESSION['userdata']['login'] = true;
 
  			// show_array($_SESSION);
-			//$this->session->set_userdata("userdata",$userdata);
+			$this->session->set_userdata("userdata",$userdata);
 
  			if($userdata['level'] == "0"){
  				$url = site_url("index_administrator");

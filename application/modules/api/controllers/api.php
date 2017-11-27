@@ -669,7 +669,7 @@ function dataProcess($jsondata) {
 
 function do_import_lp() {
 
-	show_array($_FILES); 
+	// show_array($_FILES); 
 
 	$zip = new ZipArchive;
 
@@ -696,6 +696,8 @@ function do_import_lp() {
 		// copy file to document
 
 		$this->recurse_copy("tmp_import/tmp_export/$dirname/","documents/");
+
+		echo json_encode(array("error"=>false, "pesan"=>"Proses import selesai"));
 
 
 	}
