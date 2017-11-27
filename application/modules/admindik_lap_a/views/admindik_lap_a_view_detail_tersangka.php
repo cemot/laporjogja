@@ -21,8 +21,8 @@ $n++;
     <TD><?php echo $row->tersangka_tmp_lahir; ?></TD>
   </tr>
   <tr>
-    <td>Umur </td>
-    <TD><?php echo $row->tersangka_umur; ?> th</TD>
+    <td>Tgl. Lahir / Umur </td>
+    <TD><?php echo flipdate( $row->tersangka_tgl_lahir)." / ". umur2($row->tersangka_tgl_lahir, $row->tersangka_umur) ; ?> th</TD>
   </tr>
   <!-- <tr>
     <td>Tanggal Lahir </td>

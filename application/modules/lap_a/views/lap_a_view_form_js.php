@@ -402,6 +402,10 @@ $.ajax({
     
       $("#tersangka_id_agama").val(jsonData.tersangka_id_agama).attr('selected','selected');
       $("#tersangka_id_pekerjaan").val(jsonData.tersangka_id_pekerjaan).attr('selected','selected');
+
+      $("#tersangka_id_pendidikan").val(jsonData.tersangka_id_pendidikan).attr('selected','selected');
+
+
       $("#tersangka_residivis").val(jsonData.tersangka_residivis).attr('selected','selected');
       $("#tersangka_klasifikasi").val(jsonData.tersangka_klasifikasi).attr('selected','selected');
       $("#tersangka_id").val(jsonData.id);
@@ -620,7 +624,9 @@ function korban_edit(id){
      
       $("#korban_id_agama").val(jsonData.korban_id_agama).attr('selected','selected');
       $("#korban_id_pekerjaan").val(jsonData.korban_id_pekerjaan).attr('selected','selected');
-    
+
+    $("#korban_id_pendidikan").val(jsonData.korban_id_pendidikan).attr('selected','selected');
+
       $("#korban_id").val(jsonData.id);
       $("#korban_id_provinsi").val(jsonData.korban_prov_id).attr('selected','selected');
 		$("#korban_residivis").val(jsonData.korban_residivis).attr('selected','selected');
@@ -806,8 +812,8 @@ function saksi_edit(id){
     dataType : 'json',
     success : function(jsonData) {
     $("#modal_saksi").modal('show');
-       $("#modal_saksi_judul").html('EDIT DATA saksi');
-       $(".tombol").prop('value','UPDATE DATA saksi');
+       $("#modal_saksi_judul").html('EDIT DATA SAKSI');
+       $(".tombol").prop('value','UPDATE DATA SAKSI');
     
       $("#form_saksi").loadJSON(jsonData);
       $("#saksi_jk").val(jsonData.saksi_jk).attr('selected','selected');
@@ -820,6 +826,8 @@ function saksi_edit(id){
       $("#saksi_id_provinsi").val(jsonData.saksi_prov_id).attr('selected','selected');
       $("#saksi_residivis").val(jsonData.saksi_residivis).attr('selected','selected');
       $("#saksi_klasifikasi").val(jsonData.saksi_klasifikasi).attr('selected','selected');
+
+       $("#saksi_id_pendidikan").val(jsonData.saksi_id_pendidikan).attr('selected','selected');
 
       
 

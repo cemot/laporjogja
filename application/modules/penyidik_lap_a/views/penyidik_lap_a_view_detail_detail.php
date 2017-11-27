@@ -108,7 +108,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">TGL. LAHIR</th>
+        <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -122,8 +122,9 @@
  <tr >
 
         <td><?php echo $row->tersangka_nama; ?></td>
+        <td><?php echo flipdate($row->tersangka_tgl_lahir). "<br />". umur2($row->tersangka_tgl_lahir,$row->tersangka_umur); ?> Thn</td>
         <td><?php echo $row->tersangka_tmp_lahir; ?></td>
-        <td><?php echo $row->tersangka_tgl_lahir; ?></td>
+        
         <td><?php echo $row->agama; ?></td>
         <td><?php echo $row->suku; ?></td>
         <td><?php echo $row->pekerjaan; ?></td>
@@ -147,7 +148,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">TGL. LAHIR</th>
+        <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -161,8 +162,9 @@
  <tr >
 
         <td><?php echo $row->saksi_nama; ?></td>
+         <td><?php echo flipdate($row->saksi_tgl_lahir). "<br />". umur2($row->saksi_tgl_lahir,$row->saksi_umur); ?> Thn</td>
         <td><?php echo $row->saksi_tmp_lahir; ?></td>
-        <td><?php echo $row->saksi_tgl_lahir; ?></td>
+       
         <td><?php echo $row->agama; ?></td>
         <td><?php echo $row->suku; ?></td>
         <td><?php echo $row->pekerjaan; ?></td>
@@ -186,7 +188,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">TGL. LAHIR</th>
+         <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -200,8 +202,8 @@
  <tr >
 
         <td><?php echo $row->korban_nama; ?></td>
+         <td><?php echo flipdate($row->korban_tgl_lahir). "<br />". umur2($row->korban_tgl_lahir,$row->korban_umur); ?> Thn</td>
         <td><?php echo $row->korban_tmp_lahir; ?></td>
-        <td><?php echo $row->korban_tgl_lahir; ?></td>
         <td><?php echo $row->agama; ?></td>
         <td><?php echo $row->suku; ?></td>
         <td><?php echo $row->pekerjaan; ?></td>

@@ -6,7 +6,7 @@
      <tr><td width="161">Tanggal LP </td>
             <td width="516">   
 
-            <?php echo $tanggal; ?>
+            <?php echo flipdate($tanggal); ?>
             </td>
       <tr><td>Nomor </td>
             <td><?php echo $nomor; ?> </td>
@@ -47,7 +47,7 @@
             <td><?php echo $pelapor_tmp_lahir ?>
         </td>
       <tr><td> Tgl Lahir </td>
-            <td><?php echo $pelapor_tgl_lahir ?>
+            <td><?php echo flipdate($pelapor_tgl_lahir); ?>
         </td>
       <tr><td> Jk </td>
             <td>
@@ -150,7 +150,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">UMUR</th>
+        <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -164,7 +164,7 @@
  <tr >
 
         <td><?php echo $row->tersangka_nama; ?></td>
-        <td><?php echo $row->tersangka_umur; ?></td>
+        <td><?php echo flipdate($row->tersangka_tgl_lahir). " <br />  ". umur2($row->tersangka_tgl_lahir,$row->tersangka_umur)." Thn"; ?></td>
         <td><?php echo $row->tersangka_tmp_lahir; ?></td>
         <td><?php echo $row->agama; ?></td>
         <td><?php echo $row->suku; ?></td>
@@ -190,7 +190,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">UMUR</th>
+        <th width="12%">TGL.LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -204,7 +204,7 @@
  <tr >
 
         <td><?php echo $row->saksi_nama; ?></td>
-        <td><?php echo $row->saksi_umur; ?></td>
+         <td><?php echo flipdate($row->saksi_tgl_lahir). " <br />  ". umur2($row->saksi_tgl_lahir,$row->saksi_umur)." Thn"; ?></td>
         <td><?php echo $row->saksi_tmp_lahir; ?></td>
         <td><?php echo $row->agama; ?></td>
         <td><?php echo $row->suku; ?></td>
@@ -229,7 +229,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">TGL. LAHIR</th>
+        <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -243,8 +243,9 @@
  <tr >
 
         <td><?php echo $row->korban_nama; ?></td>
+        <td><?php echo flipdate($row->korban_tgl_lahir). " <br />  ". umur2($row->korban_tgl_lahir,$row->korban_umur)." Thn"; ?></td>
         <td><?php echo $row->korban_tmp_lahir; ?></td>
-        <td><?php echo $row->korban_tgl_lahir; ?></td>
+         
         <td><?php echo $row->agama; ?></td>
         <td><?php echo $row->suku; ?></td>
         <td><?php echo $row->pekerjaan; ?></td>

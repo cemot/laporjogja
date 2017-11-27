@@ -42,8 +42,8 @@
                 <tr><td>Tempat Lahir </td>
               <TD><input type="text" class="form-control" name="saksi_tmp_lahir" id="saksi_tmp_lahir" placeholder="Tempat Lahir" /></TD></tr>
 
-            <!--    <tr><td>Tanggal Lahir </td>
-              <TD><input type="text" class="tanggal form-control" name="saksi_tgl_lahir" id="saksi_tgl_lahir" placeholder="Tanggal Lahir" data-date-format="dd-mm-yyyy" /></TD></tr> -->
+               <tr><td>Tanggal Lahir </td>
+              <TD><input type="text" class="tanggal form-control" name="saksi_tgl_lahir" id="saksi_tgl_lahir" placeholder="Tanggal Lahir" data-date-format="dd-mm-yyyy" /></TD></tr>
 
 
                <tr><td>Umur </td>

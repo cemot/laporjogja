@@ -119,6 +119,20 @@ function umur($tanggal){
 }
 
 
+function umur2($tgl,$umur) {
+	if($umur > 0 ) {
+		return $umur;
+	}
+	else {
+		$tz  = new DateTimeZone('Asia/Jakarta');
+	$age = DateTime::createFromFormat('Y-m-d', $tgl, $tz)
+     ->diff(new DateTime('now', $tz))
+     ->y;
+     return $age;
+	}
+}
+
+
 function add_arr_head($arr,$index,$str) {
 	$res[$index] = $str;
 	foreach($arr as $x => $y) : 

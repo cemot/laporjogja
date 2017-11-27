@@ -784,7 +784,9 @@ function get_data_saksi($lap_b_id) {
 				kota.id as saksi_kota_id, 
 				kota.kota, 
 				prov.id as saksi_prov_id, 
+				a.agama as saksi_agama,
 				prov.provinsi, a.agama '
+
 		)->from('lap_b_saksi t')
 	->join('m_suku suku','suku.id_suku = t.saksi_id_suku','left')
 	->join('m_pekerjaan k','k.id_pekerjaan = t.saksi_id_pekerjaan ','left')
