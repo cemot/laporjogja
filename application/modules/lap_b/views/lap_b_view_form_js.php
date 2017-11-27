@@ -853,6 +853,7 @@ function saksi_edit(id){
 
 
 	$("#saksi_jk").val(jsonData.saksi_jk).attr('selected','selected');
+	$("#saksi_id_suku").val(jsonData.saksi_id_suku).attr('selected','selected');
 
 	$("#saksi_id_agama").val(jsonData.saksi_id_agama).attr('selected','selected');
 

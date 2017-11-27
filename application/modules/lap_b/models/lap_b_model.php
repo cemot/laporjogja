@@ -201,7 +201,7 @@ meng_pangkat.pangkat as mengetahui_pangkat,
 				k_prov.provinsi as kejadian_provinsi , 
 
 
-
+a.pelapor_id_pekerjaan, 
 kerja.pekerjaan, 
 agama.agama,
 pdk.pendidikan,
@@ -221,7 +221,7 @@ u.nama as pengguna ')
 ->join('tiger_kecamatan kec','kec.id = desa.id_kecamatan ','left')
 ->join('tiger_kota kota','kota.id = kec.id_kota ','left')
 ->join('tiger_provinsi prov','prov.id = kota.id_provinsi','left')
-->join('m_pekerjaan kerja','a.pelapor_id_pekerjaan','kerja.id_pekerjaan')
+->join('m_pekerjaan kerja','a.pelapor_id_pekerjaan = kerja.id_pekerjaan')
 ->join('m_agama agama','a.pelapor_id_agama=agama.id_agama')
 ->join('m_pendidikan pdk','a.pelapor_id_pendidikan=pdk.id_pendidikan')
 ->join('m_warga_negara wn','a.pelapor_id_warga_negara=wn.id_warga_negara')
@@ -237,8 +237,11 @@ u.nama as pengguna ')
 ->where("a.lap_b_id",$id);
 $res = $this->db->get(); 
 
+// echo $this->db->last_query(); 
 
 $data = $res->row_array();
+
+// show_array($data); exit;
 
 return $data;
 
@@ -304,7 +307,8 @@ function get_lap_b_saksi_detail($id){
 	->join('m_agama a','a.id_agama = t.saksi_id_agama','left');
 	$this->db->where("t.id",$id);
 	$res = $this->db->get();
-	return $res->row_array();
+	$data =  $res->row_array();
+	 return $data; 
 }
 
 function get_lap_b_saksi($param){

@@ -97,7 +97,7 @@ $setting = $this->cm->get_setting();
 			$break = ($n>1)?"<br />":"";
 			echo  $break . $n. ". ". $row->tersangka_nama; ?></b>, 
 			<?php echo $row->tersangka_umur //umur($row->tersangka_tgl_lahir); ?> Th,
-			<?php echo ($tersangka_jk=="P")?" PEREMPUAN ":"LAKI - LAKI "; ?>, 
+			<?php echo ($row->tersangka_jk=="P")?" PEREMPUAN ":"LAKI - LAKI "; ?>, 
 			<?php echo $row->pekerjaan; ?> d/a  
  
     	    <?php echo $row->tersangka_alamat; ?> - <?php echo $row->desa ?> - <?php echo $row->kecamatan; ?> - <?php echo $row->kota; ?> - <?php echo $row->provinsi; ?>
@@ -116,7 +116,7 @@ $setting = $this->cm->get_setting();
 			
 			if($row->jenis_korban=="o") { 
 			echo ', '.umur($row->korban_tgl_lahir)." Th , ";
-			echo ($korban_jk=="P")?" PEREMPUAN, ":"LAKI - LAKI, ";
+			echo ($row->korban_jk=="P")?" PEREMPUAN, ":"LAKI - LAKI, ";
 			echo $row->pekerjaan.' ';
 			}
 			echo ' , d/a '.$row->korban_alamat.' ';
@@ -158,7 +158,7 @@ $setting = $this->cm->get_setting();
   
   
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <?php echo $no; 
+  <?php  
   $no = 0;
   foreach($saksi->result() as $row) :  
   $no++; 
