@@ -39,6 +39,8 @@ $(document).ready(function(){
 
 
 $("#frm_update").submit(function(){
+
+	$('#myPleaseWait').modal('show');
 	 $(this).ajaxSubmit({
 	 	dataType : 'json' , 
 
@@ -49,12 +51,15 @@ $("#frm_update").submit(function(){
 			                message: jsonData.pesan,
 			                 
 			            });  
+	 	
+
 	 	}
 
 
 	 	
 	 }); 
  
+ 	$('#myPleaseWait').modal('hide');
      return false;  
        
      

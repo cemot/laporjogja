@@ -31,7 +31,20 @@
 
 
 <div class="row" style="margin-bottom: 30px;">
+
+<div class="col-md-12">
+
+  <?php 
+
+    show_array($this->session->all_userdata());
+
+  ?>
 </div>
+
+</div>
+
+
+
 <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8 col-12">
