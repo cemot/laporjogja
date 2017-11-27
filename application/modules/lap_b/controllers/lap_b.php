@@ -636,8 +636,8 @@ function get_lap_b_terlapor($lap_b_id) {
         	$arr_data[] = array(
    		 
 		$row['tersangka_nama'],
-		// flipdate($row['tersangka_tgl_lahir']),
-		$row['tersangka_umur'],
+		flipdate($row['tersangka_tgl_lahir']) . "<br />".
+		$row['tersangka_umur']." Thn",
 		$row['tersangka_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -731,8 +731,8 @@ function get_lap_b_saksi($lap_b_id) {
         	$arr_data[] = array(
    		 
 		$row['saksi_nama'],
-		// flipdate($row['saksi_tgl_lahir']),
-		$row['saksi_umur'],
+		flipdate($row['saksi_tgl_lahir'])."<br>".
+		$row['saksi_umur'] . " Thn ",
 		$row['saksi_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -806,7 +806,11 @@ function tersangka_simpan($lap_b_id){
 			 
 
 
-			// $data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
+			
+			if(!empty($data['tersangka_tgl_lahir'])) { 
+			$data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
+			}
+
 			$data['lap_b_id'] = $lap_b_id;
 			 
 
@@ -969,6 +973,11 @@ function saksi_simpan($lap_b_id){
 
 
 			// $data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
+			if(!empty($data['saksi_tgl_lahir'])) { 
+			$data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
+			}
+
+
 			$data['lap_b_id'] = $lap_b_id;
 			 
 
@@ -1144,7 +1153,7 @@ function get_lap_b_korban($lap_b_id) {
         	$arr_data[] = array(
    		 
 		$row['korban_nama'],
-		flipdate($row['korban_tgl_lahir']),
+		flipdate($row['korban_tgl_lahir']). "<br />" . $row['korban_umur']. " Thn",
 		$row['korban_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -1224,8 +1233,13 @@ function korban_simpan($lap_b_id){
 			// $data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
 
 
+			// if(!empty($data['korban_tgl_lahir'])) { 
+			// $data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
+			// }
 
-			if($data['jenis_korban']=="o") {
+
+
+			if($data['jenis_korban']=="o" and !empty($data['korban_tgl_lahir'])) {
 				$data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
 			}
 			else {
@@ -1247,6 +1261,8 @@ function korban_simpan($lap_b_id){
 			$data['id'] = md5(microtime());
 			 
 			// $data['tanggal'] = flipdate($data['tanggal']);
+
+			// show_array($data); exit;
 
 			$data['id'] = md5(microtime());
 			 $res = $this->db->insert("lap_b_korban",$data);
@@ -1797,8 +1813,8 @@ function temp_get_lap_b_terlapor() {
         	$arr_data[] = array(
    		 
 		$row['tersangka_nama'],
-		// flipdate($row['tersangka_tgl_lahir']),
-		$row['tersangka_umur'],
+		flipdate($row['tersangka_tgl_lahir'])."<BR />".
+		$row['tersangka_umur']." Thn",
 		$row['tersangka_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -1854,7 +1870,11 @@ function tmp_tersangka_simpan(){
 			}
 
 
+			// $data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
+
+			if(!empty($data['tersangka_tgl_lahir'])) { 
 			$data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
+			}
 
 			$data['temp_lap_b_id'] = $temp_lap_b_id;
 			 
@@ -1909,6 +1929,10 @@ function tmp_tersangka_update(){
 
 			// $data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
 			//$data['lap_b_id'] = $lap_b_id;
+
+			if(!empty($data['tersangka_tgl_lahir'])) { 
+			$data['tersangka_tgl_lahir'] = flipdate($data['tersangka_tgl_lahir']);
+			}
 			 
 
 			 
@@ -1992,8 +2016,8 @@ function temp_get_lap_b_saksi() {
         	$arr_data[] = array(
    		 
 		$row['saksi_nama'],
-		// flipdate($row['saksi_tgl_lahir']),
-		$row['saksi_umur'],
+		flipdate($row['saksi_tgl_lahir'])."<BR />". 
+		$row['saksi_umur'] ." Thn",
 		$row['saksi_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -2045,7 +2069,11 @@ function tmp_saksi_simpan(){
 			 
 
 
+			// $data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
+
+			if(!empty($data['saksi_tgl_lahir'])) { 
 			$data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
+			}
 
 			$data['temp_lap_b_id'] = $temp_lap_b_id;
 			$data['id'] = md5(microtime());
@@ -2102,6 +2130,10 @@ function tmp_saksi_update(){
 			// $data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
 			//$data['lap_b_id'] = $lap_b_id;
 			 
+
+			 if(!empty($data['saksi_tgl_lahir'])) { 
+			$data['saksi_tgl_lahir'] = flipdate($data['saksi_tgl_lahir']);
+			}
 
 			 
 			// $data['tanggal'] = flipdate($data['tanggal']);
@@ -2182,7 +2214,7 @@ function temp_get_lap_b_korban() {
         	$arr_data[] = array(
    		 
 		$row['korban_nama'],
-		flipdate($row['korban_tgl_lahir']),
+		flipdate($row['korban_tgl_lahir']) . "<br />".$row['korban_umur']." Thn",
 		$row['korban_tmp_lahir'],
 		$row['agama'],
 		$row['suku'],
@@ -2236,8 +2268,12 @@ function tmp_korban_simpan(){
 
 			// $data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
 
+			// if(!empty($data['korban_tgl_lahir'])) { 
+			// $data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
+			// }
 
-			if($data['jenis_korban']=="o") {
+
+			if($data['jenis_korban']=="o" and !empty($data['korban_tgl_lahir'])) {
 				$data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
 			}
 			else {
@@ -2309,8 +2345,12 @@ function tmp_korban_update(){
 			//$data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
 			//$data['lap_b_id'] = $lap_b_id;
 
+			// if(!empty($data['korban_tgl_lahir'])) { 
+			// $data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
+			// }
 
-			if($data['jenis_korban']=="o") {
+
+			if($data['jenis_korban']=="o" and !empty($data['korban_tgl_lahir']) ) {
 				$data['korban_tgl_lahir'] = flipdate($data['korban_tgl_lahir']);
 			}
 			else {

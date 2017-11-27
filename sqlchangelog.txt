@@ -83,7 +83,7 @@ ALTER TABLE `lap_d` ADD `jenis` VARCHAR(20)  , ADD `id_polres` CHAR(32)  , ADD `
 ALTER TABLE `lap_laka_lantas` ADD `jenis` VARCHAR(20)  , ADD `id_polres` CHAR(32)  , ADD `id_polsek` CHAR(32)   ;
 
 
-
+ 
 
 
 update lap_a p 
@@ -238,6 +238,17 @@ group by
 
 
 -- above applied 
+
+
+-- update tanggal 27 NOV 2017 
+
+ALTER TABLE `lap_b_korban` ADD `korban_umur` INT NULL AFTER `korban_tmp_lahir`;
+
+ALTER TABLE `lap_a_korban` ADD `korban_umur` INT NULL AFTER `korban_tmp_lahir`;
+
+
+
+
 
 
 

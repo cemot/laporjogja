@@ -59,6 +59,9 @@
                <tr class="bo"><td>Tanggal Lahir </td>
               <TD><input type="text" class="tanggal form-control" name="korban_tgl_lahir" id="korban_tgl_lahir" placeholder="Tanggal Lahir" data-date-format="dd-mm-yyyy" /></TD></tr>
 
+              <tr class="bo"><td>Umur </td>
+              <TD><input type="text" class="form-control" name="korban_umur" id="korban_umur" placeholder="Umur"  /></TD></tr>
+
                 <tr class="bo"><td>Agama </td>
               <TD>
  <?php 

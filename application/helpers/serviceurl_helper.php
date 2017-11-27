@@ -69,6 +69,12 @@ function clear_array($arr) {
 }
 
 function flipdate($date){
+
+	if($date == "0000-00-00" or $date == "00-00-0000") {
+		return '';
+	}
+
+
 	$r=explode("-",$date);
 	if(count($r) < 3){
 		return "";
@@ -77,5 +83,7 @@ function flipdate($date){
 		return $r[2]."-".$r[1]."-".$r[0];
 	}
 }
+
+
 	
 ?>

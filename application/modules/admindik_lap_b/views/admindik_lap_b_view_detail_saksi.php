@@ -22,8 +22,8 @@ $n++;
     <TD><?php echo $row->saksi_tmp_lahir; ?></TD>
   </tr>
   <tr>
-    <td>Umur </td>
-    <TD><?php echo $row->saksi_umur; ?> Th</TD>
+    <td>Tgl. Lahir /Umur </td>
+    <TD><?php echo flipdate($row->saksi_tgl_lahir) ." / ". umur2($row->saksi_tgl_lahir,$row->saksi_umur); ?> Th</TD>
   </tr>
   <tr>
     <td>Agama </td>

@@ -153,7 +153,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">UMUR</th>
+        <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -180,7 +180,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">UMUR</th>
+        <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>
@@ -206,7 +206,7 @@
    <tr >
 
         <th width="10%">NAMA</th>
-        <th width="12%">TGL. LAHIR</th>
+         <th width="12%">TGL. LAHIR/UMUR</th>
         <th width="15%">TMP. LAHIR</th>
         <th width="10%">AGAMA</th>
         <th width="10%">SUKU</th>

@@ -96,7 +96,7 @@ $setting = $this->cm->get_setting();
     		<b><?php 
 			$break = ($n>1)?"<br />":"";
 			echo  $break . $n. ". ". $row->tersangka_nama; ?></b>, 
-			<?php echo $row->tersangka_umur //umur($row->tersangka_tgl_lahir); ?> Th,
+			<?php echo  umur2($row->tersangka_tgl_lahir,$row->tersangka_umur); ?> Th,
 			<?php echo ($row->tersangka_jk=="P")?" PEREMPUAN ":"LAKI - LAKI "; ?>, 
 			<?php echo $row->pekerjaan; ?> d/a  
  
@@ -115,7 +115,7 @@ $setting = $this->cm->get_setting();
 			echo  $break . '<b> '. $n. ". ". $row->korban_nama." </b> ";
 			
 			if($row->jenis_korban=="o") { 
-			echo ', '.umur($row->korban_tgl_lahir)." Th , ";
+			echo ', '.umur2($row->korban_tgl_lahir,$row->korban_umur)." Th , ";
 			echo ($row->korban_jk=="P")?" PEREMPUAN, ":"LAKI - LAKI, ";
 			echo $row->pekerjaan.' ';
 			}
@@ -166,7 +166,7 @@ $setting = $this->cm->get_setting();
   ?>
     <tr>
       <td width="6%"><?php echo $no ?>. </td>
-      <td width="94%"><?php echo $row->saksi_nama; ?>, <?php echo $row->saksi_umur // umur($row->saksi_tgl_lahir); ?> Th, <?php echo ($row->saksi_jk=="P")?"Perempuan":"Laki-laki"; ?>,  <?php echo $row->saksi_agama; ?>,<?php echo $row->pekerjaan; ?>, <?php echo $row->saksi_alamat; ?> - <?php echo $row->desa ?> - <?php echo $row->kecamatan; ?> - <?php echo $row->kota; ?> - <?php echo $row->provinsi; ?> </td>
+      <td width="94%"><?php echo $row->saksi_nama; ?>, <?php echo umur2($row->saksi_tgl_lahir ,$row->saksi_umur ) ?> Th, <?php echo ($row->saksi_jk=="P")?"Perempuan":"Laki-laki"; ?>,  <?php echo $row->saksi_agama; ?>,<?php echo $row->pekerjaan; ?>, <?php echo $row->saksi_alamat; ?> - <?php echo $row->desa ?> - <?php echo $row->kecamatan; ?> - <?php echo $row->kota; ?> - <?php echo $row->provinsi; ?> </td>
     </tr>
       <?php endforeach; ?>  
   </table></td>
