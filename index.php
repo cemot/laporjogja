@@ -1,4 +1,5 @@
 <?php
+// 00088821
 session_start();
 // putenv("ORACLE_HOME=/u01/app/oracle/product/11.2.0/db_1");
 // putenv("LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/db_1/lib");
