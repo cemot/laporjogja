@@ -247,6 +247,15 @@ ALTER TABLE `lap_b_korban` ADD `korban_umur` INT NULL AFTER `korban_tmp_lahir`;
 ALTER TABLE `lap_a_korban` ADD `korban_umur` INT NULL AFTER `korban_tmp_lahir`;
 
 
+-- update 28 NOV 2017
+
+CREATE TABLE `ci_sessions` (
+  `session_id` text,
+  `user_agent` text,
+  `ip_address` varchar(50) DEFAULT NULL,
+  `last_activity` int(20) DEFAULT NULL,
+  `user_data` text
+);
 
 
 
