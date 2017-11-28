@@ -102,6 +102,13 @@ $userdata = $_SESSION['userdata'];
                 <li><a href="<?php echo site_url("laporan_grafik_waktu"); ?>">Laporan grafik penyebaran waktu</a></li>
             </ul>
         </li>
+
+        <li>
+            <a href="<?php echo site_url("ex_whos_online") ?>" class="ripple">
+                <i class="list-icon material-icons">record_voice_over</i>
+                <span class="hide-menu">Who's Online</span>
+            </a>
+        </li>
                 
     </ul>
     <!-- /.side-menu -->
