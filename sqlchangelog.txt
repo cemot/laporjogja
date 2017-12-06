@@ -260,5 +260,21 @@ CREATE TABLE `ci_sessions` (
 
 
 
+-- history 
+
+data sempat hilang. 
+belum tau penyebabanya. 
+
+lalu saya restore dari database backup. 
+
+database backup ada di test_laporjogjadb. database ini lengkap 
+
+tapi ternyata ada selisih 101 record 
+
+
+yang selisih 101 record ada di database zjogja. 
+
+
+
 
 

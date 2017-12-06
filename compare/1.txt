@@ -1,0 +1,58 @@
++-----------------------------+--------------+------+-----+---------+-------+
+| Field                       | Type         | Null | Key | Default | Extra |
++-----------------------------+--------------+------+-----+---------+-------+
+| lap_b_id                    | char(32)     | NO   | PRI | NULL    |       |
+| tanggal                     | date         | YES  |     | NULL    |       |
+| nomor                       | varchar(100) | YES  |     | NULL    |       |
+| id_gol_kejahatan            | int(11)      | YES  | MUL | NULL    |       |
+| id_jenis_lokasi             | int(11)      | YES  | MUL | NULL    |       |
+| id_kategori_tempat          | int(11)      | YES  | MUL | NULL    |       |
+| tindak_pidana               | text         | YES  |     | NULL    |       |
+| id_pasal                    | int(11)      | YES  |     | NULL    |       |
+| id_fungsi                   | int(11)      | YES  | MUL | NULL    |       |
+| pelapor_nama                | varchar(100) | YES  |     | NULL    |       |
+| pelapor_tmp_lahir           | varchar(100) | YES  |     | NULL    |       |
+| pelapor_tgl_lahir           | date         | YES  |     | NULL    |       |
+| pelapor_jk                  | char(1)      | YES  |     | NULL    |       |
+| pelapor_id_pekerjaan        | int(11)      | YES  | MUL | NULL    |       |
+| pelapor_alamat              | text         | YES  |     | NULL    |       |
+| pelapor_id_desa             | char(13)     | YES  | MUL | NULL    |       |
+| pelapor_telpon              | varchar(30)  | YES  |     | NULL    |       |
+| pelapor_id_agama            | int(11)      | YES  | MUL | NULL    |       |
+| pelapor_id_pendidikan       | int(11)      | YES  | MUL | NULL    |       |
+| pelapor_id_warga_negara     | int(11)      | YES  | MUL | NULL    |       |
+| kejadian_tanggal            | date         | YES  |     | NULL    |       |
+| kejadian_jam                | time         | YES  |     | NULL    |       |
+| kejadian_tempat             | text         | YES  |     | NULL    |       |
+| kejadian_id_desa            | char(13)     | YES  | MUL | NULL    |       |
+| kejadian_apa                | text         | YES  |     | NULL    |       |
+| kejadian_uraian             | text         | YES  |     | NULL    |       |
+| kejadian_bagaimaan          | text         | YES  |     | NULL    |       |
+| kejadian_id_motif_kejahatan | varchar(255) | YES  |     | NULL    |       |
+| kejadian_tanggal_lapor      | date         | YES  |     | NULL    |       |
+| kejadian_jam_lapor          | time         | YES  |     | NULL    |       |
+| modus_operandi              | text         | YES  |     | NULL    |       |
+| pen_lapor_nama              | varchar(255) | YES  |     | NULL    |       |
+| pen_lapor_id_pangkat        | char(32)     | YES  |     | NULL    |       |
+| pen_lapor_nrp               | varchar(20)  | YES  |     | NULL    |       |
+| pen_lapor_kesatuan          | varchar(100) | YES  |     | NULL    |       |
+| pen_lapor_jabatan           | varchar(100) | YES  |     | NULL    |       |
+| pen_lapor_telpon            | varchar(50)  | YES  |     | NULL    |       |
+| mengetahui_nama             | varchar(100) | YES  |     | NULL    |       |
+| mengetahui_id_pangkat       | char(32)     | YES  |     | NULL    |       |
+| mengetahui_nrp              | varchar(40)  | YES  |     | NULL    |       |
+| mengetahui_jabatan          | varchar(100) | YES  |     | NULL    |       |
+| user_id                     | char(32)     | NO   | MUL | NULL    |       |
+| id_admindik                 | int(11)      | YES  |     | NULL    |       |
+| id_penyidik                 | int(11)      | YES  |     | NULL    |       |
+| waktu_penugasan             | datetime     | YES  |     | NULL    |       |
+| penyelesaian                | varchar(30)  | NO   |     | sidik   |       |
+| alasan                      | varchar(100) | NO   |     | NULL    |       |
+| penyelesaian_waktu          | date         | NO   |     | NULL    |       |
+| penyelesaian_by             | char(32)     | NO   |     | NULL    |       |
+| mon_user                    | varchar(32)  | YES  |     | NULL    |       |
+| mon_pass                    | varchar(32)  | YES  |     | NULL    |       |
+| jenis                       | varchar(20)  | YES  |     | NULL    |       |
+| id_polres                   | char(32)     | YES  |     | NULL    |       |
+| id_polsek                   | char(32)     | YES  |     | NULL    |       |
++-----------------------------+--------------+------+-----+---------+-------+

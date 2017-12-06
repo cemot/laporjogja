@@ -22,14 +22,14 @@ function data($param){
 	$userdata = $_SESSION['userdata'];
 
 	if($userdata['jenis']=="polres") {
-		$this->db->where("v_lap_bb.id_polres",$userdata['id_polres']);
+		$this->db->where("u.id_polres",$userdata['id_polres']);
 	}
 	if($userdata['jenis']=="polsek") {
-		$this->db->where("v_lap_bb.id_polsek",$userdata['id_polsek']);
+		$this->db->where("u.id_polsek",$userdata['id_polsek']);
 	}
 
 
-	$this->db->where("v_lap_bb.jenis",$userdata['jenis']);
+	$this->db->where("u.jenis",$userdata['jenis']);
 	 
 
 
@@ -109,8 +109,7 @@ u.nama as pengguna ')
 ->join("m_motif motif","motif.id_motif = a.kejadian_id_motif_kejahatan ",'left')
 ->join("m_pangkat pen_pangkat","pen_pangkat.id_pangkat = a.pen_lapor_id_pangkat ",'left')
 ->join("m_pangkat meng_pangkat","meng_pangkat.id_pangkat = a.mengetahui_id_pangkat",'left')
-->join("pengguna u","u.id = a.user_id",'left')
-// ->join("m_pasal pasal","pasal.id = a.id_pasal",'left') 
+->join("pengguna u","u.id = a.user_id",'left') 
 ->join('tiger_desa desa','desa.id = a.pelapor_id_desa ','left')
 ->join('tiger_kecamatan kec','kec.id = desa.id_kecamatan ','left')
 ->join('tiger_kota kota','kota.id = kec.id_kota ','left')

@@ -33,16 +33,16 @@ function data($param){
 		
 
 		if($param['jenis']=="polres") {
-			$this->db->where("v_lap_bb.id_polres",$param['id_polres']);
-			$this->db->where("v_lap_bb.jenis",$param['jenis']);
+			$this->db->where("u.id_polres",$param['id_polres']);
+			$this->db->where("u.jenis",$param['jenis']);
 		}
 		else if($param['jenis']=="polsek") {
-			$this->db->where("v_lap_bb.id_polsek",$param['id_polsek']);
-			$this->db->where("v_lap_bb.jenis",$param['jenis']);
+			$this->db->where("u.id_polsek",$param['id_polsek']);
+			$this->db->where("u.jenis",$param['jenis']);
 		}
 		else if($param['jenis']=="polda") {
 			 
-			$this->db->where("v_lap_bb.jenis",$param['jenis']);
+			$this->db->where("u.jenis",$param['jenis']);
 		}
 		else {
 			// $this->db->join("m_polsek sek","sek.id_polsek = u.id_polsek",'left');
