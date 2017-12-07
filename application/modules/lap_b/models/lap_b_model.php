@@ -91,7 +91,7 @@ function get_lap_b_terlapor($param){
 		"agama",
 		"suku",
 		"pekerjaan",
-		"alamat"
+		"tersangka_alamat"
 	);
 
 	$sort_by = $arr_column[$param['sort_by']];
@@ -320,7 +320,7 @@ function get_lap_b_saksi($param){
 		"agama",
 		"suku",
 		"pekerjaan",
-		"alamat"
+		"saksi_alamat"
 	);
 
 	$sort_by = $arr_column[$param['sort_by']];
@@ -366,12 +366,12 @@ function get_lap_b_saksi($param){
 function get_lap_b_korban($param){
 	$arr_column = array(
 		"korban_nama",
-		"korban_tgl_lahir",
+		"korban_umur",
 		"korban_tmp_lahir",
 		"agama",
 		"suku",
 		"pekerjaan",
-		"alamat"
+		"korban_alamat"
 	);
 
 	$sort_by = $arr_column[$param['sort_by']];
@@ -452,7 +452,9 @@ function get_lap_b_barbuk_detail($id){
 
 function get_lap_b_barbuk($param){
 	$arr_column = array(
-		"barbuk_nama"
+		"barbuk_nama",
+		"barbuk_jumlah",
+		"barbuk_satuan"
 		 
 	);
 

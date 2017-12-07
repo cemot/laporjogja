@@ -84,7 +84,7 @@ function get_lap_a_terlapor($param){
 		"agama",
 		"suku",
 		"pekerjaan",
-		"alamat"
+		"tersangka_alamat"
 	);
 
 	$sort_by = $arr_column[$param['sort_by']];
@@ -288,12 +288,12 @@ function get_lap_a_saksi_detail($id){
 function get_lap_a_saksi($param){
 	$arr_column = array(
 		"saksi_nama",
-		"saksi_tgl_lahir",
+		"saksi_umur",
 		"saksi_tmp_lahir",
 		"agama",
 		"suku",
 		"pekerjaan",
-		"alamat"
+		"saksi_alamat"
 	);
 
 	$sort_by = $arr_column[$param['sort_by']];
