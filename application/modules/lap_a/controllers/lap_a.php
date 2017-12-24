@@ -143,11 +143,12 @@ function baru(){
 
 		$userdata = $_SESSION['userdata']; 
 
-		$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		$temp_lap_a_id = $_SESSION['temp_lap_a_id'];//$this->session->userdata("temp_lap_a_id"); 
 		if($temp_lap_a_id == "") {
 			$xx = md5(date("dmyhis").round(0,100).microtime()); 
 			$this->session->set_userdata("temp_lap_a_id",$xx);
-			$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+			$_SESSION['temp_lap_a_id'] = $xx;
+			$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ; // $this->session->userdata("temp_lap_a_id"); 
 		}
 
 		// echo $this->session->userdata("temp_lap_a_id");  exit;
@@ -265,6 +266,7 @@ function simpan(){
 			
 
 			$userdata = $_SESSION['userdata'];
+
 			$data['jenis'] = $userdata['jenis'];
 			$data['id_polres'] = $userdata['id_polres'];
 			$data['id_polsek'] = $userdata['id_polsek'];
@@ -1785,7 +1787,8 @@ function tmp_tersangka_simpan(){
 		$data=$this->input->post();
 
 
-		$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ;
+		 // $this->session->userdata("temp_lap_a_id"); 
 		
 		$this->load->library('form_validation');
 		
@@ -1981,7 +1984,9 @@ function tmp_saksi_simpan(){
 		$data=$this->input->post();
 
 
-		$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ;
+
+		// $temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
 		
 		$this->load->library('form_validation');
 		
@@ -2176,7 +2181,8 @@ function tmp_korban_simpan(){
 		$data=$this->input->post();
 
 
-		$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ; 
+		// $temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
 		
 		$this->load->library('form_validation');
 		
@@ -2391,8 +2397,8 @@ function temp_get_lap_a_barbuk() {
 function tmp_barbuk_simpan(){
 		$data=$this->input->post();
 
-
-		$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ;
+		// $temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
 		
 		$this->load->library('form_validation');
 		
