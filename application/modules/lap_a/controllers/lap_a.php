@@ -143,15 +143,15 @@ function baru(){
 
 		$userdata = $_SESSION['userdata']; 
 
-		$temp_lap_a_id = $_SESSION['temp_lap_a_id'];//$this->session->userdata("temp_lap_a_id"); 
+		$temp_lap_a_id = $_SESSION['temp_lap_a_id'];//$_SESSION['temp_lap_a_id']; 
 		if($temp_lap_a_id == "") {
 			$xx = md5(date("dmyhis").round(0,100).microtime()); 
 			$this->session->set_userdata("temp_lap_a_id",$xx);
 			$_SESSION['temp_lap_a_id'] = $xx;
-			$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ; // $this->session->userdata("temp_lap_a_id"); 
+			$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ; // $_SESSION['temp_lap_a_id']; 
 		}
 
-		// echo $this->session->userdata("temp_lap_a_id");  exit;
+		// echo $_SESSION['temp_lap_a_id'];  exit;
 
 		//$this->session->unset_userdata("temp_lap_a_id");
 		$data['temp_lap_a_id']=$temp_lap_a_id;
@@ -277,7 +277,7 @@ function simpan(){
 
 			 if($res) {
 
-			 	$temp_lap_a_id = $this->session->userdata("temp_lap_a_id");
+			 	$temp_lap_a_id = $_SESSION['temp_lap_a_id'];
 
 			 	$arr_update = array("lap_a_id"=>$lap_a_id);
 
@@ -1718,7 +1718,7 @@ function temp_get_lap_a_terlapor() {
 
       //  order[0][column]
         $req_param = array (
-        		"temp_lap_a_id" => $this->session->userdata("temp_lap_a_id"),
+        		"temp_lap_a_id" => $_SESSION['temp_lap_a_id'],
 				"sort_by" => $sidx,
 				"sort_direction" => $sord,
 				"limit" => null 
@@ -1788,7 +1788,7 @@ function tmp_tersangka_simpan(){
 
 
 		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ;
-		 // $this->session->userdata("temp_lap_a_id"); 
+		 // $_SESSION['temp_lap_a_id']; 
 		
 		$this->load->library('form_validation');
 		
@@ -1915,7 +1915,7 @@ function temp_get_lap_a_saksi() {
 
       //  order[0][column]
         $req_param = array (
-        		"temp_lap_a_id" => $this->session->userdata("temp_lap_a_id"),
+        		"temp_lap_a_id" => $_SESSION['temp_lap_a_id'],
 				"sort_by" => $sidx,
 				"sort_direction" => $sord,
 				"limit" => null 
@@ -1986,7 +1986,7 @@ function tmp_saksi_simpan(){
 
 		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ;
 
-		// $temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		// $temp_lap_a_id = $_SESSION['temp_lap_a_id']; 
 		
 		$this->load->library('form_validation');
 		
@@ -2112,7 +2112,7 @@ function temp_get_lap_a_korban() {
 
       //  order[0][column]
         $req_param = array (
-        		"temp_lap_a_id" => $this->session->userdata("temp_lap_a_id"),
+        		"temp_lap_a_id" => $_SESSION['temp_lap_a_id'],
 				"sort_by" => $sidx,
 				"sort_direction" => $sord,
 				"limit" => null 
@@ -2182,7 +2182,7 @@ function tmp_korban_simpan(){
 
 
 		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ; 
-		// $temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		// $temp_lap_a_id = $_SESSION['temp_lap_a_id']; 
 		
 		$this->load->library('form_validation');
 		
@@ -2333,7 +2333,7 @@ function temp_get_lap_a_barbuk() {
 
       //  order[0][column]
         $req_param = array (
-        		"temp_lap_a_id" => $this->session->userdata("temp_lap_a_id"),
+        		"temp_lap_a_id" => $_SESSION['temp_lap_a_id'],
 				"sort_by" => $sidx,
 				"sort_direction" => $sord,
 				"limit" => null 
@@ -2398,7 +2398,7 @@ function tmp_barbuk_simpan(){
 		$data=$this->input->post();
 
 		$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ;
-		// $temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		// $temp_lap_a_id = $_SESSION['temp_lap_a_id']; 
 		
 		$this->load->library('form_validation');
 		
@@ -2549,7 +2549,7 @@ function temp_get_lap_a_pasal() {
 
       //  order[0][column]
         $req_param = array (
-        		"temp_lap_a_id" => $this->session->userdata("temp_lap_a_id"),
+        		"temp_lap_a_id" => $_SESSION['temp_lap_a_id'],
 				"sort_by" => $sidx,
 				"sort_direction" => $sord,
 				"limit" => null 
@@ -2599,7 +2599,7 @@ function temp_get_lap_a_pasal() {
 
 
 function cek_id_pasal($id_pasal) {
-	$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+	$temp_lap_a_id = $_SESSION['temp_lap_a_id']; 
 
 	if($id_pasal==""){
 		$this->form_validation->set_message('cek_id_pasal', ' %s Harus diisi ');
@@ -2618,7 +2618,7 @@ function tmp_pasal_simpan(){
 		$data=$this->input->post();
 
 
-		$temp_lap_a_id = $this->session->userdata("temp_lap_a_id"); 
+		$temp_lap_a_id = $_SESSION['temp_lap_a_id']; 
 		
 		$this->load->library('form_validation');
 		
