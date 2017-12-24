@@ -316,6 +316,8 @@ function simpan(){
 
 			 	$this->session->unset_userdata("temp_lap_b_id");
 
+			 	unset($_SESSION['temp_lap_b_id']);
+
 
 			 	$ret = array("error"=>false,"message"=>"data laporan MODEL-B berhasil disimpan");
 

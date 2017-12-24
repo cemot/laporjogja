@@ -304,6 +304,8 @@ function simpan(){
 			 	$xx = md5(date("dmyhis").round(0,100).microtime()); 
 				$this->session->set_userdata("temp_lap_a_id",$xx);
 
+				unset($_SESSION['temp_lap_a_id']);
+
 
 			 }
 			 else {
