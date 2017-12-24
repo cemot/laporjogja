@@ -21,13 +21,13 @@ function data($param){
 	$userdata = $_SESSION['userdata'];
 
 	if($userdata['jenis']=="polres") {
-		$this->db->where("u.id_polres",$userdata['id_polres']);
+		$this->db->where("v_lap_aa.id_polres",$userdata['id_polres']);
 	}
 	if($userdata['jenis']=="polsek") {
-		$this->db->where("u.id_polsek",$userdata['id_polsek']);
+		$this->db->where("v_lap_aa.id_polsek",$userdata['id_polsek']);
 	}
 
-	$this->db->where("u.jenis",$userdata['jenis']);
+	$this->db->where("v_lap_aa.jenis",$userdata['jenis']);
 
 
 				// "tanggal_awall" => $tanggal_awal, 
