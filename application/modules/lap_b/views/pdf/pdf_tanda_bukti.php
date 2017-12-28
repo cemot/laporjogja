@@ -143,7 +143,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center">a.n Ka  SPKT <?php //echo $ttd['instansi'];  ?></td>
+    <td align="center">a.n KA  SPKT <?php //echo $ttd['instansi'];  ?></td>
   </tr>
   <tr>
     <td align="center">PELAPOR</td>
@@ -175,7 +175,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center"><?php echo $pen_lapor_pangkat. " NRP. ". $pen_lapor_nrp // $setting->ttd_nrp; ?></td>
+    <td align="center"><?php echo $penerima_pangkat. " NRP. ". $pen_lapor_nrp // $setting->ttd_nrp; ?></td>
   </tr>
 </table>
 <p>&nbsp;</p>
