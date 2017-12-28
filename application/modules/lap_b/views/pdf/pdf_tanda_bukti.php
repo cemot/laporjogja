@@ -41,7 +41,7 @@ $setting = $this->cm->get_setting();
     <td colspan="3" align="center"><H2><U> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TANDA BUKTI LAPOR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</U></H2> </td>
   </tr>
   <tr>
-    <td colspan="3" align="center">NOMOR : <?php echo $nomor; ?></td>
+    <td colspan="3" align="center">NOMOR : <?php echo "STT".trim($nomor); ?></td>
   </tr>
 </table>
 <p>Berdasarkan laporan polisi nomor : <?php echo $nomor; ?> tanggal <?php echo tgl_indo(flipdate($tanggal)); ?> dengan ini menerangkan bahwa : </p>
@@ -147,7 +147,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">PELAPOR</td>
-    <td align="center"><?php echo $setting->ttd_jabatan; ?></td>
+    <td align="center"><?php echo $pen_lapor_jabatan; ?></td>
   </tr>
   <tr>
     <td align="center"></td>
@@ -171,11 +171,11 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center"><u><?php echo $pelapor_nama; ?></u></td>
-    <td align="center"><u><?php echo $mengetahui_nama; ?> <?php // echo $setting->ttd_nama; ?></u></td>
+    <td align="center"><u><?php echo $pen_lapor_nama; ?> <?php // echo $setting->ttd_nama; ?></u></td>
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center"><?php echo $mengetahui_pangkat. " NRP. ". $mengetahui_nrp // $setting->ttd_nrp; ?></td>
+    <td align="center"><?php echo $pen_lapor_pangkat. " NRP. ". $pen_lapor_nrp // $setting->ttd_nrp; ?></td>
   </tr>
 </table>
 <p>&nbsp;</p>
