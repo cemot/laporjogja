@@ -38,7 +38,7 @@ $setting = $this->cm->get_setting();
     <td colspan="3" align="center"><img width="60px" height="60px" src="<?php  echo FCPATH; ?>/assets/images/logo.png>" /></td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><H2><U> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TANDA BUKTI LAPOR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</U></H2> </td>
+    <td colspan="3" align="center"><H2><U>SURAT TANDA TERIMA LAPORAN POLISI</U></H2> </td>
   </tr>
   <tr>
     <td colspan="3" align="center">NOMOR : <?php echo "STT".trim($nomor); ?></td>
@@ -143,7 +143,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center">a.n Ka SPKT KEPOLISIAN <?php echo $ttd['instansi'];  ?></td>
+    <td align="center">a.n Ka  SPKT <?php //echo $ttd['instansi'];  ?></td>
   </tr>
   <tr>
     <td align="center">PELAPOR</td>

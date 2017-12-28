@@ -259,7 +259,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td colspan="2" align="center">Mengetahui <br />
-      a.n Ka SPKT KEPOLISIAN <?php echo $ttd['instansi'];  ?><br />
+      a.n Ka SPKT <?php //echo $ttd['instansi'];  ?><br />
       <?php echo $mengetahui_jabatan;  ?><br />
       <br />
       <br />

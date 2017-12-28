@@ -124,7 +124,7 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center">a.n KEPALA KEPOLISIAN <?php echo $ttd['instansi'];  ?> </td>
+    <td align="center">a.n Ka SPKT<?php //echo $ttd['instansi'];  ?> </td>
   </tr>
   <tr>
     <td align="center">PELAPOR</td>
