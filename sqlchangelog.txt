@@ -42,7 +42,7 @@ update lap_b_saksi set saksi_umur = year(current_date) - year(saksi_tgl_lahir);
 
 
 
-ALTER TABLE `lap_b_tersangka` ADD `tersangka_umur` INT NULL AFTER `tersangka_tgl_lahir`;
+ALTER TABLE `lap_b_saksi` ADD `tersangka_umur` INT NULL AFTER `tersangka_tgl_lahir`;
 
 update lap_b_tersangka set tersangka_umur = year(current_date) - year(tersangka_tgl_lahir); 
 
@@ -275,6 +275,78 @@ tapi ternyata ada selisih 101 record
 yang selisih 101 record ada di database zjogja. 
 
 
+-- update terbaru migrasi 
+
+
+
+update lap_a p 
+
+set jenis = ( select jenis from pengguna where id = p.user_id ) , 
+id_polres =  ( select id_polres from pengguna where id = p.user_id ) , 
+
+id_polsek =  ( select id_polsek from pengguna where id = p.user_id ) ; 
+
+
+update lap_b p 
+
+set jenis = ( select jenis from pengguna where id = p.user_id ) , 
+id_polres =  ( select id_polres from pengguna where id = p.user_id ) , 
+
+id_polsek =  ( select id_polsek from pengguna where id = p.user_id ) ; 
+
+
+update lap_c p 
+
+set jenis = ( select jenis from pengguna where id = p.user_id ) , 
+id_polres =  ( select id_polres from pengguna where id = p.user_id ) , 
+
+id_polsek =  ( select id_polsek from pengguna where id = p.user_id ) ; 
+
+
+update lap_d p 
+
+set jenis = ( select jenis from pengguna where id = p.user_id ) , 
+id_polres =  ( select id_polres from pengguna where id = p.user_id ) , 
+
+id_polsek =  ( select id_polsek from pengguna where id = p.user_id ) ; 
+
+update lap_laka_lantas p 
+
+set jenis = ( select jenis from pengguna where id = p.user_id ) , 
+id_polres =  ( select id_polres from pengguna where id = p.user_id ) , 
+
+id_polsek =  ( select id_polsek from pengguna where id = p.user_id ) ; 
+
+
+
+
+
+update lap_a_tersangka set temp_lap_a_id = lap_a_id where temp_lap_a_id is null ; 
+
+update lap_a_saksi set temp_lap_a_id = lap_a_id where temp_lap_a_id is null ; 
+update lap_a_korban set temp_lap_a_id = lap_a_id where temp_lap_a_id is null ; 
+
+
+
+update lap_b_tersangka set temp_lap_b_id = lap_b_id where temp_lap_b_id is null ; 
+
+update lap_b_saksi set temp_lap_b_id = lap_b_id where temp_lap_b_id is null ; 
+update lap_b_korban set temp_lap_b_id = lap_b_id where temp_lap_b_id is null ; 
+
+
+
+
+
+alter table lap_b 
+add column ( 
+kendaraan_nopol   varchar(100),
+kendaraan_pemilik   varchar(100),
+kendaraan_no_rangka   varchar(100),
+kendaraan_no_mesin   varchar(100),
+kendaraan_merk   varchar(100),
+kendaraan_model   varchar(100),
+kendaraan_warna   varchar(100) 
+);
 
 
 

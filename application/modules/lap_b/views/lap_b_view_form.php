@@ -141,6 +141,52 @@
 
             </td> </tr>    
  -->
+
+
+ <tr class="data-kendaraan separator" > <td colspan="2"> <b> DATA KENDARAAN</b>  </td> </tr>
+   <tr class="data-kendaraan">
+      <td> Nomor Polisi </td>
+            <td><input type="text" class="form-control" name="kendaraan_nopol" id="kendaraan_nopol" placeholder="Nomor Polisi" />
+        </td>
+    </tr>
+   <tr class="data-kendaraan">
+      <td> Nama Pemilik </td>
+            <td><input type="text" class="form-control" name="kendaraan_pemilik" id="kendaraan_pemilik" placeholder="Nama Pemilik" />
+        </td>
+    </tr>
+
+    <tr class="data-kendaraan">
+      <td> Nomor Rangka</td>
+            <td><input type="text" class="form-control" name="kendaraan_no_rangka" id="kendaraan_no_rangka" placeholder="Nomor Rangka" />
+        </td>
+    </tr>
+
+    <tr class="data-kendaraan">
+      <td> Nomor Mesin</td>
+            <td><input type="text" class="form-control" name="kendaraan_no_mesin" id="kendaraan_no_mesin" placeholder="Nomor mesin" />
+        </td>
+    </tr>
+
+    <tr class="data-kendaraan">
+      <td> Merk</td>
+            <td><input type="text" class="form-control" name="kendaraan_merk" id="kendaraan_merk" placeholder="Merk" />
+        </td>
+    </tr>
+
+    <tr class="data-kendaraan">
+      <td> Model</td>
+            <td><input type="text" class="form-control" name="kendaraan_model" id="kendaraan_model" placeholder="Model" />
+        </td>
+    </tr>
+
+    <tr class="data-kendaraan">
+      <td> Warna</td>
+            <td><input type="text" class="form-control" name="kendaraan_warna" id="kendaraan_warna" placeholder="Warna" />
+        </td>
+    </tr>
+
+
+
                
    <tr class="separator"> <td colspan="2"> <b> PELAPOR</b>  </td> </tr>
    <tr>
@@ -245,6 +291,15 @@
 
             ?>
 
+        </td>
+        </tr>
+
+
+        <tr><td>&nbsp; </td>
+            <td> 
+             <a  href="javascript:tambah_pelapor_tersangka()" class="btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i>
+  TAMBAHKAN DATA PELAPOR SEBAGAI KORBAN
+             </a>             
         </td>
         </tr>
 

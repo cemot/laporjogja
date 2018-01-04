@@ -3,6 +3,7 @@
 
 $(document).ready(function(){
 
+$(".data-kendaraan").hide();
 
 $(".ds2").select2({
 	placeholder: "Pilih "
@@ -37,6 +38,11 @@ $("#id_gol_kejahatan").change(function(){
 			
 		}
 	});
+
+
+	showhide_kendaraan($(this).val());
+
+
 });
 
 
@@ -1322,5 +1328,65 @@ function copypelapor(){
 
 }
 
+function tambah_pelapor_tersangka(){
+	$('#myPleaseWait').modal('show');
+
+	$.ajax({
+		url : '<?php echo $korban_add_url; ?>',
+		data : {
+			korban_nama : $("#pelapor_nama").val(),
+			korban_jk : $("#pelapor_jk").val(),
+			korban_tgl_lahir : $("#pelapor_tgl_lahir").val(),
+			korban_tmp_lahir : $("#pelapor_tmp_lahir").val(),
+			korban_id_pekerjaan : $("#pelapor_id_pekerjaan").val(),
+			korban_alamat : $("#pelapor_alamat").val(),
+			korban_id_desa :  $("#pelapor_id_desa").val(),
+			korban_id_suku :  $("#pelapor_id_suku").val(),
+
+			korban_id_agama :  	$("#pelapor_id_agama").val(),
+			korban_id_pendidikan	 :  $("#pelapor_id_pendidikan").val(), 
+			jenis_korban : 'o'
+		},
+		type : 'post', 
+		dataType : 'json',
+		success : function(obj) {
+				$('#myPleaseWait').modal('hide');
+				 console.log(obj);
+				if(obj.error==false){
+					 	 
+					 	 BootstrapDialog.alert({
+			                type: BootstrapDialog.TYPE_PRIMARY,
+			                title: 'Informasi',
+			                message: obj.message,
+			                 
+			            });   
+						 
+						 
+						$('#korban').DataTable().ajax.reload();						 
+						 
+						 		
+						 
+					}
+					else {
+						 BootstrapDialog.alert({
+			                type: BootstrapDialog.TYPE_DANGER,
+			                title: 'Error',
+			                message: obj.message ,
+			                 
+			            }); 
+					}
+			}
+
+	});
+}
+
+function showhide_kendaraan(id){
+	if(id=="131" || id=="132") {
+		$(".data-kendaraan").show();
+	}
+	else {
+		$(".data-kendaraan").hide();
+	}
+}
 
 </script>

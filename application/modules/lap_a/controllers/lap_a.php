@@ -145,7 +145,7 @@ function baru(){
 
 		$temp_lap_a_id = $_SESSION['temp_lap_a_id'];//$_SESSION['temp_lap_a_id']; 
 		if($temp_lap_a_id == "") {
-			$xx = md5(date("dmyhis").round(0,100).microtime()); 
+			$xx = md5(date("dmyhis").round(0,100).microtime().$userdata['id']); 
 			$this->session->set_userdata("temp_lap_a_id",$xx);
 			$_SESSION['temp_lap_a_id'] = $xx;
 			$temp_lap_a_id = $_SESSION['temp_lap_a_id'] ; // $_SESSION['temp_lap_a_id']; 
@@ -262,8 +262,10 @@ function simpan(){
 			// exit;
 			// exit;
 
-			$data['lap_a_id'] = md5(microtime());
-			
+			// $data['lap_a_id'] = md5(microtime());
+
+			$temp_lap_a_id = $_SESSION['temp_lap_a_id'];
+			$data['lap_a_id'] = $temp_lap_a_id;
 
 			$userdata = $_SESSION['userdata'];
 
@@ -277,7 +279,7 @@ function simpan(){
 
 			 if($res) {
 
-			 	$temp_lap_a_id = $_SESSION['temp_lap_a_id'];
+			 	
 
 			 	$arr_update = array("lap_a_id"=>$lap_a_id);
 
@@ -298,13 +300,16 @@ function simpan(){
 
 
 			 	$this->session->unset_userdata("temp_lap_a_id");
-
-			 	$ret = array("error"=>false,"message"=>"data laporan MODEL-A berhasil disimpan");
+				unset($_SESSION['temp_lap_a_id']);
+			 	
 
 			 	$xx = md5(date("dmyhis").round(0,100).microtime()); 
 				$this->session->set_userdata("temp_lap_a_id",$xx);
 
-				unset($_SESSION['temp_lap_a_id']);
+				$_SESSION['temp_lap_a_id'] = $xx;
+
+
+				$ret = array("error"=>false,"message"=>"data laporan MODEL-A berhasil disimpan");
 
 
 			 }

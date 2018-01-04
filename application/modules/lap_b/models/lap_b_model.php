@@ -542,6 +542,7 @@ function temp_get_lap_b_terlapor($param){
 	->join('tiger_provinsi prov','prov.id = kota.id_provinsi','left')
 	->join('m_agama a','a.id_agama = t.tersangka_id_agama','left')
 	->where("temp_lap_b_id",$param['temp_lap_b_id']);
+	// ->where("lap_b_id",$param['lap_b_id']);
 
 	($param['limit'] != null ? $this->db->limit($param['limit']['end'], $param['limit']['start']) : '');
 		//$this->db->limit($param['limit']['end'], $param['limit']['start']) ;

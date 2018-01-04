@@ -135,6 +135,9 @@ function get_data(){
 
 function baru(){
 
+		$userdata = $this->userdata; 
+		// show_array($userdata); exit;
+
 		$data['action']="simpan";
 		$data['lap_b_id']="";
 		$data['mode']="I";
@@ -142,13 +145,15 @@ function baru(){
 
 		$temp_lap_b_id = $_SESSION['temp_lap_b_id']; // $_SESSION['temp_lap_b_id']; 
 		if($temp_lap_b_id == "") {
-			$xx = md5(date("dmyhis").round(0,100).microtime()); 
+
+			$xx = md5(date("dmyhis").round(0,100).microtime().$userdata['id']); 
 			$this->session->set_userdata("temp_lap_b_id",$xx);
 			$_SESSION['temp_lap_b_id'] = $xx;
 			$temp_lap_b_id = $_SESSION['temp_lap_b_id']; // $_SESSION['temp_lap_b_id']; 
 
 		}
 
+		// echo $temp_lap_b_id. "<hr />" ;
 		// echo $_SESSION['temp_lap_b_id'];  exit;
 
 		//$this->session->unset_userdata("temp_lap_b_id");
@@ -255,7 +260,8 @@ function simpan(){
 			// exit;
 			// exit;
 
-			$data['lap_b_id'] = md5(microtime());
+			$temp_lap_b_id = $_SESSION['temp_lap_b_id'];
+			$data['lap_b_id'] =  $temp_lap_b_id ;
 
 			$userdata = $_SESSION['userdata'];
 
@@ -266,34 +272,13 @@ function simpan(){
 			$data['id_polsek'] = $userdata['id_polsek'];
 
 			 $res = $this->db->insert("lap_b",$data);
-			 $lap_b_id = $this->db->insert_id();
+			 
 			 if($res) {
 
-			 	// $temp_lap_b_id = $_SESSION['temp_lap_b_id'];
-
-			 	// $arr_update = array("lap_b_id"=>$lap_b_id);
-
-			 	// $this->db->where("temp_lap_b_id",$temp_lap_b_id);
-			 	// $this->db->update("lap_b_tersangka",$arr_update);
-
-			 	// $this->db->where("temp_lap_b_id",$temp_lap_b_id);
-			 	// $this->db->update("lap_b_saksi",$arr_update);
-
-			 	// $this->db->where("temp_lap_b_id",$temp_lap_b_id);
-			 	// $this->db->update("lap_b_korban",$arr_update);
-
-			 	// $this->db->where("temp_lap_b_id",$temp_lap_b_id);
-			 	// $this->db->update("lap_b_barbuk",$arr_update);
-
-
-		 		// $this->db->where("temp_lap_b_id",$temp_lap_b_id);
-			 	// $this->db->update("lap_b_pasal",$arr_update);
-
-
-			 	// $this->session->unset_userdata("temp_lap_b_id");
+			 	 
 			 	$lap_b_id = $data['lap_b_id'];
 
-			 	$temp_lap_b_id = $_SESSION['temp_lap_b_id'];
+			 	
 
 			 	$arr_update = array("lap_b_id"=>$lap_b_id);
 
@@ -319,10 +304,14 @@ function simpan(){
 			 	unset($_SESSION['temp_lap_b_id']);
 
 
-			 	$ret = array("error"=>false,"message"=>"data laporan MODEL-B berhasil disimpan");
+			 	
 
-			 	$xx = md5(date("dmyhis").round(0,100).microtime()); 
+			 	$xx = md5(date("dmyhis").round(0,100).microtime().$userdata['id']); 
 				$this->session->set_userdata("temp_lap_b_id",$xx);
+				$_SESSION['temp_lap_b_id'] = $xx;
+
+				$ret = array("error"=>false,"message"=>"data laporan MODEL-B berhasil disimpan","temp_lap_b_id"=>$xx);
+
 			 }
 			 else {
 			 	$ret = array("error"=>true,"message"=>$this->db->_error_message());
@@ -1787,6 +1776,7 @@ function temp_get_lap_b_terlapor() {
       //  order[0][column]
         $req_param = array (
         		"temp_lap_b_id" => $_SESSION['temp_lap_b_id'],
+        		// "lap_b_id" => $_SESSION['temp_lap_b_id'],
 				"sort_by" => $sidx,
 				"sort_direction" => $sord,
 				"limit" => null 
@@ -1881,6 +1871,7 @@ function tmp_tersangka_simpan(){
 			}
 
 			$data['temp_lap_b_id'] = $temp_lap_b_id;
+			// $data['lap_b_id'] = $temp_lap_b_id;
 			 
 			// show_array($data);
 			 
