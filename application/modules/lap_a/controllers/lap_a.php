@@ -54,8 +54,8 @@ function get_data(){
       	$draw = $_REQUEST['draw']; // get the requested page 
     	$start = $_REQUEST['start'];
         $limit = $_REQUEST['length']; // get how many rows we want to have into the grid 
-        $sidx = isset($_REQUEST['order'][0]['column'])?$_REQUEST['order'][0]['column']:"level"; // get index row - i.e. user click to sort 
-        $sord = isset($_REQUEST['order'][0]['dir'])?$_REQUEST['order'][0]['dir']:"desc"; // get the direction if(!$sidx) $sidx =1;  
+        $sidx = !empty($_REQUEST['order'][0]['column'])?$_REQUEST['order'][0]['column']:"1"; // get index row - i.e. user click to sort 
+        $sord = !empty($_REQUEST['order'][0]['dir'])?$_REQUEST['order'][0]['dir']:"desc"; // get the direction if(!$sidx) $sidx =1;  
         
         // $no_rangka = $_REQUEST['columns'][5]['search']['value'];
         $tanggal_awal = $_REQUEST['columns'][1]['search']['value'];

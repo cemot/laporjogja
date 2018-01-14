@@ -23,6 +23,7 @@ $(".tanggal").datepicker()
 		 		// "order": [[ 0, "desc" ]],
 		 		// "iDisplayLength": 50,
 				"columnDefs": [ { "targets": 0, "orderable": false } ],
+				"order":   [1,"desc"],
 				"processing": true,
 		        "serverSide": true,
 		        "ajax": '<?php echo site_url("$controller/get_data") ?>'
