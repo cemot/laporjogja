@@ -55,6 +55,9 @@ class Login extends CI_Controller {
  			else if ($userdata['level'] == "4") {
  				$url = site_url("index_executive");
  			}
+ 			else if ($userdata['level'] == "5") {
+ 				$url = site_url("index_lantas");
+ 			}
  			else {
  				
  				$url = site_url("depan_baru");

@@ -1,7 +1,7 @@
 <?php 
 class service extends CI_Controller {
-	function service(){
-		parent::_construct();
+	function __construct(){
+		parent::__construct();
 	} 
 
 
@@ -15,6 +15,53 @@ class service extends CI_Controller {
 
 		$data = $res->row_array();
 		echo json_encode($data);
+
+	}
+
+
+
+	function get_data_kendaraan($nopol){
+
+		$nopol = str_replace("%20"," ",$nopol);
+
+		$req_url = "http://180.246.178.136:5000/api.bpkb/index.php/services/get_data_kendaraan";
+
+		$ch = curl_init();
+
+		$req_array = array("key"=>"12345",
+							"nopol"=>$nopol);
+		$json_data = json_encode($req_array);
+
+		// echo $json_data;
+		 
+		curl_setopt($ch,CURLOPT_URL, $req_url);
+		curl_setopt($ch,CURLOPT_POST, 1);
+		curl_setopt($ch,CURLOPT_POSTFIELDS, $json_data);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+
+		curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+		$info = curl_getinfo($ch);
+
+		 // show_array($info);
+
+
+		//execute post
+		$result = curl_exec($ch);
+		// echo $result;  
+
+		$obj  = json_decode($result);
+		$array = (array) $obj;
+
+		$info = curl_getinfo($ch);
+
+		$error = ($info['http_code']=="200")?false:true;
+		// show_array($array); exit;
+		curl_close($ch);
+		// show_array($array); 
+		echo json_encode($array);
+		// exit;
+		// return array("data"=>$array,"error"=>$error);
 
 	}
 }

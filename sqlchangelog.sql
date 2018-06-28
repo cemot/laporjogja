@@ -350,4 +350,40 @@ kendaraan_warna   varchar(100)
 
 
 
+ALTER TABLE `lap_b` ADD `is_lantas` INT NULL AFTER `id_polsek`;
+
+ALTER TABLE `lap_b` ADD `kendaraan_no_bpkb` VARCHAR(50) NULL AFTER `kendaraan_warna`;
+ALTER TABLE `lap_b` ADD `kendaraan_pemilik_alamat` VARCHAR(200) NULL AFTER `kendaraan_pemilik`;
+ALTER TABLE `lap_b` ADD `kendaraan_jenis` VARCHAR(20) NOT NULL AFTER `kendaraan_no_bpkb`;
+ALTER TABLE `lap_b` ADD `kendaraan_tahun` INT NULL AFTER `kendaraan_jenis`;
+ALTER TABLE `lap_b` ADD `kendaraan_jumlah_roda` INT NULL AFTER `kendaraan_tahun`;
+
+
+
+
+
+alter table lap_a 
+add column ( 
+kendaraan_nopol   varchar(100),
+kendaraan_pemilik   varchar(100),
+kendaraan_no_rangka   varchar(100),
+kendaraan_no_mesin   varchar(100),
+kendaraan_merk   varchar(100),
+kendaraan_model   varchar(100),
+kendaraan_warna   varchar(100) 
+);
+
+
+
+ALTER TABLE `lap_a` ADD `is_lantas` INT NULL AFTER `id_polsek`;
+
+ALTER TABLE `lap_a` ADD `kendaraan_no_bpkb` VARCHAR(50) NULL AFTER `kendaraan_warna`;
+ALTER TABLE `lap_a` ADD `kendaraan_pemilik_alamat` VARCHAR(200) NULL AFTER `kendaraan_pemilik`;
+ALTER TABLE `lap_a` ADD `kendaraan_jenis` VARCHAR(20) NOT NULL AFTER `kendaraan_no_bpkb`;
+ALTER TABLE `lap_a` ADD `kendaraan_tahun` INT NULL AFTER `kendaraan_jenis`;
+ALTER TABLE `lap_a` ADD `kendaraan_jumlah_roda` INT NULL AFTER `kendaraan_tahun`;
+
+
+kendaraan_nopol, kendaraan_pemilik, kendaraan_no_rangka, kendaraan_no_mesin, kendaraan_merk, kendaraan_model, kendaraan_warna, kendaraan_no_bpkb, kendaraan_pemilik_alamat, kendaraan_jenis, kendaraan_tahun, kendaraan_jumlah_roda, 
+
 

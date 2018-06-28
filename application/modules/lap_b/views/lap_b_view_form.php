@@ -142,7 +142,7 @@
             </td> </tr>    
  -->
 
-
+<!-- 
  <tr class="data-kendaraan separator" > <td colspan="2"> <b> DATA KENDARAAN</b>  </td> </tr>
    <tr class="data-kendaraan">
       <td> Nomor Polisi </td>
@@ -183,7 +183,7 @@
       <td> Warna</td>
             <td><input type="text" class="form-control" name="kendaraan_warna" id="kendaraan_warna" placeholder="Warna" />
         </td>
-    </tr>
+    </tr> -->
 
 
 
@@ -508,8 +508,107 @@
 
 
 
+ <tr class="separator"> <td colspan="2"> <b> KENDARAAN BERMOTOR </b>  </td> </tr>
+ <tr> <td colspan="2">
+ <tr><td> Kasus Curanmor </td> 
+  <td>
+    <?php
+      $arr_ranmor =   array(0=>"Tidak","Ya"); 
+      echo form_dropdown("is_ranmor",$arr_ranmor,'','id="is_ranmor" class="form-control"');
+    ?>
+  </td>
+ 
+
+ </td> </tr> 
+
+ <tr class="tr_ranmor">
+  <td>Nomor Polisi </td> 
+  <td>
+    <div class="row">
+      <div class="col-md-8">
+      <input type="text" name="kendaraan_nopol" id="kendaraan_nopol" class="form-control" >
+     </div>
+     <div class="col-md-1">
+      <a href="javascript:query_kendaraan()" class="btn btn-primary"> QUERY </a>
+     </div>
+  </div>
+ </tr>
 
 
+  <tr class="tr_ranmor">
+  <td>Nomor BPKB </td> 
+  <td>
+    
+      <input type="text" name="kendaraan_no_bpkb" id="kendaraan_no_bpkb" class="form-control" >
+      
+ </tr>
+
+   <tr class="tr_ranmor">
+  <td>Nomor Rangka </td> 
+  <td>
+    
+      <input type="text" name="kendaraan_no_rangka" id="kendaraan_no_rangka" class="form-control" >
+      
+ </tr>
+
+    <tr class="tr_ranmor">
+  <td>Nomor Mesin </td> 
+  <td>
+    
+      <input type="text" name="kendaraan_no_mesin" id="kendaraan_no_mesin" class="form-control" >
+      
+ </tr>
+ 
+<tr class="tr_ranmor">
+  <td>Pemilik </td>   <td>
+    
+      <input type="text" name="kendaraan_pemilik" id="kendaraan_pemilik" class="form-control" >
+      
+</tr>
+
+<tr class="tr_ranmor">
+  <td>Alamat </td>   <td>
+    
+      <input type="text" name="kendaraan_pemilik_alamat" id="kendaraan_pemilik_alamat" class="form-control" >
+      
+</tr>
+
+
+<tr class="tr_ranmor">
+  <td>Merk </td>   <td>
+    
+      <input type="text" name="kendaraan_merk" id="kendaraan_merk" class="form-control" >
+      
+</tr>
+
+<tr class="tr_ranmor">
+  <td>Model </td>   <td>
+    
+      <input type="text" name="kendaraan_model" id="kendaraan_model" class="form-control" >
+      
+</tr>
+<tr class="tr_ranmor">
+  <td>Warna </td>   <td>
+    
+      <input type="text" name="kendaraan_warna" id="kendaraan_warna" class="form-control" >
+      
+</tr>
+
+</tr>
+<tr class="tr_ranmor">
+  <td>Julah Roda </td>   <td>
+    
+      <input type="text" name="kendaraan_jumlah_roda" id="kendaraan_jumlah_roda" class="form-control" >
+      
+</tr>
+
+</tr>
+<tr class="tr_ranmor">
+  <td>Tahun Buat  </td>   <td>
+    
+      <input type="text" name="kendaraan_tahun" id="kendaraan_tahun" class="form-control" >
+      
+</tr>
  
  <tr class="separator"> <td colspan="2"> <b> PENERIMA LAPORAN </b>  </td> </tr>
 <tr>

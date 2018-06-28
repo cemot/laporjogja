@@ -11,6 +11,19 @@ $(".ds2").select2({
 
 
 
+$(".tr_ranmor").hide();
+
+$("#is_ranmor").change(function(){
+	if($(this).val() == "0") {
+		$(".tr_ranmor").hide();
+	}
+	else {
+		$(".tr_ranmor").show();
+	}
+});
+
+
+
 $("#jenis_korban").change(function(){
 
 	if($("#jenis_korban").val() == "bo") {
@@ -1387,6 +1400,47 @@ function showhide_kendaraan(id){
 	else {
 		$(".data-kendaraan").hide();
 	}
+}
+
+function query_kendaraan(){
+	nopol = $("#kendaraan_nopol").val();
+	$.ajax({
+		url : '<?php echo site_url("service/get_data_kendaraan") ?>/'+nopol,
+		dataType : 'json',
+		success : function(obj) {
+			console.log(obj);
+			if(obj.error == true ) {
+				alert(obj.message);
+				$("#kendaraan_no_bpkb").val('');           
+				$("#kendaraan_no_rangka").val('');     
+				$("#kendaraan_no_mesin").val('');       
+				$("#kendaraan_pemilik").val('');           
+				$("#kendaraan_pemilik_alamat").val('');    
+				$("#kendaraan_merk").val('');              
+				$("#kendaraan_model").val('');             
+				$("#kendaraan_warna").val('');        
+				$("#kendaraan_tahun").val('');   
+				$("#kendaraan_jumlah_roda").val('');   
+
+				       
+			} 
+			else {
+				$("#kendaraan_no_bpkb").val(obj.data.NO_BPKB);
+				$("#kendaraan_no_rangka").val(obj.data.NO_RANGKA);
+				$("#kendaraan_pemilik").val(obj.data.NAMA_PEMILIK);
+				$("#kendaraan_pemilik_alamat").val(obj.data.ALAMAT_PEMILIK);
+				$("#kendaraan_merk").val(obj.data.MERK_NAMA);
+				$("#kendaraan_model").val(obj.data.MODEL_NAMA);
+				$("#kendaraan_warna").val(obj.data.WARNA_NAMA);
+				$("#kendaraan_tahun").val(obj.data.THN_BUAT); 
+				$("#kendaraan_jumlah_roda").val(obj.data.JML_RODA);   
+				$("#kendaraan_no_mesin").val(obj.data.NO_MESIN);                
+			}
+
+
+		}
+	}); 
+	return false;
 }
 
 </script>

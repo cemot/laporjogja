@@ -259,7 +259,30 @@ $setting = $this->cm->get_setting();
   </tr>
   <tr>
     <td colspan="2" align="center">Mengetahui <br />
-      a.n KA  SPKT <?php //echo $ttd['instansi'];  ?><br />
+
+      <!-- a.n KA  SPKT <?php //echo $ttd['instansi'];  ?><br /> -->
+<?php 
+  if($userdata['jenis']=="polda") : 
+?>
+
+A.n kapolda <br /> 
+Ka SPKT <br /> 
+ub <br /> 
+<!-- Ka Siaga SPK A.B.C <br /> -->
+<?php endif; ?>
+
+
+<?php 
+  if($userdata['jenis']=="polres") : 
+?>
+A.n kapolres<br />
+Ka spkt<br />
+ub<br />
+<!-- Kanit SPK A.B.C <br /> -->
+<?php endif; ?>
+
+
+
       <?php echo $mengetahui_jabatan;  ?><br />
       <br />
       <br />
