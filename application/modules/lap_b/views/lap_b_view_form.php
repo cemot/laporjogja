@@ -596,7 +596,7 @@
 
 </tr>
 <tr class="tr_ranmor">
-  <td>Julah Roda </td>   <td>
+  <td>Jumlah Roda </td>   <td>
     
       <input type="text" name="kendaraan_jumlah_roda" id="kendaraan_jumlah_roda" class="form-control" >
       

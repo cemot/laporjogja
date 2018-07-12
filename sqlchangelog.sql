@@ -383,6 +383,10 @@ ALTER TABLE `lap_a` ADD `kendaraan_jenis` VARCHAR(20) NOT NULL AFTER `kendaraan_
 ALTER TABLE `lap_a` ADD `kendaraan_tahun` INT NULL AFTER `kendaraan_jenis`;
 ALTER TABLE `lap_a` ADD `kendaraan_jumlah_roda` INT NULL AFTER `kendaraan_tahun`;
 
+ALTER TABLE `lap_a` ADD `is_ranmor` INT NULL AFTER `id_polsek`;
+
+ALTER TABLE `lap_b` ADD `is_ranmor` INT NULL AFTER `id_polsek`;
+
 
 kendaraan_nopol, kendaraan_pemilik, kendaraan_no_rangka, kendaraan_no_mesin, kendaraan_merk, kendaraan_model, kendaraan_warna, kendaraan_no_bpkb, kendaraan_pemilik_alamat, kendaraan_jenis, kendaraan_tahun, kendaraan_jumlah_roda, 
 
