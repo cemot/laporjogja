@@ -156,7 +156,7 @@ $("#txt_id_fungsi").change(function(){
 	
 	$("#formulir").submit(function(){
 
-		// $('#myPleaseWait').modal('show');
+		 $('#myPleaseWait').modal('show');
 		
 		$.ajax({
 			url : $("#formulir").attr('action'),
@@ -1235,7 +1235,12 @@ function get_user_info(){
 
 
 function query_kendaraan(){
+
+
+
+
 	nopol = $("#kendaraan_nopol").val();
+	$('#myPleaseWait').modal('show'); 
 	$.ajax({
 		url : '<?php echo site_url("service/get_data_kendaraan") ?>/'+nopol,
 		dataType : 'json',
@@ -1269,7 +1274,7 @@ function query_kendaraan(){
 				$("#kendaraan_no_mesin").val(obj.data.NO_MESIN);                
 			}
 
-
+		$('#myPleaseWait').modal('hide'); 
 		}
 	}); 
 	return false;

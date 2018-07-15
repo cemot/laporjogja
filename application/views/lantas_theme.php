@@ -120,7 +120,7 @@ $userdata = $_SESSION['userdata'];
                             <img src="<?php echo base_url("assets2") ?>/img/authors/user.jpg" class="media-object rounded-circle" alt="">
                         </figure>
                         <div class="media-body hide-menu">
-                            <h4 class="media-heading mr-b-5 text-uppercase"><?php echo $userdata['nama'] ?></h4><span class="user-type fs-12"><?php echo $userlevel." ".strtoupper($userdata['jenis'])." ".$inst. " " ; ?></span>
+                            <h4 class="media-heading mr-b-5 text-uppercase"><?php echo $userdata['nama'] ?></h4><span class="user-type fs-12"><?php //echo $userlevel." ".strtoupper($userdata['jenis'])." ".$inst. " " ; ?></span>
                         </div>
                     </a>
                 </div>

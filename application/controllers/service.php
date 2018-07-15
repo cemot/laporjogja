@@ -1,7 +1,13 @@
 <?php 
 class service extends CI_Controller {
+
+	var $service_url;
 	function __construct(){
 		parent::__construct();
+
+	 
+		$this->service_url = $this->config->item('bpkb_service_url');
+
 	} 
 
 
@@ -24,7 +30,9 @@ class service extends CI_Controller {
 
 		$nopol = str_replace("%20"," ",$nopol);
 
-		$req_url = "http://180.246.178.136:5000/api.bpkb/index.php/services/get_data_kendaraan";
+		// $req_url = "http://180.246.178.136:5000/api.bpkb/index.php/services/get_data_kendaraan";
+
+		$url = $this->service_url."/get_data_kendaraan";
 
 		$ch = curl_init();
 
@@ -34,7 +42,7 @@ class service extends CI_Controller {
 
 		// echo $json_data;
 		 
-		curl_setopt($ch,CURLOPT_URL, $req_url);
+		curl_setopt($ch,CURLOPT_URL, $url);
 		curl_setopt($ch,CURLOPT_POST, 1);
 		curl_setopt($ch,CURLOPT_POSTFIELDS, $json_data);
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);

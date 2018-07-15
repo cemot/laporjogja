@@ -18,6 +18,10 @@ $config['base_url']	= '';
 
 $config['service_url']	= 'http://localhost/leasingservice/api_service.php';
 
+// $config['bpkb_service_url']	= 'http://localhost/api.jogja.bpkb/index.php/services';
+$config['bpkb_service_url']	= 'http://180.246.178.136:5000/api.bpkb/index.php/services';
+ 
+
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -15,10 +15,13 @@ $userdata = $_SESSION['userdata'];
         <li class="menu-item-has-children">
             <a href="javascript:void(0);" class="ripple">
                 <i class="list-icon material-icons">event_note</i>
-                <span class="hide-menu">Laporan</span>
+                <span class="hide-menu">Laporan LP Ranmor</span>
             </a>
             <ul class="list-unstyled sub-menu">
                 <li><a href="<?php echo site_url("lantas_kendaraan"); ?>">Laporan Kendaraan </a></li>
+                <li><a href="<?php echo site_url("lantas_kendaraan_a"); ?>">LP A </a></li>
+                <li><a href="<?php echo site_url("lantas_kendaraan_b"); ?>">LP B </a></li>
+                
                 
             </ul>
         </li>

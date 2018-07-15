@@ -1403,11 +1403,16 @@ function showhide_kendaraan(id){
 }
 
 function query_kendaraan(){
+
+	$('#myPleaseWait').modal('show'); 
 	nopol = $("#kendaraan_nopol").val();
 	$.ajax({
 		url : '<?php echo site_url("service/get_data_kendaraan") ?>/'+nopol,
 		dataType : 'json',
 		success : function(obj) {
+
+			$('#myPleaseWait').modal('hide'); 
+			
 			console.log(obj);
 			if(obj.error == true ) {
 				alert(obj.message);

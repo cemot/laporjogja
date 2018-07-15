@@ -279,6 +279,10 @@ function simpan(){
 			 	$lap_b_id = $data['lap_b_id'];
 
 			 	
+		 		if($data['is_ranmor'] == 1) { 
+			 		$this->push_to_bpkb($data); 
+			 	} 
+			 	
 
 			 	$arr_update = array("lap_b_id"=>$lap_b_id);
 
@@ -327,7 +331,72 @@ function simpan(){
 	}
 
 
+function push_to_bpkb($data) {
+	$url = $this->config->item('bpkb_service_url');
 
+	$this->db->where("id_pangkat",$data['pen_lapor_id_pangkat']);
+	$dp = $this->db->get("m_pangkat")->row();
+
+	$arr_data = array(
+				"NO_BPKB" => $data['kendaraan_no_bpkb'],
+				"NO_RANGKA" => $data['kendaraan_no_rangka'],
+				"NO_MESIN" => $data['kendaraan_no_mesin'],
+				"NO_POLISI" => $data['kendaraan_nopol'],
+				"NAMA_PEMILIK" => $data['kendaraan_pemilik'],
+				"ALAMAT_PEMILIK" => $data['kendaraan_pemilik_alamat'],
+				"NO_LP" => $data['nomor'],
+				"TGL_LP" => $data['tanggal'],
+				"NAMA_PELAPOR" => $data['pelapor_nama'],
+				"NO_TLP_PELAPOR" => $data['pelapor_telpon'],
+				"PENERIMA_LAP" => $data['pen_lapor_nama'],
+				"PANGKAT_PENERIMA_LAP" => $dp->pangkat,
+				"NRP_PENERIMA_LAP" => $data['pen_lapor_nrp'],
+				"JAB_PENERIMA_LAP" => $data['pen_lapor_jabatan'],
+				"STATUS" => 0
+
+	);
+
+	// show_array($arr_data);
+
+		$url = $url."/insert_data_lp";
+
+		$ch = curl_init();
+
+		$req_array = array("key"=>"12345",
+							"datalp"=>$arr_data);
+
+		$json_data = json_encode($req_array);
+
+		// echo $json_data;
+		 
+		curl_setopt($ch,CURLOPT_URL, $url);
+		curl_setopt($ch,CURLOPT_POST, 1);
+		curl_setopt($ch,CURLOPT_POSTFIELDS, $json_data);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+
+		curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+		$info = curl_getinfo($ch);
+
+		 // show_array($info);
+
+
+		//execute post
+		$result = curl_exec($ch);
+		// echo $result;  
+
+		$obj  = json_decode($result);
+		$array = (array) $obj;
+
+		$info = curl_getinfo($ch);
+
+		$error = ($info['http_code']=="200")?false:true;
+		curl_close($ch);
+
+		return array("error"=>$error,"message"=>$array);
+
+
+}
 
 
 function edit($id){
