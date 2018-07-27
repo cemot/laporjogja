@@ -106,11 +106,14 @@ $id = $row['lap_a_id'];
         	$arr_data[] = array(
         		 
 								strtoupper($row['nomor']),
+								flipdate($row['tanggal']),
 								strtoupper($row['kendaraan_nopol']),
 								flipdate($row['tanggal']),
 								strtoupper($row['pelapor_nama']),
 								strtoupper($row['terlapor']),
 								strtoupper($row['tindak_pidana']),
+								 ($row['uploaded']==1)?"<i class=\"fa fa-check\"></i>":"",
+
 								
         		  			 "
         		  			 <a class=\"btn btn-primary\" href=\" " . site_url("$controller/detail/".$id) ."\"> Detail </a>
@@ -148,7 +151,7 @@ function detail($id){
 
 	$detail = $this->dm->detail($id);
 
-	// show_array($detail);
+	// show_array($detail); exit;
 	
 	$detail['tanggal'] = flipdate($detail['tanggal']);
 	$detail['kp_dilaporkan_pada'] = flipdate($detail['kp_dilaporkan_pada']);
@@ -177,6 +180,41 @@ function get_detail_json($id) {
 	echo json_encode($detail);
 }
  
+function upload($lap_a_id){
+
+	$this->db->where("lap_a_id",$lap_a_id);
+	$detail = $this->db->get("lap_a")->row_array();
+
+
+
+	$detail['controller'] = $this->controller;
+
+
+	//show_array($detail);
+	$content = $this->load->view($detail['controller']."_view_upload",$detail,true);
+	$this->set_subtitle("UPLOAD BERKAS LAPORAN  NOMOR :   ".$detail['nomor']. ". NOMOR POLISI : ".$detail['kendaraan_nopol']);
+	$this->set_title("UPLOAD BERKAS  LAPORAN  NOMOR :  ".$detail['nomor']. ". NOMOR POLISI : ".$detail['kendaraan_nopol']);
+	$this->set_content($content);
+	$this->render();
+
+}
+
+
+function update_upload(){
+		$post = $this->input->post();
+
+		$this->db->where("lap_a_id",$post['lap_a_id']);
+		$res = $this->db->update("lap_a",array("uploaded"=>1));
+		if($res) {
+			$ret = array("error"=>false,"message"=>"Data Berhasil diupload");
+		}
+		else {
+			$ret = array("error"=>true,"message"=>"Data gagal diupload");
+		}
+
+		echo json_encode($ret);
+}
+
 
 }
 ?>

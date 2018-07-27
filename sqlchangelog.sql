@@ -481,3 +481,107 @@ from
 	) 
 group by 
 	`a`.`lap_b_id`; 
+
+
+
+
+ALTER TABLE `lap_a` ADD `uploaded` INT NULL DEFAULT NULL AFTER `kendaraan_jumlah_roda`;
+
+
+ALTER TABLE `lap_b` ADD `uploaded` INT NULL DEFAULT NULL AFTER `kendaraan_jumlah_roda`;
+
+
+
+
+drop view v_lap_aa; 
+create view v_lap_aa as 
+select  
+	`a`.`lap_a_id` AS `lap_a_id`, 
+	`a`.`nomor` AS `nomor`, 
+	`a`.`tanggal` AS `tanggal`, 
+	`a`.`pelapor_nama` AS `pelapor_nama`, 
+	group_concat(
+		`tr`.`tersangka_nama` separator ','
+	) AS `terlapor`, 
+	`a`.`tindak_pidana` AS `tindak_pidana`, 
+	group_concat(distinct `u`.`nama` separator ',') AS `penyidik_nama`, 
+	`a`.`user_id` AS `user_id`, 
+	`op`.`nama` AS `operator`, 
+	`a`.`penyelesaian` AS `penyelesaian`, 
+	`a`.`id_fungsi` AS `id_fungsi`, 
+	`a`.`jenis` AS `jenis`, 
+	`a`.`id_polres` AS `id_polres`, 
+	`a`.`id_polsek` AS `id_polsek`, 
+	is_ranmor , kendaraan_nopol , uploaded
+from 
+	(
+		(
+			(
+				(
+					`laporjogjadb`.`lap_a` `a` 
+					left join `laporjogjadb`.`lap_a_tersangka` `tr` on(
+						(`a`.`lap_a_id` = `tr`.`lap_a_id`)
+					)
+				) 
+				left join `laporjogjadb`.`lap_a_penyidik` `p` on(
+					(`p`.`lap_a_id` = `a`.`lap_a_id`)
+				)
+			) 
+			left join `laporjogjadb`.`pengguna` `u` on(
+				(`u`.`id` = `p`.`id_penyidik`)
+			)
+		) 
+		left join `laporjogjadb`.`pengguna` `op` on(
+			(`op`.`id` = `a`.`user_id`)
+		)
+	) 
+group by 
+	`a`.`lap_a_id`; 
+
+
+
+drop view v_lap_bb ; 
+create view v_lap_bb as 
+select 
+	`a`.`lap_b_id` AS `lap_b_id`, 
+	`a`.`nomor` AS `nomor`, 
+	`a`.`tanggal` AS `tanggal`, 
+	`a`.`pelapor_nama` AS `pelapor_nama`, 
+	group_concat(
+		`tr`.`tersangka_nama` separator ','
+	) AS `terlapor`, 
+	`a`.`tindak_pidana` AS `tindak_pidana`, 
+	group_concat(distinct `u`.`nama` separator ',') AS `penyidik_nama`, 
+	`a`.`user_id` AS `user_id`, 
+	`op`.`nama` AS `operator`, 
+	`a`.`penyelesaian` AS `penyelesaian`, 
+	`a`.`id_fungsi` AS `id_fungsi`, 
+	`a`.`jenis` AS `jenis`, 
+	`a`.`id_polres` AS `id_polres`, 
+	`a`.`id_polsek` AS `id_polsek` , 
+    is_ranmor , kendaraan_nopol , uploaded
+from 
+	(
+		(
+			(
+				(
+					`laporjogjadb`.`lap_b` `a` 
+					left join `laporjogjadb`.`lap_b_tersangka` `tr` on(
+						(`a`.`lap_b_id` = `tr`.`lap_b_id`)
+					)
+				) 
+				left join `laporjogjadb`.`lap_b_penyidik` `p` on(
+					(`p`.`lap_b_id` = `a`.`lap_b_id`)
+				)
+			) 
+			left join `laporjogjadb`.`pengguna` `u` on(
+				(`u`.`id` = `p`.`id_penyidik`)
+			)
+		) 
+		left join `laporjogjadb`.`pengguna` `op` on(
+			(`op`.`id` = `a`.`user_id`)
+		)
+	) 
+group by 
+	`a`.`lap_b_id`; 
+

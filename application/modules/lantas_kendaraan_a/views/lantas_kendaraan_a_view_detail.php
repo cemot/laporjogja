@@ -20,6 +20,15 @@
 <a class="btn btn-danger" href="<?php echo site_url("$this->controller") ?>"><span class="glyphicon glyphicon-arrow-left"></span></i> Kembali </a>
 
 
+<?php if($uploaded<>1) {  ?>
+
+<a class="btn btn-success" href="<?php echo site_url("$this->controller/upload/$lap_a_id") ?>"><span class="glyphicon glyphicon-arrow-left"></span></i> Upload Berkas </a>
+<?php }
+else {  
+?>
+<a class="btn btn-success" href="#"><span class="glyphicon glyphicon-arrow-left"></span></i> Berkas sudah diupload </a>
+<?php 
+} ?>
 <hr /> 
 <br />
 

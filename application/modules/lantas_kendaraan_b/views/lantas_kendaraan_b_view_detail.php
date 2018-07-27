@@ -19,6 +19,16 @@
 
 <a class="btn btn-danger" href="<?php echo $this->agent->referrer(); ?>"><span class="glyphicon glyphicon-arrow-left"></span></i> Kembali </a>
  
+
+<?php if($uploaded<>1) {  ?>
+
+<a class="btn btn-success" href="<?php echo site_url("$this->controller/upload/$lap_b_id") ?>"><span class="glyphicon glyphicon-arrow-left"></span></i> Upload Berkas </a>
+<?php }
+else {  
+?>
+<a class="btn btn-success" href="#"><span class="glyphicon glyphicon-arrow-left"></span></i> Berkas sudah diupload </a>
+<?php 
+} ?> 
 <hr /> 
 <br />
 

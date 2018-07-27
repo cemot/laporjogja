@@ -151,7 +151,8 @@
 <thead>
 	<tr style="background-color:#CCC">
 
-        <th width="16%">NOMOR</th>
+        <th width="16%">NOMOR LP</th>
+        <th width="5%">TANGGAL LP</th>
          <th width="10%">NOMOR POLISI</th>
         <th width="10%">TANGGAL</th>
         <th width="15%">PELAPOR</th>

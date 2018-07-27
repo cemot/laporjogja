@@ -100,6 +100,7 @@ function get_data(){
         	$arr_data[] = array(
         		 
 								strtoupper($row['nomor']),
+								flipdate($row['tanggal']),
 								strtoupper($row['kendaraan_nopol']),
 								flipdate($row['tanggal']),
 								strtoupper($row['pelapor_nama']),
@@ -156,6 +157,41 @@ function detail($id){
 	$this->render();
 
 
+}
+
+function upload($lap_b_id){
+
+	$this->db->where("lap_b_id",$lap_b_id);
+	$detail = $this->db->get("lap_b")->row_array();
+
+
+
+	$detail['controller'] = $this->controller;
+
+
+	//show_array($detail);
+	$content = $this->load->view($detail['controller']."_view_upload",$detail,true);
+	$this->set_subtitle("UPLOAD BERKAS LAPORAN  NOMOR :   ".$detail['nomor']. ". NOMOR POLISI : ".$detail['kendaraan_nopol']);
+	$this->set_title("UPLOAD BERKAS  LAPORAN  NOMOR :  ".$detail['nomor']. ". NOMOR POLISI : ".$detail['kendaraan_nopol']);
+	$this->set_content($content);
+	$this->render();
+
+}
+
+
+function update_upload(){
+		$post = $this->input->post();
+
+		$this->db->where("lap_b_id",$post['lap_b_id']);
+		$res = $this->db->update("lap_b",array("uploaded"=>1));
+		if($res) {
+			$ret = array("error"=>false,"message"=>"Data Berhasil diupload");
+		}
+		else {
+			$ret = array("error"=>true,"message"=>"Data gagal diupload");
+		}
+
+		echo json_encode($ret);
 }
  
 
