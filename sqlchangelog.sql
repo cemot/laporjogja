@@ -512,7 +512,7 @@ select
 	`a`.`jenis` AS `jenis`, 
 	`a`.`id_polres` AS `id_polres`, 
 	`a`.`id_polsek` AS `id_polsek`, 
-	is_ranmor , kendaraan_nopol , uploaded
+	is_ranmor , kendaraan_nopol , uploaded, kendaraan_no_bpkb
 from 
 	(
 		(
@@ -559,7 +559,7 @@ select
 	`a`.`jenis` AS `jenis`, 
 	`a`.`id_polres` AS `id_polres`, 
 	`a`.`id_polsek` AS `id_polsek` , 
-    is_ranmor , kendaraan_nopol , uploaded
+    is_ranmor , kendaraan_nopol , uploaded, kendaraan_no_bpkb
 from 
 	(
 		(

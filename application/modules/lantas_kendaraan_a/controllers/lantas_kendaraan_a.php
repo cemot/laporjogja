@@ -108,7 +108,7 @@ $id = $row['lap_a_id'];
 								strtoupper($row['nomor']),
 								flipdate($row['tanggal']),
 								strtoupper($row['kendaraan_nopol']),
-								flipdate($row['tanggal']),
+								($row['kendaraan_no_bpkb']),
 								strtoupper($row['pelapor_nama']),
 								strtoupper($row['terlapor']),
 								strtoupper($row['tindak_pidana']),

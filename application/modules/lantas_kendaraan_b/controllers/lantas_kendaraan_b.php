@@ -102,10 +102,11 @@ function get_data(){
 								strtoupper($row['nomor']),
 								flipdate($row['tanggal']),
 								strtoupper($row['kendaraan_nopol']),
-								flipdate($row['tanggal']),
+								($row['kendaraan_no_bpkb']),
 								strtoupper($row['pelapor_nama']),
 								strtoupper($row['terlapor']),
 								strtoupper($row['tindak_pidana']),
+								($row['uploaded']==1)?"<i class=\"fa fa-check\"></i>":"",
 								 "
         		  			 <a class=\"btn btn-primary\" href=\" " . site_url("$controller/detail/".$id) ."\"> Detail </a>
 
