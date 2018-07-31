@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/firman/htdocs/api.jogja.bpkb"
 		}
 	]
 }

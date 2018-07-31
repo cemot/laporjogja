@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"v_lap",
+				"v_lap_bb"
+			],
+			[
+				"v_la",
+				"v_lap_aa"
+			],
+			[
 				"kendaraan",
 				"kendaraan_nopol"
 			],
@@ -491,6 +499,23 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "sqlchangelog.sql",
+			"settings":
+			{
+				"buffer_size": 14810,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Ai^7+-k+FN4*",
+			"settings":
+			{
+				"buffer_size": 12,
+				"line_ending": "Unix",
+				"name": "Ai^7+-k+FN4*"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -532,27 +557,59 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/firman/htdocs/laporjogja",
+		"/Users/firman/htdocs/laporjogja/application",
+		"/Users/firman/htdocs/laporjogja/application/modules",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/models",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/views",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/controllers",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/views"
 	],
 	"file_history":
 	[
+		"/Users/firman/htdocs/laporjogja/sqlchangelog.sql",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/controllers/lantas_kendaraan_b.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/controllers/lantas_kendaraan_a.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/views/lantas_kendaraan_b_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/views/lantas_kendaraan_a_view.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/views/lantas_kendaraan_b_view_upload.php",
+		"/Users/firman/htdocs/laporjogja/application/config/config.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/views/lantas_kendaraan_b_view_detail.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/views/lantas_kendaraan_a_view_detail.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/views/lantas_kendaraan_a_view_upload.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/models/lantas_kendaraan_a_view_upload.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/models/lantas_kendaraan_b_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_b/views/lantas_kendaraan_b_view_detail_js.php",
+		"/Users/firman/htdocs/api.jogja.bpkb/application/controllers/services.php",
+		"/Users/firman/htdocs/laporjogja/application/controllers/service.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/views/lantas_kendaraan_a_view_detail_js.php",
+		"/Users/firman/htdocs/laporjogja/application/views/lantas_theme.php",
+		"/Users/firman/htdocs/laporjogja/index.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan_a/models/lantas_kendaraan_a_model.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan/controllers/lantas_kendaraan.php",
+		"/Users/firman/htdocs/laporjogja/application/libraries/lantas_controller.php",
+		"/Users/firman/htdocs/laporjogja/application/views/menu_lantas.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form_js.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/controllers/lap_a.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/controllers/lap_b.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view_form.php",
+		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view_form_js.php",
+		"/Users/firman/htdocs/api.jogja.bpkb/index.php",
+		"/Users/firman/htdocs/api.jogja.bpkb/application/config/database2.php",
+		"/Users/firman/htdocs/api.jogja.bpkb/application/config/database.php",
+		"/Users/firman/htdocs/laporjogja/application/views/newtheme.php",
+		"/Users/firman/htdocs/laporjogja/application/views/template_admin.php",
+		"/Users/firman/htdocs/laporjogja/application/views/template.php",
 		"/Users/firman/htdocs/laporjogja/application/modules/login/controllers/login.php",
 		"/Users/firman/htdocs/laporjogja/application/controllers/index_lantas.php",
 		"/Users/firman/htdocs/laporjogja/application/views/lantas_depan_view.php",
-		"/Users/firman/htdocs/laporjogja/application/libraries/lantas_controller.php",
-		"/Users/firman/htdocs/laporjogja/application/views/lantas_theme.php",
-		"/Users/firman/htdocs/laporjogja/application/views/menu_lantas.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan/controllers/lantas_kendaraan.php",
-		"/Users/firman/htdocs/laporjogja/sqlchangelog.sql",
 		"/Users/firman/htdocs/laporjogja/application/modules/lantas_kendaraan/views/lantas_kendaraan_view.php",
 		"/Users/firman/htdocs/laporjogja/application/controllers/index_executive.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view_form_js.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_a/views/lap_a_view_form.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/views/lap_b_view_form.php",
 		"/Users/firman/htdocs/api.bpkbjogja/application/config/database.php",
-		"/Users/firman/htdocs/laporjogja/index.php",
-		"/Users/firman/htdocs/laporjogja/application/modules/lap_b/controllers/lap_b.php",
-		"/Users/firman/htdocs/laporjogja/application/controllers/service.php",
 		"/Users/firman/htdocs/laporjogja/sqlchangelog.txt",
 		"/Users/firman/htdocs/api.bpkbjogja/application/controllers/services.php",
 		"/Users/firman/htdocs/ksbplanbaru/app/Model/BL.php",
@@ -640,29 +697,7 @@
 		"/Users/firman/htdocs/eblokir/application/modules/user_operator/controllers/user_operator.php",
 		"/Users/firman/htdocs/eblokir/application/modules/user_operator/views/user_operator_view_form.php",
 		"/Users/firman/htdocs/eblokir/application/modules/user_operator/controllers/user_user_operator.php",
-		"/Users/firman/htdocs/eblokir/application/modules/depan_baru/controllers/depan_baru.php",
-		"/Users/firman/htdocs/eblokir/application/modules/depan_baru/models/stat_model.php",
-		"/Users/firman/htdocs/eblokir/application/modules/depan_baru/views/depan_baru_view.php",
-		"/Users/firman/htdocs/eblokir/application/modules/depan_baru/views/depan_baru_view_js.php",
-		"/Users/firman/htdocs/eblokir/application/modules/depan_baru/views/statistik.php",
-		"/Users/firman/htdocs/eblokir/application/controllers/depan_baru.php",
-		"/Users/firman/htdocs/eblokir/application/modules/baru_daftar/views/baru_daftar_view_js.php",
-		"/Users/firman/htdocs/eblokir/application/modules/non_eblokir/models/non_eblokir_model.php",
-		"/Users/firman/htdocs/eblokir/application/modules/non_eblokir/views/non_eblokir_form.php",
-		"/Users/firman/htdocs/eblokir/application/modules/non_eblokir/controllers/MHBE4DG3CDJ003788",
-		"/Users/firman/htdocs/eblokir/application/modules/baru_laporan/models/lapmodel.php",
-		"/Users/firman/htdocs/eblokir/application/modules/admin_laporan/views/admin_laporan_view_js.php",
-		"/Users/firman/htdocs/eblokir/application/modules/baru_laporan/controllers/baru_laporan.php",
-		"/Users/firman/Downloads/report.sql",
-		"/Users/firman/htdocs/eblokir/application/modules/bbn_blokir/controllers/bbn_blokir.php",
-		"/Users/firman/htdocs/eblokir/application/modules/baru_daftar/views/baru_daftar_form_js.php",
-		"/Users/firman/htdocs/eblokir/application/modules/baru_daftar/views/baru_daftar_form.php",
-		"/Users/firman/htdocs/eblokir/application/modules/non_eblokir/views/non_eblokir_form_js.php",
-		"/Users/firman/htdocs/eblokir/application/controllers/executive.php",
-		"/Users/firman/Desktop/bpbd.txt",
-		"/Users/firman/htdocs/eblokir/application/modules/exec_report/models/exec_report_model.php",
-		"/Users/firman/htdocs/eblokir/application/modules/exec_report/views/exec_report_view_table_detail_by_date.php",
-		"/Users/firman/Desktop/subdomain.sumbawabaratkab.go.id.txt"
+		"/Users/firman/htdocs/eblokir/application/modules/depan_baru/controllers/depan_baru.php"
 	],
 	"find":
 	{
@@ -680,6 +715,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lap_a",
+			"$controller",
+			"LAPORAN POLISI",
+			"       ",
+			"      \n",
+			"       ",
+			"$controller",
+			"render_baru",
+			"lantas_kendaraan",
+			"laporan",
+			"NO_LP",
+			"penerima",
+			"pelapo",
+			"formu",
+			"submit",
+			"pangkat",
+			"nomor",
+			"no_lp",
+			"bpkb",
+			"\t",
+			" ",
+			":",
+			"show()",
+			"KEN",
 			"CentOS-7",
 			"7.4.1708",
 			"TH",
@@ -707,8 +766,216 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "sqlchangelog.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13668,
+								12557
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7993.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Ai^7+-k+FN4*",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -761,20 +1028,64 @@
 		"selected_items":
 		[
 			[
+				"sqlcha",
+				"laporjogja/sqlchangelog.sql"
+			],
+			[
+				"SQLCHAN",
+				"laporjogja/sqlchangelog.sql"
+			],
+			[
+				"sql",
+				"laporjogja/sqlchangelog.sql"
+			],
+			[
+				"config.php",
+				"laporjogja/application/config/config.php"
+			],
+			[
+				"changelosq",
+				"laporjogja/sqlchangelog.sql"
+			],
+			[
+				"lantasthe",
+				"application/views/lantas_theme.php"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"lantas_theme",
+				"application/views/lantas_theme.php"
+			],
+			[
+				"lantas_controller",
+				"application/libraries/lantas_controller.php"
+			],
+			[
+				"lantas_theme.php",
+				"application/views/lantas_theme.php"
+			],
+			[
+				"lantas_controller.php",
+				"application/libraries/lantas_controller.php"
+			],
+			[
+				"lantas_kenda",
+				"application/modules/lantas_kendaraan/controllers/lantas_kendaraan.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
 				"lantas_depan_view",
 				"laporjogja/application/views/lantas_depan_view.php"
 			],
 			[
 				"changelog.sql",
 				"laporjogja/sqlchangelog.sql"
-			],
-			[
-				"index",
-				"laporjogja/index.php"
-			],
-			[
-				"inde",
-				"laporjogja/index.php"
 			],
 			[
 				"rka.blade.php",
@@ -799,10 +1110,6 @@
 			[
 				"barubuka",
 				"application/modules/baru_bukablokir/controllers/baru_bukablokir.php"
-			],
-			[
-				"config.php",
-				"application/config/config.php"
 			],
 			[
 				"ind",
@@ -1185,10 +1492,6 @@
 				"application/config/database.php"
 			],
 			[
-				"sql",
-				"sqlchangelog.txt"
-			],
-			[
 				"coremod",
 				"application/models/coremodel.php"
 			],
@@ -1225,10 +1528,6 @@
 				"assets/ionicons-2.0.1/src/android-delete.svg"
 			],
 			[
-				"sqlcha",
-				"sqlchangelog.txt"
-			],
-			[
 				"login.php",
 				"application/modules/login/controllers/login.php"
 			],
@@ -1239,38 +1538,6 @@
 			[
 				"codeig",
 				"system/core/CodeIgniter.php"
-			],
-			[
-				"api.php",
-				"application/modules/api/controllers/api.php"
-			],
-			[
-				"tanggalh",
-				"application/helpers/tanggal_helper.php"
-			],
-			[
-				"masteron",
-				"application/libraries/master_controller.php"
-			],
-			[
-				"coremo",
-				"application/models/coremodel.php"
-			],
-			[
-				"service",
-				"application/helpers/serviceurl_helper.php"
-			],
-			[
-				"tanggal",
-				"application/helpers/tanggal_helper.php"
-			],
-			[
-				"sqlc",
-				"sqlchangelog.txt"
-			],
-			[
-				"chage",
-				"assets/bootstrap-timepicker/CHANGELOG.md"
 			]
 		],
 		"width": 0.0
@@ -1278,9 +1545,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "lapor",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/htdocs/laporjogja/laporjogja.sublime-project"
+			],
 			[
 				"lapor",
 				"~/htdocs/laporjogja/LPJogja.sublime-workspace"
@@ -1333,7 +1604,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 269.0,
+	"side_bar_width": 335.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -585,3 +585,13 @@ from
 group by 
 	`a`.`lap_b_id`; 
 
+
+
+
+CREATE TABLE IF NOT EXISTS `t_berkas` (
+  `id` int(11) NOT NULL,
+  `no_lp` varchar(100) NOT NULL,
+  `file` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+

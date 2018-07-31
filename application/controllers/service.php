@@ -72,6 +72,51 @@ class service extends CI_Controller {
 		// return array("data"=>$array,"error"=>$error);
 
 	}
+
+function upload_blokir() {
+	$post = $this->input->post();
+
+	// show_array($post); show_array($_FILES); exit;
+
+	$config['upload_path']          = './berkas_blokir/';
+    $config['allowed_types']        = 'gif|jpg|png|pdf|docx';
+    $this->load->library('upload', $config);
+
+     if ( ! $this->upload->do_upload('file'))
+    {
+            $error = array('error' => $this->upload->display_errors());
+            // show_array($error); 
+
+          	$ret = array("error"=>true,"message"=>$error);
+           
+    }
+    else
+    {
+            $uploaddata = array('upload_data' => $this->upload->data());
+
+	        // show_array($uploaddata); 
+            $data['no_lp'] = $post['no_lp'];
+		    $data['file']  = $uploaddata['upload_data']['file_name'];
+			$res = $this->db->insert("t_berkas",$data);
+
+			if($res) {
+				$ret = array("error"=>false,"message"=>"Data berhasil diupload");
+			}
+			else {
+				$ret = array("error"=>true,"message"=>mysql_error());
+			}
+    }
+
+    echo json_encode($ret);
+   
+
+
+}
+
+function testupload(){
+	$this->load->view("uploadberkas");
+}
+
 }
 
 ?>
