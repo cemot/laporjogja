@@ -78,6 +78,11 @@ function upload_blokir() {
 
 	// show_array($post); show_array($_FILES); exit;
 
+	$this->load->library('Array2XML');
+
+
+
+
 	$config['upload_path']          = './berkas_blokir/';
     $config['allowed_types']        = 'gif|jpg|png|pdf|docx';
     $this->load->library('upload', $config);
@@ -107,7 +112,10 @@ function upload_blokir() {
 			}
     }
 
-    echo json_encode($ret);
+    // echo json_encode($ret);
+    $xml = Array2XML::createXML("upload", $ret);
+			header('Content-type: text/xml');
+			echo $xml->saveXML();
    
 
 
