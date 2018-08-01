@@ -14,23 +14,25 @@ function data($param){
 
 	$sort_by = $arr_column[$param['sort_by']];
 
-	$this->db->select('*')->from('v_lap_aa'); 
+	$this->db->select('*')->from('v_lap_aa l'); 
 
 
-	$this->db->join('pengguna u','v_lap_aa.user_id = u.id');
+	$this->db->join('pengguna u','l.user_id = u.id');
 	 
 
 	$userdata = $_SESSION['userdata'];
 
-	// if($userdata['jenis']=="polres") {
-	// 	$this->db->where("v_lap_aa.id_polres",$userdata['id_polres']);
-	// }
-	// if($userdata['jenis']=="polsek") {
-	// 	$this->db->where("v_lap_aa.id_polsek",$userdata['id_polsek']);
-	// }
+	if($userdata['jenis']=="polres") {
+		$this->db->join("m_polsek polsek","l.id_polsek = polsek.id_polsek");
+
+		$this->db->where("polsek.id_polres",$userdata['id_polres']);
+	}
+	if($userdata['jenis']=="polsek") {
+		$this->db->where("l.id_polsek",$userdata['id_polsek']);
+	}
 
 
-	// $this->db->where("v_lap_aa.jenis",$userdata['jenis']);
+	// $this->db->where("l.jenis",$userdata['jenis']);
 
     if($param['tanggal_awal']<> '') {
     	$tanggal_awal = flipdate($param['tanggal_awal']); 
