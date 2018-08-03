@@ -29,6 +29,18 @@ else {
 <a class="btn btn-success" href="#"><span class="glyphicon glyphicon-arrow-left"></span></i> Berkas sudah diupload </a>
 <?php 
 } ?> 
+
+
+
+<?php if($file<>"") {  ?>
+
+<a target="blank" class="btn btn-success" href="<?php echo base_url("berkas_blokir/$file") ?>"><span class="glyphicon glyphicon-arrow-left"></span></i> Download Berkas Blokir </a>
+<?php }
+else {  
+?>
+<a class="btn btn-success" href="#"><span class="glyphicon glyphicon-arrow-left"></span></i> Belum diblokir </a>
+<?php 
+} ?>
 <hr /> 
 <br />
 

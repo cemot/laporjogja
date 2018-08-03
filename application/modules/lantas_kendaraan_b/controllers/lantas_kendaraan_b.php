@@ -96,6 +96,11 @@ function get_data(){
 		//$daft_id = $row['daft_id'];
         	 
 		$id = $row['lap_b_id'];
+
+
+			$upload = ($row['uploaded']==1)?"<span class=\"badge badge-success\">Sudah diupload</span>":"<span class=\"badge badge-danger\">Belum diupload</span>";
+
+			$upload .= ($row['file']=="")?"<span class=\"badge badge-danger\">Belum diblokir</span>":"<a target='blank' href=". base_url("berkas_blokir/".$row['file']) ." class=\"badge badge-success\">Download Berkas Blokir</a>";
          
         	$arr_data[] = array(
         		 
@@ -106,9 +111,9 @@ function get_data(){
 								strtoupper($row['pelapor_nama']),
 								strtoupper($row['terlapor']),
 								strtoupper($row['tindak_pidana']),
-								($row['uploaded']==1)?"<i class=\"fa fa-check\"></i>":"",
-								 "
-        		  			 <a class=\"btn btn-primary\" href=\" " . site_url("$controller/detail/".$id) ."\"> Detail </a>
+								$upload,
+								 
+        		  			 "<a class=\"btn btn-primary\" href=\" " . site_url("$controller/detail/".$id) ."\"> Detail </a>
 
         		  			 "
         		  			 

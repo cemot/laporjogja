@@ -14,10 +14,11 @@ function data($param){
 
 	$sort_by = $arr_column[$param['sort_by']];
 
-	$this->db->select('*')->from('v_lap_bb l'); 
+	$this->db->select('l.*,b.file')->from('v_lap_bb l'); 
 
 
 	$this->db->join('pengguna u','l.user_id = u.id');
+	$this->db->join("t_berkas b","b.no_lp = l.nomor","left");
 	 
 
 	$userdata = $_SESSION['userdata'];
@@ -220,6 +221,9 @@ agama.agama,
 pdk.pendidikan,
 wn.warga_negara,
 
+b.file,
+
+
 u.nama as pengguna ')
 ->from("lap_b a")
 ->join("m_golongan_kejahatan gk","a.id_gol_kejahatan = gk.id",'left')
@@ -245,7 +249,7 @@ u.nama as pengguna ')
 ->join('tiger_kota k_kota','k_kota.id = k_kec.id_kota ','left')
 ->join('tiger_provinsi k_prov','k_prov.id = k_kota.id_provinsi','left')
 ->join('m_kelompok_kejahatan kel','kel.id_kelompok = gk.id_kelompok')
-
+->join('t_berkas b','b.no_lp = a.nomor','left')
 
 ->where("a.lap_b_id",$id);
 $res = $this->db->get(); 
