@@ -72,6 +72,7 @@ function data($param){
         
 
     $this->db->where("is_ranmor",1);
+     $this->db->group_by("l.lap_a_id");
 
 	$res = $this->db->get();
 		// echo $this->db->last_query();

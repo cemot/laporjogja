@@ -81,6 +81,8 @@ function data($param){
 
     $this->db->where("is_ranmor",1);
 
+    $this->db->group_by("l.lap_b_id");
+
 
 	($param['limit'] != null ? $this->db->limit($param['limit']['end'], $param['limit']['start']) : '');
 		//$this->db->limit($param['limit']['end'], $param['limit']['start']) ;
@@ -92,7 +94,7 @@ function data($param){
  	return $res;
 
 
-	$res = $this->db->get();
+	// $res = $this->db->get();
 
 }
 
