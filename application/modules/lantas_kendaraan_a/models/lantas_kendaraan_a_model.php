@@ -29,13 +29,13 @@ function data($param){
 
 		// $this->db->where("polsek.id_polres",$userdata['id_polres']);
 
-		$this->db->where("jenis",$userdata['jenis']);
-		$this->db->where("id_polres",$userdata['id_polres']);
+		$this->db->where("l.jenis",$userdata['jenis']);
+		$this->db->where("l.id_polres",$userdata['id_polres']);
 	}
 	if($userdata['jenis']=="polsek") {
 		// $this->db->where("l.id_polsek",$userdata['id_polsek']);
-		$this->db->where("jenis",$userdata['jenis']);
-		$this->db->where("id_polsek",$userdata['id_polsek']);
+		$this->db->where("l.jenis",$userdata['jenis']);
+		$this->db->where("l.id_polsek",$userdata['id_polsek']);
 	}
 
 
