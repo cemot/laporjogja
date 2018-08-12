@@ -25,12 +25,17 @@ function data($param){
 	$userdata = $_SESSION['userdata'];
 
 	if($userdata['jenis']=="polres") {
-		$this->db->join("m_polsek polsek","l.id_polsek = polsek.id_polsek");
+		// $this->db->join("m_polsek polsek","l.id_polsek = polsek.id_polsek");
 
-		$this->db->where("polsek.id_polres",$userdata['id_polres']);
+		// $this->db->where("polsek.id_polres",$userdata['id_polres']);
+
+		$this->db->where("jenis",$userdata['jenis']);
+		$this->db->where("id_polres",$userdata['id_polres']);
 	}
 	if($userdata['jenis']=="polsek") {
-		$this->db->where("l.id_polsek",$userdata['id_polsek']);
+		// $this->db->where("l.id_polsek",$userdata['id_polsek']);
+		$this->db->where("jenis",$userdata['jenis']);
+		$this->db->where("id_polsek",$userdata['id_polsek']);
 	}
 
 
