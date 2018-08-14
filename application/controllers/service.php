@@ -102,14 +102,30 @@ function upload_blokir() {
 	        // show_array($uploaddata); 
             $data['no_lp'] = $post['no_lp'];
 		    $data['file']  = $uploaddata['upload_data']['file_name'];
-			$res = $this->db->insert("t_berkas",$data);
 
-			if($res) {
-				$ret = array("error"=>false,"message"=>"Data berhasil diupload");
-			}
-			else {
-				$ret = array("error"=>true,"message"=>mysql_error());
-			}
+		    $this->db->where("no_lp",$post['no_lp']);
+		    $jumlah = $this->db->get("t_berkas")->num_rows();
+		    if( $jumlah == 0 ) {
+		    	$res = $this->db->insert("t_berkas",$data);
+		    	if($res) {
+				$ret = array("error"=>false,"message"=>"Data berhasil diupload (Simpan baru) ");
+				}
+				else {
+					$ret = array("error"=>true,"message"=>mysql_error());
+				}
+		    }
+		    else {
+		    	$this->db->where("no_lp",$post['no_lp']);
+		    	$res = $this->db->update("t_berkas",$data);
+		    	if($res) {
+				$ret = array("error"=>false,"message"=>"Data berhasil diupload (Update) ");
+				}
+				else {
+					$ret = array("error"=>true,"message"=>mysql_error());
+				}
+		    }			
+
+			
     }
 
     // echo json_encode($ret);
