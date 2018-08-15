@@ -281,6 +281,20 @@ function simpan(){
 			 	
 		 		if($data['is_ranmor'] == 1) { 
 			 		$this->push_to_bpkb($data); 
+
+
+			 		$rc = $this->db->get("penerima_sms");
+			 		foreach($rc->result() as $row): 
+
+
+			 			$pesan = "LP nomor  ".$data['nomor'].
+			 			" meminta blokir kendaraan dengan NOPOL ". $data['kendaraan_nopol'].
+			 			". Mohon segera diproses. terima kasih";
+
+			 			$this->sendsms($row->no_hp,$pesan);
+
+			 		endforeach;
+			 		
 			 	} 
 			 	
 

@@ -606,6 +606,47 @@ function get_header_by_user_id($user_id) {
 }
 
 
+
+function sendsms($tujuan,$pesan=""){
+
+		 $userkey = 'a0mp35';
+		 $passkey = 'Rahasia123';
+
+		 // $pesan = html
+
+
+		$url ="https://reguler.zenziva.net/apps/smsapi.php";
+
+
+		$fields_string ="userkey=$userkey&passkey=$passkey&nohp=$tujuan&pesan=$pesan";
+
+	 
+
+		$ch = curl_init();
+ 
+		 
+		curl_setopt($ch,CURLOPT_URL, $url);
+		curl_setopt($ch,CURLOPT_POST, 4);
+		curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+		curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+
+
+
+	 
+		 
+		$result = curl_exec($ch);
+		$information = curl_getinfo($ch);
+
+		// header ("Content-Type:text/xml");
+		// echo $result;
+
+	 
+
+
+	}
+
+
 }
 
 ?>

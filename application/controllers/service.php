@@ -2,6 +2,11 @@
 class service extends CI_Controller {
 
 	var $service_url;
+
+
+	
+
+
 	function __construct(){
 		parent::__construct();
 
@@ -140,6 +145,57 @@ function upload_blokir() {
 function testupload(){
 	$this->load->view("uploadberkas");
 }
+
+
+function kirimsms(){
+	$no='081328080020'; 
+	$pesan = "Pesan ini kami sampaikan dengan sangat senang"; 
+	$this->send($no,$pesan);
+}
+
+
+
+function send($tujuan,$pesan=""){
+
+		 $userkey = '113214144';
+		 $passkey = 'xxxxxxx';
+
+		 // $pesan = html
+
+
+		$url ="https://reguler.zenziva.net/apps/smsapi.php";
+
+
+		$fields_string ="userkey=$userkey&passkey=$passkey&nohp=$tujuan&pesan=$pesan";
+
+	 
+
+		$ch = curl_init();
+ 
+		 
+		curl_setopt($ch,CURLOPT_URL, $url);
+		curl_setopt($ch,CURLOPT_POST, 4);
+		curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+		curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+
+
+
+	 
+		 
+		$result = curl_exec($ch);
+		$information = curl_getinfo($ch);
+
+		header ("Content-Type:text/xml");
+		echo $result;
+
+		 
+
+
+	 
+
+
+	}
 
 }
 
