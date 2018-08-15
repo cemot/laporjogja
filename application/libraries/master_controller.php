@@ -614,6 +614,8 @@ function sendsms($tujuan,$pesan=""){
 
 		 // $pesan = html
 
+		 $pesan .=" - LP Online";
+
 
 		$url ="https://reguler.zenziva.net/apps/smsapi.php";
 
