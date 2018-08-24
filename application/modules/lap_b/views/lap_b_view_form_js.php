@@ -176,9 +176,10 @@ var dt_terlapor = $("#terlapor").DataTable(
 				BootstrapDialog.alert({
 			                type: BootstrapDialog.TYPE_DANGER,
 			                title: 'Error',
-			                message: 'Koneksi terputus'  
+			                message: 'Terjadi kesalahan '  
 			                 
 			    }); 
+			    $('#myPleaseWait').modal('hide');
 			},
 			success : function(obj) {
 				$('#myPleaseWait').modal('hide');

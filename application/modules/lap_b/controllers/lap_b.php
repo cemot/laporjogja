@@ -220,10 +220,24 @@ function baru(){
 } 
 
 
+function cek_ranmor($is_ranmor) {
+
+	$kendaraan_nopol = $_POST['kendaraan_nopol'];
+
+	if($is_ranmor == 1 and empty($kendaraan_nopol)) {
+
+		$this->form_validation->set_message('cek_ranmor', ' Kasus Pencurian Kendaraan Bermotor harus mengisi nomor polisi dan identitas kendaraan lainnya');
+		return false;
+	}
+
+
+}
+
 function simpan(){
 		$data=$this->input->post();
 
  
+ 		// show_array($data); 
 
 		
 		$this->load->library('form_validation');
@@ -233,6 +247,11 @@ function simpan(){
 		$this->form_validation->set_rules('id_gol_kejahatan','Jenis Kejahatan','callback_cek_gol');
 		$this->form_validation->set_rules('id_jenis_lokasi','Lokasi Kejadian','callback_cek_lokasi');
 		$this->form_validation->set_rules('id_fungsi','Fungsi terkait','callback_cek_fungsi');
+
+		$this->form_validation->set_rules('is_ranmor','LP Ranmor ','callback_cek_ranmor');
+
+
+		// 
  
 		$this->form_validation->set_message('required', ' %s Harus diisi ');
 		
@@ -280,7 +299,9 @@ function simpan(){
 
 			 	
 		 		if($data['is_ranmor'] == 1) { 
+		 			// echo "gk tampil lah..";  exit;
 			 		$this->push_to_bpkb($data); 
+
 
 
 			 		$rc = $this->db->get("penerima_sms");
@@ -297,6 +318,8 @@ function simpan(){
 			 		
 			 	} 
 			 	
+
+			 	// echo "input data tanpa kirim data";  exit;
 
 			 	$arr_update = array("lap_b_id"=>$lap_b_id);
 

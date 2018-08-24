@@ -221,6 +221,19 @@ function baru(){
 } 
 
 
+function cek_ranmor($is_ranmor) {
+
+	$kendaraan_nopol = $_POST['kendaraan_nopol'];
+
+	if($is_ranmor == 1 and empty($kendaraan_nopol)) {
+
+		$this->form_validation->set_message('cek_ranmor', ' Kasus Pencurian Kendaraan Bermotor harus mengisi nomor polisi dan identitas kendaraan lainnya');
+		return false;
+	}
+
+
+}
+
 function simpan(){
 		$data=$this->input->post();
 
@@ -233,6 +246,7 @@ function simpan(){
 		$this->form_validation->set_rules('kp_tanggal','Tanggal kejadian','required');
 		$this->form_validation->set_rules('id_gol_kejahatan','Jenis Kejahatan','callback_cek_gol');
 	    $this->form_validation->set_rules('id_fungsi','Fungsi terkait','callback_cek_fungsi');
+	    $this->form_validation->set_rules('is_ranmor','LP Ranmor ','callback_cek_ranmor');
 
 
 		$this->form_validation->set_message('required', ' %s Harus diisi ');
