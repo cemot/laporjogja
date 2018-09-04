@@ -290,7 +290,7 @@ function simpan(){
 			$data['id_polres'] = $userdata['id_polres'];
 			$data['id_polsek'] = $userdata['id_polsek'];
 
-			 $res = $this->db->insert("lap_b",$data);
+			$res = $this->db->insert("lap_b",$data);
 			 
 			 if($res) {
 
@@ -315,6 +315,13 @@ function simpan(){
 			 			$this->sendsms($row->no_hp,$pesan);
 
 			 		endforeach;
+
+
+			 		$this->db->where("lap_b_id",$lap_b_id); 
+			 		$this->db->update("lap_b",array("is_ranmor"=>1));
+			 		
+
+
 			 		
 			 	} 
 			 	

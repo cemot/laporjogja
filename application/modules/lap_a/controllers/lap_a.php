@@ -310,6 +310,9 @@ function simpan(){
 			 			$this->sendsms($row->no_hp,$pesan);
 
 			 		endforeach;
+
+			 		$this->db->where("lap_a_id",$lap_b_id); 
+			 		$this->db->update("lap_a",array("is_ranmor"=>1));
 			 	} 
 
 
